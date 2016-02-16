@@ -30,12 +30,12 @@ body {
   color: $darkGray;
 }
 
-.container {
+/*.container {
   margin: 0 auto;
   max-width: 1024px;
   padding: 0 10px;
   width: 100%;
-}
+}*/
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
@@ -158,13 +158,13 @@ img {
 //
 
 .wrapper-masthead {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .masthead {
   padding: 10px;
-  border-bottom: 1px solid $lightGray;
-  background: transparent url("images/gradient_back.png") repeat-x scroll 0% 0%;
+  margin-bottom: 15px;
+  background: transparent url("/images/gradient_back.png") repeat-x scroll 0% 0%;
   @include mobile {
     text-align: center;
   }
@@ -234,7 +234,10 @@ nav {
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
-
+    text-decoration: none;
+    &:hover, &:active {
+      color: $white;
+    }
     @include mobile {
       margin: 0 10px;
       color: $blue;
@@ -242,62 +245,105 @@ nav {
   }
 }
 
+
 //
-// .hompage
+// .homepage
 //
-.panel_left {
+.lrg_desc {
+  margin: 0px 0px 15px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.panel-left {
   float: left;
 }
-.panel_right {
+.panel-right {
   float:right;
+}
+
+.panel-row {
+  height:160px;
+  margin-bottom: 25px;
+}
+
+.section-link {
   border: 1px solid #00C;
-  padding-right: 5px;
+  padding-right: 10px;
 }
-.panel_row {
-  height:180px;
-}
+
 .section {
    float:left;
-   margin-left:20px;
-   width: 300px;
+   margin-right: 20px;
+   width: 350px;
    height: 100%;
-   margin: 10px;
    padding: 8px;
    border: 1px solid $lrg_green;
    border-radius: 10px;
 }
 
-.section_double {
+.section-double {
   float:left;
-  margin-left:20px;
-  width: 620px;
+  margin-right: 20px;
+  width: 720px;
   height: 100%;
-  margin: 10px;
+  margin-right: 20px;
   padding: 4px 5px;
   border: 1px solid $lrg_blue;
   border-radius: 10px;
 }
 
-.section_title {
+.section-title {
   margin-bottom: 15px;
 }
 
-.section_title a {
+.section-title a {
   color: $lrg_blue;
   font-weight: bold;
   font-size: 1.1em;
+  text-decoration: none;
   &:hover, &:active {
     color: $blue;
   }
 }
 
-.section_content {
+.section-content {
   font-size: 0.9em;
 }
 
 //
+// .table
+//
+th {
+  color: #FFF;
+  background-color: $lrg_blue;
+  font-weight: bold;
+  padding: 4px;
+  border-left: 1px solid #DDD;
+}
+
+
+//
 // .main
 //
+
+#search_term {
+  font-style: italic;
+  color: $lrg_blue;
+}
+
+#search_count {
+  font-size: 0.9em;
+}
+
+.lrg_green {
+  color: $lrg_green;
+}
+
+.inner-content {
+  padding: 25px 20px;
+
+}
 
 .posts > .post {
   padding-bottom: 2em;

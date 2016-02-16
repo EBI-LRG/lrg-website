@@ -1,0 +1,18 @@
+<div class="input-group center">
+	<script type="text/javascript">
+  {% raw %}
+	function goTo() {
+    {% endraw %}
+	  q=document.getElementById('search_id').value;
+	  if (q.length >0) {
+	    location.href = '{{ site.baseurl }}/search/#?query='+q;
+	  }
+	{% raw %}
+	}
+	{% endraw %}
+	</script>
+	<input type="text" class="form-control" placeholder='e.g. "LRG_1", "COL1A1" or "NM_000088.3"' id="search_id" onKeydown='javascript: if (event.keyCode==13) goTo();'>
+  <span class="input-group-btn">
+    <button class="btn btn-default" type="button" onClick='javascript:goTo();'>Search</button>
+	</span>
+</div>

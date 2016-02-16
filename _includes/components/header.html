@@ -1,0 +1,21 @@
+<header class="masthead clearfix">
+  <div class="site-avatar">
+    <img src="{{ site.avatar }}" />
+  </div>
+  <div class="site-info">
+    <h1 class="site-name">{{ site.name }}</h1>
+  </div>
+
+  <nav>
+    <a href="{{ site.baseurl }}/">Home</a>
+    <a href="{{ site.baseurl }}/about">About</a>
+    <a href="{{ site.baseurl }}/download">Download</a>
+    <a href="{{ site.baseurl }}/faq">FAQ</a>
+  </nav>
+  
+</header>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 col-md-8  col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+    {% include components/search_box.html %}
+  </div>
+</div>
