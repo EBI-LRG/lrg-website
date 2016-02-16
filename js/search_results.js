@@ -60,9 +60,9 @@ function get_search_results () {
   }
 */
 
-  var data_list = retrieve_data(lrg_list);
-  display_results(data_list);
-  //display_results(data_test);
+  //var data_list = retrieve_data(lrg_list);
+  //display_results(data_list);
+  display_results(data_test);
 }
 
 // Function for pagination
