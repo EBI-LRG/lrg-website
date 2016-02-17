@@ -7,13 +7,15 @@
   </div>
 
   <nav>
-    <a href="{{ site.baseurl }}/">Home</a>
-    <a href="{{ site.baseurl }}/about">About</a>
-    <a href="{{ site.baseurl }}/download">Download</a>
-    <a href="{{ site.baseurl }}/faq">FAQ</a>
+     <a {% if page.tags contains "Home" %}class="active"{% endif %} href="{{ site.baseurl }}/">Home</a></li>
+     <a {% if page.tags contains "About" %}class="active"{% endif %} href="{{ site.baseurl }}/about">About</a></li>
+     <a {% if page.tags contains "Downloads" %}class="active"{% endif %} href="{{ site.baseurl }}/downloads">Downloads</a></li>
+     <a {% if page.tags contains "FAQ" %}class="active"{% endif %} href="{{ site.baseurl }}/faq">FAQ</a></li>
   </nav>
   
 </header>
+<div class="sub-masterhead"></div>
+
 <div class="row">
   <div class="col-lg-6 col-lg-offset-3 col-md-8  col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
     {% include search_box.html %}

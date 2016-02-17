@@ -1,0 +1,22 @@
+---
+layout: default
+title: "News"
+permalink: /news/
+---
+
+<h2>News</h2>
+
+{% for post in site.posts %}
+<article class="col-md-12 section-row">
+  <div class="clearfix">
+    <div class="section-header left" style="float:left">
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </div>
+    <div class="right medium-font">{{post.date | date: '%B %d, %Y'}}</div>
+  </div>
+  <div class="section-content">
+   {{ post.excerpt }}
+  </div>
+</article> 
+
+{% endfor %}
