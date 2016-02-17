@@ -69,6 +69,22 @@ gems:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
 
+collections:
+    faq_categories:
+        output: true
+        permalink: /category/:path/
+    faq:
+        output: true
+        permalink: /faq/:path/
+defaults:
+    -
+        scope: 
+            type: "faq"
+            path: "faq"
+        values:
+            layout: "faq"
+
+
 # Exclude these files from your production _site
 exclude:
     - Gemfile

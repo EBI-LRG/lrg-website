@@ -43,8 +43,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 
   line-height: 1.7;
-  margin: 1em 0 15px;
-  padding: 0;
+  margin: 15px 0px;
+  padding: 0px;
 
   @include mobile {
     line-height: 1.4;
@@ -293,14 +293,28 @@ nav {
   border-radius: 10px;
 }
 
-.section-title {
-  margin-bottom: 15px;
+.section-row {
+  padding: 8px;
+  border: 1px solid $lrg_green;
+  border-radius: 10px;
+  margin-bottom: 25px;
 }
 
-.section-title a {
+.section-header {
+  color: $lrg_blue;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 2px 0px;
+}
+
+.section-title {
   color: $lrg_blue;
   font-weight: bold;
   font-size: 1.1em;
+  margin-bottom: 15px;
+}
+.section-title a, .section-header a {
+  color: $lrg_blue;
   text-decoration: none;
   &:hover, &:active {
     color: $blue;

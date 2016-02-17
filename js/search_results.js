@@ -1,5 +1,5 @@
 // Links
-var rest_url = "http://www.ebi.ac.uk/ebisearch/ws/rest/lrg";
+var rest_url = "https://www.ebi.ac.uk/ebisearch/ws/rest/lrg";
 var rest_url_lrg_id = rest_url + "/entry/";
 var rest_url_search = rest_url + "?query=";
 var lrg_ftp = "http://ftp.ebi.ac.uk/pub/databases/lrgex/";

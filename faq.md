@@ -1,15 +1,15 @@
 ---
-layout: page
-title: FAQ
+layout: default
+title: "FAQ"
 permalink: /faq/
+tags: FAQ
+exclude_from_search: true
 ---
 
-Some information about you!
+## {{page.title}}
 
-### More Information
+This is the LRG Frequently Asked Questions page.
 
-A place to include any other types of information that you'd like to include about yourself.
-
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+{% assign sorted_faq = (site.faq | sort: 'title') %}
+{% for faq in sorted_faq %}
+* [{{ faq.title }}]({{ faq.url }}){% endfor %}
