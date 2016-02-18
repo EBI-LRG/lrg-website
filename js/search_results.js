@@ -110,13 +110,14 @@ function retrieve_data (list) {
   $.ajax({
     method: "GET",
     dataType: "json",
-    contentType: "application/json; charset=utf-8",
+    async: false, // Avoid weird results
+    crossDomain: true,
     url: rest_url_lrg_id + list_string,
     error: function(jqXHR, status, errorThrown) { },
     success: function(results) { 
-       $.each(results, function(key, data) {
-         lrg_results.push(data);
-       });
+      $.each(results, function(key, data) {
+        lrg_results.push(data);
+      });
     }
   });
 
