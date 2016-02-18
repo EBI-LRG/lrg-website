@@ -17,6 +17,21 @@ var params = ";fields:name,status,chr_name,chr_start,chr_end,last_modification_d
 
 var data_test = [{"id":"LRG_1","source":"lrg","fields":{"name":["COL1A1"],"status":["public"],"chr_name":["17"],"chr_start":["48259457"],"chr_end":["48284000"],"last_modification_date":["20160208"]}},{"id":"LRG_2","source":"lrg","fields":{"name":["COL1A2"],"status":["public"],"chr_name":["7"],"chr_start":["94018873"],"chr_end":["94062544"],"last_modification_date":["20160208"]}}];
 
+var months = {};
+    months["01"] = "Jan";
+    months["02"] = "Feb";
+    months["03"] = "Mar";
+    months["04"] = "Apr";
+    months["05"] = "May";
+    months["06"] = "Jun";
+    months["07"] = "Jul";
+    months["08"] = "Aug";
+    months["09"] = "Sep";
+    months["10"] = "Oct";
+    months["11"] = "Nov";
+    months["08"] = "Dec";
+
+
 //
 // Methods //
 //
@@ -60,9 +75,9 @@ function get_search_results () {
   }
 */
 
-  //var data_list = retrieve_data(lrg_list);
-  //display_results(data_list);
-  display_results(data_test);
+  var data_list = retrieve_data(lrg_list);
+  display_results(data_list);
+  //display_results(data_test);
 }
 
 // Function for pagination
@@ -150,7 +165,7 @@ function display_results (results) {
     // Status
     newrow += "<td>"+ lrg_status + "</td>";
     // Last modification date
-    newrow += "<td>"+ modif_date + "</td>";
+    newrow += "<td>"+ parse_date(modif_date) + "</td>";
     // External links
     newrow += "<td>"+ ens_link + " - " + ncbi_link + " - " + ucsc_link + "</td>";
     
@@ -182,6 +197,18 @@ function get_ucsc_link (chr, start, end) {
   var new_link = ucsc_url.replace(/###LOC###/, chr+':'+start+'-'+end);
 
   return "<a href=\"" + new_link + "\" target=\"_blank\">[UCSC]</a>";;
+}
+
+// Function to parse the date
+function parse_date (date_string) {
+
+  var match = date_string.match(/^(\d{4})(\d{2})(\d{2})$/);
+  if (match) {
+    return match[3] + " " + months[match[2]] + " " + match[1];
+  }
+  else {
+    return date_string;
+  }
 }
 
 // Function to retrieve the searched term
