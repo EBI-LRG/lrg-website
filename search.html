@@ -1,20 +1,22 @@
 ---
 layout: default
 title: Search
+tag: search
 permalink: /search/
 include_in_search: false
 include_in_sitemap: true
 ---
 
 <h3 class="post-title">Search results for <span id="search_term"></span> <span id="search_count"></span></h3>
-<table id="search_results" class="table table-hover">
+<div id="debug"></div>
+<table id="search_results" class="table table-hover sortable">
   <thead>
-    <tr>
-      <th>LRG ID</th>
-      <th>HGNC Symbol</th>
-      <th>LRG status</th>
-      <th>Last modified</th>
-      <th>Genome browsers</th>
+    <tr class="sorttable_header">
+      <th class="sorttable_numeric sorttable_sorted" title="Sort by LRG ID">LRG ID</th>
+      <th class="to_sort" title="Sort by HGNC symbol (external link)">HGNC Symbol</th>
+      <th class="to_sort" title="Sort by LRG publication status, i.e. public or pending">LRG status</th>
+      <th class="to_sort" title"Sort by date">Last modified</th>
+      <th class="sorttable_nosort">Genome browsers</th>
     </tr>
   </thead>
   <tbody>

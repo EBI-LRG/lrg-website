@@ -1,21 +1,18 @@
 <div class="section-links">
   <ul>
-	  <li><a href="news">News</a></li>
   	<li><a href="lrg-collaborators">Collaborators</a></li>
   	<li><a href="web-service">View the list of LRG web services</a></li>
   	<li><a href="about">Read more about LRGs</a></li>
-  	<li><a href="faq">FAQ</a></li>
-  	<li><a href="contact">Contact</a></li>
   </ul>
 </div>
 <div class="section-news">
-      <h3 class="news-title">News</h3>
-      {% for post in site.posts limit:4 %}
-      <div class="news-item {{active}}">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <p>{{ post.title }}</p>
-          <div class="news-date">{{post.date | date: '%B %d, %Y'}}</div>
-        </a>
-      </div>
-      {% endfor %}
+  <div class="news-title"><a href="">News</a></div>
+  {% for post in site.posts limit:4 %}
+    <div class="news-item {{active}}">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        <p>{{ post.title }}</p>
+        <div class="news-date">{{post.date | date: '%B %d, %Y'}}</div>
+      </a>
+    </div>
+  {% endfor %}
 </div>
