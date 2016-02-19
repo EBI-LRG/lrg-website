@@ -394,13 +394,17 @@ nav {
 //
 // .table
 //
+
+table {
+  border-bottom: 2px solid #DDD;
+}
 tr.sorttable_header {
   color: #FFF;
   background-color: $lrg_blue;
   font-weight: bold;
-
   >th {
     border-left: 1px solid #DDD;
+    border-bottom: none;
     padding: 4px;
   }
 }
