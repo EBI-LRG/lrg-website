@@ -14,6 +14,7 @@
 //
 $lrg_green : #48A726;
 $lrg_blue  : #1A4468;
+$lrg_blue2 : #0E4C87;
 $lrg_gray  : #403c37;
 
 /**************/
@@ -295,8 +296,7 @@ nav {
    margin-right: 20px;
    width: 350px;
    height: 100%;
-   padding: 8px;
-   border: 1px solid $lrg_green;
+   border: 1px solid $lrg_blue2;
    border-radius: 10px;
 }
 
@@ -306,8 +306,7 @@ nav {
   width: 720px;
   height: 100%;
   margin-right: 20px;
-  padding: 8px;
-  border: 1px solid $lrg_blue;
+  border: 1px solid $lrg_green;
   border-radius: 10px;
 }
 
@@ -330,36 +329,42 @@ nav {
 }
 
 .section-title {
-  color: $lrg_blue;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.0em;
   margin-bottom: 15px;
-}
-
-.section-title2 {
-  padding: 2px 5px;
-  font-weight: bold;
-  font-size: 1.1em;
-  background-color: #E0E0E0; 
-  border-bottom: 1px dotted #003399;
-}
-
-.section-title a, .section-title2 a,.section-header a {
+  padding: 2px 4px 2px 8px;
   color: $lrg_blue;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.section-title a, .section-header a {
+  color: #FFF;
   text-decoration: none;
   &:hover, &:active {
     color: $blue;
   }
 }
 
-.section-content {
-  font-size: 0.9em;
+.section-title2 {
+  padding: 2px 5px;
+  font-weight: bold;
+  font-size: 1.0em;
+  padding: 2px 5px;
+  background-color: #E9E9E9;
+  border-bottom: 1px dotted $lrg_blue;
+  >a {
+    color: $lrg_green;
+    text-decoration: none;
+    &:hover, &:active {
+      color: $blue;
+    }
+  }
 }
 
-.section-separator {
-  height: 10px;
-  background-color: #FFF;
-  margin: 0px -8px;
+.section-content {
+  font-size: 0.9em;
+  padding: 4px 8px;
 }
 
 .section-links {
@@ -452,6 +457,10 @@ tr.sorttable_header {
   color: $lrg_green;
 }
 
+.lrg-green-bg {
+  background-color: $lrg_green;
+}
+
 .left {
   float: left;
 }
@@ -467,6 +476,23 @@ tr.sorttable_header {
 .inner-content {
   padding: 25px;
 
+}
+
+.gradient-blue {
+  /* Old browsers */
+  background: $lrg_blue2;
+  /* IE10 */ 
+  background: -ms-linear-gradient(top, $lrg_blue 0%, $lrg_blue2 10%);
+  /* Mozilla Firefox */ 
+  background: -moz-linear-gradient(top, $lrg_blue 0%, $lrg_blue2 10%);
+  /* Opera */ 
+  background: -o-linear-gradient(top, $lrg_blue 0%, $lrg_blue2 10%);
+  /* Webkit (Safari/Chrome 10) */ 
+  background: -webkit-gradient(linear, top, bottom, color-stop(0, $lrg_blue), color-stop(0.1, $lrg_blue2));
+  /* Webkit (Chrome 11+) */ 
+  background: -webkit-linear-gradient(top, $lrg_blue 0%, $lrg_blue2 10%);
+  /* W3C Markup, IE10 Release Preview */ 
+  background: linear-gradient(to bottom, $lrg_blue 0%, $lrg_blue2 10%);
 }
 
 .posts > .post {
