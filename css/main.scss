@@ -273,16 +273,21 @@ nav {
 }
 .panel-right {
   float:right;
+  max-width: 260px;
+}
+
+.panel-right-section {
+  margin-bottom: 20px;
+}
+
+.panel-right-section-content {
+  padding: 4px 8px;
+  background-color: #F9F9F9;
 }
 
 .panel-row {
   height:140px;
   margin-bottom: 25px;
-}
-
-.section-link {
-  border: 1px solid #00C;
-  padding-right: 10px;
 }
 
 .section {
@@ -330,7 +335,16 @@ nav {
   font-size: 1.1em;
   margin-bottom: 15px;
 }
-.section-title a, .section-header a {
+
+.section-title2 {
+  padding: 2px 5px;
+  font-weight: bold;
+  font-size: 1.1em;
+  background-color: #E0E0E0; 
+  border-bottom: 1px dotted #003399;
+}
+
+.section-title a, .section-title2 a,.section-header a {
   color: $lrg_blue;
   text-decoration: none;
   &:hover, &:active {
@@ -342,24 +356,18 @@ nav {
   font-size: 0.9em;
 }
 
+.section-separator {
+  height: 10px;
+  background-color: #FFF;
+  margin: 0px -8px;
+}
+
+.section-links {
+  font-size: 0.9em;
+}
 
 .section-news {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  max-width: 260px;
-  .news-title {
-    margin-top: 0px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 1.1em;
-    >a {
-      color: $lrg_blue;
-      text-decoration: none;
-      &:hover, &:active {
-        color: $blue;
-      }
-    }
-  }
+  padding: 5px 0px 10px;
   .news-item {
     font-size: 0.8em;
     margin: 0px 0px 5px;
