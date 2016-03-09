@@ -336,13 +336,12 @@ nav {
   color: $lrg_blue;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-}
-
-.section-title a, .section-header a {
-  color: #FFF;
-  text-decoration: none;
-  &:hover, &:active {
-    color: $blue;
+  >a {
+    color: #FFF;
+    text-decoration: none;
+    &:hover, &:active {
+      color: $blue;
+    }
   }
 }
 

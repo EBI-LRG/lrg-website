@@ -4,10 +4,7 @@ layout: multi_section
     
 {% for faq in site.faq %}{% if faq.faq_tags contains page.stub_name %}
 {% capture faq_content %}
-<div class="section-header">
-  <a href="{{ faq.url }}" title="{{ faq.title }}">{{ faq.title }}</a>
-</div>
-
+<div class="section-header">{{ faq.title }}</div>
 
 {% if faq.faq_tags %}
 <ul class="breadcrumb">
