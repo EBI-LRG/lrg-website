@@ -409,6 +409,7 @@ nav {
 
 table {
   border-bottom: 2px solid #DDD;
+  font-size:0.9em;
 }
 tr.sorttable_header {
   color: #FFF;
@@ -477,6 +478,10 @@ tr.sorttable_header {
 
 }
 
+td.left-col {
+  font-weight:bold;
+}
+
 .gradient-blue {
   /* Old browsers */
   background: $lrg_blue2;
@@ -522,6 +527,11 @@ tr.sorttable_header {
     text-transform: uppercase;
     font-size: 15px;
   }
+}
+
+.warning {
+  color: #F00;
+  font-weight: bold;
 }
 
 .wrapper-footer {
