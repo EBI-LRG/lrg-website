@@ -16,18 +16,16 @@ $lrg_green : #48A726;
 $lrg_blue  : #1A4468;
 $lrg_blue2 : #0E4C87;
 $lrg_gray  : #403c37;
+$line-height : 1.5; 
 
 /**************/
 /* BASE RULES */
 /**************/
 
-html {
-  font-size: 100%;
-}
-
 body {
 	background: $white;
-  font: 16px/1.4 $helvetica;
+  font-family: $helvetica;
+  font-size: 0.9em;
   color: $darkGray;
 }
 
@@ -43,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
   color: $darkerGray;
   font-weight: bold;
 
-  line-height: 1.7;
+  line-height: $line-height;
   margin: 15px 0px;
   padding: 0px;
 
@@ -74,6 +72,7 @@ h4 {
 
 p {
   margin: 15px 0;
+  line-height: $line-height;
 }
 
 a {
@@ -104,6 +103,10 @@ ol ul, ul ol, ul ul, ol ol {
 
 ul ul, ol ul {
   list-style-type: circle;
+}
+
+li {
+  line-height: $line_height;
 }
 
 em, i {
@@ -266,15 +269,10 @@ nav {
 .lrg_desc {
   margin: 0px 0px 15px;
   text-align: center;
-  font-size: 0.9em;
 }
 
-.panel-left {
-  float: left;
-}
-.panel-right {
-  float:right;
-  max-width: 260px;
+.panel {
+  padding: 0px;
 }
 
 .panel-right-section {
@@ -292,22 +290,23 @@ nav {
 }
 
 .section {
-   float:left;
-   margin-right: 20px;
-   width: 350px;
+   /*float:left;*/
+   /*margin-right: 20px*/;
+   /*width: 45%;*/
+   padding: 0px;
    height: 100%;
    border: 1px solid $lrg_blue2;
-   border-radius: 10px;
+   border-radius: 5px;
 }
 
 .section-double {
-  float:left;
-  margin-right: 20px;
-  width: 720px;
+  /*float:left;*/
+  /*margin-right: 20px;*/
+  /*width: 95%;*/
+  padding: 0px;
   height: 100%;
-  margin-right: 20px;
   border: 1px solid $lrg_green;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .section-bottom {
@@ -317,7 +316,7 @@ nav {
 .section-row {
   padding: 8px;
   border: 1px solid $lrg_green;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-bottom: 25px;
 }
 
@@ -330,12 +329,12 @@ nav {
 
 .section-title {
   font-weight: bold;
-  font-size: 1.0em;
+  font-size: 1.1em;
   margin-bottom: 15px;
-  padding: 2px 4px 2px 8px;
-  color: $lrg_blue;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  padding: 3px 4px 3px 8px;
+  color: $white;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   >a {
     color: #FFF;
     text-decoration: none;
@@ -346,10 +345,10 @@ nav {
 }
 
 .section-title2 {
-  padding: 2px 5px;
+  padding: 3px 5px;
   font-weight: bold;
-  font-size: 1.0em;
-  padding: 2px 5px;
+  font-size: 1.1em;
+  color: $lrg_green;
   background-color: #E9E9E9;
   border-bottom: 1px dotted $lrg_blue;
   >a {
@@ -361,19 +360,27 @@ nav {
   }
 }
 
-.section-content {
-  font-size: 0.9em;
-  padding: 4px 8px;
+.section-title3 {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  padding: 4px 4px 3px 8px;
+  color: #000;
 }
 
-.section-links {
-  font-size: 0.9em;
+
+.section-content {
+  padding: 4px 8px;
+  line-height: $line-height;
+  ul {
+    margin: 0px;
+  }
 }
 
 .section-news {
   padding: 5px 0px 10px;
   .news-item {
-    font-size: 0.8em;
+    font-size: 0.9em;
     margin: 0px 0px 5px;
     border-bottom: 1px dotted #DDD;
     >a {
@@ -409,7 +416,6 @@ nav {
 
 table {
   border-bottom: 2px solid #DDD;
-  font-size:0.9em;
 }
 tr.sorttable_header {
   color: #FFF;
@@ -449,9 +455,6 @@ tr.sorttable_header {
   color: $lrg_blue;
 }
 
-#search_count {
-  font-size: 0.9em;
-}
 
 .lrg_green {
   color: $lrg_green;

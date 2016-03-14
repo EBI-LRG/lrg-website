@@ -4,27 +4,30 @@ tags: Home
 ---
 <div class="clearfix">
   <p class="lrg_desc">{{ site.description }}</p>
-	<div class="panel-left">
+	<div class="col-xs-9 panel">
 		{% include items_panel.html %}
+    <div class="col-xs-11 section-double section-bottom">       
+      <div class="section-title3">Advantages of using LRG sequences</div>
+      <div class="section-content">
+        <ul>
+          <li>Provide a unique stable sequence record with an ID and no versioning</li>
+          <li>Provide a coordinate system for permanent and unambiguous reporting of disease-causing variants</li>
+          <li>Independent of updates to the reference genome assembly</li>
+          <li>Important for bidirectional data exchange and integration</li>
+          <li>Compiled and maintained by the <a href="http://www.ebi.ac.uk/" target="_blank">EBI</a> and <a href="http://www.ncbi.nlm.nih.gov/" target="_blank">NCBI</a> and so will be maintained in perpetuity</li>
+          <li>Integrated into the <a href="http://www.ensembl.org" target="_blank">Ensembl</a> and <a href="http://www.ncbi.nlm.nih.gov/projects/genome/guide/human/index.shtml">NCBI</a> genome browsers to benefit from visualisation and existing annotation</li>
+          <li>Can be used as the reference sequence for <a href="http://www.hgvs.org/mutnomen/" target="_blank">HGVS nomenclature</a> so that variant descriptions remain stable</li>
+          <li>Support legacy exon and amino acid numbering schemes</li>
+          <li>Supported by the <a href="https://mutalyzer.nl/syntax-checker" target="_blank">Mutalyzer sequence variant nomenclature checker</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-1"></div>
+    </div>
 	</div>
-	<div class="panel-right">
+
+	<div class="col-xs-3 panel">
 		{% include links_panel.html %}
 	</div>
 </div>
-<div class="section-double section-bottom">
-        
-  <div class="section-title">Advantages of using LRG sequences</div>
-  <div class="section-content">
-  <ul>
-    <li>provide a unique stable sequence record with an ID and no versioning</li>
-    <li>provide a coordinate system for permanent and unambiguous reporting of disease-causing variants</li>
-    <li>are independent of updates to the reference genome assembly</li>
-    <li>are important for bidirectional data exchange and integration</li>
-    <li>are compiled and maintained by the EBI and NCBI and so will be maintained in perpetuity</li>
-    <li>are integrated into the Ensembl and NCBI genome browsers to benefit from visualisation and existing annotation</li>
-    <li>can be used as the reference sequence for HGVS nomenclature so that variant descriptions remain stable</li>
-    <li>support legacy exon and amino acid numbering schemes</li>
-    <li>are supported by the Mutalyzer sequence variant nomenclature checker</li>
-  </ul>
-  </div>
-</div>
+
+

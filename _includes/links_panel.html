@@ -1,16 +1,16 @@
 <div class="panel-right-section">
-  <div class="section-title2"><a href="">Links</a></div>
+  <div class="section-title2">Links</div>
   <div class="panel-right-section-content">
     <ul class="section-links">
     	<li><a href="lrg-collaborators">Collaborators</a></li>
-  	  <li><a href="web-service">View the list of LRG web services</a></li>
+  	  <li><a href="web-service">Web services</a></li>
   	  <li><a href="about">Read more about LRGs</a></li>
     </ul>
   </div>
 </div>
 
 <div class="panel-right-section">
-  <div class="section-title2"><a href="">News</a></div>
+  <div class="section-title2"><a href="/news">News</a></div>
   <div class="panel-right-section-content">
     <div class="section-news">
       {% for post in site.posts limit:4 %}
@@ -21,6 +21,7 @@
         </a>
       </div>
       {% endfor %}
+      <a href="/news">&rarr; See all news</a>
     </div>
   </div>
 </div>

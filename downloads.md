@@ -14,7 +14,7 @@ There is the possibility to download all the public and pending LRGs:
 
 <div class="row">
   <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-    <table id="search_results" class="table table-hover">
+    <table class="table table-hover">
       <thead>
         <tr class="sorttable_header">
           <th>Status</th>
@@ -48,7 +48,7 @@ There is the possibility to download all the public and pending LRGs:
 
 <div class="row">
   <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-    <table id="search_results" class="table table-hover">
+    <table class="table table-hover">
       <thead>
         <tr class="sorttable_header">
           <th rowspan="2">Format</th>
@@ -148,7 +148,7 @@ Previous versions of the LRGs (in different LRG XML schemas) are available:
 
 <div class="row">
   <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-    <table id="search_results" class="table table-hover">
+    <table class="table table-hover">
       <thead>
         <tr class="sorttable_header">
           <th>Schema version</th>
