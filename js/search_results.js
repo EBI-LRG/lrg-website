@@ -1,27 +1,29 @@
 // Links
-var rest_url = "https://www.ebi.ac.uk/ebisearch/ws/rest/lrg";
-var rest_url_lrg_id = rest_url + "/entry/";
-var rest_url_search = rest_url + "?query=";
+//var rest_url = "https://www.ebi.ac.uk/ebisearch/ws/rest/lrg";
+//var rest_url_lrg_id = rest_url + "/entry/";
+//var rest_url_search = rest_url + "?query=";
 var lrg_ftp = "http://ftp.ebi.ac.uk/pub/databases/lrgex/";
 var ens_url = "http://www.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###.xml.gff=labels";
 var ncbi_url = "http://www.ncbi.nlm.nih.gov/mapview/maps.cgi?taxid=9606&CHR=###CHR###&BEG=###START###&END=###END###";
 var ucsc_url = "http://genome.ucsc.edu/cgi-bin/hgTracks?clade=mammal&org=Human&position=chr###LOC###";
 var hgnc_url = "http://www.genenames.org/cgi-bin/gene_symbol_report?match=";
 
+var lrg_json_file = "/json_index/lrg_index.json"
+
 var lrg_regexp = /lrg_\d+/i;
 var all_lrgs = "LRG_*";
 var lrg_list = [];
-var max_results = 100;
-var output_format = "json";
-var params = ";fields=name,status,chr_name,chr_start,chr_end,last_modification_date;size="+max_results+"&format="+output_format;
+//var max_results = 100;
+//var output_format = "json";
+//var params = ";fields=name,status,chr_name,chr_start,chr_end,last_modification_date;size="+max_results+"&format="+output_format;
 
-var data_test = [
+/*var data_test = [
   {"id":"LRG_1","source":"lrg","fields":{"name":["COL1A1"],"status":["public"],"chr_name":["17"],"chr_start":["48259457"],"chr_end":["48284000"],"last_modification_date":["20160208"]}},
   {"id":"LRG_2","source":"lrg","fields":{"name":["COL1A2"],"status":["public"],"chr_name":["7"],"chr_start":["94018873"],"chr_end":["94062544"],"last_modification_date":["20160208"]}},
   {"id":"LRG_9","source":"lrg","fields":{"name":["SDHD"],"status":["pending"],"chr_name":["11"],"chr_start":["111952571"],"chr_end":["111992353"],"last_modification_date":["20160208"]}},
   {"id":"LRG_10","source":"lrg","fields":{"name":["PPIB"],"status":["public"],"chr_name":["15"],"chr_start":["64446014"],"chr_end":["64460354"],"last_modification_date":["20160208"]}},
   {"id":"LRG_100","source":"lrg","fields":{"name":["RASGRP2"],"status":["public"],"chr_name":["11"],"chr_start":["64492383"],"chr_end":["64517928"],"last_modification_date":["20160208"]}}
-];
+];*/
 
 var months = {};
     months["01"] = "Jan";
@@ -42,17 +44,52 @@ var months = {};
 // Methods //
 //
 
-function get_search_results () {
+function get_query () {
 
-  var search_id = getParameterByName("query");
-  
+  // Comes from the search page
+  var query = document.getElementById('search_id').value;
+
+  // Comes from an other page
+  if (!query) {
+    query = getParameterByName("query");
+  }
+
+  go_to_result_page(query);
+}
+
+function go_to_result_page (query) {
+
+  if (query.length > 0) {
+    var url = window.location.href;
+    var regex = new RegExp("\/search\/");
+    // Search page
+    if (regex.test(url)) {
+      changeUrlParam('query', query);
+
+      // Asynch AJAX call + display results
+      get_search_results(query).then(function(result_objects){
+        display_results(result_objects);
+      });
+    }
+    // Other page
+    else {
+      location.href = '/search/?query='+query;
+    }
+  }
+}
+
+function get_search_results (search_id) {
+
   if (!search_id) {
     return "";
   }
-  var search_term = search_id;
 
+  var search_term = search_id;
+  if (search_id == "*") {
+    search_term = "All LRGs";
+  }
   // Check if search term contains LRG IDs
-  if (lrg_regexp.test(search_term)) {
+  /*if (lrg_regexp.test(search_term)) {
     lrg_list = [search_term];
   }
   // Check if search term empty or "*"
@@ -61,8 +98,21 @@ function get_search_results () {
       search_id = all_lrgs;
       search_term = "All";
     }
-  }
+  }*/
   $("#search_term").html(search_term);
+
+  var result_objects = [];
+
+  // Change AJAX setting
+  //$.ajaxSetup({ async: true });
+
+  return $.getJSON( lrg_json_file ).then(function(data) {
+    //result_objects = getObjects(data, data, "", search_term);
+    return getObjects(data, data, "", search_id);
+  });
+
+  // Rollback AJAX setting
+  //$.ajaxSetup({ async: true });
 
   // Retrieve the list of LRG IDs
 /*  if (lrg_list.length == 0) {
@@ -98,13 +148,12 @@ function get_search_results () {
   }
 */
 
-//  var data_list = retrieve_data(lrg_list);
-//  display_results(data_list);
-  display_results(data_test);
+// var result_objects = retrieve_data(lrg_list);
+  //display_results(result_objects);
 }
 
 // Function for pagination
-function get_with_pagination (start, query) {
+/*function get_with_pagination (start, query) {
   var rest_query = query + "&start="+start;
   var results_list = [];
   $.ajax({
@@ -120,10 +169,10 @@ function get_with_pagination (start, query) {
     }
   });
   return results_list;
-}
+}*/
 
 // Function to retrieve information
-function retrieve_data (list) {
+/*function retrieve_data (list) {
   var lrg_results = [];
   var list_string = list.toString();
   
@@ -158,12 +207,12 @@ function retrieve_data (list) {
   });
 
   return lrg_results;
-}
+}*/
 
 // Function to display results
 function display_results (results) {
 
-  var result_count = results.length;
+  var result_count = Object.keys(results).length;
   var result_term = "result";
   if (!result_count) {
     result_count = 0;
@@ -172,18 +221,18 @@ function display_results (results) {
     result_term += "s";
   }
 
-  $("#search_count").html("(" + results.length + " " + result_term + ")");
+  $("#search_count").html("(" + result_count + " " + result_term + ")");
 
-  $("#search_result > tbody").html("");
+  $("#search_results > tbody").empty();
+
   for (i in results) {
     var lrg_id     = results[i].id;
-    var fields     = results[i].fields;
-    var symbol     = fields.name.toString();
-    var lrg_status = fields.status.toString();
-    var modif_date = fields.last_modification_date.toString();
-    var chr        = fields.chr_name.toString();
-    var start      = fields.chr_start.toString();
-    var end        = fields.chr_end.toString();
+    var symbol     = results[i].symbol;
+    var lrg_status = results[i].status;
+    var modif_date = results[i].last_modification_date;
+    var chr        = results[i].chr_name;
+    var start      = results[i].chr_start;
+    var end        = results[i].chr_end;
 
     var ens_link  = get_ens_link(lrg_id, chr, start, end);
     var ncbi_link = get_ncbi_link(chr, start, end);
@@ -237,6 +286,41 @@ function get_ucsc_link (chr, start, end) {
 }
 
 
+//return an array of objects according to key, value, or key and value matching
+function getObjects (obj_parent, obj, key, val) {
+  var objects = [];
+
+  if (val == "*" && key == '') {
+    objects = obj;
+  }
+  else {
+    for (var i in obj) {
+      if (!obj.hasOwnProperty(i)) continue;
+      if (typeof obj[i] == 'object') {
+        objects = objects.concat(getObjects(obj, obj[i], key, val));    
+      } 
+      //if key matches and value matches or if key matches and value is not passed (eliminating the case where key matches but passed value does not)
+      else if (i == key && obj[i] == val || i == key && val == '') { //
+        objects.push(obj);
+      } 
+      //only add if the object is not already in the array
+      else if (obj[i] == val && key == ''){
+        if (objects.lastIndexOf(obj) == -1){
+          // Data fetched from an array
+          if (Object.keys(obj)[0] == 0) {
+            objects.push(obj_parent);
+          }
+          // Data fetched from a key/value
+          else {
+            objects.push(obj);
+          }
+        }
+      }
+    }
+  }
+  return objects;
+}
+
 // Function extract ID 
 function extract_id (lrg_id) {
 
@@ -250,7 +334,9 @@ function extract_id (lrg_id) {
 }
 
 // Function to parse the date
-function parse_date (date_string) {
+function parse_date (date) {
+
+  var date_string = date.toString();
 
   var match = date_string.match(/^(\d{4})(\d{2})(\d{2})$/);
   if (match) {
@@ -262,7 +348,7 @@ function parse_date (date_string) {
 }
 
 // Function to retrieve the searched term
-function getParameterByName(name, url) {
+function getParameterByName (name, url) {
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, "\\$&");
   var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
@@ -271,3 +357,28 @@ function getParameterByName(name, url) {
   if (!results[2]) return '';
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
+function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+    }
+
+function changeUrlParam (param, value) {
+        var currentURL = window.location.href+'&';
+        var change = new RegExp('('+param+')=(.*)&', 'g');
+        var newURL = currentURL.replace(change, '$1='+value+'&');
+
+        if (getURLParameter(param) !== null){
+            try {
+                window.history.replaceState('', '', newURL.slice(0, - 1) );
+            } catch (e) {
+                console.log(e);
+            }
+        } else {
+            var currURL = window.location.href;
+            if (currURL.indexOf("?") !== -1){
+                window.history.replaceState('', '', currentURL.slice(0, - 1) + '&' + param + '=' + value);
+            } else {
+                window.history.replaceState('', '', currentURL.slice(0, - 1) + '?' + param + '=' + value);
+            }
+        }
+    }

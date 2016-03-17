@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="/js/jquery.linq.min.js"></script>
   <script src="/js/search_results.js"></script>
   <script src="/js/sorttable.js"></script> 
  
@@ -19,8 +20,8 @@
     var regex = new RegExp("\/search\/");
     if (regex.test(url)) {
       window.onload = function() {
-         get_search_results();
-      };
+        get_query();
+      }
     }
   </script>
 
