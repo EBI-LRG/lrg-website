@@ -24,6 +24,10 @@
             var results = $.ui.autocomplete.filter(data_list, request.term);
             response(results.slice(0, this.options.maxResults));
           },
+          select: function (e, ui) {
+            $("#search_id").val(ui.item.value);
+            get_query();
+          },
           minLength: 3
         });
       });
