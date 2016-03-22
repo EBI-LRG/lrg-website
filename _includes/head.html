@@ -2,24 +2,31 @@
   <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
   {% include meta.html %}
 
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/jquery-ui.min.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/flaticon.css" | prepend: site.baseurl }}">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="/js/jquery.linq.min.js"></script>
+  <script src="/js/jquery-ui.min.js"></script>
   <script src="/js/search_results.js"></script>
   <script src="/js/sorttable.js"></script> 
  
   <script type="text/javascript">
-    var url = window.location.href;
-    var regex = new RegExp("\/search\/");
-    if (regex.test(url)) {
-      window.onload = function() {
+    window.onload = function () {
+      // Autocomplete
+      get_data_in_array().then(function(data_list){
+        $("#search_id").autocomplete({
+          source: data_list,
+          minLength: 3
+        });
+      });
+
+      // Search results
+      var url = window.location.href;
+      var regex = new RegExp("\/search\/");
+      if (regex.test(url)) {
         get_query();
       }
     }

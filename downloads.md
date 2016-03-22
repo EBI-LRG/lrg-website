@@ -13,7 +13,7 @@ The LRG genomic, transcript and protein sequences are also available in **FASTA 
 There is the possibility to download all the public and pending LRGs:
 
 <div class="row">
-  <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+  <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
     <table class="table table-hover">
       <thead>
         <tr class="sorttable_header">
@@ -82,8 +82,7 @@ There is the possibility to download all the public and pending LRGs:
         <tr>
           <td class="left-col">Tabulated<br /><span style="font-weight:normal">(LRG genes)</span></td>
           <td>
-            The file lists the LRG genes in genomic coordinates<br />
-            The columns are:
+            The file lists the LRG genes in genomic coordinates. The columns are:
             <ul>
               <li>LRG identifier (e.g. LRG_1)</li>
               <li>HGNC symbol (e.g. COL1A1)</li>
@@ -133,7 +132,7 @@ There is the possibility to download all the public and pending LRGs:
 
 
 ### LRG in Ensembl
-
+  
 The list of LRGs already imported in [Ensembl](http://www.ensembl.org) is available in this [text file](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/lrgs_in_ensembl.txt).
 
 
@@ -141,13 +140,13 @@ The list of LRGs already imported in [Ensembl](http://www.ensembl.org) is availa
 
 The LRG XML schema doumentations are downloadable [here](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs) and the different version of the XML schema definitions (RELAX NG format) are available [here](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs/schemas).
 
-
+  
 ### LRG archived data
 
 Previous versions of the LRGs (in different LRG XML schemas) are available:
 
 <div class="row">
-  <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+  <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
     <table class="table table-hover">
       <thead>
         <tr class="sorttable_header">

@@ -7,7 +7,7 @@ permalink: /about/
 
 ### About the LRG collaboration
 
-In recognition of the need to create universally accepted reference standards for variant reporting, GEN2PHEN ([http://www.gen2phen.org](http://www.gen2phen.org)) sponsored a meeting in 2008 with key stakeholders, including EBI, NCBI, HGVS, LSDB curators and other members of the community. The goal of the meeting was to design a reference system that would address the shortcomings of existing systems, including confusion over versioning, and that would allow consistent and unambiguous reporting of variants in clinically relevant loci.  
+In recognition of the need to create universally accepted reference standards for variant reporting, GEN2PHEN ([http://www.gen2phen.org](http://www.gen2phen.org)) sponsored a meeting in 2008 with key stakeholders, including EMBL-EBI, NCBI, HGVS, LSDB curators and other members of the community. The goal of the meeting was to design a reference system that would address the shortcomings of existing systems, including confusion over versioning, and that would allow consistent and unambiguous reporting of variants in clinically relevant loci.  
 The new system, founded on the RefSeqGene project, was named **Locus Reference Genomic (LRG)**.  
    
 
@@ -25,17 +25,17 @@ The creation of an LRG involves several steps:
 
 2. RefSeqs reviewed and RefSeqGene released by NCBI
 
-3. Pending LRG created by NCBI and EBI
+3. Pending LRG created by NCBI and EMBL-EBI
 
-4. Experts in LRG region of interest contacted for input by EBI. For more on experts see above and http://lrg-sequence.org/lrg-collaborators.
+4. Experts in LRG region of interest contacted for input by EMBL-EBI. For more on experts see above and http://lrg-sequence.org/lrg-collaborators.
 
-5. Transcripts reviewed by LRG curators at EBI. Publicly available data from RefSeqGene and Ensembl is scrutinized for each transcript in the LRG region. Only transcripts with good biological understanding and essential for reporting variants will be included. Changes can be made to a pending record at this stage, if necessary
+5. Transcripts reviewed by LRG curators at EMBL-EBI. Publicly available data from RefSeqGene and Ensembl is scrutinized for each transcript in the LRG region. Only transcripts with good biological understanding and essential for reporting variants will be included. Changes can be made to a pending record at this stage, if necessary
 
-6. Final review performed by LRG curators at EBI
+6. Final review performed by LRG curators at EMBL-EBI
 
 7. LRG published and collaborators informed
 
-EBI and NCBI are committed to developing the technical solutions, as well as computational and visual tools to work with LRG sequences. This enables all the information reported on an LRG to be integrated with the human genome reference sequence.
+EMBL-EBI and NCBI are committed to developing the technical solutions, as well as computational and visual tools to work with LRG sequences. This enables all the information reported on an LRG to be integrated with the human genome reference sequence.
 
 
 
