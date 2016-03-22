@@ -18,7 +18,12 @@
       // Autocomplete
       get_data_in_array().then(function(data_list){
         $("#search_id").autocomplete({
-          source: data_list,
+          // Limit the number of results displayed
+          maxResults: 25,
+          source: function(request, response) {
+            var results = $.ui.autocomplete.filter(data_list, request.term);
+            response(results.slice(0, this.options.maxResults));
+          },
           minLength: 3
         });
       });
