@@ -18,22 +18,26 @@ There is the possibility to download all the public and pending LRGs:
       <thead>
         <tr class="sorttable_header">
           <th>Status</th>
-          <th>Formats (zipped)</th>
+          <th colspan="2">Formats (zipped)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td class="left-col">Public</td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_public_xml_files.zip">XML</a>, 
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/fasta/LRG_public_fasta_files.zip">FASTA</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_public_xml_files.zip">[XML]</a>
+          </td>
+          <td>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/fasta/LRG_public_fasta_files.zip">[FASTA]</a>
           </td>  
         </tr>
         <tr>
           <td class="left-col">Pending</td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_pending_xml_files.zip">XML</a>, 
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/fasta/LRG_pending_fasta_files.zip">FASTA</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_pending_xml_files.zip">[XML]</a>
+          </td>
+          <td>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/fasta/LRG_pending_fasta_files.zip">[FASTA]</a>
           </td>  
         </tr>
       </tbody>
@@ -73,10 +77,10 @@ There is the possibility to download all the public and pending LRGs:
             </ul>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_GRCh37.bed" target="_blank">BED</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_GRCh37.bed" target="_blank">[BED]</a>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_GRCh38.bed" target="_blank">BED</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_GRCh38.bed" target="_blank">[BED]</a>
           </td>
         </tr>
         <tr>
@@ -94,10 +98,10 @@ There is the possibility to download all the public and pending LRGs:
             </ul>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_GRCh37.txt" target="_blank">TXT</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_GRCh37.txt" target="_blank">[TXT]</a>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_GRCh38.txt" target="_blank">TXT</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_GRCh38.txt" target="_blank">[TXT]</a>
           </td>
         </tr>
         <tr>
@@ -119,10 +123,10 @@ There is the possibility to download all the public and pending LRGs:
             </ul>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_GRCh37.txt" target="_blank">TXT</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_GRCh37.txt" target="_blank">[TXT]</a>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_GRCh38.txt" target="_blank">TXT</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_GRCh38.txt" target="_blank">[TXT]</a>
           </td>
         </tr>
       </tbody>
