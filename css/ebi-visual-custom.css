@@ -33,11 +33,9 @@
 
 [class^="icon-"]:before, [class*=" icon-"]:before,
 [class^="icon-"]:after, [class*=" icon-"]:after {
-  font-size: 20px;
   font-style: normal;
   font-weight: normal;
   margin-right: 10px;
-  vertical-align: middle;
 }
 
 .icon-download:before {
