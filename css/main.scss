@@ -544,8 +544,21 @@ td.left-col {
 }
 
 footer {
-  padding: 20px 0;
+  padding: 20px 0px 5px;
   text-align: center;
+}
+
+footer p {
+  font-size: 10px;
+  color: #BBB;
+  margin: 4px 0px;
+  >a {
+    color: $lrg_green;
+    text-decoration: none;
+    &:hover, &:active {
+      color: $blue;
+    }
+  }
 }
 
 .text-left {
