@@ -2,6 +2,7 @@
 layout: page
 title: List of collaborators
 tags: Collaborators
+icon-class: icon-face-to-face
 permalink: /list-collaborators/
 ---
 

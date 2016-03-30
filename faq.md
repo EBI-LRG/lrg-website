@@ -1,12 +1,11 @@
 ---
-layout: default
+layout: page
 title: "FAQ"
 permalink: /faq/
 tags: FAQ
+icon-class: icon-help
 exclude_from_search: true
 ---
-
-## {{page.title}}
 
 This is the LRG Frequently Asked Questions page.
 

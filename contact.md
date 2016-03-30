@@ -2,6 +2,7 @@
 layout: page
 title: Contact
 tags: Contact
+icon-class: icon-contact
 permalink: /contact/
 ---
 

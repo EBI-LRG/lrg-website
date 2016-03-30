@@ -2,6 +2,7 @@
 layout: page
 title: About
 tags: About
+icon-class: icon-info
 permalink: /about/
 ---
 

@@ -1,7 +1,10 @@
 ---
-layout: multi_section
+layout: page
+title: "FAQ category"
+permalink: /faq_category/
+icon-class: icon-help
 ---
-    
+
 {% for faq in site.faq %}{% if faq.faq_tags contains page.stub_name %}
 {% capture faq_content %}
 <div class="section-header">{{ faq.title }}</div>

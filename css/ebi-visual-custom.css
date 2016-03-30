@@ -31,11 +31,22 @@
     url('http://www.ebi.ac.uk/web_guidelines/fonts/EBI-FileFormats/fonts/EBI-FileFormats.ttf') format('truetype');
 }
 
-[class^="icon-"]:before, [class*=" icon-"]:before,
-[class^="icon-"]:after, [class*=" icon-"]:after {
+[class^="icon-"]:before, [class*=" icon-"]:before {
   font-style: normal;
   font-weight: normal;
   margin-right: 10px;
+}
+
+[class^="icon-"]:after, [class*=" icon-"]:after {
+  font-style: normal;
+  font-weight: normal;
+  margin-left: 4px;
+}
+
+
+
+.smaller_icon:before {
+  font-size: 0.9em;
 }
 
 .icon-download:before {
@@ -76,4 +87,41 @@
 .icon-next-page:before {
   font-family: 'EBI-Functional';
   content: ">";
+}
+
+.icon-contact:before {
+  font-family: 'EBI-Generic';
+  content: "C";
+}
+
+.icon-help:before {
+  font-family: 'EBI-Generic';
+  content: "?";
+}
+
+.icon-info:before {
+  font-family: 'EBI-Generic';
+  content: "i";}
+
+.icon-tool:before {
+  font-family: 'EBI-Functional';
+  content: "t";
+}
+
+.icon-industry:before {
+  font-family: 'EBI-Generic';
+  content: "I";
+}
+
+.icon-face-to-face:before {
+  font-family: 'EBI-Generic';
+  content: "f";
+}
+
+
+/* External link */
+.icon-external-link:after {
+  font-family: 'EBI-Generic';
+  content: "x";
+  font-size: 0.8em;
 }

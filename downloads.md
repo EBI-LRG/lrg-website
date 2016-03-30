@@ -2,6 +2,7 @@
 layout: page
 title: Downloads
 tags: Downloads
+icon-class: icon-download
 permalink: /downloads/
 ---
 

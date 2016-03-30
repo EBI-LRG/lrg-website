@@ -2,6 +2,7 @@
 layout: page
 title: LRG request
 tags: Request
+icon-class: icon-request
 permalink: /lrg-request/
 ---
 

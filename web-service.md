@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Web service
+title: Web services
 tags: Webservice
+icon-class: icon-tool
 permalink: /web-service/
 ---
 
@@ -39,11 +40,11 @@ Here are listed differents type of calls, which replace the deprecated LRG web s
     <a href="http://www.ebi.ac.uk/ebisearch/ws/rest/lrg?query=status:public&size=100&start=0" target="_blank">http://www.ebi.ac.uk/ebisearch/ws/rest/lrg?query=status:public&size=100&start=0</a>
   </p>
   <p>
-    <a href="http://www.ebi.ac.uk/ebisearch/ws/rest/lrg?query=status:public&size=200&start=0" target="_blank">http://www.ebi.ac.uk/ebisearch/ws/rest/lrg?query=status:public&size=200&start=0</a>
+    <a href="http://www.ebi.ac.uk/ebisearch/ws/rest/lrg?query=status:public&size=100&start=100" target="_blank">http://www.ebi.ac.uk/ebisearch/ws/rest/lrg?query=status:public&size=100&start=100</a>
   </p>
   <p>...</p>
   <p>
-    <a href="http://www.ebi.ac.uk/ebisearch/ws/rest/lrg?query=status:public&size=600&start=0" target="_blank">http://www.ebi.ac.uk/ebisearch/ws/rest/lrg?query=status:public&size=600&start=0</a>
+    <a href="http://www.ebi.ac.uk/ebisearch/ws/rest/lrg?query=status:public&size=100&start=600" target="_blank">http://www.ebi.ac.uk/ebisearch/ws/rest/lrg?query=status:public&size=100&start=600</a>
   </p>
 </div>
 

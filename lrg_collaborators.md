@@ -2,6 +2,7 @@
 layout: page
 title: LRG collaborators
 tags: Collaborator
+icon-class: icon-industry
 permalink: /lrg-collaborators/
 ---
 

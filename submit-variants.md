@@ -2,6 +2,7 @@
 layout: page
 title: Submit variants
 tags: Variants
+icon-class: icon-submit
 permalink: /submit-variants/
 ---
 
