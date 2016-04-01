@@ -1,5 +1,6 @@
 ---
-title: "Do the addition of new transcripts not re-create the versioning problem?"
+title: "Does the addition of new transcripts not re-create the versioning problem?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
   - transcripts

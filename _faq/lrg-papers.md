@@ -1,5 +1,6 @@
 ---
 title: "Is there a published account of LRGs that I can read?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
   - publication

@@ -1,5 +1,6 @@
 ---
 title: "Are LRGs supported by external software?"
+faq_group: software
 faq_tags:
   - software
 ---

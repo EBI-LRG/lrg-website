@@ -1,5 +1,6 @@
 ---
 title: "What is the difference between RefSeqGene and LRG records?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
   - records

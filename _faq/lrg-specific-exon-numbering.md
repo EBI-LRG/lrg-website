@@ -1,5 +1,6 @@
 ---
 title: "How is the LRG-specific exon numbering determined?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
   - content

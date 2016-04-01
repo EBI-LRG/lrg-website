@@ -1,5 +1,6 @@
 ---
 title: "How do I report intronic variants in LRGs?"
+faq_group: variant
 faq_tags:
   - variant
 ---

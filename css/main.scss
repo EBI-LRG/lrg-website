@@ -16,7 +16,8 @@ $lrg_green : #48A726;
 $lrg_blue  : #1A4468;
 $lrg_blue2 : #0E4C87;
 $lrg_gray  : #403c37;
-$line-height : 1.5; 
+$line-height : 1.5;
+$line-height-compact: 1.2;
 
 /**************/
 /* BASE RULES */
@@ -109,7 +110,7 @@ ul ul, ol ul {
 }
 
 li {
-  line-height: $line_height;
+  line-height: $line-height;
 }
 
 strong, b {
@@ -118,6 +119,13 @@ strong, b {
 
 img {
   max-width: 100%;
+}
+
+ul.compact {
+  margin: 2px 0px;
+  li {
+    line-height: $line-height-compact;
+  }
 }
 
 // Fixes images in popup boxes from Google Translate
@@ -265,10 +273,6 @@ nav {
 //
 // .homepage
 //
-.lrg_desc {
-  margin: 0px 0px 15px;
-  text-align: center;
-}
 
 .panel {
   padding: 0px;
@@ -284,14 +288,14 @@ nav {
 }
 
 .panel-row {
-  height:140px;
+  height:150px;
   margin-bottom: 25px;
 }
 
 .section {
    padding: 0px;
    height: 100%;
-   border: 1px solid $lrg_blue2;
+   border: 1px solid $lrg_blue2; /*#8bbae2;*/
    border-radius: 5px;
 }
 
@@ -321,20 +325,20 @@ nav {
 }
 
 .section-title {
-  color: #0E4C87;
-  margin: 3px 4px 5px 8px;
-}
-
-.section-double-title {
-  color: $lrg_green;
+  text-align:center;
+  color: $lrg_blue;
   margin: 3px 4px 5px 8px;
   >a {
-    color: $lrg_green;
+    color: $lrg_blue;
     text-decoration: none;
     &:hover, &:active {
       color: $blue;
     }
   }
+}
+.section-title:after {
+  content: "";
+  margin-right: 20px;
 }
 
 .section-title2 {
@@ -361,9 +365,12 @@ nav {
 .section-content {
   padding: 4px 8px;
   line-height: $line-height;
-  ul {
-    margin: 0px;
-  }
+  font-size:14px;
+}
+
+.section-publication {
+  line-height: 1.2;
+  font-size:14px;
 }
 
 .section-news {
@@ -492,6 +499,36 @@ td.left-col {
   background: -webkit-linear-gradient(top, $lrg_blue 0%, $lrg_blue2 10%);
   /* W3C Markup, IE10 Release Preview */ 
   background: linear-gradient(to bottom, $lrg_blue 0%, $lrg_blue2 10%);
+}
+
+.back_link {
+  margin-bottom: 10px;
+}
+
+.smaller-text {
+  font-size: 0.9em;
+}
+
+.margin-top-5 {
+  margin-top: 5px;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0px;
+}
+.margin-bottom-5 {
+  margin-bottom: 5px;
+}
+
+.close-button {
+  font-size: 15px;
+  width: 15px;
+  line-height:15px;
+  color: #000;
+  border-radius:8px;
+  &:hover, &:active {
+    color: $blue;
+  }
 }
 
 .posts > .post {

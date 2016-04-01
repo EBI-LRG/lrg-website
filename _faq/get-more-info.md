@@ -1,5 +1,6 @@
 ---
 title: "Where can I get more information about LRGs?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
 faq_related:

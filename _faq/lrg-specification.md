@@ -1,5 +1,6 @@
 ---
 title: "Where can I get a copy of the LRG specification?"
+faq_group: format
 faq_tags:
   - software
 faq_related:

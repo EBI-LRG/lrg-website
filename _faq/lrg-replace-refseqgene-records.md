@@ -1,5 +1,6 @@
 ---
 title: "Will LRGs replace RefSeq and RefSeqGene records?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
   - records

@@ -1,5 +1,6 @@
 ---
 title: "What is an LRG?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
 ---

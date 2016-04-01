@@ -1,5 +1,6 @@
 ---
 title: "What is contained in an LRG record?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
   - content

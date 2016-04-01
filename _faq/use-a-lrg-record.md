@@ -1,5 +1,6 @@
 ---
 title: "How can I use a LRG record?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
   - records

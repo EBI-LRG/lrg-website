@@ -1,5 +1,6 @@
 ---
 title: "What is the role of GEN2PHEN in LRG?"
+faq_group: admin
 faq_tags:
   - funding
 faq_related:

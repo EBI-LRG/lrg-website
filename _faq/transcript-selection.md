@@ -1,5 +1,6 @@
 ---
 title: "How are the transcripts selected?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
   - sequence

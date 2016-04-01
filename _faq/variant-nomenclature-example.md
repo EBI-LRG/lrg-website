@@ -1,5 +1,6 @@
 ---
-title: "Example of variant nomenclature?"
+title: "Can I see an example of variant nomenclature?"
+faq_group: variant
 faq_tags:
   - variant
 faq_related:

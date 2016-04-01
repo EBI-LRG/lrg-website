@@ -1,5 +1,6 @@
 ---
 title: "Who is the final arbiter of LRG content?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
   - records

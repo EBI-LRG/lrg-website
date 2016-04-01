@@ -1,5 +1,6 @@
 ---
 title: "Does this mean that additional transcripts cannot be added?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
   - transcripts

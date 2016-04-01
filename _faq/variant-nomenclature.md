@@ -1,5 +1,6 @@
 ---
 title: "Will I have to learn a new variant nomenclature?"
+faq_group: variant
 faq_tags:
   - variant
 faq_related:

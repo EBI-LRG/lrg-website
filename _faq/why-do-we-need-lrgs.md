@@ -1,5 +1,6 @@
 ---
 title: "Why do we need LRGs?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
 ---

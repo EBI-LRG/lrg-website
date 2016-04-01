@@ -1,5 +1,6 @@
 ---
 title: "Do you offer programmatic access to LRG data?"
+faq_group: software
 faq_tags:
   - software
 ---

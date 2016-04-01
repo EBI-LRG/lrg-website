@@ -43,10 +43,18 @@
   margin-left: 4px;
 }
 
-
-
-.smaller_icon:before {
+.smaller-icon:before {
   font-size: 0.9em;
+}
+
+.close-icon-0:before {
+  margin-right: 0px;
+}
+.close-icon-2:before {
+  margin-right: 2px;
+}
+.close-icon-5:before {
+  margin-right: 5px;
 }
 
 .icon-download:before {
@@ -84,6 +92,11 @@
   content: "L";
 }
 
+.icon-previous-page:before {
+  font-family: 'EBI-Functional';
+  content: "<";
+}
+
 .icon-next-page:before {
   font-family: 'EBI-Functional';
   content: ">";
@@ -118,10 +131,21 @@
   content: "f";
 }
 
+.icon-publication:before {
+  font-family: 'EBI-Generic';
+  content: "P";
+}
+
 
 /* External link */
 .icon-external-link:after {
   font-family: 'EBI-Generic';
   content: "x";
   font-size: 0.8em;
+}
+
+/* Close button */
+.icon-close:before {
+  font-family: 'EBI-Functional';
+  content: "x";
 }

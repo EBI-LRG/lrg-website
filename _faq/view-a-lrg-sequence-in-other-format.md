@@ -1,5 +1,6 @@
 ---
 title: "Can I view the LRG sequences in any other format?"
+faq_group: view
 faq_tags:
   - view
   - records

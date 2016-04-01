@@ -1,5 +1,6 @@
 ---
 title: "LRG records don't have versions and RefSeqGene records do. Why?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
   - records

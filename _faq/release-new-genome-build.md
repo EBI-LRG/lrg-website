@@ -1,5 +1,6 @@
 ---
 title: "What will happen when a new genome build is released?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
   - sequence

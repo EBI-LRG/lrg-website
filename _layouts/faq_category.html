@@ -4,6 +4,7 @@ title: "FAQ category"
 permalink: /faq_category/
 icon-class: icon-help
 ---
+<div class="back_link"><a class="icon-previous-page smaller-icon close-icon-5" href="/faq">Back to FAQ main page</a></div>
 
 {% for faq in site.faq %}{% if faq.faq_tags contains page.stub_name %}
 {% capture faq_content %}
@@ -30,3 +31,5 @@ icon-class: icon-help
 </ul>
 {% endif %}
 {% endcapture %}{% include section.html content=faq_content %}{% endif %}{% endfor %}
+
+<div class="back_link"><a class="icon-previous-page smaller-icon close-icon" href="/faq">Back to FAQ main page</a></div>

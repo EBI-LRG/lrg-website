@@ -1,5 +1,6 @@
 ---
 title: "How will sequence corrections be made to LRGs?"
+faq_group: most_frequent
 faq_tags:
   - most_frequent
   - sequence
