@@ -39,7 +39,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
-  color: $darkerGray;
+  color: $lrg_blue; /*$darkerGray;*/
   font-weight: bold;
 
   line-height: $line-height;
@@ -344,11 +344,11 @@ nav {
 .section-title2 {
   padding: 0px 5px;
   margin: 0px;
-  color: $lrg_green;
+  color: $lrg_blue;
   background-color: #E9E9E9;
   border-bottom: 1px dotted $lrg_blue;
   >a {
-    color: $lrg_green;
+    color: $lrg_blue;
     text-decoration: none;
     &:hover, &:active {
       color: $blue;
@@ -451,16 +451,16 @@ tr.sorttable_header {
 
 #search_term {
   font-style: italic;
-  color: $lrg_blue;
-}
-
-
-.lrg_green {
   color: $lrg_green;
 }
 
-.lrg-green-bg {
-  background-color: $lrg_green;
+
+.lrg_blue {
+  color: $lrg_blue;
+}
+
+.lrg_green {
+  color: $lrg_green;
 }
 
 .left {
