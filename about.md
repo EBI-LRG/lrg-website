@@ -7,13 +7,16 @@ permalink: /about/
 ---
 
 
-### About LRG
+### LRG project
 
 An LRG is a manually curated record that contains stable and thus, un-versioned reference sequences designed specifically for reporting sequence variants with clinical implications. Each LRG contains a stable “fixed” section and a regularly updated “updatable” section. The fixed section contains stable genomic DNA sequence for the region of interest, transcripts and proteins deemed essential for reporting variants, and an LRG-specific exon numbering system. The updatable section contains the most recent biological information for each LRG region, including mapping information, annotation of all transcripts and overlapping genes in the region, and legacy exon and amino acid numbering systems. The sequences of each LRG are chosen in collaboration with research and diagnostic laboratories, LSDB (locus specific database) curators and mutation consortia with expertise in the region of interest. Additional information on collaborators can be found here [http://lrg-sequence.org/lrg-collaborators](http://lrg-sequence.org/lrg-collaborators).  
 
 **As of February 2016, over 850 LRGs have been created, of which over 650 are public** and in use by the community.  
 See the [list of LRGs](/search/?query=*).  
 The aim of the project is to create an LRG for every locus with clinical implications.  
+
+
+### Records creation
 
 The creation of an LRG involves several steps:
 
@@ -34,7 +37,7 @@ The creation of an LRG involves several steps:
 EMBL-EBI and NCBI are committed to developing the technical solutions, as well as computational and visual tools to work with LRG sequences. This enables all the information reported on an LRG to be integrated with the human genome reference sequence.
 
 
-### About the LRG collaboration
+### Collaboration
 
 In recognition of the need to create universally accepted reference standards for variant reporting, GEN2PHEN ([http://www.gen2phen.org](http://www.gen2phen.org)) sponsored a meeting in 2008 with key stakeholders, including EMBL-EBI, NCBI, HGVS, LSDB curators and other members of the community. The goal of the meeting was to design a reference system that would address the shortcomings of existing systems, including confusion over versioning, and that would allow consistent and unambiguous reporting of variants in clinically relevant loci.  
 The new system, founded on the RefSeqGene project, was named **Locus Reference Genomic (LRG)**.  
