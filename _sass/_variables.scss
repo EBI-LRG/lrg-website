@@ -5,23 +5,22 @@
 
 // Colors
 $blue: #4183C4;
-
-// Grays
 $black: #000;
 $darkerGray: #222;
 $darkGray: #333;
 $gray: #666;
 $lightGray: #eee;
 $white: #fff;
+$lrg_green : #48A726;
+$lrg_blue  : #1A4468;
+$lrg_blue2 : #0E4C87;
+$lrg_gray  : #242729;
 
 // Font stacks
 $helvetica: Helvetica, Arial, sans-serif;
 $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
 
-// Mobile breakpoints
-@mixin mobile {
-  @media screen and (max-width: 640px) {
-    @content;
-  }
-}
+// Line heights
+$line-height : 1.5;
+$line-height-compact: 1.2;

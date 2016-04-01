@@ -7,17 +7,7 @@
 
 @import "reset";
 @import "variables";
-// Syntax highlighting @import is at the bottom of this file
 
-//
-// Variables
-//
-$lrg_green : #48A726;
-$lrg_blue  : #1A4468;
-$lrg_blue2 : #0E4C87;
-$lrg_gray  : #242729;
-$line-height : 1.5;
-$line-height-compact: 1.2;
 
 /**************/
 /* BASE RULES */
@@ -30,13 +20,6 @@ body {
   color: $darkGray;
 }
 
-/*.container {
-  margin: 0 auto;
-  max-width: 1024px;
-  padding: 0 10px;
-  width: 100%;
-}*/
-
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
   color: $lrg_blue; /*$darkerGray;*/
@@ -45,10 +28,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: $line-height;
   margin: 15px 0px;
   padding: 0px;
-
-  @include mobile {
-    line-height: 1.4;
-  }
 }
 
 h1 {
@@ -178,9 +157,6 @@ ul.compact {
   margin-bottom: 0px;
   border-bottom: 1px solid #CCC;
   background: transparent url("/images/gradient_back.png") repeat-x scroll 0% 0%;
-  @include mobile {
-    text-align: center;
-  }
 }
 
 .sub-masterhead {
@@ -194,12 +170,6 @@ ul.compact {
   padding: 0px;
   margin: 0px 20px;
 
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-
   img {
     vertical-align: middle;
     /*width: 86px;*/
@@ -209,12 +179,6 @@ ul.compact {
 
 .site-info {
   float: left;
-
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
 }
 
 .site-name {
@@ -230,10 +194,6 @@ ul.compact {
   margin: -5px 0 0 0;
   color: $gray;
   font-size: 16px;
-
-  @include mobile {
-    margin: 3px 0;
-  }
 }
 
 nav {
@@ -243,14 +203,6 @@ nav {
   font-family: $helveticaNeue;
   font-size: 16px;
   color: $white;
-
-  @include mobile {
-    float: none;
-    margin-top: 9px;
-    display: block;
-    font-size: 16px;
-  }
-
   a {
     margin-left: 20px;
     color: $white;
@@ -477,7 +429,6 @@ tr.sorttable_header {
 
 .inner-content {
   padding: 25px;
-
 }
 
 td.left-col {
@@ -608,6 +559,3 @@ footer p {
   text-align: right;
 }
 
-// Settled on moving the import of syntax highlighting to the bottom of the CSS
-// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "highlights";
