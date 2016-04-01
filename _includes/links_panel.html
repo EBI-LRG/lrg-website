@@ -1,9 +1,23 @@
 <div class="panel-right-section">
-  <h5 class="section-title2 icon-link">Links</h5>
+  <h5 class="section-title2 icon-help"><a href="/about">About LRG</a></h5>
   <div class="panel-right-section-content">
-      <div class="item-link icon-industry"><a href="lrg-collaborators">Collaborators</a></div>
-      <div class="item-link icon-face-to-face"><a href="list-collaborators">List of collaborators</a></div>
-  	  <div class="item-link icon-tool"><a href="web-service">Web services</a></div>
+    <p>
+      {{ site.description }}
+    </p>
+    <div><a class="icon-next-page smaller-icon close-icon-2" href="/about">See more</a></div>
+  </div>
+</div>
+
+
+<div class="panel-right-section">
+  <h5 class="section-title2 icon-publication"><a href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">Latest publication</a></h5>
+  <div class="panel-right-section-content">
+    <p class="section-publication ">
+      MacArthur JA et al.<br />
+      <b>Locus Reference Genomic: reference sequences for the reporting of clinically relevant sequence variants</b><br />
+      <i>Nucleic Acids Res. (2014 Jan)</i><br />
+      <a class="icon-external-link" href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">doi: 10.1093/nar/gkt1198</a>
+   </p>
   </div>
 </div>
 
@@ -19,7 +33,7 @@
         </a>
       </div>
       {% endfor %}
-      <a href="/news">&rarr; See all news</a>
+      <a class="icon-next-page smaller-icon close-icon-2" href="/news">See all news</a>
     </div>
   </div>
 </div>

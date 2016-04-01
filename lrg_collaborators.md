@@ -13,4 +13,4 @@ Additional experts on each LRG region are also identified from [GeneTests](http:
 
 The LRG project is committed to creating records that are ideal for each region and fulfill the reporting needs of the community.
 
-For a list of collaborators go [here](/list-collaborators).
+{% include list_collaborators.html %}

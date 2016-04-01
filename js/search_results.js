@@ -13,14 +13,6 @@ var lrg_list = [];
 
 var table_id = "#search_results";
 
-/*var data_test = [
-  {"id":"LRG_1","source":"lrg","fields":{"name":["COL1A1"],"status":["public"],"chr_name":["17"],"chr_start":["48259457"],"chr_end":["48284000"],"last_modification_date":["20160208"]}},
-  {"id":"LRG_2","source":"lrg","fields":{"name":["COL1A2"],"status":["public"],"chr_name":["7"],"chr_start":["94018873"],"chr_end":["94062544"],"last_modification_date":["20160208"]}},
-  {"id":"LRG_9","source":"lrg","fields":{"name":["SDHD"],"status":["pending"],"chr_name":["11"],"chr_start":["111952571"],"chr_end":["111992353"],"last_modification_date":["20160208"]}},
-  {"id":"LRG_10","source":"lrg","fields":{"name":["PPIB"],"status":["public"],"chr_name":["15"],"chr_start":["64446014"],"chr_end":["64460354"],"last_modification_date":["20160208"]}},
-  {"id":"LRG_100","source":"lrg","fields":{"name":["RASGRP2"],"status":["public"],"chr_name":["11"],"chr_start":["64492383"],"chr_end":["64517928"],"last_modification_date":["20160208"]}}
-];*/
-
 var months = {};
     months["01"] = "Jan";
     months["02"] = "Feb";
@@ -86,67 +78,14 @@ function get_search_results (search_id) {
   if (search_id == "*") {
     search_term = "All LRGs";
   }
-  // Check if search term contains LRG IDs
-  /*if (lrg_regexp.test(search_term)) {
-    lrg_list = [search_term];
-  }
-  // Check if search term empty or "*"
-  else {
-    if (search_id == "" || search_id == "*") {
-      search_id = all_lrgs;
-      search_term = "All";
-    }
-  }*/
+
   $("#search_term").html(search_term);
 
   var result_objects = [];
 
-  // Change AJAX setting
-  //$.ajaxSetup({ async: true });
-
   return $.getJSON( lrg_json_file ).then(function(data) {
     return getObjects(data, data, "", search_id);
   });
-
-  // Rollback AJAX setting
-  //$.ajaxSetup({ async: true });
-
-  // Retrieve the list of LRG IDs
-/*  if (lrg_list.length == 0) {
-    var rest_query = rest_url_search + search_term;
-    $.ajax({
-      method: "GET",
-      async: false, // Avoid weird results
-      dataType: "json",
-      data: {"size" : max_results, "format" : "json"},
-      url: rest_query,
-      error: function(jqXHR, status, errorThrown) {
-      },
-      success: function(results) {
-        $("#search_results > tbody").html(""); // Empty the results table
-        var count_results = results.hitCount;
-        if (count_results > max_results) {
-          var start = max_results + 1;
-          while (start < count_results) {
-            page_results = get_with_pagination (start, query);
-            $.each(page_results.entries, function(data) {
-              lrg_list.push(data.id);
-            });
-            start += max_results;
-          }
-        }
-        else {
-          $.each(results.entries, function(data) {
-            lrg_list.push(data.id);
-          });
-        }
-      }
-    });
-  }
-*/
-
-// var result_objects = retrieve_data(lrg_list);
-  //display_results(result_objects);
 }
 
 // Function get data in array
@@ -177,44 +116,6 @@ function get_data_in_array () {
 
 }
 
-// Function to retrieve information
-/*function retrieve_data (list) {
-  var lrg_results = [];
-  var list_string = list.toString();
-  
-  var rest_query = rest_url_lrg_id + list_string; 
-
-  $.ajax({
-    method: "GET",
-    async: false, // Avoid weird results
-    crossDomain: true,
-    dataType: output_format,
-    data: {"size" : max_results, "format" : output_format},
-    url: rest_query,
-    error: function(jqXHR, status, errorThrown) { },
-    success: function(results) { 
-      var count_results = results.hitCount;
-      if (count_results > max_results) {
-        var start = max_results + 1;
-        while (start < count_results) {
-          page_results = get_with_pagination (start, rest_query);
-          $.each(page_results.entries, function(data) {
-            lrg_results.push(data);
-          });
-          start += max_results;
-        }
-      }
-      else {
-        $.each(results.entries, function(data) {
-          lrg_results.push(data);
-        });
-      }
-    }
-  });
-
-  return lrg_results;
-}*/
-
 // Function to display results
 function display_results (results) {
 
@@ -238,8 +139,7 @@ function display_results (results) {
     var id_b = extract_id(b);
     return id_a - id_b;
   });
-  //for (i in results) {
-    for (i in result_keys) {
+  for (i in result_keys) {
     var lrg_id     = result_keys[i];
     var symbol     = results[lrg_id].symbol;
     var lrg_status = results[lrg_id].status;
