@@ -13,7 +13,12 @@
 /* BASE RULES */
 /**************/
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
 	background: $white;
   font-family: $helvetica;
   font-size: 0.9em;
@@ -146,10 +151,6 @@ ul.compact {
 //
 // .masthead
 //
-
-.wrapper-masthead {
-  margin-bottom: 40px;
-}
 
 .masthead {
   display: block;
@@ -401,6 +402,16 @@ tr.sorttable_header {
 // .main
 //
 
+.container-extra {
+  min-height: 100%;
+  margin-bottom: -160px;
+}
+.container-extra:after {
+  content: "";
+  display: block;
+  height: 160px;
+}
+
 #search_term {
   font-style: italic;
   color: $lrg_green;
@@ -528,9 +539,8 @@ td.left-col {
 }
 
 .wrapper-footer {
-  margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  height: 160px;
+  margin-top: 10px;
   background-color: $lrg_gray;
 }
 
