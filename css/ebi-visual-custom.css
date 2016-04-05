@@ -35,12 +35,16 @@
   font-style: normal;
   font-weight: normal;
   margin-right: 10px;
+  display: inline-block;
+  text-decoration: none;
 }
 
 [class^="icon-"]:after, [class*=" icon-"]:after {
   font-style: normal;
   font-weight: normal;
   margin-left: 4px;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .smaller-icon:before {
@@ -141,7 +145,8 @@
 .icon-external-link:after {
   font-family: 'EBI-Generic';
   content: "x";
-  font-size: 0.8em;
+  font-size: 0.7em;
+  vertical-align: top;
 }
 
 /* Close button */

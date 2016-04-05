@@ -7,6 +7,8 @@ var hgnc_url = "http://www.genenames.org/cgi-bin/gene_symbol_report?match=";
 
 var lrg_json_file = "/json_index/lrg_index.json";
 
+var external_link_class = "class=\"icon-external-link\"";
+
 var lrg_regexp = /lrg_\d+/i;
 var all_lrgs = "LRG_*";
 var lrg_list = [];
@@ -181,7 +183,7 @@ function get_ens_link (lrg_id, chr, start, end) {
   var new_link = ens_url.replace(/###ID###/, lrg_id);
       new_link = new_link.replace(/###LOC###/, chr+':'+start+'-'+end);
 
-  return "<a href=\"" + new_link + "\" target=\"_blank\">[Ensembl]</a>";
+  return "<a "+external_link_class+" href=\"" + new_link + "\" target=\"_blank\">Ensembl</a>";
 }
 
 function get_ncbi_link (chr, start, end) {
@@ -190,14 +192,14 @@ function get_ncbi_link (chr, start, end) {
       new_link = new_link.replace(/###START###/, start);
       new_link = new_link.replace(/###END###/, end);
 
-  return "<a href=\"" + new_link + "\" target=\"_blank\">[NCBI]</a>";;
+  return "<a "+external_link_class+" href=\"" + new_link + "\" target=\"_blank\">NCBI</a>";;
 }
 
 function get_ucsc_link (chr, start, end) {
 
   var new_link = ucsc_url.replace(/###LOC###/, chr+':'+start+'-'+end);
 
-  return "<a href=\"" + new_link + "\" target=\"_blank\">[UCSC]</a>";;
+  return "<a "+external_link_class+" href=\"" + new_link + "\" target=\"_blank\">UCSC</a>";;
 }
 
 
