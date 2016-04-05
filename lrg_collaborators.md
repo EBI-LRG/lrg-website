@@ -13,4 +13,28 @@ Additional experts on each LRG region are also identified from [GeneTests](http:
 
 The LRG project is committed to creating records that are ideal for each region and fulfill the reporting needs of the community.
 
-{% include list_collaborators.html %}
+
+<h4>List of collaborators</h4>
+
+<div class="col-lg-10 col-lg-offset-1">
+  <table class="table table-hover">
+    <thead>
+      <tr class="sorttable_header">
+        <th>Collaborator</th>
+        <th>Affiliation</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      
+    {% assign collaborators = site.data.list_collaborators %}
+    {% for collaborator in (collaborators | sort: 'name') %}
+      <tr>
+        <td class="left-col">{{ collaborator.name }}</td>
+        <td>{{ collaborator.affiliation }}</td>
+     </tr>
+    {% endfor %} 
+
+    </tbody>
+  </table>
+</div>
