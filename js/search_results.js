@@ -80,13 +80,23 @@ function get_search_results (search_id) {
   if (search_id == "*") {
     search_term = "All LRGs";
   }
+  
+  search_term = search_term.replace(/;/g, ' / ');
+  
 
   $("#search_term").html(search_term);
 
-  var result_objects = [];
+  var result_objects = {};
+  var search_ids_list = search_id.split(';');
 
   return $.getJSON( lrg_json_file ).then(function(data) {
-    return getObjects(data, data, "", search_id);
+    //for (var i=0; i < search_ids_list.length; i++) {
+    //result_objects = getObjects(data, data, "", search_ids_list[i], result_objects);
+    //}
+    $.each(search_ids_list, function (index, search_item) {
+      result_objects = getObjects(data, data, "", search_item, result_objects);
+    });
+    return result_objects;
   });
 }
 
@@ -205,7 +215,7 @@ function get_ucsc_link (chr, start, end) {
 
 //return an array of objects according to key, value, or key and value matching
 function getObjects (obj_parent, obj, key, val, objects) {
-  
+
   // Search with regex
   var regex;
   // Specific regex for the sequence identifiers, with a version, e.g. NM_000088.3
