@@ -140,6 +140,10 @@
   content: "P";
 }
 
+.icon-unassigned-job:before {
+  font-family: 'EBI-Functional';
+  content: "*";
+}
 
 /* External link */
 .icon-external-link:after {

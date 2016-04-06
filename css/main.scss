@@ -242,15 +242,27 @@ nav {
 }
 
 .panel-row {
-  height:150px;
+  min-height:130px;
   margin-bottom: 25px;
 }
 
 .section {
    padding: 0px;
-   height: 100%;
-   border: 1px solid $lrg_blue2; /*#8bbae2;*/
+   min-height: 130px;
+   border: 1px solid #96b9d7;/*#8bbae2;*/
    border-radius: 5px;
+   &:hover, &:active {
+     background-color: $highlight;
+   }
+}
+
+a.section-link {
+  text-decoration: none;
+  color: #000;
+   &:hover, &:active {
+     color: $blue;
+     background-color: #F00;
+   }
 }
 
 .section-double {
@@ -319,7 +331,14 @@ nav {
 .section-content {
   padding: 4px 8px;
   line-height: $line-height;
-  font-size:14px;
+  font-size: 14px;
+  > div:last-child {
+   margin-top: 10px;
+  }
+}
+
+.text-center {
+  text-align: center;
 }
 
 .section-publication {
@@ -339,7 +358,7 @@ nav {
       &:visited, &:focus, &:hover, &:active {
         text-decoration: none;
         outline: none;
-        background-color: #EEF;
+        background-color: $highlight;
       }
       p {
         margin: 5px 0px;
