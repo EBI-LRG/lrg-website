@@ -238,7 +238,7 @@ nav {
 
 .panel-right-section-content {
   padding: 6px 8px;
-  background-color: #F9F9F9;
+  background-color:$bg_1;
 }
 
 .panel-row {
@@ -333,7 +333,8 @@ a.section-link {
   line-height: $line-height;
   font-size: 14px;
   > div:last-child {
-   margin-top: 10px;
+    background-color:$bg_1;
+    margin: 10px -8px 0px;
   }
 }
 
