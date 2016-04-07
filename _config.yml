@@ -55,6 +55,10 @@ url:
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
+# Others baseurls
+baseurl_bootstrap:  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css"
+baseurl_googleapis: "https://ajax.googleapis.com/ajax/libs"
+
 
 
 # Jekyll 3 now only supports Kramdown for Markdown

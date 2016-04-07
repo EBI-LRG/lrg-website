@@ -1,22 +1,24 @@
-<header class="masthead clearfix">
-  <div class="site-avatar">
-    <img src="{{ site.avatar }}" />
+<header>
+  <div class="masthead clearfix">
+    <div class="site-avatar">
+      <a href="/index.html" title=" {{ site.name }} home page">
+        <img src="{{ site.avatar }}" />
+      </a>
+    </div>
+    <nav>
+       <a {% if page.tags contains "Home" %}class="active"{% endif %} href="{{ site.baseurl }}/">Home</a></li>
+       <a {% if page.tags contains "About" %}class="active"{% endif %} href="{{ site.baseurl }}/about">About</a></li>
+       <a {% if page.tags contains "Downloads" %}class="active"{% endif %} href="{{ site.baseurl }}/downloads">Downloads</a></li>
+       <a {% if page.tags contains "FAQ" %}class="active"{% endif %} href="{{ site.baseurl }}/faq">FAQ</a></li>
+       <a {% if page.tags contains "Contact" %}class="active"{% endif %} href="{{ site.baseurl }}/contact">Contact</a></li>
+    </nav>
   </div>
-  <!--<div class="site-info">
-    <h1 class="site-name">{{ site.name }}</h1>
-  </div>-->
-  <nav>
-     <a {% if page.tags contains "Home" %}class="active"{% endif %} href="{{ site.baseurl }}/">Home</a></li>
-     <a {% if page.tags contains "About" %}class="active"{% endif %} href="{{ site.baseurl }}/about">About</a></li>
-     <a {% if page.tags contains "Downloads" %}class="active"{% endif %} href="{{ site.baseurl }}/downloads">Downloads</a></li>
-     <a {% if page.tags contains "FAQ" %}class="active"{% endif %} href="{{ site.baseurl }}/faq">FAQ</a></li>
-     <a {% if page.tags contains "Contact" %}class="active"{% endif %} href="{{ site.baseurl }}/contact">Contact</a></li>
-  </nav>
-  
-</header>
-<div class="sub-masterhead"></div>
 
-<div class="clearfix">
+  <div class="sub-masterhead"></div>  
+</header>
+
+
+<div class="search-row clearfix">
   <div class="col-lg-6 col-lg-offset-3 col-md-8  col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
     {% include search_box.html %}
   </div>
