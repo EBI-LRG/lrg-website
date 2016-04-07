@@ -14,6 +14,7 @@ An LRG is a manually curated record that contains stable and thus, un-versioned 
 **As of February 2016, over 850 LRGs have been created, of which over 650 are public** and in use by the community.  
 See the [list of LRGs](/search/?query=*).  
 The aim of the project is to create an LRG for every locus with clinical implications.  
+<br />
 
 
 ### Records creation
@@ -34,13 +35,15 @@ The creation of an LRG involves several steps:
 
 7. **LRG published** and collaborators informed
 
-EMBL-EBI and NCBI are committed to developing the technical solutions, as well as computational and visual tools to work with LRG sequences. This enables all the information reported on an LRG to be integrated with the human genome reference sequence.
+EMBL-EBI and NCBI are committed to developing the technical solutions, as well as computational and visual tools to work with LRG sequences. This enables all the information reported on an LRG to be integrated with the human genome reference sequence.  
+<br />
 
 
 ### Collaboration
 
 In recognition of the need to create universally accepted reference standards for variant reporting, GEN2PHEN ([http://www.gen2phen.org](http://www.gen2phen.org)) sponsored a meeting in 2008 with key stakeholders, including EMBL-EBI, NCBI, HGVS, LSDB curators and other members of the community. The goal of the meeting was to design a reference system that would address the shortcomings of existing systems, including confusion over versioning, and that would allow consistent and unambiguous reporting of variants in clinically relevant loci.  
 The new system, founded on the RefSeqGene project, was named **Locus Reference Genomic (LRG)**.  
+<br />
 
 
 ### Further information
@@ -61,13 +64,14 @@ Also available
 
 - [LRG video presentation](http://www.ebi.ac.uk/training/online/course/locus-reference-genomic-lrg-resource-webinar): a webinar of ~30min providing an overview and demo of the LRG resource.
 
-For more information on how the RefSeqGene records relate to the LRG project, please refer to this [document](http://www.ncbi.nlm.nih.gov/refseq/rsg/lrg/).
+For more information on how the RefSeqGene records relate to the LRG project, please refer to this [document](http://www.ncbi.nlm.nih.gov/refseq/rsg/lrg/).  
+<br />
 
  
 ### Licence
 
-The LRG project imposes no restrictions on access to, or use of, the data provided. The code written by the members of the project is provided under the **Apache 2.0 licence**.
-  
+The LRG project imposes no restrictions on access to, or use of, the data provided. The code written by the members of the project is provided under the **Apache 2.0 licence**.  
+<br />
   
   
 ### Past support

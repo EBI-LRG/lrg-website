@@ -48,11 +48,12 @@ There is the possibility to download all the public and pending LRGs:
 
 <span class="warning">NOTE:</span> If you can't access to the LRG FTP site through the FTP protocol, you can access it using the HTTP protocol: [LRG FTP site - HTTP](http://ftp.ebi.ac.uk/pub/databases/lrgex/).
 
+<br />  
 
 #### Summary data
 
 <div class="row">
-  <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <table class="table table-hover">
       <thead>
         <tr class="sorttable_header">
@@ -133,18 +134,20 @@ There is the possibility to download all the public and pending LRGs:
       </tbody>
     </table>
   </div>
-</div>
+</div>  
 
 
 ### LRG in Ensembl
   
-The list of LRGs already imported in [Ensembl](http://www.ensembl.org) is available in this [text file](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/lrgs_in_ensembl.txt).
-
-
+The list of LRGs already imported in [Ensembl](http://www.ensembl.org) is available in this [text file](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/lrgs_in_ensembl.txt).  
+<br />
+  
+  
 ### LRG XML schema
 
-The LRG XML schema doumentations are downloadable [here](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs) and the different version of the XML schema definitions (RELAX NG format) are available [here](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs/schemas).
-
+The LRG XML schema doumentations are downloadable [here](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs) and the different version of the XML schema definitions (RELAX NG format) are available [here](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs/schemas).  
+<br />
+  
   
 ### LRG archived data
 

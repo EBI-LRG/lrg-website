@@ -7,9 +7,10 @@ permalink: /submit-variants/
 ---
 
 Consistent with the goals of the LRG collaboration, we offer the opportunity to submit information about variants to [dbSNP](http://www.ncbi.nlm.nih.gov/projects/SNP/) or [dbVar](http://www.ncbi.nlm.nih.gov/dbvar)/[DGVa](http://www.ebi.ac.uk/dgva/), as appropriate, and obtain an accession number for each variant. The results will be returned to you as outlined in the [instructions](http://ftp.ebi.ac.uk/pub/databases/lrgex/docs/SubmittingVariationInfo.pdf).  
+<br />
 
 
-#### Minimal information
+### Minimal information
 
 The minimum information you need to report for each mutation is:
 
@@ -17,8 +18,10 @@ The minimum information you need to report for each mutation is:
 * The **number of independent observations** (defaults to one).
 * Whether the mutation is **somatic**, **germline** or **unknown**.
 
+<br />
 
-#### Recommanded information
+
+### Recommanded information
 
 We would encourage you to also submit the following information:
 
@@ -33,8 +36,9 @@ We would encourage you to also submit the following information:
 * **Alternate designations** or **common names** for this variant
 * The **assay method** that was used to identify this variant
 
+<br />
 
-#### Submission procedure
+### Submission procedure
 
 Below is a general outline of the submission procedure: 
 
