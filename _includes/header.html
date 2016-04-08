@@ -1,18 +1,36 @@
 <header>
-  <div class="masthead clearfix">
-    <div class="site-avatar">
-      <a href="/index.html" title=" {{ site.name }} home page">
-        <img src="{{ site.avatar }}" />
-      </a>
+  <nav class = "navbar navbar-default masthead" role = "navigation">
+    <div class="navbar-header">
+      <div class="site-avatar">
+        <a href="/index.html" title=" {{ site.name }} home page">
+          <img src="{{ site.avatar }}" />
+        </a>
+      </div>
+
+      <button type = "button" class = "navbar-toggle" 
+           data-toggle = "collapse" data-target = "#lrg-navbar">
+        <span class = "sr-only">Toggle navigation</span>
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+      </button>
+
     </div>
-    <nav>
-       <a {% if page.tags contains "Home" %}class="active"{% endif %} href="{{ site.baseurl }}/">Home</a></li>
-       <a {% if page.tags contains "About" %}class="active"{% endif %} href="{{ site.baseurl }}/about">About</a></li>
-       <a {% if page.tags contains "Downloads" %}class="active"{% endif %} href="{{ site.baseurl }}/downloads">Downloads</a></li>
-       <a {% if page.tags contains "FAQ" %}class="active"{% endif %} href="{{ site.baseurl }}/faq">FAQ</a></li>
-       <a {% if page.tags contains "Contact" %}class="active"{% endif %} href="{{ site.baseurl }}/contact">Contact</a></li>
-    </nav>
-  </div>
+
+    <div class = "collapse navbar-collapse" id = "lrg-navbar">
+  
+      <ul class = "nav navbar-nav">
+        <li><a {% if page.tags contains "Home" %}class="active"{% endif %} href="{{ site.baseurl }}/">Home</a></li>
+        <li><a {% if page.tags contains "About" %}class="active"{% endif %} href="{{ site.baseurl }}/about">About</a></li>
+        <li><a {% if page.tags contains "Downloads" %}class="active"{% endif %} href="{{ site.baseurl }}/downloads">Downloads</a></li>
+        <li><a {% if page.tags contains "FAQ" %}class="active"{% endif %} href="{{ site.baseurl }}/faq">FAQ</a></li>
+        <li><a {% if page.tags contains "Contact" %}class="active"{% endif %} href="{{ site.baseurl }}/contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
 
   <div class="sub-masterhead"></div>  
 </header>
