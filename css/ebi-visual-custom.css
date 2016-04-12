@@ -71,11 +71,6 @@
   content: "4";
 }
 
-.icon-request:before {
-  font-family: 'EBI-Generic';
-  content: "'";
-}
-
 .icon-submit:before {
   font-family: 'EBI-Functional';
   content: "_";
@@ -86,16 +81,6 @@
   content: "0";
 }
 
-.icon-news:before {
-  font-family: 'EBI-Generic';
-  content: "N";
-}
-
-.icon-link:before {
-  font-family: 'EBI-Generic';
-  content: "L";
-}
-
 .icon-previous-page:before {
   font-family: 'EBI-Functional';
   content: "<";
@@ -104,6 +89,31 @@
 .icon-next-page:before {
   font-family: 'EBI-Functional';
   content: ">";
+}
+
+.icon-tool:before {
+  font-family: 'EBI-Functional';
+  content: "t";
+}
+
+.icon-unassigned-job:before {
+  font-family: 'EBI-Functional';
+  content: "*";
+}
+
+.icon-lock:before {
+  font-family: 'EBI-Functional';
+  content: "L";
+}
+
+.icon-database-submit:before {
+  font-family: 'EBI-Functional';
+  content: "D";
+}
+
+.icon-unlock:before {
+  font-family: 'EBI-Functional';
+  content: "U";
 }
 
 .icon-contact:before {
@@ -118,11 +128,27 @@
 
 .icon-info:before {
   font-family: 'EBI-Generic';
-  content: "i";}
+  content: "i";
+}
 
-.icon-tool:before {
-  font-family: 'EBI-Functional';
-  content: "t";
+.icon-request:before {
+  font-family: 'EBI-Generic';
+  content: "'";
+}
+
+.icon-news:before {
+  font-family: 'EBI-Generic';
+  content: "N";
+}
+
+.icon-link:before {
+  font-family: 'EBI-Generic';
+  content: "L";
+}
+
+.icon-publication:before {
+  font-family: 'EBI-Generic';
+  content: "P";
 }
 
 .icon-industry:before {
@@ -135,14 +161,29 @@
   content: "f";
 }
 
-.icon-publication:before {
+.icon-reviewed-data:before {
   font-family: 'EBI-Generic';
-  content: "P";
+  content: "q";
 }
 
-.icon-unassigned-job:before {
-  font-family: 'EBI-Functional';
-  content: "*";
+.icon-unreviewed-data:before {
+  font-family: 'EBI-Generic';
+  content: "Q";
+}
+
+.icon-home:before {
+  font-family: 'EBI-Generic';
+  content: "H";
+}
+
+.icon-group:before {
+  font-family: 'EBI-Generic';
+  content: "}";
+}
+
+.icon-external-systems:before {
+  font-family: 'EBI-Generic';
+  content: "y";
 }
 
 /* External link */
