@@ -90,9 +90,6 @@ function get_search_results (search_id) {
   var search_ids_list = search_id.split(';');
 
   return $.getJSON( lrg_json_file ).then(function(data) {
-    //for (var i=0; i < search_ids_list.length; i++) {
-    //result_objects = getObjects(data, data, "", search_ids_list[i], result_objects);
-    //}
     $.each(search_ids_list, function (index, search_item) {
       result_objects = getObjects(data, data, "", search_item, result_objects);
     });
@@ -283,7 +280,7 @@ function parse_date (date) {
 
   var date_string = date.toString();
 
-  var match = date_string.match(/^(\d{4})(\d{2})(\d{2})$/);
+  var match = date_string.match(/^(\d{4})-(\d{2})-(\d{2})$/);
   if (match) {
     return match[3] + " " + months[match[2]] + " " + match[1];
   }
