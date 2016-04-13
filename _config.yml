@@ -96,6 +96,8 @@ collections:
     faq:
         output: true
         permalink: /faq/:path/
+    web-service:
+        output: true
 defaults:
     -
         scope: 
