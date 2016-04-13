@@ -383,6 +383,11 @@ a.section-link {
   border: 1px solid $lrg_green;
   border-radius: 5px;
   margin-bottom: 25px;
+  .section-grey {
+    background-color:$bg_1;
+    padding: 4px 4px 4px 8px;
+    margin: 5px -8px 0px;
+  }
 }
 
 .section-header {
@@ -390,6 +395,7 @@ a.section-link {
   font-weight: bold;
   font-size: 1.2em;
   margin: 2px 0px;
+  padding-bottom: 20px;
 }
 
 .section-title {
