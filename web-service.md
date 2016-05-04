@@ -13,11 +13,11 @@ Web service root URL for LRG: [http://www.ebi.ac.uk/ebisearch/ws/rest/lrg](http:
 
 The EMBL-EBI RESTful web services provide several output format such as: XML, JSON, CSV, TSV.
 
-Here are listed differents type of calls, which replace the deprecated LRG web services. They are classified in 2 main types of queries:
+Here are listed differents type of calls, which replace the deprecated LRG web services.  
+They are grouped in 2 main types of queries:
 
 * [Search LRG(s)](#ws_lrg_search) using differents terms/IDs, e.g. LRG ID, HGNC symbol, Ensembl accession, NCBI accession, ...
 * [Get LRG data annotation](#ws_lrg_data) from one or several entries
-
 
 <a name="ws_lrg_search"></a>
 <br />
