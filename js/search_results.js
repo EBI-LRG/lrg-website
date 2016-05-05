@@ -171,7 +171,7 @@ function display_results (results) {
     // LRG ID
     newrow += "<td sorttable_customkey=\"" + extract_id(lrg_id) + "\" class=\"left-col\"><a href=\"" + lrg_link + lrg_id + ".xml" + "\" target=\"_blank\">" + lrg_id + "</a></td>";
     // Symbol
-    newrow += "<td><a href=\"" + hgnc_url + symbol + "\" target=\"_blank\">"+ symbol + "</a></td>";
+    newrow += "<td><a "+external_link_class+" href=\"" + hgnc_url + symbol + "\" target=\"_blank\">"+ symbol + "</a></td>";
     // Status
     newrow += "<td>"+ lrg_status + "</td>";
     // Last modification date
