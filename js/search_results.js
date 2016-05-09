@@ -1,6 +1,6 @@
 // Links
 var lrg_ftp = "http://ftp.ebi.ac.uk/pub/databases/lrgex/";
-var ens_url = "http://www.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###.xml.gff=labels";
+var ens_url = "http://www.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels";
 var ncbi_url = "http://www.ncbi.nlm.nih.gov/mapview/maps.cgi?taxid=9606&CHR=###CHR###&BEG=###START###&END=###END###";
 var ucsc_url = "http://genome.ucsc.edu/cgi-bin/hgTracks?clade=mammal&org=Human&position=chr###LOC###";
 var hgnc_url = "http://www.genenames.org/cgi-bin/gene_symbol_report?match=";
@@ -9,6 +9,7 @@ var lrg_json_file = "/json_index/lrg_index.json";
 
 var external_link_class = "class=\"icon-external-link\"";
 
+var ref_assembly = "GRCh38";
 var lrg_regexp = /lrg_\d+/i;
 var all_lrgs = "LRG_*";
 var lrg_list = [];
@@ -157,7 +158,7 @@ function display_results (results) {
     var start      = results[lrg_id].chr_start;
     var end        = results[lrg_id].chr_end;
 
-    var ens_link  = get_ens_link(lrg_id, chr, start, end);
+    var ens_link  = get_ens_link(lrg_id, chr, start, end, ref_assembly);
     var ncbi_link = get_ncbi_link(chr, start, end);
     var ucsc_link = get_ucsc_link(chr, start, end);
 
@@ -185,9 +186,10 @@ function display_results (results) {
   }
 }
 
-function get_ens_link (lrg_id, chr, start, end) {
+function get_ens_link (lrg_id, chr, start, end, assembly) {
 
   var new_link = ens_url.replace(/###ID###/, lrg_id);
+      new_link = new_link.replace(/###ASSEMBLY###/, assembly);
       new_link = new_link.replace(/###LOC###/, chr+':'+start+'-'+end);
 
   return "<a "+external_link_class+" href=\"" + new_link + "\" target=\"_blank\">Ensembl</a>";
