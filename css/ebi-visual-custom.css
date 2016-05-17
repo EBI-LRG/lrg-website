@@ -61,6 +61,12 @@
   margin-right: 5px;
 }
 
+
+.icon-approve:before {
+  font-family: 'EBI-Functional';
+  content: "/";
+}
+
 .icon-download:before {
   font-family: 'EBI-Functional';
   content: "=";
@@ -114,6 +120,12 @@
 .icon-unlock:before {
   font-family: 'EBI-Functional';
   content: "U";
+}
+
+
+.icon-alert:before {
+  font-family: 'EBI-Generic';
+  content: "l";
 }
 
 .icon-contact:before {
@@ -184,6 +196,17 @@
 .icon-external-systems:before {
   font-family: 'EBI-Generic';
   content: "y";
+}
+
+.icon-xml:before {
+  font-family: 'EBI-FileFormats';
+  content: "x";
+}
+
+
+.icon-fasta:before {
+  font-family: 'EBI-FileFormats';
+  content: "a";
 }
 
 /* External link */
