@@ -15,10 +15,10 @@ There is the possibility to download all the public and pending LRGs:
 
 <div class="row">
   <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
-    <table class="table table-hover">
+    <table class="table table-hover table-lrg">
       <thead>
         <tr class="sorttable_header">
-          <th>Status</th>
+          <th class="first-col">Status</th>
           <th colspan="2">Formats (zipped)</th>
         </tr>
       </thead>
@@ -54,12 +54,12 @@ There is the possibility to download all the public and pending LRGs:
 
 <div class="row">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <table class="table table-hover">
+    <table class="table table-hover table-lrg">
       <thead>
         <tr class="sorttable_header">
-          <th rowspan="2">Format</th>
+          <th rowspan="2" class="first-col">Format</th>
           <th rowspan="2">Description</th>
-          <th colspan="2">Files location by assembly</th>
+          <th colspan="2" class="split-header">Files location by assembly</th>
         </tr>
         <tr class="sorttable_header">
           <th>GRCh37</th>
@@ -155,10 +155,10 @@ Previous versions of the LRGs (in different LRG XML schemas) are available:
 
 <div class="row">
   <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
-    <table class="table table-hover">
+    <table class="table table-hover table-lrg">
       <thead>
         <tr class="sorttable_header">
-          <th>Schema version</th>
+          <th class="first-col">Schema version</th>
           <th>Link</th>
         </tr>
       </thead>

@@ -16,10 +16,10 @@ The corresponding protein-level description is **LRG_13p2:p.Ser76Arg**.
 
 <div class="row">
   <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-    <table class="table table-hover">
+    <table class="table table-hover table-lrg">
       <thead>
         <tr class="sorttable_header">
-          <th>Description Level</th>
+          <th class="first-col">Description Level</th>
           <th>RefSeqGene or RefSeq</th>
           <th>LRG</th>
         </tr>

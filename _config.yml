@@ -10,9 +10,10 @@
 name: Locus Reference Genomic
 
 # Short bio or description (displayed in the header)
-description: LRG sequences provide a stable genomic DNA framework for reporting mutations with a permanent ID and core content that never changes.
+description: LRG sequences provide a stable genomic DNA framework for reporting variants with a permanent ID and core content that never changes.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
+#avatar: /images/lrg_logo.png
 avatar: /images/lrg_logo.png
 
 # Search label

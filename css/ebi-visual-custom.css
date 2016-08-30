@@ -97,6 +97,11 @@
   content: ">";
 }
 
+.icon-search:before {
+  font-family: 'EBI-Functional';
+  content: "1";
+}
+
 .icon-tool:before {
   font-family: 'EBI-Functional';
   content: "t";

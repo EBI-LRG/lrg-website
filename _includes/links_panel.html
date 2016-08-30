@@ -1,5 +1,8 @@
 <div class="panel-right-section">
-  <h5 class="section-title2 icon-help"><a href="/about">About LRG</a></h5>
+  <!--<h5 class="section-title2"><a class="icon-help" href="/about">About LRG</a></h5>-->
+  <a class="section-title2" href="/about">
+    <h5 class="icon-help">About LRG</h5>
+  </a>
   <div class="panel-right-section-content">
     <p>
       {{ site.description }}
@@ -10,7 +13,10 @@
 
 
 <div class="panel-right-section">
-  <h5 class="section-title2 icon-publication"><a href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">Latest publication</a></h5>
+  <!--<h5 class="section-title2"><a class="icon-publication" href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">Latest publication</a></h5>-->
+  <a class="section-title2" href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">
+    <h5 class="icon-publication">Latest publication</h5>
+  </a>
   <div class="panel-right-section-content">
     <p class="section-publication ">
       MacArthur JA et al.<br />
@@ -22,7 +28,10 @@
 </div>
 
 <div class="panel-right-section">
-  <h5 class="section-title2 icon-news"><a href="/news">News</a></h5>
+  <!--<h5 class="section-title2"><a class="icon-news" href="/news">News</a></h5>-->
+  <a class="section-title2" href="/news">
+    <h5 class="icon-news">News</h5>
+  </a>
   <div class="panel-right-section-content">
     <div class="section-news">
       {% for post in site.posts limit:4 %}
