@@ -27,7 +27,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
-  color: $lrg_blue; /*$darkerGray;*/
   font-weight: bold;
 
   line-height: $line-height;
@@ -37,6 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 30px;
+  color: $lrg_dark;
   a {
     color: inherit;
   }
@@ -44,18 +44,22 @@ h1 {
 
 h2 {
   font-size: 24px;
+  color: $lrg_blue;
 }
 
 h3 {
   font-size: 20px;
+  color: $lrg_blue;
 }
 
 h4 {
   font-size: 18px;
+  color: $lrg_blue;
 }
 
 h5 {
   font-size: 16px;
+  color: $lrg_blue;
 }
 
 p {
@@ -164,7 +168,6 @@ header {
   /*display: block;*/
   padding: 5px;
   margin-bottom: 0px;
-  /*background: transparent url("/images/gradient_back.png") repeat-x scroll 0% 0%;*/
   background-color: $lrg_dark;
   background-image: none;
   border-radius: 0px;
@@ -572,12 +575,12 @@ tr.sorttable_header {
 
 .container-extra {
   min-height: 100%;
-  margin-bottom: -160px;
+  margin-bottom: -130px;
 }
 .container-extra:after {
   content: "";
   display: block;
-  height: 160px;
+  height: 130px;
 }
 
 #search_term {
@@ -629,6 +632,22 @@ td.left-col {
   background: -webkit-linear-gradient(top, $lrg_blue2 0%, $lrg_blue3 10%);
   /* W3C Markup, IE10 Release Preview */ 
   background: linear-gradient(to bottom, $lrg_blue2 0%, $lrg_blue3 10%);
+}
+
+.gradient-dark-blue {
+  background: $lrg_dark;
+  /* IE10 */ 
+  background: -ms-linear-gradient(left, $lrg_dark 30%, $lrg_blue 100%);
+  /* Mozilla Firefox */ 
+  background: -moz-linear-gradient(left, $lrg_dark 30%, $lrg_blue 100%);
+  /* Opera */ 
+  background: -o-linear-gradient(left, $lrg_dark 30%, $lrg_blue 100%);
+  /* Webkit (Safari/Chrome 10) */ 
+  background: -webkit-gradient(linear, left, right, color-stop(0.3, $lrg_dark), color-stop(1, $lrg_blue));
+  /* Webkit (Chrome 11+) */ 
+  background: -webkit-linear-gradient(left, $lrg_dark 30%, $lrg_blue 100%);
+  /* W3C Markup, IE10 Release Preview */ 
+  background: linear-gradient(to right, $lrg_dark 30%, $lrg_blue 100%);
 }
 
 .back_link {
@@ -708,7 +727,7 @@ td.left-col {
 }
 
 .wrapper-footer {
-  height: 160px;
+  height: 130px;
   margin-top: 10px;
   background-color: $lrg_dark;
   border-top: 3px solid $lrg_blue;
