@@ -1,6 +1,7 @@
 ---
 title: "Can I download and view LRGs locally?"
 faq_group: view
+faq_order: 3
 faq_tags:
   - view
   - records

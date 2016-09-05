@@ -1,6 +1,7 @@
 ---
 title: "How do I find out if an LRG already exists for my gene of interest?"
 faq_group: request
+faq_order: 1
 faq_tags:
   - gene
   - records

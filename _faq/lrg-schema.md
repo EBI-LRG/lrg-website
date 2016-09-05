@@ -1,6 +1,7 @@
 ---
 title: "Is the LRG XML schema available?"
 faq_group: format
+faq_order: 2
 faq_tags:
   - software
   - records

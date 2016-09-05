@@ -1,6 +1,7 @@
 ---
 title: "What will happen now that the GEN2PHEN project funding has ended?"
 faq_group: admin
+faq_order: 3
 faq_tags:
   - funding
 faq_related:

@@ -1,6 +1,7 @@
 ---
 title: "Can I create my own LRG sequence records?"
 faq_group: format
+faq_order: 4
 faq_tags:
   - records
 faq_related:

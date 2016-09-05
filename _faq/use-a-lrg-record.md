@@ -1,8 +1,9 @@
 ---
 title: "How can I use a LRG record?"
-faq_group: most_frequent
+faq_group: lrg_definition
+faq_order: 8
 faq_tags:
-  - most_frequent
+  - lrg_definition
   - records
 ---
 

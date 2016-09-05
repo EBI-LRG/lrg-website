@@ -8,14 +8,14 @@ permalink: /news/
 {% for post in site.posts %}
 <article class="col-md-12 section-row">
   <div class="clearfix">
-    <div class="section-header left" style="float:left">
+    <div class="section-header left">
       <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
     </div>
     <div class="right medium-font">{{post.date | date: '%B %d, %Y'}}</div>
   </div>
-  <div class="section-content">
+  <div class="section-content" style="padding-left:0px">
    {{ post.excerpt }}
   </div>
-</article> 
+</article>
 
 {% endfor %}

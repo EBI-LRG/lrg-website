@@ -11,7 +11,7 @@ This is the LRG Frequently Asked Questions page.
 
 {% include tutorial.html %}
 
-{% assign sorted_faq = (site.faq | sort: 'title') %}
+{% assign sorted_faq = (site.faq | sort: 'faq_order') %}
 
 {% assign faq_groups = (site.faq_groups | sort: 'order') %}
 {% for faq_group in faq_groups %}

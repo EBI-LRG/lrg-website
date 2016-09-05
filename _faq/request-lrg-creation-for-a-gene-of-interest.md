@@ -1,6 +1,7 @@
 ---
 title: "How do I request the creation of an LRG if none exists yet for my gene of interest?"
 faq_group: request
+faq_order: 2
 faq_tags:
   - gene
   - records

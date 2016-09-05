@@ -1,6 +1,7 @@
 ---
-title: "What do I need to view an LRG?"
+title: "How can I view a LRG record?"
 faq_group: view
+faq_order: 1
 faq_tags:
   - view
   - records

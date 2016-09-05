@@ -1,9 +1,10 @@
 ---
-title: "Does this mean that additional transcripts cannot be added?"
-faq_group: most_frequent
+title: "Can additional transcripts be added to an LRG?"
+faq_group: stability
+faq_order: 4
 faq_tags:
-  - most_frequent
   - transcripts
+  - records
 faq_related:
   - versioning-problem
 ---

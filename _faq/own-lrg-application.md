@@ -1,6 +1,7 @@
 ---
 title: "Can I write my own application using LRG?"
 faq_group: software
+faq_order: 3
 faq_tags:
   - software
 faq_related:

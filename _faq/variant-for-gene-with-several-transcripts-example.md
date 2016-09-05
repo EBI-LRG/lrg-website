@@ -1,6 +1,7 @@
 ---
 title: "Can I see an example of variant for a gene with more than one transcript?"
 faq_group: variant
+faq_order: 3
 faq_tags:
   - variant
   - gene
