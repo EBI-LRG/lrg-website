@@ -81,8 +81,8 @@ The LRG project imposes no restrictions on access to, or use of, the data provid
 
 
 This website lists existing LRG sequences and has a FTP site for downloading LRGs.  
-If you would like to give us feedback, please email us at **feedback@lrg-sequence.org**.  
-To create an LRG for your region of interest, please contact us at **request@lrg-sequence.org**.
+If you would like to give us feedback, please email us at <a href="mailto:feedback@lrg-sequence.org">feedback@lrg-sequence.org</a>.  
+To create an LRG for your region of interest, please contact us at <a href="mailto:request@lrg-sequence.org">request@lrg-sequence.org</a>.
 
 
 

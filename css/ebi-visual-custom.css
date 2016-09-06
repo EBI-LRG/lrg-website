@@ -67,6 +67,16 @@
   content: "/";
 }
 
+.icon-collapse-closed:before {
+  font-family: 'EBI-Functional';
+  content: "9";
+}
+
+.icon-collapse-open:before {
+  font-family: 'EBI-Functional';
+  content: "8";
+}
+
 .icon-download:before {
   font-family: 'EBI-Functional';
   content: "=";

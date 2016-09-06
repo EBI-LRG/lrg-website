@@ -5,8 +5,8 @@ var ncbi_url = "http://www.ncbi.nlm.nih.gov/mapview/maps.cgi?taxid=9606&CHR=###C
 var ucsc_url = "http://genome.ucsc.edu/cgi-bin/hgTracks?clade=mammal&org=Human&position=chr###LOC###";
 var hgnc_url = "http://www.genenames.org/cgi-bin/gene_symbol_report?match=";
 
-//var lrg_json_file = "/json_index/lrg_index.json";
-var lrg_json_file = "http://ftp.ebi.ac.uk/pub/databases/lrgex/lrg_index.json";
+var lrg_json_file = "/json_index/lrg_index.json";
+//var lrg_json_file = "http://ftp.ebi.ac.uk/pub/databases/lrgex/.lrg_index/lrg_index.json";
 
 var external_link_class = "class=\"icon-external-link\"";
 

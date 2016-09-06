@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "News"
+title: "Updates"
 icon-class: icon-news
 permalink: /news/
 ---
@@ -8,10 +8,8 @@ permalink: /news/
 {% for post in site.posts %}
 <article class="col-md-12 section-row">
   <div class="clearfix">
-    <div class="section-header left">
-      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </div>
-    <div class="right medium-font">{{post.date | date: '%B %d, %Y'}}</div>
+    <div class="section-header left">{{ post.title }}</div>
+    <div class="right label-date"><span class="label label-info">{{post.date | date: '%B %d, %Y'}}</span></div>
   </div>
   <div class="section-content" style="padding-left:0px">
    {{ post.excerpt }}

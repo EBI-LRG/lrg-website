@@ -83,7 +83,7 @@ ul, ol {
 }
 
 ul {
-  list-style-type: disc;
+  list-style-type: circle;
 }
 
 ol {
@@ -95,7 +95,7 @@ ol ul, ul ol, ul ul, ol ol {
 }
 
 ul ul, ol ul {
-  list-style-type: circle;
+  list-style-type: disc;
 }
 
 li {
@@ -253,6 +253,7 @@ header {
   text-shadow: none;
   letter-spacing: 1.2px;
   font-family: $futura;
+
   &:hover {
     color: $lrg_green2;
     text-decoration: none;
@@ -460,22 +461,29 @@ a.section-link {
 .section-double {
   padding: 0px;
   height: 100%;
-  border: 1px solid $lrg_green;
-  border-radius: 5px;
+  /*border: 1px solid $lrg_green;
+  border-radius: 5px;*/
 }
 
 .section-bottom {
-  border-color: #BCBEC0;/*#DDD;*/
-  margin-top:10px;
+  /*border-color: #BCBEC0;*/
+  margin-top:20px;
 }
 
 .section-row {
   padding: 8px 0px 25px;
   border-bottom: 1px solid $lrg_light_gray;
   margin-bottom: 25px;
+}
+
+.section-box {
+  padding: 8px;
+  border: 1px solid $lrg_light_gray;
+  border-radius: 5px;
+  margin-bottom: 25px;
   .section-grey {
-    background-color:$bg_1;
-    padding: 4px 4px 4px 8px;
+    background-color:$lrg_light_gray;
+    padding: 6px 10px;
     margin: 5px -8px 0px;
   }
 }
@@ -501,7 +509,7 @@ a.section-link {
 }
 
  .section-circle {
-    border:2px solid $lrg_dark;
+    border:2px solid $lrg_blue;
     border-radius:24px;
     font-size:24px;
     padding:6px;
@@ -553,8 +561,12 @@ a.section-link {
 }
 
 .section-publication {
-  line-height: 1.2;
-  font-size:14px;
+  line-height: 1.3;
+  margin-top: 6px;
+  >span {
+    font-weight:bold;
+    line-height: 1.2;
+  }
 }
 
 .section-news {
@@ -784,6 +796,33 @@ td.left-col {
   }
 }
 
+.faq_entry {
+  margin-bottom: 4px;
+  border: 1px solid $lrg_light_gray;
+  &:hover, &:focus, &:active {
+    border-color: $lrg_purple;
+    .faq_title {
+      color: $lrg_purple;
+    }
+  }
+}
+
+.faq_title {
+  padding: 6px 5px;
+  color: $lrg_blue;
+  background-color: #EEE;
+  font-weight:bold;
+  &:hover, &:focus, &:active {
+    cursor:pointer;
+  }
+}
+
+.faq_content {
+  padding: 0px 8px;
+  display: none;
+  border-top: 1px solid $lrg_light_gray;
+}
+
 .warning {
   color: #F00;
   font-weight: bold;
@@ -801,7 +840,7 @@ td.left-col {
 
 .wrapper-footer {
   height: 130px;
-  margin-top: 10px;
+  margin-top: 5px;
   background-color: $lrg_dark;
   border-top: 3px solid $lrg_blue;
 }
