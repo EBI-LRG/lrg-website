@@ -158,10 +158,11 @@ ul.compact {
 //
 header {
   width:100%;
-  height: 85px;
+  height: 95px;
   position:fixed;
   top:0px;
-  z-index: 10;
+  z-index: 100;
+  padding-bottom: 18px;
 }
 
 .masthead {
@@ -173,10 +174,17 @@ header {
   border-radius: 0px;
 }
 
-.sub-masterhead {
-  padding: 12px 0px;
+.sub-masterhead_blue {
   border-top: 5px solid $lrg_blue;
-  /*background: url(/images/shadow_top.png) no-repeat 50% 0%;*/
+}
+.sub-masterhead_green {
+  border-top: 5px solid $lrg_green2;
+}
+.sub-masterhead_purple {
+  border-top: 5px solid $lrg_purple;
+}
+.sub-masterhead_dark {
+  border-top: 1px solid $lrg_dark;
 }
 
 
@@ -211,6 +219,7 @@ header {
   font-family: $futura;
   color: #FFF;
   width: 450px;
+  margin-top:10px;
 }
 
 .tag_line {
@@ -273,7 +282,7 @@ header {
   }
 
   .navbar-nav {
-    padding-top: 45px;
+    padding-top: 55px;
     margin-right: 5px;
   }
 
@@ -376,8 +385,17 @@ header {
     text-decoration: none;
   }
 }
+
+.table-lrg > thead > tr {
+  background-color: $lrg_dark;
+  color: #FFF;
+  font-weight: bold;
+}
+
 .table-lrg>thead>tr>th {
   border-bottom: 2px solid $lrg_blue;
+  border-left: 1px solid #DDD;
+  padding: 4px 8px;
 }
 
 .table-lrg>thead>tr>th.first-col {
@@ -392,8 +410,8 @@ header {
 .table-lrg>thead>tr>th.sorttable_sorted
 {
   &:hover, &:active, &:focus {
-    color:$lrg_purple;
-    border-bottom: 2px solid $lrg_purple;
+    color:$lrg_green2;
+    border-bottom: 2px solid $lrg_green2;
   }
 }
 
@@ -403,10 +421,15 @@ header {
 //
 
 .project_description {
-  font-weight: bold;
+  font-weight: normal;
   font-family: $futura;
   letter-spacing: 1.0px;
   font-size: 16px;
+  margin-top: -10px;
+  background-color: #FFF; /*#E9E9E9*/
+  /*color: #FFF;*/
+  padding: 6px 8px;
+  border-left: 5px solid $lrg_blue;
 }
 
 .read_more_link {
@@ -434,20 +457,36 @@ header {
 }
 
 .section {
-  padding: 0px;
+  padding: 5px 0px 0px;
   min-height: 130px;
-  /*border: 1px solid $lrg_light_gray;
-  border-radius: 5px;*/
+  /*border-radius: 8px;*/
   &:hover, &:active {
-    background-color: $lrg_light_gray;
+    /*background-color: $lrg_light_gray;*/
+    &:after {
+      width: 60%;
+      background-color: $lrg_purple;
+    }
     .section-circle {
       border-color: $lrg_purple;
     }
-    .section-sub-circle {
+    /*.section-sub-circle {
       text-decoration: underline;
       text-decoration-color: $lrg_purple;
-    }
+    }*/
   }
+}
+
+.section:after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  height: 1px;
+  width: 0px;
+  -webkit-transform: translate(-50%, 0px);
+  transform: translate(-50%, 0px);
+  -webkit-transition: all 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 a.section-link {
@@ -481,6 +520,9 @@ a.section-link {
   border: 1px solid $lrg_light_gray;
   border-radius: 5px;
   margin-bottom: 25px;
+  .section-header {
+    color:$lrg_green2;
+  }
   .section-grey {
     background-color:$lrg_light_gray;
     padding: 6px 10px;
@@ -494,6 +536,9 @@ a.section-link {
   font-size: 1.2em;
   margin: 2px 0px;
   padding-bottom: 5px;
+  h3 {
+    margin:0px;
+  }
 }
 
 .section-title {
@@ -501,22 +546,24 @@ a.section-link {
   color: $lrg_dark;/*$lrg_blue2*/
   margin: 3px 4px 5px 8px;
   >div {
-    font-size: 20px;
     font-weight: bold;
     margin: 0px auto 5px;
     text-align:center;
   }
 }
 
- .section-circle {
-    border:2px solid $lrg_blue;
-    border-radius:24px;
-    font-size:24px;
-    padding:6px;
-    width:36px;
-    height:36px;
-  }
+.section-circle {
+  border:3px solid $lrg_blue;
+  border-radius:30px;
+  font-size:24px;
+  padding:7px;
+  width:44px;
+  height:44px;
+}
 
+.section-sub-circle {
+  font-size: 20px;
+}
 
 .section-title2 {
   >h5 { 
@@ -528,15 +575,11 @@ a.section-link {
  }
   &:hover, &:active {
     >h5 {
-      border-bottom: 3px solid $lrg_purple;
-      color: $lrg_purple;
+      border-bottom: 3px solid $lrg_green2;
+      color: $lrg_green2;
     }
-  /*>a {*/
-    color: #FFF;/*$lrg_blue2;*/
+    color: #FFF;
     text-decoration: none;
-    /*&:hover, &:active {
-      color: $lrg_purple;
-    }*/
   }
 }
 
@@ -624,16 +667,16 @@ a.section-link {
 table {
   border-bottom: 2px solid #DDD;
 }
-tr.sorttable_header {
+/*tr.sorttable_header {
   color: #FFF;
-  background-color: $lrg_dark;/*$lrg_blue2;*/
+  background-color: $lrg_dark;
   font-weight: bold;
   >th {
     border-left: 1px solid #DDD;
     border-bottom: none;
     padding: 4px;
   }
-}
+}*/
 
 .to_sort { 
   background: url('/images/sortable.png') no-repeat right center;
@@ -659,7 +702,7 @@ tr.sorttable_header {
 
 .container-extra {
   min-height: 100%;
-  margin-top:85px;
+  margin-top: 95px;
   margin-bottom: -130px;
 }
 .container-extra:after {
@@ -673,6 +716,9 @@ tr.sorttable_header {
   color: $lrg_green;
 }
 
+.lrg_blue {
+  color: $lrg_blue;
+}
 
 .lrg_blue2 {
   color: $lrg_blue2;
@@ -680,6 +726,18 @@ tr.sorttable_header {
 
 .lrg_green {
   color: $lrg_green;
+}
+
+.lrg_green2 {
+  color: $lrg_green2;
+}
+
+.lrg_purple {
+  color: $lrg_purple;
+}
+
+.lrg_dark {
+  color: $lrg_dark;
 }
 
 .left {
@@ -722,17 +780,17 @@ td.left-col {
 .gradient-dark-blue {
   background: $lrg_dark;
   /* IE10 */ 
-  background: -ms-linear-gradient(left, $lrg_dark 30%, $lrg_blue 100%);
+  background: -ms-linear-gradient(left, $lrg_dark 25%, $lrg_blue 100%);
   /* Mozilla Firefox */ 
-  background: -moz-linear-gradient(left, $lrg_dark 30%, $lrg_blue 100%);
+  background: -moz-linear-gradient(left, $lrg_dark 25%, $lrg_blue 100%);
   /* Opera */ 
-  background: -o-linear-gradient(left, $lrg_dark 30%, $lrg_blue 100%);
+  background: -o-linear-gradient(left, $lrg_dark 25%, $lrg_blue 100%);
   /* Webkit (Safari/Chrome 10) */ 
-  background: -webkit-gradient(linear, left, right, color-stop(0.3, $lrg_dark), color-stop(1, $lrg_blue));
+  background: -webkit-gradient(linear, left, right, color-stop(0.25, $lrg_dark), color-stop(1, $lrg_blue));
   /* Webkit (Chrome 11+) */ 
-  background: -webkit-linear-gradient(left, $lrg_dark 30%, $lrg_blue 100%);
+  background: -webkit-linear-gradient(left, $lrg_dark 25%, $lrg_blue 100%);
   /* W3C Markup, IE10 Release Preview */ 
-  background: linear-gradient(to right, $lrg_dark 30%, $lrg_blue 100%);
+  background: linear-gradient(to right, $lrg_dark 25%, $lrg_blue 100%);
 }
 
 .back_link {
@@ -762,7 +820,7 @@ td.left-col {
   border-radius:8px;
   cursor:default;
   &:hover, &:active {
-    color: $blue;
+    color: $lrg_green2;
   }
 }
 
@@ -793,6 +851,17 @@ td.left-col {
   .read-more {
     text-transform: uppercase;
     font-size: 15px;
+  }
+}
+
+.faq_section_title {
+  margin: 15px 0px;
+  h4 {
+    margin: 0px;
+  }
+  a {
+    vertical-align: middle;
+    line-height:27px;
   }
 }
 

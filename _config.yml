@@ -26,16 +26,17 @@ avatar: /images/lrg_logo.png
 search-label: "Search LRGs"
 
 # LRG counts (used in FAQ)
-lrg-date: "October 2015"
+lrg-date: "September 2016"
 lrg-created: "1,000"
-lrg-public: "655"
+lrg-public: "665"
+lrg-schema: "1.9"
 
 
 #--------------------------------------------------------#
 # Configuration below is optional - NO NEED TO CHANGE IT #
 #--------------------------------------------------------#
 
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
+# Your website URL
 # Used for Sitemap.xml and your RSS feed
 url:
 
