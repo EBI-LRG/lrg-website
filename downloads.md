@@ -85,6 +85,7 @@ There is the possibility to download all the public and pending LRGs:
             <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_GRCh38.bed" target="_blank">[BED]</a>
           </td>
         </tr>
+
         <tr>
           <td class="left-col">Tabulated<br /><span style="font-weight:normal">(LRG genes)</span></td>
           <td>
@@ -106,6 +107,7 @@ There is the possibility to download all the public and pending LRGs:
             <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_GRCh38.txt" target="_blank">[TXT]</a>
           </td>
         </tr>
+
         <tr>
           <td class="left-col">Tabulated<br /><span style="font-weight:normal">(LRG transcripts, exons, proteins)</span></td>
           <td>
@@ -131,6 +133,27 @@ There is the possibility to download all the public and pending LRGs:
             <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_GRCh38.txt" target="_blank">[TXT]</a>
           </td>
         </tr>
+
+        <tr>
+          <td class="left-col">Tabulated<br /><span style="font-weight:normal">(LRG transcripts + external references)</span></td>
+          <td>
+            The file lists the LRG transcripts and their external references<br />
+            The columns are:
+            <ul>
+             <li>LRG ID (e.g. LRG_2)</li>
+             <li>HGNC symbol (e.g. COL1A2)</li>
+             <li>RefSeqGene ID (e.g. NG_007405.1)</li>
+             <li>LRG transcript (e.g. t1)</li>
+             <li>RefSeq transcript ID with the same sequence as the LRG transcript (e.g. NM_000089.3)</li>
+             <li>Ensembl transcript ID with the same sequence as the LRG transcript (e.g. ENST00000297268.10)</li>
+             <li>CCDS ID (e.g. CCDS34682.1)</li>
+            </ul>
+          </td>
+          <td>-</td>
+          <td>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_xrefs.txt" target="_blank">[TXT]</a>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -146,6 +169,7 @@ The list of LRGs already imported in [Ensembl](http://www.ensembl.org) is availa
 ### LRG XML schema
 
 The LRG XML schema doumentations are downloadable [here](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs) and the different version of the XML schema definitions (RELAX NG format) are available [here](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs/schemas).  
+The current LRG XML schema version is **{{ site.lrg-schema }}**.  
 <br />
   
   

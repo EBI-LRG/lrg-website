@@ -50,11 +50,14 @@ The new system, founded on the RefSeqGene project, was named **Locus Reference G
 
 For more information on the specification and LRGs, see the following publications:
 
-- **Locus Reference Genomic: reference sequences for the reporting of clinically relevant sequence variants**, [MacArthur JA et al., Nucleic Acids Res. **2014** Jan (doi: 10.1093/nar/gkt1198)](http://dx.doi.org/10.1093/nar/gkt1198)
+- **Locus Reference Genomic: reference sequences for the reporting of clinically relevant sequence variants**  
+[MacArthur JA et al., Nucleic Acids Res. **2014** Jan (doi: 10.1093/nar/gkt1198)](http://dx.doi.org/10.1093/nar/gkt1198)
 
-- Locus Reference Genomic sequences: an improved basis for describing human DNA variants, [Dalgleish R et al., Genome Med. **2010**, 2:24](http://genomemedicine.com/content/2/4/24/)
+- Locus Reference Genomic sequences: an improved basis for describing human DNA variants  
+[Dalgleish R et al., Genome Med. **2010**, 2:24](http://genomemedicine.com/content/2/4/24/)
 
-- Conventional wisdom (Editorial), [Nature Genetics **2010**, 42, p. 363](http://www.nature.com/ng/journal/v42/n5/abs/ng0510-363.html)
+- Conventional wisdom (Editorial)  
+[Nature Genetics **2010**, 42, p. 363](http://www.nature.com/ng/journal/v42/n5/abs/ng0510-363.html)
 
 - The LRG specification [document](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs/LRG.pdf)
 

@@ -6,7 +6,7 @@
     <div class="section-news">
       {% for post in site.posts limit:3 %}
       <div class="news-item {{active}}">
-        <a href="{{ post.url | prepend: site.baseurl }}">
+        <a href="{{ post.url | prepend: site.baseurl }}" title="Read the update">
           <div class="clearfix" style="margin-bottom:10px">
             <div class="col-xs-6 col-sm-7 col-md-9 col-lg-9" style="padding:0px">{{ post.title }}</div>
             <div class="col-xs-6 col-sm-5 col-md-3 col-lg-3 label-date"><span class="label label-info" title="{{post.date | date: '%B %d, %Y'}}">{{post.date | date: '%b %d'}}</span></div>
@@ -48,7 +48,7 @@
 <div class="panel-right-section">
   <!--<h5 class="section-title2"><a class="icon-publication" href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">Latest publication</a></h5>-->
   <a class="section-title2" href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">
-    <h5 class="icon-publication">Latest publication</h5>
+    <h5 class="icon-publication">LRG publication</h5>
   </a>
   <div class="panel-right-section-content">
     <div class="section-publication">MacArthur JA et al.</div>
