@@ -22,8 +22,7 @@ Consistent with the goals of the LRG collaboration, we offer the opportunity to 
 
 ### Help and feedback
 
-For help and support on the technical issues concerning LRGs (e.g. the XML schema) and the LRG website, please send an email to <a href="mailto:help@lrg-sequence.org">help@lrg-sequence.org</a>.  
-For feedback on the LRG specification, website etc., please send an email to <a href="mailto:feedback@lrg-sequence.org">feedback@lrg-sequence.org</a>.  
+For help and support on the technical issues concerning LRGs (e.g. the XML schema) and the LRG website, or for feedback please send an email to <a href="mailto:help@lrg-sequence.org">help@lrg-sequence.org</a>.
 <br />
 
 

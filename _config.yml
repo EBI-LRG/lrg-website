@@ -51,6 +51,7 @@ baseurl_bootstrap:  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6"
 baseurl_googleapis: "https://ajax.googleapis.com/ajax/libs"
 
 
+
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:

@@ -1,13 +1,22 @@
 <head>
   <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
   {% include meta.html %}
-
+  
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/images/favicon/apple-touch-icon.png" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" href="{{ "/images/favicon/favicon-32x32.png" | prepend: site.baseurl }}" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{ "/images/favicon/favicon-16x16.png" | prepend: site.baseurl }}" sizes="16x16">
+  <link rel="manifest" href="{{ "/images/favicon/manifest.json" | prepend: site.baseurl }}">
+  <link rel="mask-icon" href="{{ "/images/favicon/safari-pinned-tab.svg" | prepend: site.baseurl }}" color="#5bbad5">
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl_bootstrap }}">
   <link rel="stylesheet" href="{{ "/css/bootstrap-theme.min.css" | prepend: site.baseurl_bootstrap }}">
   <link rel="stylesheet" href="{{ "/css/ebi-visual-custom.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ "/css/lrg.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ "/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" | prepend: site.baseurl_googleapis }}">
-
+  
+  <!-- Javascript / Jquery -->
   <script src="{{ "/jquery/1.12.2/jquery.min.js" | prepend: site.baseurl_googleapis }}"></script>
   <script src="{{ "/jqueryui/1.11.4/jquery-ui.min.js" | prepend: site.baseurl_googleapis }}"></script>
   <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl_bootstrap }}"></script>
@@ -34,12 +43,27 @@
         });
       });
 
+      // Toggle tooltip
+      $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+        $('button').focus(function() {
+          this.blur();
+        });
+      });
+
       // Search results
       var url = window.location.href;
       var regex = new RegExp("\/search\/");
       if (regex.test(url)) {
         get_query();
       }
+
+      // This will capture hash changes while on the page
+      $(window).on("hashchange",offsetAnchor);
+      // This is here so that when you enter the page with a hash,
+      // it can provide the offset in that case too. Having a timeout
+      // seems necessary to allow the browser to jump to the anchor first.
+      window.setTimeout(offsetAnchor, 0.1); 
     }
   </script>
 

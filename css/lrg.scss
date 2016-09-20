@@ -158,11 +158,11 @@ ul.compact {
 //
 header {
   width:100%;
-  height: 95px;
+  height: 105px;
   position:fixed;
   top:0px;
   z-index: 100;
-  padding-bottom: 18px;
+  padding-bottom: 20px;
 }
 
 .masthead {
@@ -190,13 +190,11 @@ header {
 
 .site-avatar {
   float: left;
-  padding: 0px;
+  padding: 5px 0px;
   margin: 0px 20px;
 
   img {
     vertical-align: middle;
-    /*width: 86px;*/
-    /*height: 60px;*/
   }
 }
 
@@ -215,16 +213,17 @@ header {
 
 .next-to-logo {
   float:left;
-  margin-left:20px;
+  margin-left:30px;
   font-family: $futura;
   color: #FFF;
   width: 450px;
-  margin-top:10px;
+  margin-top:15px;
 }
 
 .tag_line {
-  padding: 5px 0px;
-  font-size:14px;
+  padding: 0px;
+  margin-bottom: 15px;
+  font-size: 14px;
   letter-spacing: 1.1px;
 }
 
@@ -266,14 +265,34 @@ header {
   &:hover {
     color: $lrg_green2;
     text-decoration: none;
+     &:after {
+      width: 60%;
+      background-color: $lrg_green2;
+    }
   }
   &:active, &:focus {
     color: $lrg_blue;
     text-decoration: none;
+    &:after {
+      width: 60%;
+      background-color: $lrg_blue;
+    }
   }
 }
 .navbar-nav>li>a.active {
   color: $lrg_blue;
+}
+.navbar-nav>li>a:after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  height: 1px;
+  width: 0px;
+  -webkit-transform: translate(-50%, 0px);
+  transform: translate(-50%, 0px);
+  -webkit-transition: all 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 @media (min-width: $menu_width_threshold) {
@@ -282,7 +301,7 @@ header {
   }
 
   .navbar-nav {
-    padding-top: 55px;
+    padding-top: 60px;
     margin-right: 5px;
   }
 
@@ -398,8 +417,11 @@ header {
   padding: 4px 8px;
 }
 
-.table-lrg>thead>tr>th.first-col {
+.table-lrg>thead>tr:first-child {
   border-left: 1px solid $lrg_dark;
+}
+.table-lrg>thead>tr:last-child {
+  border-right: 1px solid $lrg_dark;
 }
 .table-lrg>thead>tr>th.split-header {
   border-bottom: none;
@@ -413,6 +435,14 @@ header {
     color:$lrg_green2;
     border-bottom: 2px solid $lrg_green2;
   }
+}
+
+.table-small {
+  font-size: 0.8em;
+  border: 1px solid $lrg_light_gray;
+}
+.table-small>tbody>tr>td {
+  padding:4px;
 }
 
 
@@ -437,18 +467,13 @@ header {
   font-family: $futura;
 }
 
+.panel-content-top, .panel-content-bottom {
+  margin-bottom: 20px;
+}
+
 .panel-content {
   padding: 0px;
-  margin-bottom: 20px;
-}
-
-.panel-right-section {
-  margin-bottom: 20px;
-}
-
-.panel-right-section-content {
-  padding: 6px 8px;
-  background-color:$bg_2;/*$bg_1;*/
+  margin-bottom: 40px;
 }
 
 .panel-row {
@@ -504,11 +529,6 @@ a.section-link {
   border-radius: 5px;*/
 }
 
-.section-bottom {
-  /*border-color: #BCBEC0;*/
-  margin-top:20px;
-}
-
 .section-row {
   padding: 8px 0px 25px;
   border-bottom: 1px solid $lrg_light_gray;
@@ -552,6 +572,10 @@ a.section-link {
   }
 }
 
+.section-title-underline {
+  border-bottom: 1px solid $lrg_blue;
+}
+
 .section-circle {
   border:3px solid $lrg_blue;
   border-radius:30px;
@@ -563,6 +587,11 @@ a.section-link {
 
 .section-sub-circle {
   font-size: 20px;
+}
+
+.section-bottom-content {
+  background-color:$bg_2;
+  padding: 6px 8px;
 }
 
 .section-title2 {
@@ -593,10 +622,10 @@ a.section-link {
   padding: 4px 8px;
   line-height: $line-height;
   font-size: 14px;
-  > div:last-child {
+  /*> div:last-child {
     background-color:#E9E9E9;
     margin: 10px -8px 0px;
-  }
+  }*/
 }
 
 .text-center {
@@ -702,7 +731,7 @@ table {
 
 .container-extra {
   min-height: 100%;
-  margin-top: 95px;
+  margin-top: 105px;
   margin-bottom: -130px;
 }
 .container-extra:after {
@@ -714,6 +743,10 @@ table {
 #search_term {
   font-style: italic;
   color: $lrg_green;
+}
+
+.bold_font {
+  font-weight: bold;
 }
 
 .lrg_blue {
@@ -738,6 +771,10 @@ table {
 
 .lrg_dark {
   color: $lrg_dark;
+}
+
+.lrg_blue_bg {
+  background-color: $lrg_blue;
 }
 
 .left {
@@ -801,6 +838,10 @@ td.left-col {
   font-size: 0.9em;
 }
 
+.margin-top-2 {
+  margin-top: 2px;
+}
+
 .margin-top-5 {
   margin-top: 5px;
 }
@@ -810,6 +851,14 @@ td.left-col {
 }
 .margin-bottom-5 {
   margin-bottom: 5px;
+}
+
+.padding-left-0 {
+  padding-left: 0px;
+}
+
+.padding-right-0 {
+  padding-right: 0px;
 }
 
 .close-button {
@@ -822,6 +871,26 @@ td.left-col {
   &:hover, &:active {
     color: $lrg_green2;
   }
+}
+
+.link_list {
+  margin-bottom: 6px;
+  background-color: #EEE;
+  padding: 4px;
+  border-bottom: 1px solid $lrg_blue;
+  a {
+    font-weight: bold;
+  }
+}
+
+.big_badge {
+  font-size: 14px;
+  vertical-align: baseline;
+}
+
+.text_row {
+  margin: 5px 0px;
+  font-size: 1.1em;
 }
 
 .posts > .post {
@@ -947,3 +1016,124 @@ footer span {
   text-align: right;
 }
 
+
+//
+// .curation
+//
+
+.legend_title {
+  padding: 4px 5px;
+  color: $lrg_blue;
+  border: 1px solid $lrg_light_gray;
+  background-color: #EEE;
+  font-weight:bold;
+  &:hover, &:focus, &:active {
+    cursor:pointer;
+    color: $lrg_purple;
+    border-color: $lrg_purple;
+  }
+}
+
+
+.legend_subtitle {
+  padding: 4px 5px;
+  color: $lrg_blue;
+  border: 1px solid $lrg_light_gray;
+  background-color: #EEE;
+  font-weight:bold;
+}
+
+.colour_box {
+  margin-top:20px;
+  border:none;
+}
+
+.status-header {
+  margin-left: 0px;
+  margin-top: 25px;
+  padding: 5px 10px;
+  background-color: #3C3F45;
+  color: #1C9BCF;
+  vertical-align: middle;
+  font-size: 1.3em;
+  border-bottom: 2px solid #1C9BCF;
+}
+
+.status-label {
+  margin: 0px;
+  display: inline;
+  color: #FFF;
+}
+
+.step { 
+  font-size:0.9em;
+  padding-right: 2px;
+}
+
+.green_step {
+  background: $green1;
+}
+
+.orange_step {
+  background: $orange1;
+}
+      
+.red_step {
+  background: $red1;
+}
+  
+.black_step {
+  background: $black;
+}
+      
+.step_list {
+  vertical-align: baseline;
+  color: #FFF;
+  padding: 5px 10px 0px;
+  button {
+    margin-left: 5px;
+  }
+}
+
+td.step_number {
+  font-weight: bold;
+  text-align:center;
+  vertical-align:top;
+}
+
+.lrg_progress_bar { 
+  width:200px;
+  height: 18px;
+  margin-bottom:4px;
+}
+
+.lrg_progress_height { 
+  line-height:18px;
+}
+
+.lrg_public {
+  color: $lrg_public;
+  border-color: $lrg_public;
+}
+
+.lrg_pending {
+  color: $lrg_pending;
+  border-color: $lrg_pending;
+}
+
+.lrg_stalled {
+  color: $lrg_stalled;
+  border-color: $lrg_stalled;
+}
+
+.lrg_public_bg {
+  background-color: $lrg_public;
+}
+
+.lrg_pending_bg {
+  background-color: $lrg_pending;
+}
+
+.lrg_stalled_bg {
+  background-color: $lrg_stalled;
+}

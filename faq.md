@@ -18,7 +18,7 @@ This is the LRG Frequently Asked Questions page.
 {% assign faq_groups = (site.faq_groups | sort: 'order') %}
 {% for faq_group in faq_groups %}
   <div class="faq_section_title clearfix">
-    <div class="left"><h4>{{ faq_group.title }}</h4></div>
+    <div class="left"><h4 class="lrg_dark">{{ faq_group.title }}</h4></div>
     <div class="right" style="margin-right:5px"><a class="icon-next-page close-icon-5 rotate-icon-270" href="#top">Back to top</a></div>
   </div>
   {% assign faq_group_name = faq_group.url | split:"/" | last %}

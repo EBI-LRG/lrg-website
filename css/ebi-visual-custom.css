@@ -255,6 +255,13 @@
   vertical-align: top;
 }
 
+.icon-info-link:after {
+  font-family: 'EBI-Generic';
+  content: "i";
+  font-size: 0.7em;
+  vertical-align: top;
+}
+
 /* Close button */
 .icon-close:before {
   font-family: 'EBI-Functional';

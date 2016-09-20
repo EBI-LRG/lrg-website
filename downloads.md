@@ -144,8 +144,8 @@ There is the possibility to download all the public and pending LRGs:
              <li>HGNC symbol (e.g. COL1A2)</li>
              <li>RefSeqGene ID (e.g. NG_007405.1)</li>
              <li>LRG transcript (e.g. t1)</li>
-             <li>RefSeq transcript ID with the same sequence as the LRG transcript (e.g. NM_000089.3)</li>
-             <li>Ensembl transcript ID with the same sequence as the LRG transcript (e.g. ENST00000297268.10)</li>
+             <li>RefSeq transcript ID with the sequence identical to the LRG transcript (e.g. NM_000089.3)</li>
+             <li>Ensembl transcript ID with the sequence identical to LRG transcript (e.g. ENST00000297268.10)</li>
              <li>CCDS ID (e.g. CCDS34682.1)</li>
             </ul>
           </td>
