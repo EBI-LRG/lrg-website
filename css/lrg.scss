@@ -20,15 +20,14 @@ html {
 body {
   height: 100%;
 	background: $white;
-  font-family: $helvetica;
+  font-family: $font_content;/*$helvetica;*/
   font-size: 0.9em;
   color: $darkGray;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
+  font-family: $font_title;/*$helveticaNeue;*/
   font-weight: bold;
-
   line-height: $line-height;
   margin: 15px 0px;
   padding: 0px;
@@ -115,6 +114,10 @@ ul.compact {
   li {
     line-height: $line-height-compact;
   }
+}
+
+.title_font {
+  font-family: $font_title;
 }
 
 // Fixes images in popup boxes from Google Translate
@@ -213,10 +216,10 @@ header {
 .next-to-logo {
   float:left;
   margin-left:30px;
-  font-family: $futura;
   color: #FFF;
   width: 450px;
   margin-top:15px;
+  font-family: $font_title;
 }
 
 .tag_line {
@@ -254,12 +257,12 @@ header {
 .navbar-default .navbar-nav>li>a {
   color: $white;
   text-align: right;
-  font-weight: 300;
+  /*font-weight: 300;*/
   letter-spacing: 1px;
   text-decoration: none;
   text-shadow: none;
   letter-spacing: 1.2px;
-  font-family: $futura;
+  font-family: $font_title;
 
   &:hover {
     color: $lrg_green2;
@@ -427,13 +430,15 @@ header {
 .table-lrg > thead > tr {
   background-color: $lrg_dark;
   color: #FFF;
-  font-weight: bold;
+  /*font-weight: bold;*/
 }
 
 .table-lrg>thead>tr>th {
   border-bottom: 2px solid $lrg_blue;
   border-left: 1px solid #DDD;
   padding: 4px 8px;
+  font-family: $font_title;
+  font-weight: normal;
 }
 
 .table-lrg>thead>tr:first-child {
@@ -462,6 +467,12 @@ header {
 }
 .table-small>tbody>tr>td {
   padding:4px;
+  text-align: left;
+  &:first-child {
+    font-weight: bold;
+    text-align: center;
+    vertical-align:top;
+  }
 }
 
 
@@ -471,7 +482,7 @@ header {
 
 .project_description {
   font-weight: normal;
-  font-family: $futura;
+  font-family: $font_title;
   letter-spacing: 1.0px;
   font-size: 16px;
   margin-top: -10px;
@@ -483,7 +494,7 @@ header {
 
 .read_more_link {
   margin-top: 4px;
-  font-family: $futura;
+  font-family: $font_title;
 }
 
 .panel-content-top, .panel-content-bottom {
@@ -503,7 +514,6 @@ header {
 .section {
   padding: 5px 0px 0px;
   min-height: 130px;
-  /*border-radius: 8px;*/
   &:hover, &:active {
     &:after {
       width: 60%;
@@ -512,10 +522,6 @@ header {
     .section-circle {
       border-color: $lrg_purple;
     }
-    /*.section-sub-circle {
-      text-decoration: underline;
-      text-decoration-color: $lrg_purple;
-    }*/
   }
 }
 
@@ -567,9 +573,10 @@ a.section-link {
 }
 
 .section-header {
-  color: $lrg_blue;/*$lrg_blue2;*/
+  color: $lrg_blue;
   font-weight: bold;
   font-size: 1.2em;
+  font-family: $font_title;
   margin: 2px 0px;
   padding-bottom: 5px;
   h3 {
@@ -579,7 +586,8 @@ a.section-link {
 
 .section-title {
   text-align:center;
-  color: $lrg_dark;/*$lrg_blue2*/
+  font-family: $font_title;
+  color: $lrg_dark;
   margin: 3px 4px 5px 8px;
   >div {
     font-weight: bold;
@@ -617,6 +625,7 @@ a.section-link {
   color: #FFF;/*$lrg_blue2;*/
   background-color: $lrg_dark;/*#E9E9E9;*/
   border-bottom: 3px solid $lrg_blue;
+  font-weight: normal;
  }
   &:hover, &:active {
     >h5 {
@@ -897,6 +906,7 @@ td.left-col {
   background-color: #EEE;
   padding: 4px;
   border-bottom: 1px solid $lrg_blue;
+  font-family: $font_title;
   a {
     font-weight: bold;
   }
@@ -916,6 +926,7 @@ ul.sections_list {
   list-style-type: none;
   margin: -4px 0px 0px;
   padding: 0px;
+  font-family: $font_title;
 
   li {
     float:left;
@@ -1059,6 +1070,7 @@ ul.sections_list>li>a:after {
   margin-top: 5px;
   background-color: $lrg_dark;
   border-top: 3px solid $lrg_blue;
+  font-family: $font_title;
 }
 
 footer {
@@ -1141,6 +1153,7 @@ footer span {
   margin: 0px;
   display: inline;
   color: #FFF;
+  font-family: $font_title;
 }
 
 .step { 
@@ -1171,12 +1184,6 @@ footer span {
   button {
     margin-left: 5px;
   }
-}
-
-td.step_number {
-  font-weight: bold;
-  text-align:center;
-  vertical-align:top;
 }
 
 .lrg_progress_bar { 

@@ -9,7 +9,7 @@
         <div class="news-item {{active}}">
           <a href="{{ post.url | prepend: site.baseurl }}" title="Read the update">
             <div class="clearfix" style="margin-bottom:10px">
-              <div class="col-xs-6 col-sm-7 col-md-9 col-lg-9" style="padding:0px">{{ post.title }}</div>
+              <div class="col-xs-6 col-sm-7 col-md-9 col-lg-9 title_font" style="padding:0px">{{ post.title }}</div>
               <div class="col-xs-6 col-sm-5 col-md-3 col-lg-3 label-date"><span class="label label-info" title="{{post.date | date: '%B %d, %Y'}}">{{post.date | date: '%b %d'}}</span></div>
             </div>
             <div style="color:#000;font-size:12px;margin-bottom:2px">{{ post.content | strip_html | truncatewords:20}}</div>
