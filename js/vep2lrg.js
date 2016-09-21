@@ -25,12 +25,21 @@ function get_vep_results () {
 
     rest_url += hgvs+'?content-type=application/json';
 
+    $('#vep_results').html('<h4 class="icon-info close-icon-5 smaller-icon" style="text-align:center">Request sent to Ensembl. Please wait for the results ...</h4><div class="loader" style="text-align:center"></div>');
+
     $.getJSON(rest_url)
               .done(function(data) {
                   console.log(data);
-                  //$('#vep_results').html(data[0].id);
                   var html_content = parseData(data[0]);
                   $('#vep_results').html(html_content);
+              })
+              .fail(function(data,status,xhr) {
+                console.log( status+": "+ xhr);
+                var fail_html = '<div class="clearfix"><div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 lrg_gray_bg">' + 
+                                 '<h4 class="icon-alert close-icon-5 smaller-icon" style="text-align:center"><span class="lrg_dark">Sorry, we can\'t get results from Ensembl!</span></h4>' +
+                                 '<h6>Type: <span style="font-style:italic">'+status+'</span></h6><h6>Cause: <span style="font-style:italic">'+xhr+'</span></h6>' +
+                                 '</div></div>';
+                $('#vep_results').html(fail_html);
               });
     console.log("Ensembl REST query done to retrieve VEP data from HGVS notation");
   }
@@ -63,23 +72,22 @@ function getUrlParam (name){
 function parseData(data) {
   var html = "";
 
-  //var most_severe_consequence = data.most_severe_consequence;
-  //var alleles  = data.allele_string;
-  //var assembly = data.assembly_name;
   var strand = get_strand(data.strand);
 
   var allele_desc = (data.id.indexOf("LRG_") >= 0) ? 'LRG / Reference' : 'Reference / LRG';
 
+  var info_div_classes  = "link_list text_row";
+  var info_span_classes = "icon-next-page close-icon-5 smaller-icon" 
   html += "<h3>Results for "+data.id+"</h3>";
   html += '<div class="clearfix">';
-  html += '  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">';
-  html += '    <div class="text_row"><span>Most severe consequence' + msc_help + ': </span><span class="bold_font">' + data.most_severe_consequence + '</span></div>';
-  html += '    <div class="text_row"><span>Alleles: </span><span class="bold_font">' + data.allele_string + '</span> <small>(' + allele_desc + ')</small></div>';
-  html += '    <div class="text_row"><span>Assembly: </span><span class="bold_font">' + data.assembly_name + '</span>' + 
-               ' (Strand: <span class="bold_font">'+ strand + '</span>)</div>';
+  html += '  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-left-0">';
+  html += '    <div class="' + info_div_classes + '"><span class="' + info_span_classes + '">Most severe consequence' + msc_help + ': </span><span class="bold_font">' + data.most_severe_consequence + '</span></div>';
+  html += '    <div class="' + info_div_classes + '"><span class="' + info_span_classes + '">Alleles </span><span class="small-font">(' + allele_desc + ')</span>: <span class="bold_font">' + data.allele_string + '</span> </div>';
+  html += '    <div class="' + info_div_classes + '"><span class="' + info_span_classes + '">Assembly: </span><span class="bold_font">' + data.assembly_name + '</span>' + 
+               '<span class="lrg_blue" style="padding:0px 10px">|</span><span>Strand: </span><span class="bold_font">'+ strand + '</span></div>';
   html += '  </div>';
 
-  html += '  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">';
+  html += '  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-right-0">';
 
   html += parse_colocated_variants(data);
 
@@ -115,7 +123,7 @@ console.log("Variant:  "+variant.id);
     html += '      </tbody></table>';
   }
   else {
-    html += '    <span>No co-located variant found in Ensembl</span>';
+    html += '    <span class="icon-info close-icon-5 smaller-icon">No co-located variant found in Ensembl</span>';
   }
 
   return html;
@@ -154,7 +162,7 @@ function parse_transcript_data (data) {
     html += '  </tbody></table>';
   }
   else {
-    html += '    <span>No transcript consequence found</span>';
+    html += '    <span class="icon-info close-icon-5 smaller-icon">No transcript consequence found</span>';
   }
   return html;
 }

@@ -139,7 +139,7 @@ function display_results (results) {
     result_term += "s";
   }
 
-  $("#search_count").html("(" + result_count + " " + result_term + ")");
+  $("#search_count").html(result_count + " " + result_term);
 
   $(table_id + " > tbody").empty();
 
@@ -169,22 +169,30 @@ function display_results (results) {
     }
 
     // HTML code
-    var newrow = "<tr id=\"" + lrg_id + "\">";
+    var newrow = $('<tr/>');
+        newrow.attr('id', lrg_id);
     // LRG ID
-    newrow += "<td sorttable_customkey=\"" + extract_id(lrg_id) + "\" class=\"left-col\"><a href=\"" + lrg_link + lrg_id + ".xml" + "\" target=\"_blank\">" + lrg_id + "</a></td>";
+    var lrg_id_cell = newCell('<a href="' + lrg_link + lrg_id + '.xml" target="_blank">' + lrg_id + '</a>');
+        lrg_id_cell.attr('sorttable_customkey', extract_id(lrg_id));
+        lrg_id_cell.addClass('left-col');
+    newrow.append(lrg_id_cell);
     // Symbol
-    newrow += "<td><a "+external_link_class+" href=\"" + hgnc_url + symbol + "\" target=\"_blank\">"+ symbol + "</a></td>";
+    newrow.append(newCell('<a '+external_link_class+' href="' + hgnc_url + symbol + '" target="_blank">'+ symbol + '</a>'));
     // Status
-    newrow += "<td>"+ lrg_status + "</td>";
+    newrow.append(newCell(lrg_status));
     // Last modification date
-    newrow += "<td sorttable_customkey=\"" + modif_date + "\">"+ parse_date(modif_date) + "</td>";
+    var date_cell = newCell(parse_date(modif_date));
+        date_cell.attr('sorttable_customkey',modif_date);
+    newrow.append(date_cell);
     // External links
-    newrow += "<td>"+ ens_link + " - " + ncbi_link + " - " + ucsc_link + "</td>";
-    
-    newrow += "</tr>";
+    newrow.append(newCell(ens_link + " - " + ncbi_link + " - " + ucsc_link));
 
     $(table_id + " > tbody").append(newrow);
   }
+}
+
+function newCell(content) {
+  return $("<td></td>").html(content);
 }
 
 function get_ens_link (lrg_id, chr, start, end, assembly) {
@@ -330,5 +338,5 @@ function changeUrlParam (param, value) {
 
 function wait_for_results() {
   $(table_id + " > tbody").empty();
-  $(table_id + " > tbody").append("<tr><td class=\"wait\" colspan=\"5\"></td></tr>");
+  $(table_id + " > tbody").append('<tr><td colspan="5"><div class="wait"></div><div class="loader"></div></td></tr>');
 }

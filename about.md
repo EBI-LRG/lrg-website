@@ -6,6 +6,17 @@ icon-class: icon-info
 permalink: /about/
 ---
 
+<!-- Table of content -->
+<div class="clearfix">
+  <ul class="sections_list">
+    <li><a href="#lrg-project">LRG project</a></li>
+    <li><a href="#records-creation">Records creation</a></li>
+    <li><a href="#collaboration">Collaboration</a></li>
+    <li><a href="#further-information">Further information</a></li>
+    <li><a href="#licence">Licence</a></li>
+    <li><a href="#past-support">Past support</a></li>
+  </ul>  
+</div>
 
 ### LRG project
 

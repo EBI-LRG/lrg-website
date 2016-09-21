@@ -6,6 +6,18 @@ icon-class: icon-download
 permalink: /downloads/
 ---
 
+<!-- Table of content -->
+<div class="clearfix">
+  <ul class="sections_list">
+    <li><a href="#lrg-data">LRG data</a></li>
+    <li><a href="#lrg-in-ensembl">LRG in Ensembl</a></li>
+    <li><a href="#lrg-xml-schema">XML schema</a></li>
+    <li><a href="#lrg-archived-data">Archived data</a></li>
+    <li><a href="#web-services">Web services</a></li>
+  </ul>  
+</div>
+
+
 ### LRG data
 
 LRG data is available on the [LRG FTP site](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/) in **XML format**.  
@@ -168,7 +180,7 @@ The list of LRGs already imported in [Ensembl](http://www.ensembl.org) is availa
   
 ### LRG XML schema
 
-The LRG XML schema doumentations are downloadable [here](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs) and the different version of the XML schema definitions (RELAX NG format) are available [here](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs/schemas).  
+The LRG XML schema documentation is downloadable [here](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs) and the different versions of the XML schema definitions (RELAX NG format) are available [here](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs/schemas).  
 The current LRG XML schema version is **{{ site.lrg-schema }}**.  
 <br />
   
