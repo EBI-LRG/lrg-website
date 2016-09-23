@@ -15,7 +15,45 @@ include_in_sitemap: false
   }
 </script>
 
+<div class="section-box" id="search_help">
+  <div class="clearfix">
+    <div class="section-header icon-help left">About the VEP</div>
+    <div class="right close-button icon-close close-icon-0" title="Close this box" onclick="javascript:$('#search_help').hide()"></div>
+  </div>
+  <p class="margin-top-5 margin-bottom-0 smaller-text">
+    The <a href="http://www.ensembl.org/info/docs/tools/vep/index.html" target="_blank">Variant Effect Predictor (VEP)</a> determines the effect of variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts, and protein sequence, as well as regulatory regions. 
+  </p>
+  <div style="margin: 15px 5px 0px">
+    {% assign faqs = (site.faq | where: 'help','vep') %}
+     
+      {% for faq in faqs %}
+        {% if faq.faq_tags contains "vep" %}
+          <div class="faq_entry" style="width:auto">
+            <div class="faq_title close-icon-5 icon-collapse-closed" id="{{ faq.faq_group }}_{{ faq.faq_order }}_button" onclick="javascript:show_hide('{{ faq.faq_group }}_{{ faq.faq_order }}')">
+              {{ faq.title }}
+              <div class="icon-help right" data-toggle="tooltip" data-placement="bottom" title="Contextual help from the FAQ"></div>
+            </div>
+            <div class="faq_content" id="{{ faq.faq_group }}_{{ faq.faq_order }}">
+              {{ faq.content }}
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
 <div id="vep_results"></div>
+
+<script type="text/javascript">
+    $(function() {
+          $('[data-tooltip="true"]').tooltip({
+              container: 'body',
+              placement:'bottom'
+          });
+    
+    });
+
+  </script>
 
 
 

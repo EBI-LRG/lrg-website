@@ -13,7 +13,7 @@ name: Locus Reference Genomic
 description: LRG sequences provide a stable genomic DNA framework for reporting variants with a permanent ID and core content that never changes.
 
 # Short description (displayed in the homepage)
-description2: "An LRG record contains stable reference sequences for reporting sequence variants with clinical implications. LRG are manually curated, have permanent identifiers and core content that never changes"
+description2: "A Locus Reference Genomic (LRG) record contains stable reference sequences for reporting sequence variants with clinical implications. LRG are manually curated, have permanent identifiers and core content that never changes"
 
 # Tag line (displayed in the header)
 tag_line: Stable reference sequences for reporting variants
@@ -27,7 +27,7 @@ search-label: "Search LRGs"
 
 # LRG counts (used in FAQ)
 lrg-date: "September 2016"
-lrg-created: "1,000"
+lrg-created: "950"
 lrg-public: "665"
 lrg-schema: "1.9"
 

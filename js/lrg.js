@@ -20,6 +20,21 @@ function show_hide(id, label) {
   }
 }
 
+function show_hide_info(id) {
+  var info_id = "#"+id;
+  var button_id = "#"+id+"_button";
+  
+  if($(button_id).hasClass("icon-plus")) {
+    $(button_id).removeClass("icon-plus").addClass("icon-minus");
+    $(info_id).show(150);
+  }
+  else {
+    $(button_id).removeClass("icon-minus").addClass("icon-plus");
+    $(info_id).hide(150);
+  }
+}
+
+
 function show_hide_all(item_class, content_class, button_id) {
   var item = "." + item_class;
   var content = "." + content_class;

@@ -58,7 +58,8 @@
   text-decoration: none;
 }
 
-.smaller-icon:before {
+.smaller-icon:before,
+.smaller-icon:after {
   font-size: 0.9em;
 }
 
@@ -72,6 +73,10 @@
   margin-right: 5px;
 }
 
+.close-icon-0:after {
+  margin-left: 0px;
+}
+
 .rotate-icon-270:before {
   padding-bottom: 4px;
   transform: rotate(270deg);
@@ -79,9 +84,19 @@
 
 
 /* Functional */
+.icon-add:before {
+  font-family: 'EBI-Functional';
+  content: "+";
+}
+
 .icon-approve:before {
   font-family: 'EBI-Functional';
   content: "/";
+}
+
+.icon-collapse:before {
+  font-family: 'EBI-Functional';
+  content: "w";
 }
 
 .icon-collapse-closed:before {
@@ -260,6 +275,18 @@
   content: "i";
   font-size: 0.7em;
   vertical-align: top;
+}
+
+.icon-plus:after {
+  font-family: 'EBI-Functional';
+  content: "+";
+  font-size: 0.7em;
+}
+.icon-minus:after {
+  font-family: 'EBI-Functional';
+  content: "w";
+  font-size: 0.7em;
+  vertical-align: baseline;
 }
 
 /* Close button */

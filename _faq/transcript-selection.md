@@ -1,7 +1,7 @@
 ---
 title: "How are the transcripts selected?"
 faq_group: lrg_definition
-faq_order: 5
+faq_order: 4
 faq_tags:
   - most_frequent
   - sequence
