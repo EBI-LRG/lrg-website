@@ -69,26 +69,6 @@
       });
     });
 
-    $('table').on({
-    'mouseenter': function() {
-        var $cell = $(this).find('td.has_help');
-        if (!$cell.data("bs.tooltip")) {
-            $cell.tooltip({
-                    container: 'body',
-                    html: true,
-                    trigger: 'manual',
-                    title: function() {
-                        return "YES!";
-                    }
-                });
-        }
-        $cell.tooltip('show');
-    },
-    'mouseleave': function() {
-        $(this).find('td.has_help').tooltip('hide');
-    }
-},'tbody > tr');
-
   </script>
 
 </head>

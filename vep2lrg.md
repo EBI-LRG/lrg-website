@@ -44,16 +44,5 @@ include_in_sitemap: false
 
 <div id="vep_results"></div>
 
-<script type="text/javascript">
-    $(function() {
-          $('[data-tooltip="true"]').tooltip({
-              container: 'body',
-              placement:'bottom'
-          });
-    
-    });
-
-  </script>
-
 
 

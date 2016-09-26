@@ -1,4 +1,6 @@
-<div class="clearfix">
+<div class="section-bottom clearfix">
+
+  <!-- Updates -->
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
     <a class="section-title2" href="/news">
       <h5 class="icon-news">Updates</h5>
@@ -12,16 +14,18 @@
               <div class="col-xs-6 col-sm-7 col-md-9 col-lg-9 title_font" style="padding:0px">{{ post.title }}</div>
               <div class="col-xs-6 col-sm-5 col-md-3 col-lg-3 label-date"><span class="label label-info" title="{{post.date | date: '%B %d, %Y'}}">{{post.date | date: '%b %d'}}</span></div>
             </div>
-            <div style="color:#000;font-size:12px;margin-bottom:2px">{{ post.content | strip_html | truncatewords:20}}</div>
-            <!--<div class="news-date">{{post.date | date: '%B %d, %Y'}}</div>-->
+            <div style="color:#000;font-size:12px;margin-bottom:2px">{{ post.content | strip_html | truncatewords:18}}</div>
           </a>
         </div>
         {% endfor %}
-        <a class="icon-next-page smaller-icon close-icon-2" href="/news">See all updates</a>
       </div>
+    </div>
+    <div class="section-bottom-link">
+      <a class="icon-next-page smaller-icon close-icon-2" href="/news">See all updates</a>
     </div>
   </div>
 
+  <!-- Collaborators -->
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
     <a class="section-title2" href="/lrg-collaborators">
       <h5 class="icon-industry">Collaborators</h5>
@@ -29,25 +33,16 @@
     <div class="section-bottom-content">
       <p>
         Each LRG is created upon request by collaborators such as research and diagnostic laboratories, LSDB curators and mutation consortia.<br />
-        <a class="icon-next-page smaller-icon close-icon-2" href="/lrg-collaborators">See the list of collaborators</a>
       </p>
+
+    </div>
+    <div class="section-bottom-link">
+      <a class="icon-next-page smaller-icon close-icon-2" href="/lrg-collaborators">See the list of collaborators</a>
     </div>
   </div>
-  <!--<div class="panel-right-section">
-    <a class="section-title2" href="/about">
-      <h5 class="icon-help">About LRG</h5>
-    </a>
-    <div class="panel-right-section-content">
-      <p>
-        {{ site.description }}
-      </p>
-      <div><a class="icon-next-page smaller-icon close-icon-2" href="/about">See more</a></div>
-    </div>
-  </div>-->
 
-
+  <!-- Publication -->
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-    <!--<h5 class="section-title2"><a class="icon-publication" href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">Latest publication</a></h5>-->
     <a class="section-title2" href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">
       <h5 class="icon-publication">LRG publication</h5>
     </a>
@@ -57,11 +52,12 @@
         <span>Locus Reference Genomic: reference sequences for the reporting of clinically relevant sequence variants</span>
       </div>
       <div class="section-publication">  
-        <i>Nucleic Acids Res. (2014 Jan)</i><br />
-        <a class="icon-external-link" href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">doi: 10.1093/nar/gkt1198</a>
+        <i>Nucleic Acids Res. (2014 Jan)</i>
      </div>
+    </div>
+    <div class="section-bottom-link">
+      <a class="icon-next-page smaller-icon close-icon-2 icon-external-link" href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">doi: 10.1093/nar/gkt1198</a>
     </div>
   </div>
 
 </div>
-
