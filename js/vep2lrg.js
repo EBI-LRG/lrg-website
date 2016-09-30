@@ -1,11 +1,14 @@
+---
+---
 
-var rest_current = 'http://rest.ensembl.org/vep/human/hgvs/';
-var rest_grch37  = 'http://grch37.rest.ensembl.org/vep/human/hgvs/';
+//var rest_current = 'http://rest.ensembl.org/vep/human/hgvs/';
+var rest_current = '{{ site.rest_url_38 }}';
+var rest_grch37  = '{{ site.rest_url_37 }}';
 
-var ens_gene_url  = 'http://www.ensembl.org/Homo_sapiens/Gene/Summary?g=';
-var ens_trans_url = 'http://www.ensembl.org/Homo_sapiens/Transcript/Summary?t=';
-var ens_var_url   = 'http://www.ensembl.org/Homo_sapiens/Variation/Explore?v=';
-var conseq_url    = 'http://www.ensembl.org/info/genome/variation/predicted_data.html#';
+var ens_gene_url  = '{{ site.ens_gene_url }}';
+var ens_trans_url = '{{ site.ens_trans_url }}';
+var ens_var_url   = '{{ site.ens_var_url }}';
+var conseq_url    = '{{ site.conseq_url }}';
 
 var default_val   = 'unknown';
 

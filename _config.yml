@@ -25,12 +25,11 @@ avatar: /images/lrg_logo.png
 # Search label
 search-label: "Search LRGs"
 
-# LRG counts (used in FAQ)
+# LRG counts (used in FAQ) - Can be edited
 lrg-date: "September 2016"
-lrg-created: "950"
+lrg-created: "900"
 lrg-public: "665"
 lrg-schema: "1.9"
-
 
 #--------------------------------------------------------#
 # Configuration below is optional - NO NEED TO CHANGE IT #
@@ -50,6 +49,28 @@ baseurl: ""
 baseurl_bootstrap:  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6"
 baseurl_googleapis: "https://ajax.googleapis.com/ajax/libs"
 
+
+#-- Variables for javascript --#
+
+# URLs
+rest_url_38: "http://rest.ensembl.org/vep/human/hgvs/"
+rest_url_37: "http://grch37.rest.ensembl.org/vep/human/hgvs/"
+
+ens_url:       "http://www.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels"
+ens_gene_url:  "http://www.ensembl.org/Homo_sapiens/Gene/Summary?g="
+ens_trans_url: "http://www.ensembl.org/Homo_sapiens/Transcript/Summary?t="
+ens_var_url:   "http://www.ensembl.org/Homo_sapiens/Variation/Explore?v="
+conseq_url:    "http://www.ensembl.org/info/genome/variation/predicted_data.html#"
+
+ncbi_url: "http://www.ncbi.nlm.nih.gov/mapview/maps.cgi?taxid=9606&CHR=###CHR###&BEG=###START###&END=###END###"
+ucsc_url: "http://genome.ucsc.edu/cgi-bin/hgTracks?clade=mammal&org=Human&position=chr###LOC###"
+hgnc_url: "http://www.genenames.org/cgi-bin/gene_symbol_report?match="
+
+ref_assembly:   "GRCh38"
+lrg_ftp:        "http://ftp.ebi.ac.uk/pub/databases/lrgex/"
+lrg_json_file : "/json_index/lrg_index.json"
+#lrg_json_file:  "http://ftp.ebi.ac.uk/pub/databases/lrgex/.lrg_index/lrg_index.json"
+#------------------------------#
 
 
 # Includes an icon in the footer for each username you enter

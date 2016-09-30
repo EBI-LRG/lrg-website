@@ -1,16 +1,18 @@
-// Links
-var lrg_ftp = "http://ftp.ebi.ac.uk/pub/databases/lrgex/";
-var ens_url = "http://www.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels";
-var ncbi_url = "http://www.ncbi.nlm.nih.gov/mapview/maps.cgi?taxid=9606&CHR=###CHR###&BEG=###START###&END=###END###";
-var ucsc_url = "http://genome.ucsc.edu/cgi-bin/hgTracks?clade=mammal&org=Human&position=chr###LOC###";
-var hgnc_url = "http://www.genenames.org/cgi-bin/gene_symbol_report?match=";
+---
+---
 
-var lrg_json_file = "/json_index/lrg_index.json";
-//var lrg_json_file = "http://ftp.ebi.ac.uk/pub/databases/lrgex/.lrg_index/lrg_index.json";
+// Links
+var lrg_ftp  = '{{ site.lrg_ftp }}';
+var ens_url  = '{{ site.ens_url }}';
+var ncbi_url = '{{ site.ncbi_url }}';
+var ucsc_url = '{{ site.ucsc_url }}';
+var hgnc_url = '{{ site.hgnc_url }}';
+
+var lrg_json_file = '{{ site.lrg_json_file }}';
 
 var external_link_class = "class=\"icon-external-link\"";
 
-var ref_assembly = "GRCh38";
+var ref_assembly = '{{ site.ref_assembly }}';
 var lrg_regexp = /lrg_\d+/i;
 var all_lrgs = "LRG_*";
 var lrg_list = [];
