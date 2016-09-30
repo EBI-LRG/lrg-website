@@ -30,7 +30,7 @@ There is the possibility to download all the public and pending LRGs:
     <table class="table table-hover table-lrg">
       <thead>
         <tr class="sorttable_header">
-          <th class="first-col">Status</th>
+          <th>Status</th>
           <th colspan="2">Formats (zipped)</th>
         </tr>
       </thead>
@@ -69,7 +69,7 @@ There is the possibility to download all the public and pending LRGs:
     <table class="table table-hover table-lrg">
       <thead>
         <tr class="sorttable_header">
-          <th rowspan="2" class="first-col">Format</th>
+          <th rowspan="2">Format</th>
           <th rowspan="2">Description</th>
           <th colspan="2" class="split-header">Files location by assembly</th>
         </tr>
@@ -194,7 +194,7 @@ Previous versions of the LRGs (in different LRG XML schemas) are available:
     <table class="table table-hover table-lrg">
       <thead>
         <tr class="sorttable_header">
-          <th class="first-col">Schema version</th>
+          <th>Schema version</th>
           <th>Link</th>
         </tr>
       </thead>
