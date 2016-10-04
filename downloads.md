@@ -7,8 +7,11 @@ permalink: /downloads/
 ---
 
 <!-- Table of content -->
-<div class="clearfix">
+<div class="clearfix page_menu">
   <ul class="sections_list">
+    <li class="icon-next-page smaller-icon close-icon-2 lrg_blue section_title">
+      <span class="lrg_dark bold_font">Sections</span>
+    </li>
     <li><a href="#lrg-data">LRG data</a></li>
     <li><a href="#lrg-in-ensembl">LRG in Ensembl</a></li>
     <li><a href="#lrg-xml-schema">XML schema</a></li>

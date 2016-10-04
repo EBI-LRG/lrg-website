@@ -28,12 +28,13 @@ include_in_sitemap: false
      
       {% for faq in faqs %}
         {% if faq.faq_tags contains "vep" %}
-          <div class="faq_entry" style="width:auto">
-            <div class="faq_title close-icon-5 icon-collapse-closed" id="{{ faq.faq_group }}_{{ faq.faq_order }}_button" onclick="javascript:show_hide('{{ faq.faq_group }}_{{ faq.faq_order }}')">
+          {% assign faq_id = faq.faq_group | append : '_' | append : faq.faq_order %}
+          <div class="item_entry" style="width:auto">
+            <div class="item_title close-icon-5 icon-collapse-closed" id="{{ faq_id }}_button" onclick="javascript:show_hide('{{ faq_id }}')">
               {{ faq.title }}
               <div class="icon-help right" data-toggle="tooltip" data-placement="bottom" title="Contextual help from the FAQ"></div>
             </div>
-            <div class="faq_content" id="{{ faq.faq_group }}_{{ faq.faq_order }}">
+            <div class="item_content" id="{{ faq_id }}">
               {{ faq.content }}
             </div>
         </div>

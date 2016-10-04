@@ -35,10 +35,14 @@ function show_hide_info(id) {
 }
 
 
-function show_hide_all(item_class, content_class, button_id) {
+function show_hide_all(item_class, content_class, button_id, button_text) {
   var item = "." + item_class;
   var content = "." + content_class;
   var button_id = "#"+button_id;
+
+  if (!button_text) {
+    button_text = "FAQs"
+  }
 
   if ($(button_id).hasClass("is-collapsed")) {
     $(item).each(function( index, entry ) {
@@ -48,7 +52,7 @@ function show_hide_all(item_class, content_class, button_id) {
       $(entry).show(150);
     });
     $(button_id).removeClass("is-collapsed").addClass("is-expanded");
-    $(button_id).html("Collapse all FAQs");
+    $(button_id).html("Collapse all " + button_text);
   }
   else {
     $(item).each(function( index, entry ) {
@@ -58,7 +62,7 @@ function show_hide_all(item_class, content_class, button_id) {
       $(entry).hide(150);
     });
     $(button_id).removeClass("is-expanded").addClass("is-collapsed");
-    $(button_id).html("Expand all FAQs");
+    $(button_id).html("Expand all " + button_text);
   }
 }
 

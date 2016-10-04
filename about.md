@@ -7,8 +7,11 @@ permalink: /about/
 ---
 
 <!-- Table of content -->
-<div class="clearfix">
+<div class="clearfix page_menu">
   <ul class="sections_list">
+    <li class="icon-next-page smaller-icon close-icon-2 lrg_blue section_title">
+      <span class="lrg_dark bold_font">Sections</span>
+    </li>
     <li><a href="#the-lrg-project">The LRG Project</a></li>
     <li><a href="#further-information">Further information</a></li>
     <li><a href="#licence">Licence</a></li>

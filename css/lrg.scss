@@ -136,11 +136,11 @@ ul.compact {
 // Specify the color of the selection
 ::-moz-selection {
   color: $black;
-  background: $lightGray;
+  background: $lrg_gray2;
 }
 ::selection {
   color: $black;
-  background: $lightGray;
+  background: $lrg_gray2;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -251,7 +251,7 @@ header {
   padding-top: 3px;
   border: 1px solid #BCBEC0;
   text-shadow: 0 1px 0 #fff;
-  background-color: $lrg_light_gray;
+  background-color: $lrg_gray;
   &:hover, &:active, &:focus {
     color:$lrg_green2;
     background-color: #AAA;
@@ -423,7 +423,7 @@ header {
   height:30px;
   padding:2px 8px;
   color: $lrg_dark;
-  border-color: $lrg_light_gray;
+  border-color: $lrg_gray;
 }
 
 .navbar-default .btn-link {
@@ -475,7 +475,7 @@ header {
 
 .table-small {
   font-size: 0.8em;
-  border: 1px solid $lrg_light_gray;
+  border: 1px solid $lrg_gray;
 }
 .table-small>tbody>tr>td {
   padding:4px;
@@ -510,12 +510,12 @@ header {
 }
 
 .panel-content-top, .panel-content-bottom {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .panel-content {
   padding: 0px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .panel-row {
@@ -565,13 +565,13 @@ a.section-link {
 
 .section-row {
   padding: 8px 0px 25px;
-  border-bottom: 1px solid $lrg_light_gray;
+  border-bottom: 1px solid $lrg_gray;
   margin-bottom: 25px;
 }
 
 .section-box {
   padding: 8px;
-  border: 1px solid $lrg_light_gray;
+  border: 1px solid $lrg_gray;
   border-radius: 5px;
   margin-bottom: 25px;
   .section-header {
@@ -838,7 +838,11 @@ table {
 }
 
 .lrg_gray_bg {
-  background-color: $lrg_light_gray;
+  background-color: $lrg_gray;
+}
+
+.border_bottom_blue {
+  border-bottom: 1px solid $lrg_blue;
 }
 
 
@@ -967,7 +971,7 @@ td.left-col {
 
 .link_list {
   margin-bottom: 6px;
-  background-color: #EEE;
+  background-color: $lrg_gray2;
   padding: 4px;
   border-bottom: 1px solid $lrg_blue;
   font-family: $font_title;
@@ -997,7 +1001,7 @@ ul.sections_list {
     position: relative;
     padding: 2px 6px;
     margin-right: 6px;
-    background-color: #EEE;
+    background-color: $lrg_gray2;
   }
   li a {
     display: block;
@@ -1010,6 +1014,10 @@ ul.sections_list {
         background-color: $lrg_purple;
       }
     }
+  }
+  >li.section_title {
+    background-color:#FFF;
+    padding-right: 0px;
   }
 }
 
@@ -1028,7 +1036,7 @@ ul.sections_list>li>a:after {
 
 .posts > .post {
   padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid $lrg_gray2;
 }
 
 .loader {
@@ -1075,12 +1083,16 @@ ul.sections_list>li>a:after {
   }
 }
 
-.contact_address {
-  padding-left: 10px;
-  color: $lrg_dark;
+.info_highlighted {
+  padding: 2px 6px;
+  background-color: $lrg_gray2;
+  a {
+    padding-left: 10px;
+    color: $lrg_dark;
+  }
 }
 
-.faq_section_title {
+.item_section_title {
   margin: 15px 0px;
   h4 {
     margin: 0px;
@@ -1091,9 +1103,9 @@ ul.sections_list>li>a:after {
   }
 }
 
-.faq_entry {
+.item_entry {
   margin-bottom: 4px;
-  border: 1px solid $lrg_light_gray;
+  border: 1px solid $lrg_gray;
   &:hover, &:focus, &:active {
     border-color: $lrg_purple;
     .faq_title {
@@ -1102,20 +1114,20 @@ ul.sections_list>li>a:after {
   }
 }
 
-.faq_title {
+.item_title {
   padding: 6px 5px;
   color: $lrg_blue;
-  background-color: #EEE;
+  background-color: $lrg_gray2;
   font-weight:bold;
   &:hover, &:focus, &:active {
     cursor:pointer;
   }
 }
 
-.faq_content {
+.item_content {
   padding: 0px 8px;
   display: none;
-  border-top: 1px solid $lrg_light_gray;
+  border-top: 1px solid $lrg_gray;
 }
 
 
@@ -1138,6 +1150,21 @@ ul.sections_list>li>a:after {
 }
 .wait:before {
   content: "Please wait for the results";
+}
+
+.page {
+  position:relative;
+}
+
+.page_info {
+  position:absolute;
+  top:0px;
+  right:5px;
+}
+.page_menu {
+  position:absolute;
+  top:15px;
+  right:5px;
 }
 
 .wrapper-footer {
@@ -1189,8 +1216,8 @@ footer span {
 .legend_title {
   padding: 4px 5px;
   color: $lrg_blue;
-  border: 1px solid $lrg_light_gray;
-  background-color: #EEE;
+  border: 1px solid $lrg_gray;
+  background-color: $lrg_gray2;
   font-weight:bold;
   &:hover, &:focus, &:active {
     cursor:pointer;
@@ -1203,8 +1230,8 @@ footer span {
 .legend_subtitle {
   padding: 4px 5px;
   color: $lrg_blue;
-  border: 1px solid $lrg_light_gray;
-  background-color: #EEE;
+  border: 1px solid $lrg_gray;
+  background-color: $lrg_gray2;
   font-weight:bold;
 }
 

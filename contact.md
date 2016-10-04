@@ -6,7 +6,9 @@ icon-class: icon-contact
 permalink: /contact/
 ---
 
-<h3>Email address: <a class="contact_address" href="mailto:contact@lrg-sequence.org">contact@lrg-sequence.org</a></h3>
+<div class="page_info">
+  <h4 class="info_highlighted">Email address: <a href="mailto:contact@lrg-sequence.org">contact@lrg-sequence.org</a></h4>
+</div>
 
 ### Request a LRG
 
