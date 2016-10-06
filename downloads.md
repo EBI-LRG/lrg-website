@@ -77,7 +77,7 @@ There is the possibility to download all the public and pending LRGs:
           <th colspan="2" class="split-header">Files location by assembly</th>
         </tr>
         <tr class="sorttable_header">
-          <th>GRCh37</th>
+          <th class="border-left">GRCh37</th>
           <th>GRCh38</th>
         </tr>
       </thead>

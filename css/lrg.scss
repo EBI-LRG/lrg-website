@@ -150,7 +150,6 @@ ul.compact {
     content: " ";
     display: table;
 }
-
 .clearfix:after {
     clear: both;
 }
@@ -234,7 +233,7 @@ header {
 .tag_line {
   padding: 0px;
   margin-bottom: 15px;
-  font-size: 1em;
+  font-size: 16px;
   letter-spacing: 1.1px;
 }
 
@@ -294,15 +293,25 @@ header {
   color: $lrg_blue;
 }
 
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
 
-@media (min-width: $menu_width_threshold_min) {
+@media (min-width: $menu_width_threshold_min) and (max-width: 1199px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+@media (min-width: $menu_width_threshold_min)  {
   .nav {
     float:right;
   }
 
   .navbar-nav {
     padding-top: 60px;
-    margin-right: 5px;
   }
 
   .navbar-default {
@@ -331,21 +340,25 @@ header {
 
 @media (max-width: $menu_width_threshold_max) {
   .masterhead {
-    padding: 0px;
+    padding: 5px;
+  }
+
+  .container {
+    width: auto;
   }
   
   .navbar-header {
-      float: none;
-      border: none;
+    float: none;
+    border: none;
   }
 
   .navbar-left,.navbar-right {
-      float: none !important;
+    float: none !important;
   }
   
   .navbar-fixed-top {
-      top: 0;
-      border-width: 0px;
+    top: 0;
+    border-width: 0px;
   }
 
   .navbar-default {
@@ -419,6 +432,12 @@ header {
   }
 }
 
+@media (max-width: 750px) {
+  .container {
+    width: 730px;
+  }
+}
+
 .form-control {
   height:30px;
   padding:2px 8px;
@@ -439,7 +458,6 @@ header {
 .table-lrg > thead > tr {
   background-color: $lrg_dark;
   color: #FFF;
-  /*font-weight: bold;*/
 }
 
 .table-lrg>thead>tr>th {
@@ -449,11 +467,13 @@ header {
   font-family: $font_title;
   font-weight: normal;
 }
-.table-lrg>thead>tr>th:not(:first-child) {
-  border-left: 1px solid #DDD;
-}
+
 .table-lrg>thead>tr>th:first-child {
   border-left: 1px solid $lrg_dark;
+}
+.table-lrg>thead>tr>th.border-left,
+.table-lrg>thead>tr>th:not(:first-child) {
+  border-left: 1px solid #DDD;
 }
 .table-lrg>thead>tr>th:last-child {
   border-right: 1px solid $lrg_dark;
@@ -499,7 +519,7 @@ header {
   font-size: 16px;
   margin-top: -10px;
   background-color: #FFF; /*#E9E9E9*/
-  /*color: #FFF;*/
+  line-height: 1.2;
   padding: 6px 8px;
   border-left: 5px solid $lrg_blue;
 }
@@ -519,8 +539,8 @@ header {
 }
 
 .panel-row {
-  min-height:130px;
-  margin-bottom: 20px;
+  min-height:150px;
+  margin-bottom: 25px;
 }
 
 .section {
@@ -610,18 +630,23 @@ a.section-link {
 
 .section-title-underline {
   border-bottom: 1px solid $lrg_blue;
+  vertical-align: baseline;
+  line-height: 24px;
 }
 
 .section-circle {
   border:3px solid $lrg_blue;
   border-radius:50%;
-  font-size:24px;
-  padding:7px;
-  width:44px;
-  height:44px;
+  font-size:26px;
+  padding:8px;
+  width:48px;
+  height:48px;
 }
 
 .section-sub-circle {
+  font-size: 22px;
+}
+.section-sub-title {
   font-size: 20px;
 }
 
@@ -657,7 +682,7 @@ a.section-link {
 }
 
 .section-title2 {
-  >h5 { 
+  >h4 { 
   padding: 0px 5px;
   margin: 0px;
   color: #FFF;
@@ -666,7 +691,7 @@ a.section-link {
   font-weight: normal;
  }
   &:hover, &:active {
-    >h5 {
+    >h4 {
       border-bottom: 3px solid $lrg_green2;
       color: $lrg_green2;
     }
@@ -1089,6 +1114,9 @@ ul.sections_list>li>a:after {
   a {
     padding-left: 10px;
     color: $lrg_dark;
+    &:hover {
+      color: $lrg_purple;
+    }
   }
 }
 
@@ -1182,7 +1210,7 @@ footer {
 }
 
 footer p {
-  font-size: 10px;
+  font-size: 12px;
   color: #DDD;
   margin: 4px 0px;
   >a {
