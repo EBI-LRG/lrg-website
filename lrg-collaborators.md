@@ -27,8 +27,8 @@ The LRG project is committed to creating records that are ideal for each region 
 
     <tbody>
       
-    {% assign collaborators = site.data.list_collaborators %}
-    {% for collaborator in (collaborators | sort: 'name') %}
+    {% assign collaborators = (site.data.list_collaborators | sort: 'name') %}
+    {% for collaborator in collaborators %}
       <tr>
         <td class="left-col">{{ collaborator.name }}</td>
         <td>{{ collaborator.affiliation }}</td>

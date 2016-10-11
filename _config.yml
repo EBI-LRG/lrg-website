@@ -106,11 +106,11 @@ kramdown:
 permalink: /:title/
 
 # The release of Jekyll used
-version: 3.1.2
+version: 3.3.0
 
 # Set the Sass partials directory, as we're using @imports
 sass:
-  style: :expanded # You might prefer to minify using :compressed
+  style: :compressed # You might prefer to minify using :compressed or expanded using :expanded
 
 # Use the following plug-ins
 gems:
