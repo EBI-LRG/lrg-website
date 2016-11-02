@@ -77,6 +77,12 @@ function showhiderow(class_name,step_id) {
   });
 }
 
+function show_output(div_id,output) {
+  var output_div = div_id+'_'+output;
+  $('#'+div_id+' > div[id!="'+output_div+'"]').hide();
+  $('#'+output_div).show();
+}
+
 function offsetAnchor() {
   if(location.hash.length !== 0) {
     window.scrollTo(window.scrollX, window.scrollY - 100);

@@ -55,6 +55,7 @@ baseurl_googleapis: "https://ajax.googleapis.com/ajax/libs"
 # URLs
 rest_url_38: "http://rest.ensembl.org/vep/human/hgvs/"
 rest_url_37: "http://grch37.rest.ensembl.org/vep/human/hgvs/"
+rest_lrg:    "http://www.ebi.ac.uk/ebisearch/ws/rest/lrg"
 
 ens_url:       "http://www.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels"
 ens_gene_url:  "http://www.ensembl.org/Homo_sapiens/Gene/Summary?g="

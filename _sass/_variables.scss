@@ -45,10 +45,12 @@ $futura : Futura, Helvetica, Arial, sans-serif;
 $lucida: Lucida Grande, Helvetica, Arial, sans-serif;
 $open_sans: 'Open Sans', Helvetica, Arial, sans-serif;
 $lato: Lato, Helvetica, Arial, sans-serif;
+$consolas: Consolas,Monaco,"Courier New",monospace;
 
 // Actual font variable used in lrg.css
 $font_content : $open_sans;
 $font_title: $lato;
+$font_code: $consolas;
 
 // Line heights
 $line-height : 1.5;

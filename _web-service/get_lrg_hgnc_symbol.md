@@ -1,7 +1,7 @@
 ---
 title: "Get the HGNC symbols of a list of LRGs"
 tag: ws_lrg_data
-order: 3
+order: 2
 ---
 
 <p>

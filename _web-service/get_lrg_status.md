@@ -1,7 +1,7 @@
 ---
 title: "Get the status of a list of LRGs"
 tag: ws_lrg_data
-order: 2
+order: 3
 ---
 
 <p>
