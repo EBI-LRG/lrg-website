@@ -13,9 +13,12 @@ Below is a list of the information you need to supply when requesting a LRG reco
 
 Authoritative source (e.g. LSDB) information:
 
-* Source name
-* Source URL
-* Name of Submitter (and e-mail address) - optional
+* Source name  
+
+* Source URL  
+
+* Name of Submitter (and e-mail address) - optional  
+
 
 <span class="warning">NOTE:</span> Please refer to *e.g.* the LRG record for the **COL1A1** gene, [LRG_1](http://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_1.xml), for an example of how this contact information is displayed.  
 <br />
@@ -36,8 +39,10 @@ For many genes, a reference gene model may already have been created within the 
 
 * Genomic sequence for your gene of interest
   * Submit this in either Fasta format or using a public sequence accession and version (Genbank/EMBL)
-  * Remember to include upstream and downstream sequences for unique placement on the genome (We would recommend 5 kb upstream from the first exon and 2 kb downstream of the last exon or whatever is most appropriate. Be sure to include any promoter regions where mutations are reported).
-* The gene name for the LRG (optional)
+  * Remember to include upstream and downstream sequences for unique placement on the genome (We would recommend 5 kb upstream from the first exon and 2 kb downstream of the last exon or whatever is most appropriate. Be sure to include any promoter regions where mutations are reported).  
+
+* The gene name for the LRG (optional)  
+
 * For each transcript used for reporting mutations/diagnostics, please supply either an accession number (e.g. a RefSeq accession) OR:
   * Transcript-specific exon positions in LRG coordinates
   * Start and end positions of the coding region in LRG coordinates  
@@ -56,7 +61,8 @@ For databases that currently use an idealised set of exons as a reporting standa
 
 ### In some cases this information may be relevant
 
-* If there is a legacy/other amino acid numbering system which would result in different amino acid numbering that would be generated automatically, you can include this.
+* If there is a legacy/other amino acid numbering system which would result in different amino acid numbering that would be generated automatically, you can include this.  
+
 * Other exon numbering systems
 
 <br />
@@ -64,7 +70,7 @@ For databases that currently use an idealised set of exons as a reporting standa
 
 ### Submitting Your Data
 
-Please submit your data to **request@lrg-sequence.org**.  
+Please submit your data to <a class="bold_font" href="mailto:request@lrg-sequence.org">request@lrg-sequence.org</a>.  
 <br />
 
 

@@ -41,19 +41,39 @@ There is the possibility to download all the public and pending LRGs:
         <tr>
           <td class="left-col">Public</td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_public_xml_files.zip">[XML]</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_public_xml_files.zip">
+              <div class="file_link clearfix">
+                <div class="left icon-literature close-icon-0"></div>
+                <div class="left">XML</div>
+              </div>
+            </a>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/fasta/LRG_public_fasta_files.zip">[FASTA]</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/fasta/LRG_public_fasta_files.zip">
+              <div class="file_link clearfix">
+                <div class="left icon-literature close-icon-0"></div>
+                <div class="left">FASTA</div>
+              </div>
+            </a>
           </td>  
         </tr>
         <tr>
           <td class="left-col">Pending</td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_pending_xml_files.zip">[XML]</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_pending_xml_files.zip">
+              <div class="file_link clearfix">
+                <div class="left icon-literature close-icon-0"></div>
+                <div class="left">XML</div>
+              </div>
+            </a>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/fasta/LRG_pending_fasta_files.zip">[FASTA]</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/fasta/LRG_pending_fasta_files.zip">
+              <div class="file_link clearfix">
+                <div class="left icon-literature close-icon-0"></div>
+                <div class="left">FASTA</div>
+              </div>
+            </a>
           </td>  
         </tr>
       </tbody>
@@ -84,7 +104,7 @@ There is the possibility to download all the public and pending LRGs:
       <tbody>
         <tr>
           <td class="left-col">BED</td>
-          <td>
+          <td class="smaller-text">
             The file contains 4 tracks:
             <ul>
               <li>Public LRG genes</li>
@@ -94,16 +114,26 @@ There is the possibility to download all the public and pending LRGs:
             </ul>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_GRCh37.bed" target="_blank">[BED]</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_GRCh37.bed" target="_blank">
+              <div class="file_link clearfix">
+                <div class="left icon-literature close-icon-0"></div>
+                <div class="left">BED</div>
+              </div>
+            </a>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_GRCh38.bed" target="_blank">[BED]</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_GRCh38.bed" target="_blank">
+              <div class="file_link clearfix">
+                <div class="left icon-literature close-icon-0"></div>
+                <div class="left">BED</div>
+              </div>
+            </a>
           </td>
         </tr>
 
         <tr>
-          <td class="left-col">Tabulated<br /><span style="font-weight:normal">(LRG genes)</span></td>
-          <td>
+          <td class="left-col">Tabulated<br /><span class="smaller-text" style="font-weight:normal">(LRG genes)</span></td>
+          <td class="smaller-text">
             The file lists the LRG genes in genomic coordinates. The columns are:
             <ul>
               <li>LRG identifier (e.g. LRG_1)</li>
@@ -116,16 +146,26 @@ There is the possibility to download all the public and pending LRGs:
             </ul>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_GRCh37.txt" target="_blank">[TXT]</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_GRCh37.txt" target="_blank">
+              <div class="file_link clearfix">
+                <div class="left icon-literature close-icon-0"></div>
+                <div class="left">TXT</div>
+              </div>
+            </a>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_GRCh38.txt" target="_blank">[TXT]</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_GRCh38.txt" target="_blank">
+              <div class="file_link clearfix">
+                <div class="left icon-literature close-icon-0"></div>
+                <div class="left">TXT</div>
+              </div>
+            </a>
           </td>
         </tr>
 
         <tr>
-          <td class="left-col">Tabulated<br /><span style="font-weight:normal">(LRG transcripts, exons, proteins)</span></td>
-          <td>
+          <td class="left-col">Tabulated<br /><span class="smaller-text" style="font-weight:normal">(LRG transcripts, exons, proteins)</span></td>
+          <td class="smaller-text">
             The file lists the LRG transcripts, exons and protein in genomic coordinates<br />
             The columns are:
             <ul>
@@ -142,16 +182,26 @@ There is the possibility to download all the public and pending LRGs:
             </ul>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_GRCh37.txt" target="_blank">[TXT]</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_GRCh37.txt" target="_blank">
+              <div class="file_link clearfix">
+                <div class="left icon-literature close-icon-0"></div>
+                <div class="left">TXT</div>
+              </div>
+            </a>
           </td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_GRCh38.txt" target="_blank">[TXT]</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_GRCh38.txt" target="_blank">
+              <div class="file_link clearfix">
+                <div class="left icon-literature close-icon-0"></div>
+                <div class="left">TXT</div>
+              </div>
+            </a>
           </td>
         </tr>
 
         <tr>
-          <td class="left-col">Tabulated<br /><span style="font-weight:normal">(LRG transcripts + external references)</span></td>
-          <td>
+          <td class="left-col">Tabulated<br /><span class="smaller-text" style="font-weight:normal">(LRG transcripts + external references)</span></td>
+          <td class="smaller-text">
             The file lists the LRG transcripts and their external references<br />
             The columns are:
             <ul>
@@ -166,7 +216,12 @@ There is the possibility to download all the public and pending LRGs:
           </td>
           <td>-</td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_xrefs.txt" target="_blank">[TXT]</a>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_xrefs.txt" target="_blank">
+              <div class="file_link clearfix">
+                <div class="left icon-literature close-icon-0"></div>
+                <div class="left">TXT</div>
+              </div>
+            </a>
           </td>
         </tr>
       </tbody>
@@ -177,7 +232,7 @@ There is the possibility to download all the public and pending LRGs:
 
 ### LRG in Ensembl
   
-The list of LRGs already imported in [Ensembl](http://www.ensembl.org) is available in this [text file](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/lrgs_in_ensembl.txt).  
+The list of LRGs already imported in [Ensembl](http://www.ensembl.org){: .icon-external-link} is available in this [text file](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/lrgs_in_ensembl.txt).  
 <br />
   
   
@@ -205,19 +260,19 @@ Previous versions of the LRGs (in different LRG XML schemas) are available:
         <tr>
           <td class="left-col">Schema 1.8</td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/SCHEMA_1_8_ARCHIVE/" target="_blank">FTP site</a>
+            <a class="icon-link smaller-icon close-icon-5" href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/SCHEMA_1_8_ARCHIVE/" target="_blank">FTP site</a>
           </td>  
         </tr>
         <tr>
           <td class="left-col">Schema 1.7</td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/SCHEMA_1_7_ARCHIVE/" target="_blank">FTP site</a>
+            <a class="icon-link smaller-icon close-icon-5" href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/SCHEMA_1_7_ARCHIVE/" target="_blank">FTP site</a>
           </td>  
         </tr>
         <tr>
           <td class="left-col">Schema 1.6</td>
           <td>
-            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/SCHEMA_1_6_ARCHIVE/" target="_blank">FTP site</a>
+            <a class="icon-link smaller-icon close-icon-5" href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/SCHEMA_1_6_ARCHIVE/" target="_blank">FTP site</a>
           </td>  
         </tr>
       </tbody>
@@ -227,5 +282,5 @@ Previous versions of the LRGs (in different LRG XML schemas) are available:
 
 ### Web services
 
-The EMBL-EBI provides [RESTful web services](http://www.ebi.ac.uk/Tools/webservices/services/eb-eye_rest) for LRG.
+The EMBL-EBI provides [RESTful web services](http://www.ebi.ac.uk/Tools/webservices/services/eb-eye_rest){: .icon-external-link} for LRG.
 <div><a class="icon-next-page smaller-icon close-icon-2" href="/web-service">See more</a></div>

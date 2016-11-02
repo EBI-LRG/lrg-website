@@ -251,6 +251,11 @@
   content: "d";
 }
 
+.icon-literature:before {
+  font-family: 'EBI-Conceptual';
+  content: "l";
+}
+
 /* FileFormats */
 .icon-xml:before {
   font-family: 'EBI-FileFormats';

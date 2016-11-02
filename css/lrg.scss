@@ -109,6 +109,14 @@ img {
   max-width: 100%;
 }
 
+pre {
+  padding:4px 6px;
+  background-color: #FFF;
+  font-size: 14px;
+  line-height:18px;
+  font-family: $font_code;
+}
+
 ul.compact {
   margin: 2px 0px;
   li {
@@ -683,7 +691,7 @@ a.section-link {
 
 .section-title2 {
   >h4 { 
-  padding: 0px 5px;
+  padding: 0px 8px;
   margin: 0px;
   color: #FFF;
   background-color: $lrg_dark;
@@ -946,9 +954,17 @@ td.left-col {
 .margin-top-2 {
   margin-top: 2px;
 }
-
 .margin-top-5 {
   margin-top: 5px;
+}
+.margin-top-10 {
+  margin-top: 10px;
+}
+.margin-top-15 {
+  margin-top: 15px;
+}
+.margin-top-20 {
+  margin-top: 20px;
 }
 
 .margin-bottom-0 {
@@ -957,9 +973,16 @@ td.left-col {
 .margin-bottom-5 {
   margin-bottom: 5px;
 }
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
 
 .margin-right-5 {
   margin-right: 5px;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
 }
 
 .padding-left-0 {
@@ -1002,6 +1025,13 @@ td.left-col {
   font-family: $font_title;
   a {
     font-weight: bold;
+  }
+}
+
+.file_link {
+  line-height:30px;
+  div:first-child {
+    font-size:30px;
   }
 }
 
@@ -1111,8 +1141,9 @@ ul.sections_list>li>a:after {
 .info_highlighted {
   padding: 2px 6px;
   background-color: $lrg_gray2;
+  border-bottom: 2px solid $lrg_blue;
   a {
-    padding-left: 10px;
+    padding-left:10px;
     color: $lrg_dark;
     &:hover {
       color: $lrg_purple;
@@ -1158,6 +1189,20 @@ ul.sections_list>li>a:after {
   border-top: 1px solid $lrg_gray;
 }
 
+.output_example {
+  padding: 0px 6px 6px;
+  margin-bottom: 10px;
+  background-color: #EEE;
+  /*border:1px solid #CCC;*/
+  display:none;
+  >h5 {
+    margin:0px;
+    padding: 4px 0px;
+  }
+  >pre {
+    border:1px solid #CCC;
+  }
+}
 
 .btn-lrg-small {
   line-height:1;
