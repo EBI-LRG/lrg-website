@@ -1189,15 +1189,26 @@ ul.sections_list>li>a:after {
   border-top: 1px solid $lrg_gray;
 }
 
+.ws_example_title {
+  margin-top:30px;
+  margin-bottom: 15px;
+}
+
+.ws_example_content {
+  margin:0px 20px;
+}
+
 .output_example {
   padding: 0px 6px 6px;
   margin-bottom: 10px;
   background-color: #EEE;
   /*border:1px solid #CCC;*/
   display:none;
-  >h5 {
-    margin:0px;
+  >div {
     padding: 4px 0px;
+  }
+  h5 {
+    margin:0px;
   }
   >pre {
     border:1px solid #CCC;
