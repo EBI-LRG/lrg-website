@@ -515,7 +515,6 @@ header {
   }
 }
 
-
 //
 // .homepage
 //
@@ -811,6 +810,10 @@ table {
   background: url('/images/sort_asc.png') no-repeat right center;
   cursor: pointer;
   padding-right:25px;
+}
+
+.tr_separator {
+  border-top: 2px solid $lrg_blue;
 }
 
 //
