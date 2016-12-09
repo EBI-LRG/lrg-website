@@ -191,8 +191,10 @@ The list of fields retrievables are listed [here](#ws_fields)
     <tr>
       <td class="bold_font">status</td>
       <td>Curation status of the LRG.
+        <ul>
           <li>"public": The LRG has been publicly released and its genomic, transcript and protein sequences won't change.</li>
           <li>"pending": The LRG curation is still in working progress, which means that the genomic, transcript and protein sequences can change</li>
+        </ul>
       </td>
       <td>public</td>
     </tr>

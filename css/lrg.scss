@@ -470,7 +470,6 @@ header {
 
 .table-lrg>thead>tr>th {
   border-bottom: 2px solid $lrg_blue;
-  /*border-left: 1px solid #DDD;*/
   padding: 4px 8px;
   font-family: $font_title;
   font-weight: normal;
@@ -483,6 +482,11 @@ header {
 .table-lrg>thead>tr>th:not(:first-child) {
   border-left: 1px solid #DDD;
 }
+
+.table-lrg>thead>tr>th.border-right {
+  border-right: 1px solid #DDD;
+}
+
 .table-lrg>thead>tr>th:last-child {
   border-right: 1px solid $lrg_dark;
 }

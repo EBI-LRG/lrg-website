@@ -68,7 +68,8 @@ ucsc_url: "http://genome.ucsc.edu/cgi-bin/hgTracks?clade=mammal&org=Human&positi
 hgnc_url: "http://www.genenames.org/cgi-bin/gene_symbol_report?match="
 
 ref_assembly:   "GRCh38"
-lrg_ftp:        "http://ftp.ebi.ac.uk/pub/databases/lrgex/"
+lrg_ftp:        "http://ftp.ebi.ac.uk/pub/databases/lrgex/test/"
+#lrg_ftp:        "http://ftp.ebi.ac.uk/pub/databases/lrgex/"
 lrg_json_file : "/json_index/lrg_index.json"
 #lrg_json_file:  "http://ftp.ebi.ac.uk/pub/databases/lrgex/.lrg_index/lrg_index.json"
 #------------------------------#

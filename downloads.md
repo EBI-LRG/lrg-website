@@ -18,7 +18,7 @@ permalink: /downloads/
     <li><a href="#lrg-archived-data">Archived data</a></li>
     <li><a href="#web-services">Web services</a></li>
   </ul>  
-</div>
+</div>  
 
 
 ### LRG data
