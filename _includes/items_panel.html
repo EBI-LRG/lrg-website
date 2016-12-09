@@ -1,67 +1,98 @@
 
 <div class="panel-row clearfix">
-  <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 section">
-    <h3 class="section-title icon-view"><a href="/search/?query=*">View LRGs</a></h3>
-    <div class="section-content text-center">
-      <div>
-        View the <a href="/search/?query=*">list of existing LRGs</a>, with additional information
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 section">
+    <a class="section-link" href="/search/?query=*">
+      <div class="section-title">
+        <div class="icon-view close-icon-0 section-circle"></div>
+        <div class="section-sub-circle">View</div>
       </div>
-      <div class="icon-unassigned-job close-icon-5">
-        View the <a href="http://ftp.ebi.ac.uk/pub/databases/lrgex/lrgs_progress_status.html" target="_blank">progress status of LRGs</a> in curation
+      <div class="section-content text-center">
+        View existing LRGs
       </div>
-    </div>
+    </a>
   </div>
-  <div class="col-xs-5 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1 section">
-    <h3 class="section-title icon-download"><a href="/downloads">Download LRG data</a></h3>
-    <div class="section-content text-center">
-      <div>
-        <a href="/downloads">Download LRG records</a> in several formats (XML, FASTA, BED, ...)
+
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 section">
+    <a class="section-link" href="/downloads">
+      <div class="section-title">
+        <div class="icon-download close-icon-0 section-circle"></div>
+        <div class="section-sub-circle">Download</div>
       </div>
-      <div class="icon-tool close-icon-5">
-        Access programmatically through <a href="/web-service">web services</a>
+      <div class="section-content text-center">
+        LRG records in several formats (XML, FASTA, BED).<br />Access programmatically through web services
       </div>
-    </div>
+    </a>
+  </div>
+  
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 section">
+    <a class="section-link" href="/curation-status" target="_blank">
+      <div class="section-title">
+        <div class="icon-unassigned-job close-icon-0 section-circle"></div>
+        <div class="section-sub-circle">Curation status</div>
+      </div>
+      <div class="section-content text-center">
+        Check the progress of pending LRG records undergoing curation
+      </div>
+    </a>
   </div>
   <div class="col-xs-1"></div>
 </div>
 
 <div class="panel-row clearfix">
-  <a class="section-link" href="/lrg-request">
-    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 section">
-      <h3 class="section-title icon-request">Request an LRG</h3>
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 section">
+    <a class="section-link" href="/lrg-request">  
+      <div class="section-title">
+        <div class="icon-request close-icon-0 section-circle"></div>
+        <div class="section-sub-circle">Request an LRG</div>
+      </div>
       <div class="section-content text-center">
          If no LRG record exists for your gene of interest, you can request one to be created for you.
       </div>
-    </div>
-  </a>
-  <a class="section-link" href="/lrg-collaborators">
-    <div class="col-xs-5 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1 section">
-      <h3 class="section-title icon-industry">Collaborators</h3>
+    </a>
+  </div>
+  <!--<div class="col-xs-5 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1 section">
+    <a class="section-link" href="/lrg-collaborators">
+      <div class="section-title">
+        <div class="icon-industry close-icon-0 section-circle"></div>
+        <div class="section-sub-circle">Collaborators</div>
+      </div>
       <div class="section-content text-center">
         Each LRG is created upon request by collaborators such as research and diagnostic laboratories, LSDB curators and mutation consortia.
       </div>
-    </div>
-  </a>
-  <div class="col-xs-1"></div>
+    </a>
+  </div>-->
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 section">
+    <a class="section-link" href="/submit-variants">
+      <div class="section-title">
+        <div class="icon-submit close-icon-0 section-circle"></div>
+        <div class="section-sub-circle">Submit variants</div>
+      </div>
+      <div class="section-content text-center">
+        You may submit information about variants to dbSNP or dbVar/DGVa and obtain an accession number for each variant.
+      </div>
+    </a>
+  </div>
+  
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 section">
+    <a class="section-link" href="http://www.ncbi.nlm.nih.gov/genome/tools/remap#tab=rsg" target="_blank">
+      <div class="section-title">
+        <div class="icon-mapping close-icon-0 section-circle"></div>
+        <div class="section-sub-circle">Map to LRG</div>
+      </div>
+      <div class="section-content text-center">
+        Map sequences from different sources (e.g. RefSeqGene, GRCh38, GRCh37) to the LRG coordinate system
+      </div>
+    </a>
+  </div>
+
 </div>
 
-<div class="panel-row clearfix">
-  <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 section">
-    <h3 class="section-title icon-mapping"><a href="http://www.ncbi.nlm.nih.gov/genome/tools/remap#tab=rsg" target="_blank">Map to LRG</a></h3>
+
+  <!--<h3 class="section-title"><a class="icon-mapping" href="http://www.ncbi.nlm.nih.gov/genome/tools/remap#tab=rsg" target="_blank">Map to LRG</a></h3>
     <div class="section-content text-center">
       Map sequences from different sources to the LRG coordinate system, e.g.:<br />
       <a class="icon-external-link" href="http://www.ncbi.nlm.nih.gov/genome/tools/remap#tab=rsg&amp;data_from=RefSeqGene&amp;data_to=LRG&amp;with_refseq=true" target="_blank" rel="external"><strong>RefSeqGene</strong></a> | 
       <a class="icon-external-link" href="http://www.ncbi.nlm.nih.gov/genome/tools/remap#tab=rsg&amp;data_from=GCF_000001405.26&amp;data_to=LRG&amp;any_refseq=true&amp;without_refseq=true&amp;with_refseq=true" target="_blank" rel="external"><strong>GRCh38</strong></a> | 
       <a class="icon-external-link" href="http://www.ncbi.nlm.nih.gov/genome/tools/remap#tab=rsg&amp;data_from=GCF_000001405.25&amp;data_to=LRG&amp;any_refseq=true&amp;without_refseq=true&amp;with_refseq=true" target="_blank" rel="external"><strong>GRCh37</strong></a>
     </div>
-  </div>
-  <a class="section-link" href="/submit-variants">
-    <div class="col-xs-5 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1 col-lg-5 col-lg-offset-1 section">
-      <h3 class="section-title icon-submit">Submit variants</h3>
-      <div class="section-content text-center">
-        You may submit information about variants to dbSNP or dbVar/DGVa and obtain an accession number for each variant.
-      </div>
-    </div>
-  </a>
-  <div class="col-xs-1"></div>
-</div>
+  </div>-->

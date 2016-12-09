@@ -1,6 +1,7 @@
 ---
 title: "How are the reference sequences in the LRG chosen?"
 faq_group: most_frequent
+faq_order: 4
 faq_tags:
   - most_frequent
   - sequence

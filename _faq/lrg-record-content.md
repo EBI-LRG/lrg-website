@@ -1,8 +1,9 @@
 ---
 title: "What is contained in an LRG record?"
-faq_group: most_frequent
+faq_group: lrg_definition
+faq_order: 3
 faq_tags:
-  - most_frequent
+  - lrg_definition
   - content
 faq_related:
   - lrg-specific-exon-numbering

@@ -1,6 +1,7 @@
 ---
 title: "Who has responsibility for creating LRG sequences?"
 faq_group: admin
+faq_order: 1
 faq_tags:
   - records
 faq_related:

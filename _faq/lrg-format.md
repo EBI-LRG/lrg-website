@@ -1,6 +1,7 @@
 ---
 title: "How are LRGs formatted?"
 faq_group: format
+faq_order: 1
 faq_tags:
   - software
   - records

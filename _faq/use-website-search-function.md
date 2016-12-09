@@ -1,6 +1,7 @@
 ---
 title: "How do I use the search function on the LRG website?"
 faq_group: view
+faq_order: 4
 faq_tags:
   - search
   - records

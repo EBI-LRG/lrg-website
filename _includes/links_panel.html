@@ -1,39 +1,63 @@
-<div class="panel-right-section">
-  <h5 class="section-title2 icon-help"><a href="/about">About LRG</a></h5>
-  <div class="panel-right-section-content">
-    <p>
-      {{ site.description }}
-    </p>
-    <div><a class="icon-next-page smaller-icon close-icon-2" href="/about">See more</a></div>
-  </div>
-</div>
+<div class="section-bottom clearfix">
 
-
-<div class="panel-right-section">
-  <h5 class="section-title2 icon-publication"><a href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">Latest publication</a></h5>
-  <div class="panel-right-section-content">
-    <p class="section-publication ">
-      MacArthur JA et al.<br />
-      <b>Locus Reference Genomic: reference sequences for the reporting of clinically relevant sequence variants</b><br />
-      <i>Nucleic Acids Res. (2014 Jan)</i><br />
-      <a class="icon-external-link" href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">doi: 10.1093/nar/gkt1198</a>
-   </p>
-  </div>
-</div>
-
-<div class="panel-right-section">
-  <h5 class="section-title2 icon-news"><a href="/news">News</a></h5>
-  <div class="panel-right-section-content">
-    <div class="section-news">
-      {% for post in site.posts limit:4 %}
-      <div class="news-item {{active}}">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <p>{{ post.title }}</p>
-          <div class="news-date">{{post.date | date: '%B %d, %Y'}}</div>
-        </a>
+  <!-- Updates -->
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <a class="section-title2" href="/news">
+      <h4 class="icon-news">Updates</h4>
+    </a>
+    <div class="section-bottom-content">
+      <div class="section-news">
+        {% for post in site.posts limit:3 %}
+        <div class="news-item {{active}}">
+          <a href="{{ post.url | prepend: site.baseurl }}" title="Read the update">
+            <div class="clearfix" style="margin-bottom:10px">
+              <div class="col-xs-6 col-sm-7 col-md-9 col-lg-9 title_font" style="padding:0px">{{ post.title }}</div>
+              <div class="col-xs-6 col-sm-5 col-md-3 col-lg-3 label-date"><span class="label label-info" title="{{post.date | date: '%B %d, %Y'}}">{{post.date | date: '%b %d'}}</span></div>
+            </div>
+            <div style="color:#000;font-size:12px;margin-bottom:2px">{{ post.content | strip_html | truncatewords:18}}</div>
+          </a>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-      <a class="icon-next-page smaller-icon close-icon-2" href="/news">See all news</a>
+    </div>
+    <div class="section-bottom-link">
+      <a class="icon-next-page smaller-icon close-icon-2" href="/news">See all updates</a>
     </div>
   </div>
+
+  <!-- Collaborators -->
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <a class="section-title2" href="/lrg-collaborators">
+      <h4 class="icon-industry">Collaborators</h4>
+    </a>
+    <div class="section-bottom-content">
+      <p>
+        Each LRG is created upon request by collaborators such as research and diagnostic laboratories, LSDB curators and mutation consortia.<br />
+      </p>
+
+    </div>
+    <div class="section-bottom-link">
+      <a class="icon-next-page smaller-icon close-icon-2" href="/lrg-collaborators">See the list of collaborators</a>
+    </div>
+  </div>
+
+  <!-- Publication -->
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <a class="section-title2" href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">
+      <h4 class="icon-publication">LRG publication</h4>
+    </a>
+    <div class="section-bottom-content">
+      <div class="section-publication">MacArthur JA et al.</div>
+      <div class="section-publication">
+        <span>Locus Reference Genomic: reference sequences for the reporting of clinically relevant sequence variants</span>
+      </div>
+      <div class="section-publication">  
+        <i>Nucleic Acids Res. (2014 Jan)</i>
+     </div>
+    </div>
+    <div class="section-bottom-link">
+      <a class="icon-next-page smaller-icon close-icon-2 icon-external-link" href="http://dx.doi.org/10.1093/nar/gkt1198" target="_blank">doi: 10.1093/nar/gkt1198</a>
+    </div>
+  </div>
+
 </div>

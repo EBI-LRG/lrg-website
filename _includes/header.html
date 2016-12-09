@@ -1,43 +1,56 @@
 <header>
-  <nav class = "navbar navbar-default masthead" role = "navigation">
-    <div class="navbar-header">
-      <div class="site-avatar">
-        <a href="/index.html" title=" {{ site.name }} home page">
-          <img src="{{ site.avatar }}" />
-        </a>
+  <nav class = "navbar navbar-default masterhead" role = "navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="site-avatar">
+          <a href="/index.html" title=" {{ site.name }} home page">
+            <img src="{{ site.avatar }}" />
+          </a>
+        </div>
+
+        <!--<div style="float:left; padding: 2px 0px;margin-left: -10px">
+          <div style="color: #FFF;font-size:34px;font-weight:bold">LRG</div>
+          <div style="color: #FFF;font-size:12px;margin-top:2px">Locus Reference Genomic
+  sequence format</div>
+        </div>-->
+        <div class="next-to-logo">
+          <div class="tag_line">{{ site.tag_line }}</div>
+          {% include search_box.html %}
+        </div>
+
+        <button type = "button" class = "navbar-toggle" 
+             data-toggle = "collapse" data-target = "#lrg-navbar">
+          <span class = "sr-only">Toggle navigation</span>
+          <span class = "icon-bar"></span>
+          <span class = "icon-bar"></span>
+          <span class = "icon-bar"></span>
+          <span class = "icon-bar"></span>
+          <span class = "icon-bar"></span>
+        </button>
+
       </div>
 
-      <button type = "button" class = "navbar-toggle" 
-           data-toggle = "collapse" data-target = "#lrg-navbar">
-        <span class = "sr-only">Toggle navigation</span>
-        <span class = "icon-bar"></span>
-        <span class = "icon-bar"></span>
-        <span class = "icon-bar"></span>
-        <span class = "icon-bar"></span>
-        <span class = "icon-bar"></span>
-      </button>
+      <div class = "collapse navbar-collapse" id = "lrg-navbar">
+    
+        <ul class = "nav navbar-nav">
+          <li><a {% if page.tags contains "Home" %}class="active"{% endif %} href="{{ site.baseurl }}/">Home</a></li>
+          <li><a {% if page.tags contains "About" %}class="active"{% endif %} href="{{ site.baseurl }}/about">About</a></li>
+          <li><a {% if page.tags contains "Downloads" %}class="active"{% endif %} href="{{ site.baseurl }}/downloads">Downloads</a></li>
+          <li><a {% if page.tags contains "FAQ" %}class="active"{% endif %} href="{{ site.baseurl }}/faq">FAQ</a></li>
+          <li><a {% if page.tags contains "Contact" %}class="active"{% endif %} href="{{ site.baseurl }}/contact">Contact</a></li>
+        </ul>
 
-    </div>
-
-    <div class = "collapse navbar-collapse" id = "lrg-navbar">
-  
-      <ul class = "nav navbar-nav">
-        <li><a {% if page.tags contains "Home" %}class="active"{% endif %} href="{{ site.baseurl }}/">Home</a></li>
-        <li><a {% if page.tags contains "About" %}class="active"{% endif %} href="{{ site.baseurl }}/about">About</a></li>
-        <li><a {% if page.tags contains "Downloads" %}class="active"{% endif %} href="{{ site.baseurl }}/downloads">Downloads</a></li>
-        <li><a {% if page.tags contains "FAQ" %}class="active"{% endif %} href="{{ site.baseurl }}/faq">FAQ</a></li>
-        <li><a {% if page.tags contains "Contact" %}class="active"{% endif %} href="{{ site.baseurl }}/contact">Contact</a></li>
-      </ul>
-
+      </div>
     </div>
   </nav>
 
-  <div class="sub-masterhead"></div>
-</header>
-
-
-<div class="search-row clearfix">
-  <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-7 col-sm-offset-2 col-xs-8 col-xs-offset-1">
-    {% include search_box.html %}
+  <div class="clearfix">
+    <div class="sub-masterhead_blue"  style="float:left;width:5%"></div>
+    <div class="sub-masterhead_green" style="float:left;width:4%"></div>
+    <div class="sub-masterhead_blue"  style="float:left;width:91%"></div>
   </div>
-</div>
+
+    <!--<div class="sub-masterhead_blue"   style="height:5px"></div>
+    <div class="sub-masterhead_green"  style="height:5px"></div>
+    <div class="sub-masterhead_purple" style="height:5px"></div>-->
+</header>

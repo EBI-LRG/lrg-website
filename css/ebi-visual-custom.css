@@ -31,6 +31,17 @@
     url('http://www.ebi.ac.uk/web_guidelines/fonts/EBI-FileFormats/fonts/EBI-FileFormats.ttf') format('truetype');
 }
 
+/* Conceptual (biology) */
+@font-face {
+  font-family: 'EBI-Conceptual';
+  src:url('http://www.ebi.ac.uk/web_guidelines/fonts/EBI-Conceptual/fonts/EBI-Conceptual.eot');
+  src:url('http://www.ebi.ac.uk/web_guidelines/fonts/EBI-Conceptual/fonts/EBI-Conceptual.eot?#iefix') format('embedded-opentype'),
+    url('http://www.ebi.ac.uk/web_guidelines/fonts/EBI-Conceptual/fonts/EBI-Conceptual.woff') format('woff'),
+    local('â˜º'),
+    url('http://www.ebi.ac.uk/web_guidelines/fonts/EBI-Conceptual/fonts/EBI-Conceptual.svg#EBI-Conceptual') format('svg'),
+    url('http://www.ebi.ac.uk/web_guidelines/fonts/EBI-Conceptual/fonts/EBI-Conceptual.ttf') format('truetype');
+}
+
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-style: normal;
   font-weight: normal;
@@ -47,7 +58,8 @@
   text-decoration: none;
 }
 
-.smaller-icon:before {
+.smaller-icon:before,
+.smaller-icon:after {
   font-size: 0.9em;
 }
 
@@ -61,10 +73,40 @@
   margin-right: 5px;
 }
 
+.close-icon-0:after {
+  margin-left: 0px;
+}
+
+.rotate-icon-270:before {
+  padding-bottom: 4px;
+  transform: rotate(270deg);
+}
+
+
+/* Functional */
+.icon-add:before {
+  font-family: 'EBI-Functional';
+  content: "+";
+}
 
 .icon-approve:before {
   font-family: 'EBI-Functional';
   content: "/";
+}
+
+.icon-collapse:before {
+  font-family: 'EBI-Functional';
+  content: "w";
+}
+
+.icon-collapse-closed:before {
+  font-family: 'EBI-Functional';
+  content: "9";
+}
+
+.icon-collapse-open:before {
+  font-family: 'EBI-Functional';
+  content: "8";
 }
 
 .icon-download:before {
@@ -97,6 +139,11 @@
   content: ">";
 }
 
+.icon-search:before {
+  font-family: 'EBI-Functional';
+  content: "1";
+}
+
 .icon-tool:before {
   font-family: 'EBI-Functional';
   content: "t";
@@ -122,7 +169,7 @@
   content: "U";
 }
 
-
+/* Generic */
 .icon-alert:before {
   font-family: 'EBI-Generic';
   content: "l";
@@ -198,11 +245,22 @@
   content: "y";
 }
 
+/* Conceptual */
+.icon-dna:before {
+  font-family: 'EBI-Conceptual';
+  content: "d";
+}
+
+.icon-literature:before {
+  font-family: 'EBI-Conceptual';
+  content: "l";
+}
+
+/* FileFormats */
 .icon-xml:before {
   font-family: 'EBI-FileFormats';
   content: "x";
 }
-
 
 .icon-fasta:before {
   font-family: 'EBI-FileFormats';
@@ -215,6 +273,25 @@
   content: "x";
   font-size: 0.7em;
   vertical-align: top;
+}
+
+.icon-info-link:after {
+  font-family: 'EBI-Generic';
+  content: "i";
+  font-size: 0.7em;
+  vertical-align: top;
+}
+
+.icon-plus:after {
+  font-family: 'EBI-Functional';
+  content: "+";
+  font-size: 0.7em;
+}
+.icon-minus:after {
+  font-family: 'EBI-Functional';
+  content: "w";
+  font-size: 0.7em;
+  vertical-align: baseline;
 }
 
 /* Close button */

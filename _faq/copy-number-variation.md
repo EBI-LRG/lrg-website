@@ -1,8 +1,9 @@
 ---
 title: "How to deal with copy number variation?"
-faq_group: most_frequent
+faq_group: variant
+faq_order: 6
 faq_tags:
-  - most_frequent
+  - variant
   - sequence
 ---
 

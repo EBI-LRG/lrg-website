@@ -1,8 +1,9 @@
 ---
 title: "Is there a published account of LRGs that I can read?"
-faq_group: most_frequent
+faq_group: lrg_definition
+faq_order: 12
 faq_tags:
-  - most_frequent
+  - lrg_definition
   - publication
 ---
 

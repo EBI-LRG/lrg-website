@@ -1,6 +1,7 @@
 ---
 title: "Can I see an example of variant nomenclature?"
 faq_group: variant
+faq_order: 2
 faq_tags:
   - variant
 faq_related:
@@ -12,10 +13,10 @@ The frequently reported disease-causing variant **NG_007400.1:g.9595G>A** can al
 
 <div class="row">
   <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-    <table class="table table-hover">
+    <table class="table table-hover table-lrg">
       <thead>
         <tr class="sorttable_header">
-          <th>Description Level</th>
+          <th class="first-col">Description Level</th>
           <th>RefSeqGene or RefSeq</th>
           <th>LRG</th>
         </tr>

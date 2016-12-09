@@ -1,8 +1,8 @@
 ---
 title: "Will LRGs replace RefSeq and RefSeqGene records?"
-faq_group: most_frequent
+faq_group: stability
+faq_order: 3
 faq_tags:
-  - most_frequent
   - records
 faq_related:
   - difference-refseqgene-lrg

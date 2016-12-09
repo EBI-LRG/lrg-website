@@ -1,7 +1,7 @@
-<div class="input-group center">
+<div class="input-group search-form">
 	<input type="text" class="form-control" placeholder='e.g. "LRG_1", "COL1A1" or "NM_000088.3"' id="search_id" onKeydown='javascript: if (event.keyCode==13) get_query();'>
   <span class="input-group-btn">
-    <button class="btn btn-default" type="button" onClick='javascript:get_query();'>{{site.search-label}}</button>
-    <button class="btn btn-link" type="button" onClick='javascript:go_to_result_page("*");'>All LRGs</button>
+    <button class="btn btn-search icon-search smaller-icon close-icon-0" type="button" style="border-radius: 0px 4px 4px 0px;" onClick='javascript:get_query();'></button>
+    <button class="btn btn-link btn-search-text" type="button" onClick='javascript:go_to_result_page("*");'>All LRGs</button>
   </span>
 </div>

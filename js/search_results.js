@@ -1,15 +1,20 @@
-// Links
-var lrg_ftp = "http://ftp.ebi.ac.uk/pub/databases/lrgex/";
-var ens_url = "http://www.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels";
-var ncbi_url = "http://www.ncbi.nlm.nih.gov/mapview/maps.cgi?taxid=9606&CHR=###CHR###&BEG=###START###&END=###END###";
-var ucsc_url = "http://genome.ucsc.edu/cgi-bin/hgTracks?clade=mammal&org=Human&position=chr###LOC###";
-var hgnc_url = "http://www.genenames.org/cgi-bin/gene_symbol_report?match=";
+---
+---
 
-var lrg_json_file = "/json_index/lrg_index.json";
+// Links
+var lrg_ftp  = '{{ site.lrg_ftp }}';
+var ens_url  = '{{ site.ens_url }}';
+var ncbi_url = '{{ site.ncbi_url }}';
+var ucsc_url = '{{ site.ucsc_url }}';
+var hgnc_url = '{{ site.hgnc_url }}';
+
+var lrg_json_file = '{{ site.lrg_json_file }}';
 
 var external_link_class = "class=\"icon-external-link\"";
 
-var ref_assembly = "GRCh38";
+var ref_assembly = '{{ site.ref_assembly }}';
+ens_url = ens_url.replace(/###ASSEMBLY###/, ref_assembly);
+
 var lrg_regexp = /lrg_\d+/i;
 var all_lrgs = "LRG_*";
 var lrg_list = [];
@@ -81,9 +86,7 @@ function get_search_results (search_id) {
   if (search_id == "*") {
     search_term = "All LRGs";
   }
-  
   search_term = search_term.replace(/;/g, ' / ');
-  
 
   $("#search_term").html(search_term);
 
@@ -114,7 +117,7 @@ function get_data_in_array () {
         data_list[item.synonym[j]] = 1;
       }
       for (var k in item.xref) {
-          data_list[item.xref[k]] = 1;
+        data_list[item.xref[k]] = 1;
       }
     }
     // Compile the data into an array
@@ -138,7 +141,7 @@ function display_results (results) {
     result_term += "s";
   }
 
-  $("#search_count").html("(" + result_count + " " + result_term + ")");
+  $("#search_count").html(result_count + " " + result_term);
 
   $(table_id + " > tbody").empty();
 
@@ -158,7 +161,7 @@ function display_results (results) {
     var start      = results[lrg_id].chr_start;
     var end        = results[lrg_id].chr_end;
 
-    var ens_link  = get_ens_link(lrg_id, chr, start, end, ref_assembly);
+    var ens_link  = get_ens_link(lrg_id, chr, start, end);
     var ncbi_link = get_ncbi_link(chr, start, end);
     var ucsc_link = get_ucsc_link(chr, start, end);
 
@@ -168,78 +171,80 @@ function display_results (results) {
     }
 
     // HTML code
-    var newrow = "<tr id=\"" + lrg_id + "\">";
+    var newrow = $('<tr/>');
+        newrow.attr('id', lrg_id);
     // LRG ID
-    newrow += "<td sorttable_customkey=\"" + extract_id(lrg_id) + "\" class=\"left-col\"><a href=\"" + lrg_link + lrg_id + ".xml" + "\" target=\"_blank\">" + lrg_id + "</a></td>";
+    var lrg_id_cell = newCell('<a href="' + lrg_link + lrg_id + '.xml" target="_blank">' + lrg_id + '</a>');
+        lrg_id_cell.attr('sorttable_customkey', extract_id(lrg_id));
+        lrg_id_cell.addClass('left-col');
+    newrow.append(lrg_id_cell);
     // Symbol
-    newrow += "<td><a "+external_link_class+" href=\"" + hgnc_url + symbol + "\" target=\"_blank\">"+ symbol + "</a></td>";
+    newrow.append(newCell('<a '+external_link_class+' href="' + hgnc_url + symbol + '" target="_blank">'+ symbol + '</a>'));
     // Status
-    newrow += "<td>"+ lrg_status + "</td>";
+    newrow.append(newCell(lrg_status));
     // Last modification date
-    newrow += "<td sorttable_customkey=\"" + modif_date + "\">"+ parse_date(modif_date) + "</td>";
+    var date_cell = newCell(parse_date(modif_date));
+        date_cell.attr('sorttable_customkey',modif_date);
+    newrow.append(date_cell);
     // External links
-    newrow += "<td>"+ ens_link + " - " + ncbi_link + " - " + ucsc_link + "</td>";
-    
-    newrow += "</tr>";
+    newrow.append(newCell(ens_link + " - " + ncbi_link + " - " + ucsc_link));
 
     $(table_id + " > tbody").append(newrow);
   }
 }
 
-function get_ens_link (lrg_id, chr, start, end, assembly) {
+function newCell(content) {
+  return $("<td></td>").html(content);
+}
 
+function get_ens_link (lrg_id, chr, start, end) {
   var new_link = ens_url.replace(/###ID###/, lrg_id);
-      new_link = new_link.replace(/###ASSEMBLY###/, assembly);
       new_link = new_link.replace(/###LOC###/, chr+':'+start+'-'+end);
-
   return "<a "+external_link_class+" href=\"" + new_link + "\" target=\"_blank\">Ensembl</a>";
 }
 
 function get_ncbi_link (chr, start, end) {
-
   var new_link = ncbi_url.replace(/###CHR###/, chr);
       new_link = new_link.replace(/###START###/, start);
       new_link = new_link.replace(/###END###/, end);
-
   return "<a "+external_link_class+" href=\"" + new_link + "\" target=\"_blank\">NCBI</a>";;
 }
 
 function get_ucsc_link (chr, start, end) {
-
   var new_link = ucsc_url.replace(/###LOC###/, chr+':'+start+'-'+end);
-
   return "<a "+external_link_class+" href=\"" + new_link + "\" target=\"_blank\">UCSC</a>";;
 }
 
 
-//return an array of objects according to key, value, or key and value matching
+// Return an array of objects according to key, value, or key and value matching
 function getObjects (obj_parent, obj, key, val, objects) {
 
-  // Search with regex
-  var regex;
-  // Specific regex for the sequence identifiers, with a version, e.g. NM_000088.3
-  if (val.match(/^(NM_|NG_|ENST|ENSG)\d+/)) {
-    regex = new RegExp("^"+val+"\.");
-  }
-  // Specific regex for the character "*"
-  else if (!val.match(/^[a-z0-9]+/i)) {
-    regex = new RegExp("^\\"+val+"$"); 
-  }
-  // Default regex
-  else {
-    regex = new RegExp("^"+val+"$"); 
-  }
-
-  // Data search
+  // Initialise hash
   if (!objects) {
     objects = {};
   }
+
+  // Data search
+
+  // Get all the data
   if (val == "*" && key == '') {
     for (var i in obj) {
       objects[obj[i].id] = obj[i];
     }
   }
+  // Get a search result
   else {
+    // Search with regex
+    var regex;
+    // Specific regex for the sequence identifiers, with a version, e.g. NM_000088.3
+    if (val.match(/^(NM_|NG_|ENST|ENSG)\d+/)) {
+      regex = new RegExp("^"+val+"\.");
+    }
+    // Default regex
+    else {
+      regex = new RegExp("^"+val+"$"); 
+    }
+
     for (var i in obj) {
       if (!obj.hasOwnProperty(i)) continue;
       if (typeof obj[i] == 'object') {
@@ -265,7 +270,7 @@ function getObjects (obj_parent, obj, key, val, objects) {
   return objects;
 }
 
-// Function extract ID 
+// Function extract numerical ID from a LRG ID (LRG_XXX)
 function extract_id (lrg_id) {
 
   var match = lrg_id.match(/^LRG_(\d+)$/);
@@ -277,9 +282,8 @@ function extract_id (lrg_id) {
   }
 }
 
-// Function to parse the date
+// Function to parse the date and display it in a nicer way
 function parse_date (date) {
-
   var date_string = date.toString();
 
   var match = date_string.match(/^(\d{4})-(\d{2})-(\d{2})$/);
@@ -302,10 +306,12 @@ function getParameterByName (name, url) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+// Pick up the URL parameters in order to get the search terms
 function getURLParameter(name) {
   return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
 }
 
+// Change the URL to add the search terms as parameters
 function changeUrlParam (param, value) {
   var currentURL = window.location.href+'&';
   var change = new RegExp('('+param+')=(.*)&', 'g');
@@ -327,7 +333,8 @@ function changeUrlParam (param, value) {
   }
 }
 
+// Rolling image displayed while the result is 
 function wait_for_results() {
   $(table_id + " > tbody").empty();
-  $(table_id + " > tbody").append("<tr><td class=\"wait\" colspan=\"5\"></td></tr>");
+  $(table_id + " > tbody").append('<tr><td colspan="5"><div class="wait"></div><div class="loader"></div></td></tr>');
 }
