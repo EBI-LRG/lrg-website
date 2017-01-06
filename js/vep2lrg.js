@@ -2,13 +2,20 @@
 ---
 
 //var rest_current = 'http://rest.ensembl.org/vep/human/hgvs/';
-var rest_current = '{{ site.rest_url_38 }}';
-var rest_grch37  = '{{ site.rest_url_37 }}';
+var rest_url    = '{{ site.rest_url_38 }}';
+var rest_grch37 = '{{ site.rest_url_37 }}';
 
+var conseq_url  = '{{ site.conseq_url }}';
+
+// 38
 var ens_gene_url  = '{{ site.ens_gene_url }}';
 var ens_trans_url = '{{ site.ens_trans_url }}';
 var ens_var_url   = '{{ site.ens_var_url }}';
-var conseq_url    = '{{ site.conseq_url }}';
+
+//37
+var ens_gene_url_grch37  = '{{ site.ens_gene_url_37 }}';
+var ens_trans_url_grch37 = '{{ site.ens_trans_url_37 }}';
+var ens_var_url_grch37   = '{{ site.ens_var_url_37 }}';
 
 var default_val   = 'unknown';
 
@@ -29,12 +36,15 @@ function get_vep_results () {
 
   var assembly = getUrlParam('assembly');
   var hgvs     = getUrlParam('hgvs');
+  var lrg_id   = getUrlParam('lrg');
 
   if (assembly && hgvs) {
     assembly = assembly.toLowerCase();
-    var rest_url = rest_current;
     if (assembly.match('grch37')) {
       rest_url = rest_grch37;
+      ens_gene_url  = ens_gene_url_grch37;
+      ens_trans_url = ens_trans_url_grch37;
+      ens_var_url   = ens_var_url_grch37;
       maf_help['Reference'] = maf_help['Reference'].replace('GRCh38','GRCh37');
     }
 
@@ -45,7 +55,7 @@ function get_vep_results () {
     $.getJSON(rest_url)
               .done(function(data) {
                   console.log(data);
-                  var html_content = parseData(data[0]);
+                  var html_content = parseData(data[0],lrg_id);
                   $('#vep_results').html(html_content);
               })
               .fail(function(data,status,xhr) {
@@ -84,12 +94,19 @@ function getUrlParam (name){
   }
 }
 
-function parseData(data) {
+function parseData(data,lrg_id) {
   var html = "";
 
   var strand = get_strand(data.strand);
 
-  var allele_desc = (data.id.indexOf("LRG_") >= 0) ? ['LRG','Reference'] : ['Reference','LRG'];
+  var lrg_label = 'LRG';
+  if (lrg_id) {
+    lrg_label = lrg_id;
+    maf_help[lrg_id] = maf_help['LRG'].replace('LRG',lrg_label);
+    maf_colour[lrg_id] = maf_colour['LRG'];
+  }
+
+  var allele_desc = (data.id.indexOf("LRG_") >= 0) ? [lrg_label,'Reference'] : ['Reference',lrg_label];
 
   var alleles = data.allele_string.split('/');
 
@@ -153,7 +170,7 @@ function parse_colocated_variants (data,seqs_by_allele) {
       var ma     = (variant.minor_allele) ? '<span class="'+ma_colour+'">'+variant.minor_allele+'</span>' : default_val;
       var maf    = (variant.minor_allele_freq || variant.minor_allele_freq == 0) ? variant.minor_allele_freq : default_val;
       var aa     = (variant.ancestral_allele) ? variant.ancestral_allele : default_val;
-console.log("Variant:  "+variant.id);
+      console.log("Variant:  "+variant.id);
 
       var minor_allele_seq = "";
       var minor_allele_seq_info = ""
@@ -208,7 +225,7 @@ function parse_transcript_data (data) {
 
       var distance = (trans.distance) ? '<i>Distance to transcript: '+trans.distance+'bp' : '-';
 
-      html += '    <tr><td>' + gene_id + '</td><td>' + trans_id + '</td><td>' + trans.biotype + '</td><td>'+ strand + '</td><td>' + cons.join(', ') + '</td>' +
+      html += '    <tr><td>' + gene_id + '</td><td>' + trans_id + '</td><td>' + trans.biotype + '</td><td style="text-align:center">'+ strand + '</td><td>' + cons.join(', ') + '</td>' +
                       '<td>' + trans.variant_allele + '</td><td>' + trans.impact + '</td><td>' + distance+ '</td></tr>';
     });
 

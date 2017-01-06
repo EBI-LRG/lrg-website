@@ -57,11 +57,20 @@ rest_url_38: "http://rest.ensembl.org/vep/human/hgvs/"
 rest_url_37: "http://grch37.rest.ensembl.org/vep/human/hgvs/"
 rest_lrg:    "http://www.ebi.ac.uk/ebisearch/ws/rest/lrg"
 
-ens_url:       "http://www.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels"
-ens_gene_url:  "http://www.ensembl.org/Homo_sapiens/Gene/Summary?g="
-ens_trans_url: "http://www.ensembl.org/Homo_sapiens/Transcript/Summary?t="
-ens_var_url:   "http://www.ensembl.org/Homo_sapiens/Variation/Explore?v="
-conseq_url:    "http://www.ensembl.org/info/genome/variation/predicted_data.html#"
+conseq_url:  "http://www.ensembl.org/info/genome/variation/predicted_data.html#"
+
+# 38
+ens_url:        "http://www.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels"
+ens_gene_url:   "http://www.ensembl.org/Homo_sapiens/Gene/Summary?g="
+ens_trans_url:  "http://www.ensembl.org/Homo_sapiens/Transcript/Summary?t="
+ens_var_url:    "http://www.ensembl.org/Homo_sapiens/Variation/Explore?v="
+
+#37
+ens_url_37:       "http://grch37.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels"
+ens_gene_url_37:  "http://grch37.ensembl.org/Homo_sapiens/Gene/Summary?g="
+ens_trans_url_37: "http://grch37.ensembl.org/Homo_sapiens/Transcript/Summary?t="
+ens_var_url_37:   "http://grch37.ensembl.org/Homo_sapiens/Variation/Explore?v="
+
 
 ncbi_url: "http://www.ncbi.nlm.nih.gov/mapview/maps.cgi?taxid=9606&CHR=###CHR###&BEG=###START###&END=###END###"
 ucsc_url: "http://genome.ucsc.edu/cgi-bin/hgTracks?clade=mammal&org=Human&position=chr###LOC###"
