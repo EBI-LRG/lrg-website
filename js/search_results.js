@@ -21,20 +21,6 @@ var lrg_list = [];
 
 var table_id = "#search_results";
 
-var months = {};
-    months["01"] = "Jan";
-    months["02"] = "Feb";
-    months["03"] = "Mar";
-    months["04"] = "Apr";
-    months["05"] = "May";
-    months["06"] = "Jun";
-    months["07"] = "Jul";
-    months["08"] = "Aug";
-    months["09"] = "Sep";
-    months["10"] = "Oct";
-    months["11"] = "Nov";
-    months["08"] = "Dec";
-
 
 //
 // Methods //
@@ -156,7 +142,6 @@ function display_results (results) {
     var lrg_id     = result_keys[i];
     var symbol     = results[lrg_id].symbol;
     var lrg_status = results[lrg_id].status;
-    var modif_date = results[lrg_id].last_modification_date;
     var chr        = results[lrg_id].chr_name;
     var start      = results[lrg_id].chr_start;
     var end        = results[lrg_id].chr_end;
@@ -182,12 +167,8 @@ function display_results (results) {
     newrow.append(newCell('<a '+external_link_class+' href="' + hgnc_url + symbol + '" target="_blank">'+ symbol + '</a>'));
     // Status
     newrow.append(newCell(lrg_status));
-    // Last modification date
-    var date_cell = newCell(parse_date(modif_date));
-        date_cell.attr('sorttable_customkey',modif_date);
-    newrow.append(date_cell);
     // External links
-    newrow.append(newCell(ens_link + " - " + ncbi_link + " - " + ucsc_link));
+    newrow.append(newCell(ens_link + '<span style="padding:0px 15px">-</span>' + ncbi_link + '<span style="padding:0px 15px">-</span>' + ucsc_link));
 
     $(table_id + " > tbody").append(newrow);
   }
