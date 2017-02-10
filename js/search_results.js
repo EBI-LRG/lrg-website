@@ -263,19 +263,6 @@ function extract_id (lrg_id) {
   }
 }
 
-// Function to parse the date and display it in a nicer way
-function parse_date (date) {
-  var date_string = date.toString();
-
-  var match = date_string.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  if (match) {
-    return match[3] + " " + months[match[2]] + " " + match[1];
-  }
-  else {
-    return date_string;
-  }
-}
-
 // Function to retrieve the searched term
 function getParameterByName (name, url) {
   if (!url) url = window.location.href;
