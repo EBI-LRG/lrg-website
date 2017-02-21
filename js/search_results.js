@@ -142,9 +142,9 @@ function display_results (results) {
     var lrg_id     = result_keys[i];
     var symbol     = results[lrg_id].symbol;
     var lrg_status = results[lrg_id].status;
-    var chr        = results[lrg_id].chr_name;
-    var start      = results[lrg_id].chr_start;
-    var end        = results[lrg_id].chr_end;
+    var chr        = results[lrg_id].chr;
+    var start      = results[lrg_id].start;
+    var end        = results[lrg_id].end;
 
     var ens_link  = get_ens_link(lrg_id, chr, start, end);
     var ncbi_link = get_ncbi_link(chr, start, end);
