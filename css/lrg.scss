@@ -178,6 +178,14 @@ header {
   padding-bottom: 20px;
 }
 
+.beta_label {
+  position:absolute;
+  top:15px;
+  left:15px;
+  background-color:#78BE43;
+  font-size:30px;
+}
+
 .masterhead {
   padding: 5px;
   margin-bottom: 0px;
@@ -1183,6 +1191,8 @@ ul.sections_list>li>a:after {
 .item_title {
   padding: 6px 5px;
   color: $lrg_blue;
+  font-size: 16px;
+  line-height: 16px;
   background-color: $lrg_gray2;
   font-weight:bold;
   &:hover, &:focus, &:active {
@@ -1194,6 +1204,37 @@ ul.sections_list>li>a:after {
   padding: 0px 8px;
   display: none;
   border-top: 1px solid $lrg_gray;
+}
+
+
+.item_entry_no_border {
+  margin-bottom: 4px;
+  &:hover, &:focus, &:active {
+    border-color: $lrg_purple;
+    .faq_title {
+      color: $lrg_purple;
+    }
+  }
+}
+
+.item_title_no_border {
+  padding: 6px 5px;
+  color: $lrg_blue;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight:bold;
+  &:hover, &:focus, &:active {
+    cursor:pointer;
+    color:$lrg_purple;
+  }
+}
+
+.item_content_no_border {
+  padding: 0px 8px;
+  display: none;
+  ul {
+    margin-top: 5px;
+  }
 }
 
 .ws_example_title {
