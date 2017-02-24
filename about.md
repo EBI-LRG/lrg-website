@@ -71,7 +71,11 @@ The LRG project is a collaborative effort. See below the relationship between th
   </div>
   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     <div class="vignette">
-      <div class="padding-bottom-10 text-center"><img src="/images/gencode_logo.png" /></div>
+      <div class="padding-bottom-10 text-center">
+        <a href="https://www.gencodegenes.org/about.html" target="_blank">
+          <img src="/images/gencode_logo.png" />
+        </a>
+      </div>
         <div class="padding-bottom-5"><b>Description:</b> GENCODE Transcripts (ENST)</div>
       <div><b>Collaboration with LRG:</b> review and improve annotation of clinically relevant transcripts</div>
     </div>
@@ -80,7 +84,11 @@ The LRG project is a collaborative effort. See below the relationship between th
 <div class="clearfix" style="margin-bottom:10px">
   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     <div class="vignette">
-      <div class="padding-bottom-10 text-center"><img src="/images/refseq_logo.png" /></div>
+      <div class="padding-bottom-10 text-center">
+        <a href="http://www.ncbi.nlm.nih.gov/refseq/rsg" target="_blank">
+          <img src="/images/refseq_logo.png" />
+        </a>
+      </div>
       <div class="padding-bottom-5"><b>Description:</b> RefSeqGene (NG), RefSeq transcript (NM)</div>
       <div><b>Collaboration with LRG:</b> review and improve annotation of clinically relevant transcripts</div>
     </div>
@@ -89,7 +97,10 @@ The LRG project is a collaborative effort. See below the relationship between th
     <div class="vignette">
       <div class="padding-bottom-10 text-center">
         <div class="vignette_title_grc">
-          <img src="/images/grc_logo.png" /><span>Genome Reference Consortium</span></div>
+          <a href="https://genomereference.org/" target="_blank">
+            <img src="/images/grc_logo.png" /><span>Genome Reference Consortium</span>
+          </a>
+        </div>
       </div>
       <div class="padding-bottom-5"><b>Description:</b> Reference genome assembly GRCh37/GRCh38</div>
       <div><b>Collaboration with LRG:</b> review and improve the sequence of the reference assembly and determine compatibility with legacy or community-requested sequences</div>
