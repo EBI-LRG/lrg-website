@@ -71,8 +71,7 @@ ens_gene_url_37:  "http://grch37.ensembl.org/Homo_sapiens/Gene/Summary?g="
 ens_trans_url_37: "http://grch37.ensembl.org/Homo_sapiens/Transcript/Summary?t="
 ens_var_url_37:   "http://grch37.ensembl.org/Homo_sapiens/Variation/Explore?v="
 
-
-ncbi_url: "http://www.ncbi.nlm.nih.gov/mapview/maps.cgi?taxid=9606&CHR=###CHR###&BEG=###START###&END=###END###"
+ncbi_url: "https://www.ncbi.nlm.nih.gov/variation/view/?chr=###CHR###&from=###START###&to=###END###"
 ucsc_url: "http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr###LOC###"
 hgnc_url: "http://www.genenames.org/cgi-bin/gene_symbol_report?match="
 
