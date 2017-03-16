@@ -10,11 +10,10 @@ var hgnc_url = '{{ site.hgnc_url }}';
 
 var lrg_json_file = '{{ site.lrg_json_file }}';
 
-var external_link_class = "class=\"icon-external-link\"";
-
 var ref_assembly = '{{ site.ref_assembly }}';
 ens_url = ens_url.replace(/###ASSEMBLY###/, ref_assembly);
 
+var external_link_class = 'icon-external-link';
 var lrg_regexp = /lrg_\d+/i;
 var all_lrgs = "LRG_*";
 var lrg_list = [];
@@ -35,7 +34,6 @@ function get_query () {
   if (!query) {
     query = getParameterByName("query");
   }
-
   go_to_result_page(query);
 }
 
@@ -128,7 +126,6 @@ function display_results (results) {
   }
 
   $("#search_count").html(result_count + " " + result_term);
-
   $(table_id + " > tbody").empty();
 
   // Sort the results by LRG ID (using the numeric part of the LRG ID)
@@ -138,6 +135,9 @@ function display_results (results) {
     var id_b = extract_id(b);
     return id_a - id_b;
   });
+
+  var link_separator = '<span style="padding:0px 15px">-</span>';
+
   for (i in result_keys) {
     var lrg_id     = result_keys[i];
     var symbol     = results[lrg_id].symbol;
@@ -157,19 +157,19 @@ function display_results (results) {
 
     // HTML code
     var newrow = $('<tr/>');
-        newrow.attr('id', lrg_id);
+        //newrow.attr('id', lrg_id); // <= not used at the moment
     // LRG ID
-    var lrg_id_cell = newCell('<a href="' + lrg_link + lrg_id + '.xml" target="_blank">' + lrg_id + '</a>');
+    var lrg_link = build_external_link(lrg_link + lrg_id + '.xml',lrg_id);
+    var lrg_id_cell = newCell(lrg_link);
         lrg_id_cell.attr('sorttable_customkey', extract_id(lrg_id));
         lrg_id_cell.addClass('left-col');
     newrow.append(lrg_id_cell);
     // Symbol
-    newrow.append(newCell('<a '+external_link_class+' href="' + hgnc_url + symbol + '" target="_blank">'+ symbol + '</a>'));
+    newrow.append(newCell(build_external_link(hgnc_url + symbol,symbol)));
     // Status
     newrow.append(newCell(lrg_status));
     // External links
-    newrow.append(newCell(ens_link + '<span style="padding:0px 15px">-</span>' + ncbi_link + '<span style="padding:0px 15px">-</span>' + ucsc_link));
-
+    newrow.append(newCell(ens_link + link_separator + ncbi_link + link_separator + ucsc_link));
     $(table_id + " > tbody").append(newrow);
   }
 }
@@ -181,21 +181,35 @@ function newCell(content) {
 function get_ens_link (lrg_id, chr, start, end) {
   var new_link = ens_url.replace(/###ID###/, lrg_id);
       new_link = new_link.replace(/###LOC###/, chr+':'+start+'-'+end);
-  return "<a "+external_link_class+" href=\"" + new_link + "\" target=\"_blank\">Ensembl</a>";
+  return build_external_link(new_link,'Ensembl',1);
 }
 
 function get_ncbi_link (chr, start, end) {
   var new_link = ncbi_url.replace(/###CHR###/, chr);
       new_link = new_link.replace(/###START###/, start);
       new_link = new_link.replace(/###END###/, end);
-  return "<a "+external_link_class+" href=\"" + new_link + "\" target=\"_blank\">NCBI</a>";;
+  return build_external_link(new_link,'NCBI',1);
 }
 
 function get_ucsc_link (chr, start, end) {
   var new_link = ucsc_url.replace(/###LOC###/, chr+':'+start+'-'+end);
-  return "<a "+external_link_class+" href=\"" + new_link + "\" target=\"_blank\">UCSC</a>";;
+  return build_external_link(new_link,'UCSC',1);
 }
 
+// Function to build simple external link
+function build_external_link (url,label,return_html) {
+  var ext_link = $('<a></a>');
+      ext_link.addClass(external_link_class);
+      ext_link.attr('target','_blank');
+      ext_link.attr('href', url);
+      ext_link.html(label);
+  if (return_html) {
+    return ext_link[0].outerHTML;
+  }
+  else {
+    return ext_link;
+  }
+}
 
 // Return an array of objects according to key, value, or key and value matching
 function getObjects (obj_parent, obj, key, val, objects) {
@@ -205,7 +219,7 @@ function getObjects (obj_parent, obj, key, val, objects) {
     objects = {};
   }
 
-  // Data search
+  // Data search //
 
   // Get all the data
   if (val == "*" && key == '') {
@@ -220,6 +234,11 @@ function getObjects (obj_parent, obj, key, val, objects) {
     // Specific regex for the sequence identifiers, with a version, e.g. NM_000088.3
     if (val.match(/^(NM_|NG_|ENST|ENSG)\d+/)) {
       regex = new RegExp("^"+val+"\.");
+    }
+    // Wild card character associated with other characters
+    else if (val.match(/\*/)) {
+      var tmp_val = val.replace(/\*/g,".*");
+      regex = new RegExp("^"+tmp_val+"$");
     }
     // Default regex
     else {
