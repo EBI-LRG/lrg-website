@@ -97,8 +97,8 @@ function get_data_in_array () {
       data_list[item.id] = 1;
       data_list[item.symbol] = 1;
       data_list[item.status] = 1;
-      for (var j in item.synonym) {
-        data_list[item.synonym[j]] = 1;
+      for (var j in item.synonyms) {
+        data_list[item.synonyms[j]] = 1;
       }
       for (var k in item.xref) {
         data_list[item.xref[k]] = 1;
@@ -233,16 +233,16 @@ function getObjects (obj_parent, obj, key, val, objects) {
     var regex;
     // Specific regex for the sequence identifiers, with a version, e.g. NM_000088.3
     if (val.match(/^(NM_|NG_|ENST|ENSG)\d+/)) {
-      regex = new RegExp("^"+val+"\.");
+      regex = new RegExp("^"+val+"\.", "i");
     }
     // Wild card character associated with other characters
     else if (val.match(/\*/)) {
       var tmp_val = val.replace(/\*/g,".*");
-      regex = new RegExp("^"+tmp_val+"$");
+      regex = new RegExp("^"+tmp_val+"$", "i");
     }
     // Default regex
     else {
-      regex = new RegExp("^"+val+"$"); 
+      regex = new RegExp("^"+val+"$", "i"); 
     }
 
     for (var i in obj) {
