@@ -81,7 +81,7 @@ There is the possibility to download all the public and pending LRGs:
   </div>
 </div>
 
-<span class="warning">NOTE:</span> If you can't access to the LRG FTP site through the FTP protocol, you can access it using the HTTP protocol: [LRG FTP site - HTTP](http://ftp.ebi.ac.uk/pub/databases/lrgex/).
+<span class="lrg_green2">NOTE:</span> If you can't access to the LRG FTP site through the FTP protocol, you can access it using the HTTP protocol: [LRG FTP site - HTTP](http://ftp.ebi.ac.uk/pub/databases/lrgex/).
 
 <br />  
 
@@ -91,19 +91,23 @@ There is the possibility to download all the public and pending LRGs:
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <table class="table table-hover table-lrg">
       <thead>
-        <tr class="sorttable_header">
-          <th rowspan="2">Format</th>
+        <tr>
+          <th rowspan="2">Data type(s)</th>
           <th rowspan="2">Description</th>
+          <th rowspan="2">Format</th>
           <th colspan="2" class="split-header">Files location by assembly</th>
         </tr>
-        <tr class="sorttable_header">
+        <tr>
           <th class="border-left">GRCh37</th>
           <th>GRCh38</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="left-col">BED</td>
+          <td class="left-col">
+            <div>LRG genes</div>
+            <div>LRG transcripts</div>
+          </td>
           <td class="smaller-text">
             The file contains 4 tracks:
             <ul>
@@ -113,6 +117,7 @@ There is the possibility to download all the public and pending LRGs:
               <li>Pending LRG transcripts, with their exon(s) coordinates</li>
             </ul>
           </td>
+          <td>BED</td>
           <td>
             <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_GRCh37.bed" target="_blank">
               <div class="file_link clearfix">
@@ -132,7 +137,10 @@ There is the possibility to download all the public and pending LRGs:
         </tr>
 
         <tr>
-          <td class="left-col">Tabulated<br /><span class="smaller-text" style="font-weight:normal">(LRG genes)</span></td>
+          <td class="left-col">
+            <div>LRG genes</div>
+            <div class="smaller-text" style="padding-top:2px;font-weight:normal">with <span class="lrg_green2">genomic coordinates</span></div>
+          </td>
           <td class="smaller-text">
             The file lists the LRG genes in genomic coordinates. The columns are:
             <ul>
@@ -145,6 +153,7 @@ There is the possibility to download all the public and pending LRGs:
               <li>Strand (1 = forward, -1 = reverse)</li>
             </ul>
           </td>
+          <td>Tabulated</td>
           <td>
             <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_GRCh37.txt" target="_blank">
               <div class="file_link clearfix">
@@ -164,7 +173,10 @@ There is the possibility to download all the public and pending LRGs:
         </tr>
 
         <tr>
-          <td class="left-col">Tabulated<br /><span class="smaller-text" style="font-weight:normal">(LRG transcripts, exons, proteins)</span></td>
+          <td class="left-col">
+            <div>LRG transcripts</div>
+            <div class="smaller-text" style="padding-top:2px;font-weight:normal">with <span class="lrg_green2">exons coordinates</span></div>
+          </td>
           <td class="smaller-text">
             The file lists the LRG transcripts, exons and protein in genomic coordinates<br />
             The columns are:
@@ -181,6 +193,7 @@ There is the possibility to download all the public and pending LRGs:
              <li>Protein end</li>
             </ul>
           </td>
+          <td>Tabulated</td>
           <td>
             <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_GRCh37.txt" target="_blank">
               <div class="file_link clearfix">
@@ -200,7 +213,10 @@ There is the possibility to download all the public and pending LRGs:
         </tr>
 
         <tr>
-          <td class="left-col">Tabulated<br /><span class="smaller-text" style="font-weight:normal">(LRG transcripts + external references)</span></td>
+          <td class="left-col">
+            <div>LRG transcripts</div>
+            <div class="smaller-text" style="padding-top:2px;font-weight:normal">with <span class="lrg_green2">external references</span></div>
+          </td>
           <td class="smaller-text">
             The file lists the LRG transcripts and their external references<br />
             The columns are:
@@ -214,6 +230,7 @@ There is the possibility to download all the public and pending LRGs:
              <li>CCDS ID (e.g. CCDS34682.1)</li>
             </ul>
           </td>
+          <td>Tabulated</td>
           <td>-</td>
           <td>
             <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_transcripts_xrefs.txt" target="_blank">
@@ -224,6 +241,35 @@ There is the possibility to download all the public and pending LRGs:
             </a>
           </td>
         </tr>
+
+        <tr>
+          <td class="left-col">
+            <div>LRG proteins</div>
+            <div class="smaller-text" style="padding-top:2px;font-weight:normal">with <span class="lrg_green2">RefSeq proteins</span></div>
+          </td>
+          <td class="smaller-text">
+            The file lists the LRG proteins and their corresponding RefSeq proteins and transcripts<br />
+            The columns are:
+            <ul>
+             <li>LRG protein ID (e.g. LRG_2p1)</li>
+             <li>RefSeq Protein ID (e.g. NP_000080.2)</li>
+             <li>LRG ID (e.g. LRG_2)</li>
+             <li>LRG transcript (e.g. LRG_2t1)</li>
+             <li>RefSeq Transcript ID (e.g. NM_000089.3)</li>
+            </ul>
+          </td>
+          <td>Tabulated</td>
+          <td>-</td>
+          <td>
+            <a href="ftp://ftp.ebi.ac.uk/pub/databases/lrgex/list_LRGs_proteins_RefSeq.txt" target="_blank">
+              <div class="file_link clearfix">
+                <div class="left icon-literature close-icon-0"></div>
+                <div class="left">TXT</div>
+              </div>
+            </a>
+          </td>
+        </tr>
+
       </tbody>
     </table>
   </div>
