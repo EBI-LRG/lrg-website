@@ -20,7 +20,7 @@ Authoritative source (e.g. LSDB) information:
 * Name of Submitter (and e-mail address) - optional  
 
 
-<span class="warning">NOTE:</span> Please refer to *e.g.* the LRG record for the **COL1A1** gene, [LRG_1](http://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_1.xml), for an example of how this contact information is displayed.  
+<span class="warning">NOTE:</span> Please refer to *e.g.* the LRG record for the **COL1A1** gene, [LRG_1]({{ site.lrg_ftp_http }}LRG_1.xml), for an example of how this contact information is displayed.  
 <br />
 
 
@@ -76,7 +76,7 @@ Please submit your data to <a class="bold_font" href="mailto:request@lrg-sequenc
 
 ### XML specification
 
-If you're happy using XML format, please download the specification from our [FTP site](http://ftp.ebi.ac.uk/pub/databases/lrgex/) and use this for your submissions.  
+If you're happy using XML format, please download the specification from our [FTP site]({{ site.lrg_ftp_http }}) and use this for your submissions.  
 <br />
 
 

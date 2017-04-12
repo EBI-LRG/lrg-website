@@ -6,7 +6,7 @@ icon-class: icon-submit
 permalink: /submit-variants/
 ---
 
-Consistent with the goals of the LRG collaboration, we offer the opportunity to submit information about variants to [dbSNP](http://www.ncbi.nlm.nih.gov/projects/SNP/) or [dbVar](http://www.ncbi.nlm.nih.gov/dbvar){: .icon-external-link}/[DGVa](http://www.ebi.ac.uk/dgva/){: .icon-external-link}, as appropriate, and obtain an accession number for each variant. The results will be returned to you as outlined in the [instructions](http://ftp.ebi.ac.uk/pub/databases/lrgex/docs/SubmittingVariationInfo.pdf).  
+Consistent with the goals of the LRG collaboration, we offer the opportunity to submit information about variants to [dbSNP](http://www.ncbi.nlm.nih.gov/projects/SNP/) or [dbVar](http://www.ncbi.nlm.nih.gov/dbvar){: .icon-external-link}/[DGVa](http://www.ebi.ac.uk/dgva/){: .icon-external-link}, as appropriate, and obtain an accession number for each variant. The results will be returned to you as outlined in the [instructions]({{ site.lrg_ftp_http }}docs/SubmittingVariationInfo.pdf).  
 <br />
 
 
@@ -53,7 +53,7 @@ We would encourage you to also submit the following information:
 
 Below is a general outline of the submission procedure: 
 
-1. **Download and read the [instructions](http://ftp.ebi.ac.uk/pub/databases/lrgex/docs/SubmittingVariationInfo.pdf)** for submission and the [submission template](http://ftp.ebi.ac.uk/pub/databases/lrgex/docs/submission_template.xls) so you understand the procedure and the steps involved.  
+1. **Download and read the [instructions]({{ site.lrg_ftp_http }}docs/SubmittingVariationInfo.pdf)** for submission and the [submission template]({{ site.lrg_ftp_http }}docs/submission_template.xls) so you understand the procedure and the steps involved.  
 
 2. **Fill in** your submission data in the template.  
 

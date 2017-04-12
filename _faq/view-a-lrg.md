@@ -9,5 +9,5 @@ faq_related:
   - use-a-lrg-record
 ---
 
-All that you need is a web browser such as Firefox, Chrome, Safari, etc. to view the LRGs that are available at the [LRG FTP site](http://ftp.ebi.ac.uk/pub/databases/lrgex/).  
+All that you need is a web browser such as Firefox, Chrome, Safari, etc. to view the LRGs that are available at the [LRG FTP site]({{ site.lrg_ftp_http }}).  
 LRGs can also be viewed in the Ensembl, NCBI and UCSC genome browsers.

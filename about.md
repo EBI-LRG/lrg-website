@@ -131,7 +131,7 @@ For more information on the specification and LRGs, see the following publicatio
 
 * [LRG video presentation](http://www.ebi.ac.uk/training/online/course/locus-reference-genomic-lrg-resource-webinar){: .icon-external-link}: a webinar of ~30min providing an overview and demo of the LRG resource.
 
-* The LRG specification [document](ftp://ftp.ebi.ac.uk/pub/databases/lrgex/docs/LRG.pdf)
+* The LRG specification [document]({{ site.lrg_ftp_http }}docs/LRG.pdf)
 
 For more information on how the RefSeqGene records relate to the LRG project, please refer to this NCBI webpage [document](http://www.ncbi.nlm.nih.gov/refseq/rsg/lrg/){: .icon-external-link}.  
 <br />
