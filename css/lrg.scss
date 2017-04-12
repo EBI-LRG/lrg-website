@@ -1228,6 +1228,17 @@ ul.sections_list>li>a:after {
   }
 }
 
+.item_title_no_border_small {
+  padding: 4px 3px;
+  color: $lrg_blue;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight:bold;
+  &:hover, &:focus, &:active {
+    cursor:pointer;
+  }
+}
+
 .item_content_no_border {
   padding: 0px 8px;
   display: none;

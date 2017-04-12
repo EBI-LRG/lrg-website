@@ -117,7 +117,7 @@ There is the possibility to download all the public and pending LRGs:
               <li>Pending LRG transcripts, with their exon(s) coordinates</li>
             </ul>
           </td>
-          <td>BED</td>
+          <td>BED<br /><span class="smaller-text">(12 columns)</span></td>
           <td>
             <a href="{{ lrg_ftp }}/LRG_GRCh37.bed" target="_blank">
               <div class="file_link clearfix">
@@ -144,14 +144,29 @@ There is the possibility to download all the public and pending LRGs:
           <td class="smaller-text">
             The file lists the LRG genes in genomic coordinates. The columns are:
             <ul>
-              <li>LRG identifier (e.g. LRG_1)</li>
-              <li>HGNC symbol (e.g. COL1A1)</li>
+              <li>LRG identifier</li>
+              <li>HGNC symbol</li>
               <li>Status (public/pending)</li>
               <li>Chromosome</li>
               <li>Start</li>
               <li>End</li>
               <li>Strand (1 = forward, -1 = reverse)</li>
             </ul>
+
+            <div class="clearfix">
+              <div id="lrg_data_file_gene_button" class="item_title_no_border_small close-icon-5 icon-collapse-closed" style="float:left;margin-bottom:2px" onclick="javascript:show_hide('lrg_data_file_gene')">File content example</div>
+            </div>
+            <div id="lrg_data_file_gene" style="display:none">
+              <table class="table table-bordered table-lrg">
+                <thead>
+                  <tr><th>LRG_ID</th><th>HGNC_SYMBOL</th><th>LRG_STATUS</th><th>CHROMOSOME</th><th>START</th><th>STOP</th><th>STRAND</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>LRG_1</td><td>COL1A1</td><td>public</td><td>17</td><td>50182096</td><td>50206639</td><td>-1</td></tr>
+                  <tr><td>LRG_2</td><td>COL1A2</td><td>public</td><td>7</td><td>94389561</td><td>94433232</td><td>1</td></tr>
+                </tbody>
+              </table>
+            </div>
           </td>
           <td>Tabulated</td>
           <td>
@@ -181,17 +196,32 @@ There is the possibility to download all the public and pending LRGs:
             The file lists the LRG transcripts, exons and protein in genomic coordinates<br />
             The columns are:
             <ul>
-             <li>LRG transcript identifier (e.g. LRG_1t1)</li>
-             <li>HGNC symbol (e.g. COL1A1)</li>
-             <li >Chromosome</li>
-             <li>Strand (1 = forward, -1 = reverse)</li>
-             <li>Transcript start</li>
-             <li>Transcript end</li>
-             <li>List of exons coordinates ("start-end" separated by a comma)</li>
-             <li>LRG protein identifier (e.g. LRG_1p1)</li>
-             <li>Protein start</li>
-             <li>Protein end</li>
+              <li>LRG transcript identifier</li>
+              <li>HGNC symbol</li>
+              <li>Chromosome</li>
+              <li>Strand (1 = forward, -1 = reverse)</li>
+              <li>Transcript start</li>
+              <li>Transcript end</li>
+              <li>List of exons coordinates ("start-end" separated by a comma)</li>
+              <li>LRG protein identifier</li>
+              <li>Protein start</li>
+              <li>Protein end</li>
             </ul>
+
+            <div class="clearfix">
+              <div id="lrg_data_file_tr1_button" class="item_title_no_border_small close-icon-5 icon-collapse-closed" style="float:left;margin-bottom:2px" onclick="javascript:show_hide('lrg_data_file_tr1')">File content example</div>
+            </div>
+            <div id="lrg_data_file_tr1" style="display:none">
+              <table class="table table-bordered table-lrg">
+                <thead>
+                  <tr><th>LRG_TRANSCRIPT</th><th>HGNC_SYMBOL</th><th>CHROMOSOME</th><th>STRAND</th><th>TRANSCRIPT_START</th><th>TRANSCRIPT_STOP</th><th>EXONS_COORDS</th><th>LRG_PROTEIN</th><th>CDS_START</th><th>CDS_STOP</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>LRG_1t1</td><td>COL1A1</td><td>17</td><td>-1</td><td>50184096</td><td>50201639</td><td><ul style="margin:0px;padding-left:15px"><li>50184096-50185648</li><li>50185778-50186020</li><li>...</li><li>50201411-50201639</li></ul></td><td>LRG_1p1</td><td>50185502</td><td>50201513</td></tr>
+                  <tr><td>LRG_2t1</td><td>COL1A2</td><td>7</td><td>1</td><td>94394561</td><td>94431232</td><td><ul style="margin:0px;padding-left:15px"><li>94394561-94395101</li><li>94397748-94397758</li><li>...</li><li>94430247-94431232</li></ul></td><td>LRG_2p1</td><td>94395032</td><td>94430393</td></tr>
+                </tbody>
+              </table>
+            </div>
           </td>
           <td>Tabulated</td>
           <td>
@@ -221,14 +251,29 @@ There is the possibility to download all the public and pending LRGs:
             The file lists the LRG transcripts and their external references<br />
             The columns are:
             <ul>
-             <li>LRG ID (e.g. LRG_2)</li>
-             <li>HGNC symbol (e.g. COL1A2)</li>
-             <li>RefSeqGene ID (e.g. NG_007405.1)</li>
-             <li>LRG transcript (e.g. t1)</li>
-             <li>RefSeq transcript ID with the sequence identical to the LRG transcript (e.g. NM_000089.3)</li>
-             <li>Ensembl transcript ID with the sequence identical to LRG transcript (e.g. ENST00000297268.10)</li>
-             <li>CCDS ID (e.g. CCDS34682.1)</li>
+              <li>LRG ID</li>
+              <li>HGNC symbol</li>
+              <li>RefSeqGene ID</li>
+              <li>LRG transcript</li>
+              <li>RefSeq transcript ID with the sequence identical to the LRG transcript</li>
+              <li>Ensembl transcript ID with the sequence identical to LRG transcript</li>
+              <li>CCDS ID</li>
             </ul>
+
+            <div class="clearfix">
+              <div id="lrg_data_file_tr2_button" class="item_title_no_border_small close-icon-5 icon-collapse-closed" style="float:left;margin-bottom:2px" onclick="javascript:show_hide('lrg_data_file_tr2')">File content example</div>
+            </div>
+            <div id="lrg_data_file_tr2" style="display:none">
+              <table class="table table-bordered table-lrg">
+                <thead>
+                  <tr><th>LRG</th><th>HGNC_SYMBOL</th><th>REFSEQ_GENOMIC</th><th>LRG_TRANSCRIPT</th><th>REFSEQ_TRANSCRIPT</th><th>ENSEMBL_TRANSCRIPT</th><th>CCDS</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>LRG_1</td><td>COL1A1</td><td>NG_007400.1</td><td>t1</td><td>NM_000088.3</td><td>-</td><td>CCDS11561.1</td></tr>
+                  <tr><td>LRG_2</td><td>COL1A2</td><td>NG_007405.1</td><td>t1</td><td>NM_000089.3</td><td>ENST00000297268.10</td><td>CCDS34682.1</td></tr>
+                </tbody>
+              </table>
+            </div>
           </td>
           <td>Tabulated</td>
           <td>-</td>
@@ -251,12 +296,27 @@ There is the possibility to download all the public and pending LRGs:
             The file lists the LRG proteins and their corresponding RefSeq proteins and transcripts<br />
             The columns are:
             <ul>
-             <li>LRG protein ID (e.g. LRG_2p1)</li>
-             <li>RefSeq Protein ID (e.g. NP_000080.2)</li>
-             <li>LRG ID (e.g. LRG_2)</li>
-             <li>LRG transcript (e.g. LRG_2t1)</li>
-             <li>RefSeq Transcript ID (e.g. NM_000089.3)</li>
+              <li>LRG protein ID</li>
+              <li>RefSeq Protein ID</li>
+              <li>LRG ID</li>
+              <li>LRG transcript</li>
+              <li>RefSeq Transcript ID</li>
             </ul>
+
+            <div class="clearfix">
+              <div id="lrg_data_file_pr_button" class="item_title_no_border_small close-icon-5 icon-collapse-closed" style="float:left;margin-bottom:2px" onclick="javascript:show_hide('lrg_data_file_pr')">File content example</div>
+            </div>
+            <div id="lrg_data_file_pr" style="display:none">
+              <table class="table table-bordered table-lrg">
+                <thead>
+                  <tr><th>LRG_PROTEIN</th><th>REFSEQ_PROTEIN</th><th>LRG</th><th>LRG_TRANSCRIPT</th><th>REFSEQ_TRANSCRIPT</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>LRG_1p1</td><td>NP_000079.2</td><td>LRG_1</td><td>LRG_1t1</td><td>NM_000088.3</td></tr>
+                  <tr><td>LRG_2p1</td><td>NP_000080.2</td><td>LRG_2</td><td>LRG_2t1</td><td>NM_000089.3</td></tr>
+                </tbody>
+              </table>
+            </div>
           </td>
           <td>Tabulated</td>
           <td>-</td>
