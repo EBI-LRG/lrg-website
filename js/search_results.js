@@ -2,7 +2,7 @@
 ---
 
 // Links
-var lrg_ftp  = '{{ site.lrg_ftp_html }}';
+var lrg_ftp  = '{{ site.lrg_ftp_http }}';
 var ens_url  = '{{ site.ens_url }}';
 var ncbi_url = '{{ site.ncbi_url }}';
 var ucsc_url = '{{ site.ucsc_url }}';
