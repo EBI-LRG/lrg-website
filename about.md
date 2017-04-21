@@ -24,7 +24,7 @@ permalink: /about/
 
 ### The LRG Project
 
-An LRG is a manually curated record that contains stable and thus, un-versioned reference sequences designed specifically for reporting sequence variants with clinical implications.
+An **LRG** (**L**ocus **R**eference **G**enomic) is a manually curated record that contains stable and thus, un-versioned reference sequences designed specifically for reporting sequence variants with clinical implications.
 Each LRG contains a stable “**fixed**” section and a regularly updated “**updatable**” section:  
 
 * The **fixed section** contains:  
@@ -51,7 +51,7 @@ The LRG project is a collaboration between the NCBI and EMBL-EBI. The creation o
 
 * **Experts in LRG region of interest contacted** for input. For more on experts see [the LRG collaborators page](/lrg-collaborators/). Changes can be made to a pending record at this stage, if necessary.
 
-* **Final review** performed by LRG curators at EBI
+* **Final review** performed by LRG curators at EMBL-EBI
 
 * **LRG published** and collaborators informed  
 
