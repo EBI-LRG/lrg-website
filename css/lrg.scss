@@ -70,8 +70,9 @@ a {
   color: $blue;
   text-decoration: none;
 	cursor: pointer;
-  &:hover, &:active, &:focus {
+  &:hover, &:active, &:focus, &:visited {
     color: $lrg_purple;
+    outline: none;
     text-decoration: none;
   }
 }
