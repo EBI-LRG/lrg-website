@@ -388,5 +388,5 @@ Previous versions of the LRGs (in different LRG XML schemas) are available:
 
 ### Web services
 
-The EMBL-EBI provides [RESTful web services](http://www.ebi.ac.uk/Tools/webservices/services/eb-eye_rest){: .icon-external-link} for LRG.
+The EMBL-EBI provides RESTful web services for LRG.
 <div><a class="icon-next-page smaller-icon close-icon-2" href="/web-service">See more</a></div>
