@@ -1,11 +1,44 @@
-<div class="section-box" id="search_help">
-  <div class="clearfix">
-    <div class="section-header icon-help left">Search help</div>
-    <div class="right close-button icon-close close-icon-0" title="Close this box" onclick="javascript:$('#search_help').hide()"></div>
+<div class="clearfix" id="search_info">
+  
+  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padding-left-0">
+    <div class="section-box" id="search_help">
+      <div class="section-header icon-help">Search help</div>
+      <div>  
+        <p class="margin-top-2 margin-bottom-0 smaller-text">
+          You can <span class="bold_font">search by</span> LRG identifier, HGNC gene name, NCBI and Ensembl accession numbers (gene or transcript), gene synonym or LRG status.
+        </p>
+        <p class="margin-top-5 margin-bottom-0 smaller-text">
+          <span class="bold_font">Autocompletion</span> will appear when you will start typing: you can search for NCBI and Ensembl accession numbers without using the version number, e.g. <a href="/search/?query=NM_000088">NM_000088</a> instead of <a href="/search/?query=NM_000088.3">NM_000088.3</a>.
+        </p>
+        <p class="margin-top-5 margin-bottom-0 smaller-text">
+          <span class="bold_font">Batch search</span> can be carried out by entering a list of identifiers separated by a semi-colon symbol e.g. <a href="/search/?query=LRG_1;LRG_3;NM_007294;LRG_45">LRG_1;LRG_3;NM_007294;LRG_45</a>.
+        </p>
+      </div>
+    </div>
   </div>
-  <p class="margin-top-5 margin-bottom-0 smaller-text">
-    You can search by e.g. LRG identifier, HGNC gene name, NCBI and Ensembl accession numbers (gene or transcript), gene synonym or LRG status.<br />
-    <b>Autocompletion</b> will appear when you will start typing: you can search for NCBI and Ensembl accession numbers without using the version number, e.g. <a href="/search/?query=NM_000088">NM_000088</a> instead of <a href="/search/?query=NM_000088.3">NM_000088.3</a>. <b>Batch search</b> can be carried out by entering a list of identifiers separated by a semi-colon symbol e.g. <a href="/search/?query=LRG_1;LRG_3;NM_007294;LRG_45">LRG_1;LRG_3;NM_007294;LRG_45</a>.
-  </p>
-  <div class="section-grey icon-tool close-icon-5">Programmatic access to LRG data is available through web services. <a class="icon-next-page smaller-icon close-icon-2" href="/web-service">See more</a></div>
+
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 padding-left-0 padding-right-0">
+
+    <div class="section-box margin-bottom-5" id="web_service_help">
+      <div class="section-header icon-tool">Web services</div>
+      <div> 
+        <p class="margin-top-2 margin-bottom-0 smaller-text"> 
+          Programmatic access to LRG data is available through web services. 
+          <a class="icon-next-page smaller-icon close-icon-2" href="/web-service">See more</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="section-box" id="curation_help">
+      <div class="section-header icon-unassigned-job">Curation progress</div>
+      <div>
+        <p class="margin-top-2 margin-bottom-0 smaller-text">  
+          Check the progress of pending LRG records undergoing curation.
+          <a class="icon-next-page smaller-icon close-icon-2" href="/curation-status">See curation progress</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
 </div>
