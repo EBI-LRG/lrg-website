@@ -70,7 +70,7 @@ a {
   color: $blue;
   text-decoration: none;
 	cursor: pointer;
-  &:hover, &:active, &:focus, &:visited {
+  &:hover, &:active, &:focus {
     color: $lrg_purple;
     outline: none;
     text-decoration: none;
@@ -623,9 +623,10 @@ a.section-link {
     color:$lrg_green2;
   }
   .section-grey {
+    color: $lrg_green2;
     background-color:$bg_2;
     padding: 6px 10px;
-    margin: 5px -8px 0px;
+    margin: 8px -8px 0px;
   }
 }
 
@@ -645,7 +646,7 @@ a.section-link {
   text-align:center;
   font-family: $font_title;
   color: $lrg_dark;
-  margin: 3px 4px 5px 8px;
+  margin: 3px 0px 5px;
   >div {
     font-weight: bold;
     margin: 0px auto 5px;
@@ -676,7 +677,7 @@ a.section-link {
 }
 
 .section-bottom-container {
-  background-color:$bg_2;
+  background-color:$lrg_gray2;/*$bg_2;*/
   position: relative;
   .section-bottom-content {
     min-height: 150px;
@@ -733,12 +734,21 @@ a.section-link {
 .section-publication {
   line-height: 1.3;
   margin-top: 6px;
-  >span {
+  .publication-title {
     font-weight:bold;
     line-height: 1.2;
   }
 }
 
+.section-publication-most-recent-item {
+  margin-bottom: 6px;
+}
+
+.section-publication-item {
+  border-top:1px solid $lrg_blue;
+  padding-top:4px;
+  margin-bottom: 6px;
+}
 
 
 .section-news {
@@ -986,6 +996,10 @@ td.left-col {
   margin-bottom: 20px;
 }
 
+.margin-left-20 {
+  margin-left: 20px;
+}
+
 .margin-right-5 {
   margin-right: 5px;
 }
@@ -993,11 +1007,15 @@ td.left-col {
   margin-right: 10px;
 }
 
+
 .padding-left-0 {
   padding-left: 0px;
 }
 .padding-left-5 {
   padding-left: 5px;
+}
+.padding-left-10 {
+  padding-left: 10px;
 }
 
 .padding-right-0 {

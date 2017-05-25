@@ -16,8 +16,32 @@ This is the LRG Frequently Asked Questions page.
 <div>
   <h3>Frequently Asked Questions <button class="btn btn-primary btn-sm is-collapsed" style="margin-left:100px" id="item_button" onclick="javascript:show_hide_all('item_title','item_content','item_button');">Expand all FAQs</button></h3>
 {% assign faq_groups = (site.faq_groups | sort: 'order') %}
+{% assign half_faq_groups_size = faq_groups.size | divided_by: 2 %}
+  <div class="clearfix">
+    <div class="left">
+      <ul>
+      
+      
+  {% for faq_group in faq_groups %}
+    
+    {% if forloop.index0 == half_faq_groups_size %}
+      </ul>
+    </div>
+    <div class="left margin-left-20">
+      <ul>
+    {% endif %}
+
+    {% assign faq_group_name = faq_group.url | split:"/" | last %}
+        <li><a href="#{{ faq_group_name }}">{{ faq_group.title }}</a></li>
+
+  {% endfor %}
+      </ul>
+    </div>
+  </div>
+
 {% for faq_group in faq_groups %}
-  <div class="item_section_title clearfix">
+  {% assign faq_group_name = faq_group.url | split:"/" | last %}
+  <div class="item_section_title clearfix" id="{{ faq_group_name }}">
     <div class="left"><h4 class="lrg_dark">{{ faq_group.title }}</h4></div>
     <div class="right" style="margin-right:5px"><a class="icon-next-page close-icon-5 rotate-icon-270" href="#top">Back to top</a></div>
   </div>
