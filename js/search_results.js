@@ -151,8 +151,10 @@ function display_results (results) {
     var ucsc_link = get_ucsc_link(chr, start, end);
 
     var lrg_link = lrg_ftp;
+    var curation_link = '';
     if (lrg_status != "public") {
       lrg_link += lrg_status + "/";
+      curation_link = get_curation_link(lrg_id); 
     }
 
     // HTML code
@@ -167,7 +169,7 @@ function display_results (results) {
     // Symbol
     newrow.append(newCell(build_external_link(hgnc_url + symbol,symbol)));
     // Status
-    newrow.append(newCell(lrg_status));
+    newrow.append(newCell(lrg_status+curation_link));
     // External links
     newrow.append(newCell(ens_link + link_separator + ncbi_link + link_separator + ucsc_link));
     $(table_id + " > tbody").append(newrow);
@@ -194,6 +196,14 @@ function get_ncbi_link (chr, start, end) {
 function get_ucsc_link (chr, start, end) {
   var new_link = ucsc_url.replace(/###LOC###/, chr+':'+start+'-'+end);
   return build_external_link(new_link,'UCSC',1);
+}
+
+function get_curation_link (lrg_id) {
+  var curation_link = $('<a></a>');
+      curation_link.addClass('padding-left-10');
+      curation_link.attr('href', '/curation-status/#'+lrg_id);
+      curation_link.html('(see progress)');
+  return curation_link[0].outerHTML;
 }
 
 // Function to build simple external link

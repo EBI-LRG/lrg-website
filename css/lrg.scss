@@ -742,6 +742,9 @@ a.section-link {
 
 .section-publication-most-recent-item {
   margin-bottom: 6px;
+  background-color: #FEFEFE;
+  padding:2px 4px 6px;
+  margin: 0px;
 }
 
 .section-publication-item {
@@ -926,39 +929,6 @@ td.left-col {
   font-weight:bold;
 }
 
-.gradient-blue {
-  /* Old browsers */
-  background: $lrg_blue3;
-  /* IE10 */ 
-  background: -ms-linear-gradient(top, $lrg_blue2 0%, $lrg_blue3 10%);
-  /* Mozilla Firefox */ 
-  background: -moz-linear-gradient(top, $lrg_blue2 0%, $lrg_blue3 10%);
-  /* Opera */ 
-  background: -o-linear-gradient(top, $lrg_blue2 0%, $lrg_blue3 10%);
-  /* Webkit (Safari/Chrome 10) */ 
-  background: -webkit-gradient(linear, top, bottom, color-stop(0, $lrg_blue2), color-stop(0.1, $lrg_blue3));
-  /* Webkit (Chrome 11+) */ 
-  background: -webkit-linear-gradient(top, $lrg_blue2 0%, $lrg_blue3 10%);
-  /* W3C Markup, IE10 Release Preview */ 
-  background: linear-gradient(to bottom, $lrg_blue2 0%, $lrg_blue3 10%);
-}
-
-.gradient-dark-blue {
-  background: $lrg_dark;
-  /* IE10 */ 
-  background: -ms-linear-gradient(left, $lrg_dark 25%, $lrg_blue 100%);
-  /* Mozilla Firefox */ 
-  background: -moz-linear-gradient(left, $lrg_dark 25%, $lrg_blue 100%);
-  /* Opera */ 
-  background: -o-linear-gradient(left, $lrg_dark 25%, $lrg_blue 100%);
-  /* Webkit (Safari/Chrome 10) */ 
-  background: -webkit-gradient(linear, left, right, color-stop(0.25, $lrg_dark), color-stop(1, $lrg_blue));
-  /* Webkit (Chrome 11+) */ 
-  background: -webkit-linear-gradient(left, $lrg_dark 25%, $lrg_blue 100%);
-  /* W3C Markup, IE10 Release Preview */ 
-  background: linear-gradient(to right, $lrg_dark 25%, $lrg_blue 100%);
-}
-
 .back_link {
   margin-bottom: 10px;
 }
@@ -996,6 +966,9 @@ td.left-col {
   margin-bottom: 20px;
 }
 
+.margin-left-5 {
+  margin-left: 5px;
+}
 .margin-left-20 {
   margin-left: 20px;
 }
@@ -1060,6 +1033,22 @@ td.left-col {
     font-weight: bold;
   }
 }
+
+a.button_link {
+  >span {
+    background-color: #1881ad;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 16px;
+    padding:0px 8px;
+  }
+  &:hover, &:active {
+    >span {
+      background-color: $lrg_purple;
+    }
+  }
+}
+
 
 .file_link {
   line-height:30px;
