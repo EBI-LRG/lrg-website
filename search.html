@@ -14,10 +14,22 @@ include_in_sitemap: true
 <table id="search_results" class="table table-hover table-lrg sortable">
   <thead>
     <tr class="sorttable_header">
-      <th class="sorttable_numeric sorttable_sorted first-col" title="Sort by LRG ID">LRG ID</th>
-      <th class="to_sort" title="Sort by HGNC symbol (external link)">HGNC Symbol</th>
-      <th class="to_sort" title="Sort by LRG publication status, i.e. public or pending">LRG status</th>
-      <th class="sorttable_nosort">Genome browsers</th>
+      <th class="sorttable_numeric sorttable_sorted first-col">
+        <span>LRG ID</span>
+        <span class="right icon-help tiny-icon close-icon-0 margin-right-15" data-toggle="tooltip" data-placement="bottom" title="Sort by LRG identifier"></span>
+      </th>
+      <th class="to_sort">
+        <span>HGNC Symbol</span>
+        <span class="right icon-help tiny-icon close-icon-0 margin-right-15" data-toggle="tooltip" data-placement="bottom" title="Sort by HGNC symbol (external link)"></span>
+      </th>
+      <th class="to_sort">
+        <span>LRG status</span>
+        <span class="right icon-help tiny-icon close-icon-0 margin-right-15" data-toggle="tooltip" data-placement="bottom" title="Sort by LRG publication status, i.e. public or pending. Link to the progress status of the pending LRGs is displayed"></span>
+      </th>
+      <th class="sorttable_nosort">
+        <span>Genome browsers</span>
+        <span class="right icon-help tiny-icon close-icon-0 margin-right-5" style="cursor:pointer" data-toggle="tooltip" data-placement="bottom" title="External links to several genome browsers"></span>
+      </th>
     </tr>
   </thead>
   <tbody>

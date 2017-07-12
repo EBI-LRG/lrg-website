@@ -63,6 +63,11 @@
   font-size: 0.9em;
 }
 
+.tiny-icon:before,
+.tiny-icon:after {
+  font-size: 0.8em;
+}
+
 .close-icon-0:before {
   margin-right: 0px;
 }
@@ -129,19 +134,24 @@
   content: "0";
 }
 
-.icon-previous-page:before {
-  font-family: 'EBI-Functional';
-  content: "<";
-}
-
 .icon-next-page:before {
   font-family: 'EBI-Functional';
   content: ">";
 }
 
+.icon-previous-page:before {
+  font-family: 'EBI-Functional';
+  content: "<";
+}
+
 .icon-search:before {
   font-family: 'EBI-Functional';
   content: "1";
+}
+
+.icon-send:before {
+  font-family: 'EBI-Functional';
+  content: "n";
 }
 
 .icon-tool:before {
@@ -164,6 +174,11 @@
   content: "D";
 }
 
+.icon-target:before {
+  font-family: 'EBI-Functional';
+  content: "T";
+}
+
 .icon-unlock:before {
   font-family: 'EBI-Functional';
   content: "U";
@@ -178,6 +193,11 @@
 .icon-contact:before {
   font-family: 'EBI-Generic';
   content: "C";
+}
+
+.icon-email:before {
+  font-family: 'EBI-Generic';
+  content: "E";
 }
 
 .icon-help:before {

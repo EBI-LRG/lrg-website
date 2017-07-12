@@ -2,12 +2,12 @@
 layout: page
 title: Contact
 tags: Contact
-icon-class: icon-contact
+icon-class: icon-email
 permalink: /contact/
 ---
 
 <div class="page_info">
-  <h4 class="info_highlighted">Email address: <a href="mailto:contact@lrg-sequence.org">contact@lrg-sequence.org</a></h4>
+  <h4 class="info_highlighted icon-send close-icon-5">Email address: <a href="mailto:contact@lrg-sequence.org">contact@lrg-sequence.org</a></h4>
 </div>
 
 ### Request a LRG

@@ -169,7 +169,7 @@ function display_results (results) {
     // Symbol
     newrow.append(newCell(build_external_link(hgnc_url + symbol,symbol)));
     // Status
-    newrow.append(newCell(lrg_status+curation_link));
+    newrow.append(newCell('<span class="lrg_'+lrg_status+'_highlight">'+lrg_status+curation_link+'</span>'));
     // External links
     newrow.append(newCell(ens_link + link_separator + ncbi_link + link_separator + ucsc_link));
     $(table_id + " > tbody").append(newrow);
@@ -200,9 +200,9 @@ function get_ucsc_link (chr, start, end) {
 
 function get_curation_link (lrg_id) {
   var curation_link = $('<a></a>');
-      curation_link.addClass('padding-left-10');
+      curation_link.addClass('icon-next-page smaller-icon close-icon-2 padding-left-15 smaller-font');
       curation_link.attr('href', '/curation-status/#'+lrg_id);
-      curation_link.html('(see progress)');
+      curation_link.html('see progress');
   return curation_link[0].outerHTML;
 }
 
