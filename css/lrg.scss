@@ -1026,6 +1026,9 @@ td.left-col {
 .margin-top-20 {
   margin-top: 20px;
 }
+.margin-top-25 {
+  margin-top: 25px;
+}
 
 .margin-bottom-0 {
   margin-bottom: 0px;
@@ -1038,6 +1041,9 @@ td.left-col {
 }
 .margin-bottom-20 {
   margin-bottom: 20px;
+}
+.margin-bottom-40 {
+  margin-bottom: 40px;
 }
 
 .margin-left-5 {
@@ -1246,14 +1252,29 @@ ul.sections_list>li>a:after {
 }
 
 .info_highlighted {
-  padding: 2px 6px;
-  background-color: $lrg_gray2;
-  border-bottom: 2px solid $lrg_blue;
-  a {
-    padding-left:10px;
-    color: $lrg_dark;
-    &:hover {
-      color: $lrg_purple;
+  >div {
+    padding: 3px 6px;
+    line-height:1.5;
+    color: $white;
+    font-weight: normal;
+  }
+
+  >div:first-child {
+    background-color: $lrg_blue;
+    padding-left: 8px;
+  }
+
+  >div:last-child {
+    background-color: $lrg_dark;
+    padding-bottom: 4px;
+  }
+
+  &:hover,&:focus {
+    >div:first-child {
+      background-color: $lrg_purple;
+    }
+    >div:last-child {
+      color: $lrg_light_purple;
     }
   }
 }
