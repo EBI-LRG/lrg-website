@@ -7,7 +7,12 @@ permalink: /contact/
 ---
 
 <div class="page_info">
-  <h4 class="info_highlighted icon-send close-icon-5">Email address: <a href="mailto:contact@lrg-sequence.org">contact@lrg-sequence.org</a></h4>
+  <a href="mailto:contact@lrg-sequence.org">
+    <h4 class="info_highlighted clearfix">
+      <div class="left icon-send close-icon-5"></div>
+      <div class="left">contact@lrg-sequence.org</div>
+    </h4>
+  </a>
 </div>
 
 ### Request a LRG

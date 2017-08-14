@@ -7,7 +7,12 @@ permalink: /web-service/
 ---
 
 <div class="page_info">
-  <h4 class="info_highlighted">Web service URL for LRG: <a href="http://www.ebi.ac.uk/ebisearch/ws/rest/lrg" target="_blank">http://www.ebi.ac.uk/ebisearch/ws/rest/lrg</a></h4>
+  <a href="http://www.ebi.ac.uk/ebisearch/ws/rest/lrg" target="_blank">
+    <h4 class="info_highlighted clearfix">
+      <div class="left icon-link close-icon-5"></div>
+      <div class="left">http://www.ebi.ac.uk/ebisearch/ws/rest/lrg</div>
+    </h4>
+  </a>
 </div>
 
 The EMBL-EBI provides [RESTful web services](http://www.ebi.ac.uk/Tools/webservices/services/eb-eye_rest){: .icon-external-link} for LRG. It also provides [client tools](http://www.ebi.ac.uk/Tools/webservices/services/eb-eye_rest#clients) in several programming languages to query their RESTful web services and parse their outputs.
