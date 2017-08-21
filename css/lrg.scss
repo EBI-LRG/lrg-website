@@ -1003,6 +1003,10 @@ td.left-col {
   font-weight:bold;
 }
 
+td.left-col-bg {
+  background-color:$lrg_gray2;
+}
+
 .back_link {
   margin-bottom: 10px;
 }
@@ -1042,12 +1046,21 @@ td.left-col {
 .margin-bottom-20 {
   margin-bottom: 20px;
 }
+.margin-bottom-25 {
+  margin-bottom: 25px;
+}
 .margin-bottom-40 {
   margin-bottom: 40px;
+}
+.margin-bottom-75 {
+  margin-bottom: 75px;
 }
 
 .margin-left-5 {
   margin-left: 5px;
+}
+.margin-left-10 {
+  margin-left: 10px;
 }
 .margin-left-20 {
   margin-left: 20px;
@@ -1348,6 +1361,19 @@ ul.sections_list>li>a:after {
   }
 }
 
+.item_title_no_border_big {
+  padding: 6px 5px;
+  color: $lrg_blue;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight:bold;
+  background-color: $lrg_gray2;
+  &:hover, &:focus, &:active {
+    cursor:pointer;
+    color:$lrg_purple;
+  }
+}
+
 .item_title_no_border_small {
   padding: 4px 3px;
   color: $lrg_blue;
@@ -1409,7 +1435,7 @@ ul.sections_list>li>a:after {
 .output_example {
   padding: 0px 6px 6px;
   margin-bottom: 10px;
-  background-color: #EEE;
+  background-color: $lrg_gray2;
   /*border:1px solid #CCC;*/
   display:none;
   >div {

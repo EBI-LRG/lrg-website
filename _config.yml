@@ -26,9 +26,9 @@ avatar: /images/lrg_logo.png
 search-label: "Search LRGs"
 
 # LRG counts (used in FAQ) - Can be edited
-lrg-date: "September 2016"
-lrg-created: "900"
-lrg-public: "665"
+lrg-date: "August 2017"
+lrg-created: "1068"
+lrg-public: "694"
 lrg-schema: "1.9"
 
 #--------------------------------------------------------#
@@ -79,9 +79,7 @@ ref_assembly:   "GRCh38"
 
 lrg_ftp_url:    "ftp://ftp.ebi.ac.uk/pub/databases/lrgex/test/"
 lrg_ftp_http:   "http://ftp.ebi.ac.uk/pub/databases/lrgex/test/"
-#lrg_ftp:        "http://ftp.ebi.ac.uk/pub/databases/lrgex/"
 lrg_json_file : "/json_index/lrg_index.json"
-#lrg_json_file:  "http://ftp.ebi.ac.uk/pub/databases/lrgex/.lrg_index/lrg_index.json"
 #------------------------------#
 
 
@@ -129,6 +127,8 @@ gems:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
 
 collections:
+    about:
+        output: true
     faq_groups:
         output: true
         permalink: /faq_group/:path/
