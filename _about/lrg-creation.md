@@ -1,7 +1,7 @@
 ---
 title: "LRG creation process"
 about_order: 3
-expanded: 0
+expanded: 1
 ---
 
 The LRG project is a collaboration between the NCBI and EMBL-EBI. The creation of an LRG involves several steps, listed here.   

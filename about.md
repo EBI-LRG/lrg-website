@@ -19,7 +19,7 @@ permalink: /about/
     <li><a href="#about_section_{{ about_section.about_order }}_button">{{ about_section.title }}</a></li>
 {% endfor %}
     <li style="background-color:#FFF;padding:0px">
-      <button class="btn btn-primary btn-xs is-collapsed" id="about_button" onclick="javascript:show_hide_all('item_title_no_border_big','about_content','about_button','sections');">Expand all sections</button>
+      <button class="btn btn-primary btn-xs is-expanded" id="about_button" onclick="javascript:show_hide_all('item_title_no_border_big','about_content','about_button','sections');">Collapse all sections</button>
     </li>
   </ul>
 </div>
@@ -34,7 +34,7 @@ A **L**ocus **R**eference **G**enomic (**LRG**) record is manually curated and c
 <div class="item_title_no_border_big close-icon-5 icon-collapse-open margin-top-20" title="Click to expand" id="about_section_{{ about_section.about_order }}_button" onclick="javascript:show_hide('about_section_{{ about_section.about_order }}')">
   {{ about_section.title }}
 </div>
-<div class="about_content margin-left-10" id="about_section_{{ about_section.about_order }}">
+<div class="about_content margin-left-10 margin-bottom-60" id="about_section_{{ about_section.about_order }}">
   {{ about_section.content }}
 </div>
 
@@ -43,7 +43,7 @@ A **L**ocus **R**eference **G**enomic (**LRG**) record is manually curated and c
 <div class="item_title_no_border_big close-icon-5 icon-collapse-closed margin-top-20" title="Click to expand" id="about_section_{{ about_section.about_order }}_button" onclick="javascript:show_hide('about_section_{{ about_section.about_order }}')">
   {{ about_section.title }}
 </div>
-<div class="about_content margin-left-10" id="about_section_{{ about_section.about_order }}" style="display:none">
+<div class="about_content margin-left-10 margin-bottom-60" id="about_section_{{ about_section.about_order }}" style="display:none">
   {{ about_section.content }}
 </div>
 

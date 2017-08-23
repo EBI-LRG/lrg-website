@@ -1,7 +1,7 @@
 ---
 title: "LRG records"
 about_order: 2
-expanded: 0
+expanded: 1
 ---
 
 LRG records are created upon request for a region of the genome, usually a gene of interest. Each record contains a stable “**fixed**” section and a regularly updated “**updatable**” section:
