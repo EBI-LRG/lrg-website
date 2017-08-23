@@ -53,7 +53,7 @@ permalink: /ref-seq-sources/
     <tr>
       <td class="left-col left-col-bg">SOURCE</td>
       <td>
-        A collaboration between the Sanger Institute, EMBL-EBI, the NCBI and McDonnell Genome institute.
+        A collaboration between the Sanger Institute, EMBL-EBI, the NCBI and McDonnell Genome Institute.
       </td><td>
         A collaboration between many institutes lead by Ensembl at EMBL-EBI, based near Cambridge, UK.
       </td><td>
@@ -168,20 +168,20 @@ permalink: /ref-seq-sources/
       <td class="left-col left-col-bg">REFERENCES</td>
       <td>
         <div class="margin-bottom-5">
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/grc/help/patches" target="_blank">Patches</a>
-        </div>
-        <div class="margin-bottom-5">
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/28396521" target="_blank">Schneider VA et al., 2017 </a>
-        </div>
-        <div>
           <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/grc/help/definitions" target="_blank">Assembly Terminology</a>
         </div>
-      </td><td>
         <div class="margin-bottom-5">
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/26110515" target="_blank">Frankish A et al., 2015</a>
+          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/grc/help/patches" target="_blank">Patches</a>
+        </div>
+        <div>
+          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/28396521" target="_blank">Schneider VA et al., 2017 </a>
+        </div>
+      </td><td>
+       <div class="margin-bottom-5">
+          <a class="icon-external-link" href="http://www.ensembl.org/info/website/glossary.html" target="_blank">Ensembl glossary</a>
         </div>
         <div class="margin-bottom-5">
-          <a class="icon-external-link" href="http://www.ensembl.org/info/website/glossary.html" target="_blank">Ensembl glossary</a>
+          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/26110515" target="_blank">Frankish A et al., 2015</a>
         </div>
         <div>
           <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/22955987" target="_blank">Harrow J et al., 2012</a>
@@ -191,10 +191,13 @@ permalink: /ref-seq-sources/
           <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/books/NBK50679/" target="_blank">RefSeq FAQ</a>
         </div>
         <div class="margin-bottom-5">
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/22121212" target="_blank">Pruitt KD et al., 2012</a>
+          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/refseq/rsg/lrg/" target="_blank">RefSeqGene and LRG</a>
+        </div>
+        <div class="margin-bottom-5">
+          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/26553804" target="_blank">O’Leary NA et al., 2016</a>
         </div>
         <div>
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/26553804" target="_blank">O’Leary NA et al., 2016</a>
+          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/22121212" target="_blank">Pruitt KD et al., 2012</a>
         </div>
       </td><td>
         <div class="margin-bottom-5">
@@ -240,6 +243,14 @@ permalink: /ref-seq-sources/
     </tr>
     <tr>
       <td class="left-col">
+        <a class="icon-external-link" href="http://www.ebi.ac.uk/about" target="_blank">EMBL-EBI</a>
+      </td>
+      <td>
+        The European Bioinformatics Institute (EMBL-EBI) shares data from <a class="icon-external-link" href="http://www.ebi.ac.uk/services" target="_blank">life science experiments</a>, performs basic <a class="icon-external-link" href="http://www.ebi.ac.uk/research" target="_blank">research</a> in computational biology and offers an extensive user  <a class="icon-external-link" href="http://www.ebi.ac.uk/training" target="_blank">training</a> programme, supporting researchers in academia and <a class="icon-external-link" href="http://www.ebi.ac.uk/industry" target="_blank">industry</a>. It is part of <a class="icon-external-link" href="http://embl.org/" target="_blank">EMBL</a>, Europe’s flagship laboratory for the life sciences.
+      </td>
+    </tr>
+    <tr>
+      <td class="left-col">
         <a class="icon-external-link" href="http://www.ensembl.org" target="_blank">Ensembl</a>
       </td>
       <td>
@@ -272,6 +283,30 @@ permalink: /ref-seq-sources/
     </tr>
     <tr>
       <td class="left-col">
+        <a class="icon-external-link" href="http://www.hgvs.org/" target="_blank">HGVS</a>
+      </td>
+      <td>
+        The Human Genome Variation Society issues <a class="icon-external-link" href="http://varnomen.hgvs.org/recommendations/general/" target="_blank">guidelines and recommendations</a> on the nomenclature of gene variations. <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/26931183" target="_blank">Den Dunnen et al., 2016</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="left-col">
+        <a class="icon-external-link" href="http://www.lovd.nl/3.0/home" target="_blank">LOVD</a>
+      </td>
+      <td>
+        The Leiden Open Variation Database (LOVD) provides a  tool for Gene-centered collection and display of DNA variations and aggregates variants from <a class="icon-external-link" href="https://grenada.lumc.nl/LSDB_list/lsdbs" target="_blank">locus-specific databases (LSDBs)</a>. LRG curators refer to LOVD LSDBs to help establish which transcript models are in use by the community.
+      </td>
+    </tr>
+    <tr>
+      <td class="left-col">
+        <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/home/about/" target="_blank">NCBI</a>
+      </td>
+      <td>
+        The USA’s National Centre for Biotechnology Information advances science and health by providing access to biomedical and genomic information.
+      </td>
+    </tr>
+    <tr>
+      <td class="left-col">
         <a class="icon-external-link" href="http://www.thetgmi.org/" target="_blank">TGMI</a>
       </td>
       <td>
@@ -299,7 +334,7 @@ permalink: /ref-seq-sources/
         <a class="icon-external-link" href="http://www.ensembl.org/vep" target="_blank">VEP</a>
       </td>
       <td>
-        VEP (Variant effect predictor) determines the effect of variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts, and protein sequence.  It is produced by Ensembl at EMBL-EBI.
+        VEP (Variant effect predictor) determines the effect of variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts, and protein sequence.  It is produced by Ensembl at EMBL-EBI. <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/27268795" target="_blank">McLaren W et al., 2016</a>
       </td>
     </tr>
 
