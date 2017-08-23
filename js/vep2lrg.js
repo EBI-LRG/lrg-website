@@ -21,11 +21,11 @@ var default_val   = 'unknown';
 
 var maf_help = { 
                  'LRG' : 'The <b>LRG</b> genomic sequence contains the ',
-                 'Reference' : 'The <b>reference</b> genome assembly (GRCh38) contains the '
+                 'Genome' : 'The <b>genome assembly</b> (GRCh38) contains the '
                };
 var maf_colour = {  
                     'LRG' : 'lrg_blue',
-                    'Reference' : 'lrg_green2',
+                    'Genome' : 'lrg_green2',
                     'default' : 'lrg_dark'
                  };
 
@@ -34,9 +34,12 @@ var msc_help = '<a class="icon-info-link" href="'+conseq_url+'consequences" titl
 
 function get_vep_results () {
 
-  var assembly = getUrlParam('assembly');
-  var hgvs     = getUrlParam('hgvs');
-  var lrg_id   = getUrlParam('lrg');
+  var assembly    = getUrlParam('assembly');
+  var hgvs        = getUrlParam('hgvs');
+  var lrg_id      = getUrlParam('lrg');
+  var hgnc_symbol = getUrlParam('hgnc');
+  var g_strand    = getUrlParam('strand');
+
 
   if (assembly && hgvs) {
     assembly = assembly.toLowerCase();
@@ -45,7 +48,7 @@ function get_vep_results () {
       ens_gene_url  = ens_gene_url_grch37;
       ens_trans_url = ens_trans_url_grch37;
       ens_var_url   = ens_var_url_grch37;
-      maf_help['Reference'] = maf_help['Reference'].replace('GRCh38','GRCh37');
+      maf_help['Genome'] = maf_help['Genome'].replace('GRCh38','GRCh37');
     }
 
     rest_url += hgvs+'?content-type=application/json';
@@ -55,7 +58,7 @@ function get_vep_results () {
     $.getJSON(rest_url)
               .done(function(data) {
                   console.log(data);
-                  var html_content = parseData(data[0],lrg_id);
+                  var html_content = parseData(data[0],lrg_id,hgnc_symbol,g_strand);
                   $('#vep_results').html(html_content);
               })
               .fail(function(data,status,xhr) {
@@ -94,10 +97,8 @@ function getUrlParam (name){
   }
 }
 
-function parseData(data,lrg_id) {
+function parseData(data,lrg_id,hgnc_symbol,g_strand) {
   var html = "";
-
-  var strand = get_strand(data.strand);
 
   var lrg_label = 'LRG';
   if (lrg_id) {
@@ -106,7 +107,8 @@ function parseData(data,lrg_id) {
     maf_colour[lrg_id] = maf_colour['LRG'];
   }
 
-  var allele_desc = (data.id.indexOf("LRG_") >= 0) ? [lrg_label,'Reference'] : ['Reference',lrg_label];
+  // Alleles
+  var allele_desc = (data.id.indexOf("LRG_") >= 0) ? [lrg_label,'Genome'] : ['Genome',lrg_label];
 
   var alleles = data.allele_string.split('/');
 
@@ -121,18 +123,69 @@ function parseData(data,lrg_id) {
       seqs_by_allele[allele1] = allele_desc[0];
       seqs_by_allele[allele2] = allele_desc[1];
 
-  var info_div_classes  = "link_list text_row";
-  var info_span_classes = "icon-next-page close-icon-5 smaller-icon padding-right-8";
+  var genome_allele = (data.id.indexOf("LRG_") >= 0) ? allele2 : allele1;
+  var lrg_allele = (data.id.indexOf("LRG_") >= 0) ? allele1 : allele2;
 
-  var allele_html = allele_desc[0] + ' allele</span><span class="lrg_green2 bold_font bigger-font">' + alleles_by_seq[allele_desc[0]] + '</span><span class="lrg_blue" style="padding:0px 15px">|</span><span class="padding-right-8">'+ allele_desc[1] + ' allele</span><span class="lrg_blue bold_font bigger-font">' + alleles_by_seq[allele_desc[1]] + '</span>';
-  
-  html += "<h3>Results for "+data.id+"</h3>";
+  var genome_assembly  = data.assembly_name.toLowerCase();
+  var genome_bg_colour = (genome_assembly.match('grch37')) ? 'lrg_purple_bg' : 'lrg_green2_bg';
+  var genome_colour    = (genome_assembly.match('grch37')) ? 'lrg_purple' : 'lrg_green2';
+
+  // Strands
+  var strand1 = data.strand;
+  var strand2 = (g_strand) ? g_strand : '';
+
+  var strand_gen = (data.id.indexOf("LRG_") >= 0) ? strand2 : strand1;
+  var strand_lrg = (data.id.indexOf("LRG_") >= 0) ? strand1 : strand2;
+
+  html += '<h3>Results for <span class="lrg_dark">'+data.id+'</span></h3>';
   html += '<div class="clearfix">';
   html += '  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-left-0">';
-  html += '    <div class="' + info_div_classes + '"><span class="' + info_span_classes + '">Most severe consequence' + msc_help + ' </span><span class="bold_font">' + data.most_severe_consequence + '</span></div>';
-  html += '    <div class="' + info_div_classes + '"><span class="' + info_span_classes + '">'+ allele_html + '</div>';
-  html += '    <div class="' + info_div_classes + '"><span class="' + info_span_classes + '">Assembly</span><span class="bold_font">' + data.assembly_name + '</span>' + 
-               '<span class="lrg_blue" style="padding:0px 15px">|</span><span class="padding-right-8">Strand</span><span class="bold_font">'+ strand + '</span></div>';
+  html += '    <table class="table-vep" style="width:100%"><tbody>';
+  html += '      <tr>' + 
+          '        <td class="' + genome_bg_colour + '"></td>' +
+          '        <td colspan="3">' + 
+          '          <span class="bold_font">Most severe consequence' + msc_help + '</span>:' + 
+          '          <span class="bold_font padding-left-5">' + 
+          '            <a class="icon-external-link" href="'+conseq_url+data.most_severe_consequence+'" title="Click here to see the description of the consequence term '+data.most_severe_consequence+'" target="_blank">'+data.most_severe_consequence+'</a>' + 
+          '          </span>' +
+          '        </td>' +
+          '      </tr>';
+  html += '      <tr>' + 
+          '        <td class="' + genome_bg_colour + '"></td>' +
+          '        <td style="width:120px">' + 
+          '          <span class="bold_font">' + data.assembly_name + '</span> allele:' + 
+          '        </td>' +
+          '        <td class="' + genome_colour + ' bold_font bigger-font">' + genome_allele + '</td>' +
+          '        <td class="smaller-font margin-left-15">';
+  if (strand_gen) {
+    var genome_strand = get_strand(strand_gen);
+    var genome_strand_label = get_strand(strand_gen, 'Allele on the genome');        
+    html += '          [ <span class="padding-right-5">' + genome_strand + '</span>' + genome_strand_label + ' ]';
+  }
+  html += '      </td></tr>' +
+          '      <tr>' + 
+          '        <td class="lrg_blue_bg"></td>'+
+          '        <td style="width:120px">' + 
+          '          <span class="bold_font">LRG</span> allele: ' + 
+          '        </td>' +
+          '        <td class="lrg_blue bold_font bigger-font">' + lrg_allele + '</td>' +
+          '        <td class="smaller-font margin-left-15">';
+  if (strand_lrg) {
+    var lrg_genome_strand = get_strand(strand_lrg);
+    var lrg_genome_strand_label = get_strand(strand_lrg,'Allele on the LRG');
+    var lrg_genome_strand_label2 = get_strand(strand_lrg,' ');
+    html += '          [ <span class="padding-right-5">' + lrg_genome_strand + '</span>' + lrg_genome_strand_label + ' ]';
+  }
+  html += '      </td></tr>' +
+          '      </tbody></table>';
+
+  if (strand_lrg) {
+    var lrg_gene_name = (hgnc_symbol) ? ' ('+hgnc_symbol+')' : '';
+    html += '    <div class="clearfix margin-top-10 margin-bottom-20">'+
+            '      <div class="icon-info close-icon-5"><b>'+ lrg_id + '</b>' + lrg_gene_name +' maps to the ' + lrg_genome_strand_label2 + ' of the genome assembly</div>'+
+            '    </div>';
+  }
+
   html += '  </div>';
 
   html += '  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-right-0">';
@@ -154,9 +207,10 @@ function parse_colocated_variants (data,seqs_by_allele) {
 
   if (data.colocated_variants) {
     html += '    <table class="table table-hover table-lrg"><thead>';
-    html += '        <tr><th class="split-header" style="text-align:center" colspan="5">Co-located variant(s)</th></tr>';
+    html += '        <tr><th class="split-header" style="text-align:center" colspan="6">Co-located variant(s)</th></tr>';
     html += '        <tr><th>Variant</th><th>Alleles</th><th>Minor allele</th>' + 
-                    '<th data-toggle="tooltip" data-placement="bottom" id="maf" title="Minor Allele Frequency">MAF</th><th>Ancestral allele</th></tr>';
+                    '<th data-toggle="tooltip" data-placement="bottom" id="maf" title="Minor Allele Frequency">MAF</th><th>Ancestral allele</th>' +
+                    '<th>Strand</th></tr>';
     html += '      </thead><tbody>';
 
     $.each(data.colocated_variants, function (index, variant) {
@@ -170,13 +224,13 @@ function parse_colocated_variants (data,seqs_by_allele) {
       var ma     = (variant.minor_allele) ? '<span class="'+ma_colour+'">'+variant.minor_allele+'</span>' : default_val;
       var maf    = (variant.minor_allele_freq || variant.minor_allele_freq == 0) ? variant.minor_allele_freq : default_val;
       var aa     = (variant.ancestral_allele) ? variant.ancestral_allele : default_val;
+      var strand = (variant.strand) ? get_strand(variant.strand) : default_val;
       console.log("Variant:  "+variant.id);
 
       var minor_allele_seq = "";
       var minor_allele_seq_info = ""
       if (variant.minor_allele) {
         if (seqs_by_allele[variant.minor_allele]) {
-          
           minor_allele_seq_info = '<div>' + maf_help[seqs_by_allele[variant.minor_allele]] + '<b>MINOR</b> allele <span class="bold_font ' + ma_colour + '">' + variant.minor_allele + '</span>.</div>';
           $.each(seqs_by_allele, function(allele, seq) {
             if (seq != seqs_by_allele[variant.minor_allele]) {
@@ -184,11 +238,11 @@ function parse_colocated_variants (data,seqs_by_allele) {
             }
           });
 
-          minor_allele_seq = ' <div class="btn btn-xs btn-primary btn-lrg-small icon-plus close-icon-0 right" id="'+variant.id+'_button" onclick="javascript:show_hide_info(\''+variant.id+'\')"></div>';
-          minor_allele_seq_info = '<tr id="'+variant.id+'" style="display:none"><td colspan="5">'+minor_allele_seq_info+'</td></tr>';
+          minor_allele_seq = ' <div class="btn btn-xs btn-primary btn-lrg-small icon-minus close-icon-0 right" id="'+variant.id+'_button" onclick="javascript:show_hide_info(\''+variant.id+'\')"></div>';
+          minor_allele_seq_info = '<tr id="'+variant.id+'" ><td></td><td colspan="5">'+minor_allele_seq_info+'</td></tr>';
         }
       }
-      html += '      <tr><td>' + var_id + '</td><td>' + var_al + '</td><td>' + ma + minor_allele_seq + '</td><td>' + maf + '</td><td>' + aa + '</td></tr>'+minor_allele_seq_info;
+      html += '      <tr><td>' + var_id + '</td><td>' + var_al + '</td><td>' + ma + minor_allele_seq + '</td><td>' + maf + '</td><td>' + aa + '</td><td style="text-align:center">' + strand +'</td></tr>'+minor_allele_seq_info;
     });
     html += '      </tbody></table>';
   }
@@ -216,7 +270,7 @@ function parse_transcript_data (data) {
     $.each(data.transcript_consequences, function (index, trans) {
       var gene_id  = '<a class="icon-external-link bold_font" href="'+ ens_gene_url + trans.gene_id +'">'+trans.gene_symbol+'</a>';
       var trans_id = '<a class="icon-external-link" href="'+ ens_trans_url + trans.transcript_id +'">'+trans.transcript_id+'</a>';
-      var strand = get_strand(trans.strand,1);
+      var strand = get_strand(trans.strand);
 
       var cons = [];
       $.each(trans.consequence_terms, function (index, cterm) {
@@ -237,12 +291,13 @@ function parse_transcript_data (data) {
   return html;
 }
 
-function get_strand (strand, icon_type) {
-  if (icon_type) {
-    return (strand == 1) ? '<span class="icon-next-page close-icon-0" title="Forward"></span>' : '<span class="icon-previous-page close-icon-0" title="Reverse"></span>';
+function get_strand (strand, label) {
+  var fw_arrow  = '<span class="bigger-font" style="color:blue" title="Forward">&rarr;</span>';
+  var rev_arrow = '<span class="bigger-font" style="color:red" title="Reverse">&larr;</span>'
+  if (label) {
+    return (strand == 1) ? label+" <b>Forward</b> strand" : label+" <b>Reverse</b> strand";
   }
   else {
-    return (strand == 1) ? "Forward" : "Reverse";
+    return (strand == 1) ? fw_arrow : rev_arrow;
   }
 }
- 
