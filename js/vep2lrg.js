@@ -51,7 +51,7 @@ function get_vep_results () {
       maf_help['Genome'] = maf_help['Genome'].replace('GRCh38','GRCh37');
     }
 
-    rest_url += hgvs+'?content-type=application/json';
+    rest_url += hgvs+'?merged=1;content-type=application/json';
 
     $('#vep_results').html('<h4 class="icon-info close-icon-5 smaller-icon" style="text-align:center">Request sent to Ensembl. Please wait for the results ...</h4><div class="loader" style="text-align:center"></div>');
 
@@ -279,8 +279,10 @@ function parse_transcript_data (data) {
 
       var distance = (trans.distance) ? '<i>Distance to transcript: '+trans.distance+'bp' : '-';
 
+      var v_allele = (trans.strand == 1) ? trans.variant_allele : reverse_complement(trans.variant_allele);
+
       html += '    <tr><td>' + gene_id + '</td><td>' + trans_id + '</td><td>' + trans.biotype + '</td><td style="text-align:center">'+ strand + '</td><td>' + cons.join(', ') + '</td>' +
-                      '<td>' + trans.variant_allele + '</td><td>' + trans.impact + '</td><td>' + distance+ '</td></tr>';
+                      '<td>' + v_allele + '</td><td>' + trans.impact + '</td><td>' + distance+ '</td></tr>';
     });
 
     html += '  </tbody></table>';
@@ -301,3 +303,10 @@ function get_strand (strand, label) {
     return (strand == 1) ? fw_arrow : rev_arrow;
   }
 }
+
+function complement(seq) {
+    return { A: 'T', T: 'A', G: 'C', C: 'G' }[seq];
+}    
+function reverse_complement(seq) {
+    return seq.split('').reverse().map(complement).join('');
+}  
