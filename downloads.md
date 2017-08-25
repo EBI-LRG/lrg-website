@@ -119,7 +119,7 @@ There is the possibility to download all the public and pending LRGs:
           </td>
           <td>BED<br /><span class="smaller-text">(12 columns)</span></td>
           <td>
-            <a href="{{ lrg_ftp }}/LRG_GRCh37.bed" target="_blank">
+            <a href="{{ site.lrg_ftp_url }}LRG_GRCh37.bed" target="_blank">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">BED</div>
@@ -127,7 +127,7 @@ There is the possibility to download all the public and pending LRGs:
             </a>
           </td>
           <td>
-            <a href="{{ lrg_ftp }}/LRG_GRCh38.bed" target="_blank">
+            <a href="{{ site.lrg_ftp_url }}LRG_GRCh38.bed" target="_blank">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">BED</div>

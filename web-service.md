@@ -29,7 +29,7 @@ The list of fields retrievables are listed [here](#ws_fields)
 
 <div class="border_bottom_blue"></div>
 
-<button class="btn btn-primary btn-sm is-collapsed" id="item_button" onclick="javascript:show_hide_all('item_title','item_content','item_button', 'web service use cases');">Expand all web service use cases</button>
+<button class="btn btn-primary btn-xs is-collapsed" id="item_button" onclick="javascript:show_hide_all('item_title','item_content','item_button', 'web service use cases');">Expand all web service use cases</button>
 
 <a name="ws_lrg_search"></a>
 
