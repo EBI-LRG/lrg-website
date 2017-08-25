@@ -134,7 +134,8 @@
   content: "0";
 }
 
-.icon-next-page:before {
+.icon-next-page:before,
+.icon-next:before {
   font-family: 'EBI-Functional';
   content: ">";
 }
@@ -288,7 +289,8 @@
 }
 
 /* External link */
-.icon-external-link:after {
+.icon-external-link:after,
+.icon-ext:after {
   font-family: 'EBI-Generic';
   content: "x";
   font-size: 0.7em;

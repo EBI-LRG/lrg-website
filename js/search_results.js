@@ -13,7 +13,7 @@ var lrg_json_file = '{{ site.lrg_json_file }}';
 var ref_assembly = '{{ site.ref_assembly }}';
 ens_url = ens_url.replace(/###ASSEMBLY###/, ref_assembly);
 
-var external_link_class = 'icon-external-link';
+var external_link_class = 'icon-ext';
 var lrg_regexp = /lrg_\d+/i;
 var all_lrgs = "LRG_*";
 var lrg_list = [];
@@ -136,7 +136,7 @@ function display_results (results) {
     return id_a - id_b;
   });
 
-  var link_separator = '<span style="padding:0px 15px">-</span>';
+  var link_separator = '<span>-</span>';
 
   for (i in result_keys) {
     var lrg_id     = result_keys[i];
@@ -163,15 +163,15 @@ function display_results (results) {
     // LRG ID
     var lrg_link = build_external_link(lrg_link + lrg_id + '.xml',lrg_id);
     var lrg_id_cell = newCell(lrg_link);
-        lrg_id_cell.attr('sorttable_customkey', extract_id(lrg_id));
+        lrg_id_cell.attr('sorttable_key', extract_id(lrg_id));
         lrg_id_cell.addClass('left-col');
     newrow.append(lrg_id_cell);
     // Symbol
     newrow.append(newCell(build_external_link(hgnc_url + symbol,symbol)));
     // Status
-    newrow.append(newCell('<span class="lrg_'+lrg_status+'_highlight">'+lrg_status+curation_link+'</span>'));
+    newrow.append(newCell('<span>'+lrg_status+curation_link+'</span>').addClass('lrg_'+lrg_status+'_hl'));
     // External links
-    newrow.append(newCell(ens_link + link_separator + ncbi_link + link_separator + ucsc_link));
+    newrow.append(newCell(ens_link + link_separator + ncbi_link + link_separator + ucsc_link).addClass('gbrowser'));
     $(table_id + " > tbody").append(newrow);
   }
 }
@@ -200,7 +200,7 @@ function get_ucsc_link (chr, start, end) {
 
 function get_curation_link (lrg_id) {
   var curation_link = $('<a></a>');
-      curation_link.addClass('icon-next-page smaller-icon close-icon-2 padding-left-15 smaller-font');
+      curation_link.addClass('icon-next smaller-icon close-icon-2');
       curation_link.attr('href', '/curation-status/#'+lrg_id);
       curation_link.html('see progress');
   return curation_link[0].outerHTML;
