@@ -521,6 +521,10 @@ header {
   }
 }
 
+.table-lrg-bold-left-col>tbody>tr>td:first-child {
+  font-weight:bold;
+}
+
 .table-small {
   font-size:0.8em;
   border:1px solid $lrg_gray;

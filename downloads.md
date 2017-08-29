@@ -30,7 +30,7 @@ There is the possibility to download all the public and pending LRGs:
 
 <div class="row">
   <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
-    <table class="table table-hover table-lrg">
+    <table class="table table-hover table-lrg table-lrg-bold-left-col">
       <thead>
         <tr class="sorttable_header">
           <th>Status</th>
@@ -39,7 +39,7 @@ There is the possibility to download all the public and pending LRGs:
       </thead>
       <tbody>
         <tr>
-          <td class="left-col">Public</td>
+          <td>Public</td>
           <td>
             <a href="{{ site.lrg_ftp_url }}LRG_public_xml_files.zip">
               <div class="file_link clearfix">
@@ -58,7 +58,7 @@ There is the possibility to download all the public and pending LRGs:
           </td>  
         </tr>
         <tr>
-          <td class="left-col">Pending</td>
+          <td>Pending</td>
           <td>
             <a href="{{ site.lrg_ftp_url }}LRG_pending_xml_files.zip">
               <div class="file_link clearfix">
@@ -89,7 +89,7 @@ There is the possibility to download all the public and pending LRGs:
 
 <div class="row">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <table class="table table-hover table-lrg">
+    <table class="table table-hover table-lrg table-lrg-bold-left-col">
       <thead>
         <tr>
           <th rowspan="2">Data type(s)</th>
@@ -104,7 +104,7 @@ There is the possibility to download all the public and pending LRGs:
       </thead>
       <tbody>
         <tr>
-          <td class="left-col">
+          <td>
             <div>LRG genes</div>
             <div>LRG transcripts</div>
           </td>
@@ -137,7 +137,7 @@ There is the possibility to download all the public and pending LRGs:
         </tr>
 
         <tr>
-          <td class="left-col">
+          <td>
             <div>LRG genes</div>
             <div class="smaller-text" style="padding-top:2px;font-weight:normal">with <span class="lrg_green2">genomic coordinates</span></div>
           </td>
@@ -188,7 +188,7 @@ There is the possibility to download all the public and pending LRGs:
         </tr>
 
         <tr>
-          <td class="left-col">
+          <td>
             <div>LRG transcripts</div>
             <div class="smaller-text" style="padding-top:2px;font-weight:normal">with <span class="lrg_green2">exons coordinates</span></div>
           </td>
@@ -243,7 +243,7 @@ There is the possibility to download all the public and pending LRGs:
         </tr>
 
         <tr>
-          <td class="left-col">
+          <td>
             <div>LRG transcripts</div>
             <div class="smaller-text" style="padding-top:2px;font-weight:normal">with <span class="lrg_green2">external references</span></div>
           </td>
@@ -288,7 +288,7 @@ There is the possibility to download all the public and pending LRGs:
         </tr>
 
         <tr>
-          <td class="left-col">
+          <td>
             <div>LRG proteins</div>
             <div class="smaller-text" style="padding-top:2px;font-weight:normal">with <span class="lrg_green2">RefSeq proteins</span></div>
           </td>
@@ -355,7 +355,7 @@ Previous versions of the LRGs (in different LRG XML schemas) are available:
 
 <div class="row">
   <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
-    <table class="table table-hover table-lrg">
+    <table class="table table-hover table-lrg table-lrg-bold-left-col">
       <thead>
         <tr class="sorttable_header">
           <th>Schema version</th>
@@ -364,19 +364,19 @@ Previous versions of the LRGs (in different LRG XML schemas) are available:
       </thead>
       <tbody>
         <tr>
-          <td class="left-col">Schema 1.8</td>
+          <td>Schema 1.8</td>
           <td>
             <a class="icon-link smaller-icon close-icon-5" href="{{ site.lrg_ftp_url }}SCHEMA_1_8_ARCHIVE/" target="_blank">FTP site</a>
           </td>  
         </tr>
         <tr>
-          <td class="left-col">Schema 1.7</td>
+          <td>Schema 1.7</td>
           <td>
             <a class="icon-link smaller-icon close-icon-5" href="{{ site.lrg_ftp_url }}SCHEMA_1_7_ARCHIVE/" target="_blank">FTP site</a>
           </td>  
         </tr>
         <tr>
-          <td class="left-col">Schema 1.6</td>
+          <td>Schema 1.6</td>
           <td>
             <a class="icon-link smaller-icon close-icon-5" href="{{ site.lrg_ftp_url }}SCHEMA_1_6_ARCHIVE/" target="_blank">FTP site</a>
           </td>  

@@ -17,7 +17,7 @@ The LRG project is committed to creating records that are ideal for each region 
 <h4>List of collaborators</h4>
 
 <div class="col-lg-10 col-lg-offset-1">
-  <table class="table table-hover table-lrg">
+  <table class="table table-hover table-lrg table-lrg-bold-left-col">
     <thead>
       <tr>
         <th>Collaborator</th>
@@ -30,7 +30,7 @@ The LRG project is committed to creating records that are ideal for each region 
     {% assign collaborators = (site.data.list_collaborators | sort: 'name') %}
     {% for collaborator in collaborators %}
       <tr>
-        <td class="left-col">{{ collaborator.name }}</td>
+        <td>{{ collaborator.name }}</td>
         <td>{{ collaborator.affiliation }}</td>
      </tr>
     {% endfor %} 

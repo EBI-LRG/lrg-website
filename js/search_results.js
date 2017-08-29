@@ -51,6 +51,7 @@ function go_to_result_page (query) {
       // Asynch AJAX call + display results
       get_search_results(query).then(function(result_objects){
         display_results(result_objects);
+
       });
     }
     // Other page
@@ -83,6 +84,7 @@ function get_search_results (search_id) {
     });
     return result_objects;
   });
+
 }
 
 // Function get data in array
@@ -161,13 +163,12 @@ function display_results (results) {
     var newrow = $('<tr/>');
         //newrow.attr('id', lrg_id); // <= not used at the moment
     // LRG ID
-    var lrg_link = build_external_link(lrg_link + lrg_id + '.xml',lrg_id);
+    var lrg_link = build_ftp_link(lrg_id, lrg_link + lrg_id + '.xml');
     var lrg_id_cell = newCell(lrg_link);
         lrg_id_cell.attr('sorttable_key', extract_id(lrg_id));
-        lrg_id_cell.addClass('left-col');
     newrow.append(lrg_id_cell);
     // Symbol
-    newrow.append(newCell(build_external_link(hgnc_url + symbol,symbol)));
+    newrow.append(newCell(get_hgnc_link(symbol)));
     // Status
     newrow.append(newCell('<span>'+lrg_status+curation_link+'</span>').addClass('lrg_'+lrg_status+'_hl'));
     // External links
@@ -176,43 +177,93 @@ function display_results (results) {
   }
 }
 
+
 function newCell(content) {
   return $("<td></td>").html(content);
 }
 
-function get_ens_link (lrg_id, chr, start, end) {
-  var new_link = ens_url.replace(/###ID###/, lrg_id);
-      new_link = new_link.replace(/###LOC###/, chr+':'+start+'-'+end);
-  return build_external_link(new_link,'Ensembl',1);
+/**** Links ****/
+
+/* NCBI link */
+function get_hgnc_link (symbol) {
+  var ext_link = build_external_link(symbol);
+      ext_link.attr('onclick',"hgnc_link('"+symbol+"')");
+  return ext_link[0].outerHTML;
+}
+function hgnc_link (symbol) {
+  window.open(hgnc_url+symbol,'_blank');
 }
 
+
+/* Ensembl link */
+function get_ens_link (lrg_id, chr, start, end) {
+  var ext_link = build_external_link('Ensembl');
+      ext_link.attr('onclick',"ensembl_link('"+lrg_id+"','"+chr+"','"+start+"','"+end+"')");
+  return ext_link[0].outerHTML;
+}
+function ensembl_link (lrg_id, chr, start, end) {
+  var new_link = ens_url.replace(/###ID###/, lrg_id);
+      new_link = new_link.replace(/###LOC###/, chr+':'+start+'-'+end);
+  window.open(new_link,'_blank');
+}
+
+
+/* NCBI link */
 function get_ncbi_link (chr, start, end) {
+  var ext_link = build_external_link('NCBI');
+      ext_link.attr('onclick',"ncbi_link('"+chr+"','"+start+"','"+end+"')");
+  return ext_link[0].outerHTML;
+}
+function ncbi_link (chr, start, end) {
   var new_link = ncbi_url.replace(/###CHR###/, chr);
       new_link = new_link.replace(/###START###/, start);
       new_link = new_link.replace(/###END###/, end);
-  return build_external_link(new_link,'NCBI',1);
+  window.open(new_link,'_blank');
 }
 
+
+/* UCSC link */
 function get_ucsc_link (chr, start, end) {
+  var ext_link = build_external_link('UCSC');
+      ext_link.attr('onclick',"ucsc_link('"+chr+"','"+start+"','"+end+"')");
+  return ext_link[0].outerHTML;
+}
+function ucsc_link (chr, start, end) {
   var new_link = ucsc_url.replace(/###LOC###/, chr+':'+start+'-'+end);
-  return build_external_link(new_link,'UCSC',1);
+  window.open(new_link,'_blank');
 }
 
+
+/* Curation link */
 function get_curation_link (lrg_id) {
-  var curation_link = $('<a></a>');
+  var curation_link = build_link_base('see progress', '/curation-status/#'+lrg_id);
       curation_link.addClass('icon-next smaller-icon close-icon-2');
-      curation_link.attr('href', '/curation-status/#'+lrg_id);
-      curation_link.html('see progress');
   return curation_link[0].outerHTML;
 }
 
-// Function to build simple external link
-function build_external_link (url,label,return_html) {
+
+/**** Functions to build the links ****/
+
+function build_link_base (label,url) {
   var ext_link = $('<a></a>');
+      ext_link.html(label);
+  if (url) {
+    ext_link.attr('href', url);
+  }
+  return ext_link;
+}
+
+function build_ftp_link (label,url) {
+  var ftp_link = build_link_base(label,url);
+      
+  return ftp_link;
+}
+
+// Function to build simple external link
+function build_external_link (label,url,return_html) {
+  var ext_link = build_link_base(label,url);
       ext_link.addClass(external_link_class);
       ext_link.attr('target','_blank');
-      ext_link.attr('href', url);
-      ext_link.html(label);
   if (return_html) {
     return ext_link[0].outerHTML;
   }
@@ -220,6 +271,7 @@ function build_external_link (url,label,return_html) {
     return ext_link;
   }
 }
+
 
 // Return an array of objects according to key, value, or key and value matching
 function getObjects (obj_parent, obj, key, val, objects) {
