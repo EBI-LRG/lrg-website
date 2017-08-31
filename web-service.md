@@ -15,7 +15,7 @@ permalink: /web-service/
   </a>
 </div>
 
-The EMBL-EBI provides [RESTful web services](http://www.ebi.ac.uk/Tools/webservices/services/eb-eye_rest){: .icon-external-link} for LRG. It also provides [client tools](http://www.ebi.ac.uk/Tools/webservices/services/eb-eye_rest#clients) in several programming languages to query their RESTful web services and parse their outputs.
+The EMBL-EBI provides [RESTful web services](http://www.ebi.ac.uk/Tools/webservices/services/eb-eye_rest){: .icon-external-link}{:target="_blank"} for LRG. It also provides [client tools](http://www.ebi.ac.uk/Tools/webservices/services/eb-eye_rest#clients) in several programming languages to query their RESTful web services and parse their outputs.
 
 The EMBL-EBI RESTful web services provide several output format such as XML, JSON, CSV or TSV.
 

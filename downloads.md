@@ -338,7 +338,7 @@ There is the possibility to download all the public and pending LRGs:
 
 ### LRG in Ensembl
   
-The list of LRGs already imported in [Ensembl](http://www.ensembl.org){: .icon-external-link} is available in this [text file]({{ site.lrg_ftp_url }}lrgs_in_ensembl.txt).  
+The list of LRGs already imported in [Ensembl](http://www.ensembl.org){: .icon-external-link}{:target="_blank"} is available in this [text file]({{ site.lrg_ftp_url }}lrgs_in_ensembl.txt).  
 <br />
   
   
