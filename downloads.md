@@ -338,7 +338,19 @@ There is the possibility to download all the public and pending LRGs:
 
 ### LRG in Ensembl
   
-The list of LRGs already imported in [Ensembl](http://www.ensembl.org){: .icon-external-link}{:target="_blank"} is available in this [text file]({{ site.lrg_ftp_url }}lrgs_in_ensembl.txt).  
+<div class="clearfix">
+  <div class="left file_link">
+    The list of LRGs already imported in <a href="http://www.ensembl.org" target="_blank">Ensembl</a> is available in this text file:
+  </div>
+  <div class="left margin-left-5">
+    <a href="{{ site.lrg_ftp_url }}lrgs_in_ensembl.txt" target="_blank">
+      <div class="file_link clearfix">
+          <div class="left icon-literature close-icon-0"></div>
+          <div class="left">TXT</div>
+      </div>
+    </a>
+  </div>
+</div>
 <br />
   
   
