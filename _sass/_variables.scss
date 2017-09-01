@@ -5,10 +5,12 @@
 
 // Colors
 $blue: #1881ad; //#1a8ebe; //#4183C4;
+$blue2: #369;
 $black: #000;
 $white: #fff;
 $gray: #666;
 $darkGray: #333;
+$turquoise1: #4a989c;
 $lrg_green        : #909F4F;
 $lrg_green2       : #78BE43;
 $lrg_green_old    : #48A726;
@@ -19,20 +21,28 @@ $lrg_dark         : #3C3F45;
 $lrg_gray         : #BCBEC0;
 $lrg_gray2        : #EEE;
 $lrg_purple       : #9051A0;
-$lrg_light_purple : #ba8ec6;
+
+// Light colours
+$light_orange         : #fff7ea;
+$light_turquoise      : #e4eff0;
+$light_blue           : #f9fbfc;
+$lrg_light_blue       : #ecf7fb;
+$lrg_light_purple     : #ba8ec6;
 $lrg_blue_transparent : rgba(28,155,207, 0.02);
 
-// Specific public/private curation status
+// LRG curation status
 $green1 : #0C0;
 $green2 : #5E5;
-$orange1 : #ffa500;
+$orange1 : #FFA500;
 $orange2 : #ffc04d;
 $red1 : #E22;
 $red2 : #F66;
 
+// LRG status
 $lrg_public:  #48a726;
 $lrg_pending: #FFA500;
 $lrg_stalled: #E00;
+
 
 $highlight : #FCFCFF;
 $bg_1: #F9F9F9;

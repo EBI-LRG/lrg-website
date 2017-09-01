@@ -6,17 +6,17 @@ icon-class: icon-info
 permalink: /ref-seq-sources/
 ---
 
-<table class="table table-hover table-lrg margin-bottom-75">
+<table class="table table-hover table-lrg ref-sources margin-bottom-75">
   <thead>
     <tr>
-      <th rowspan="2" style="width:8%">Category</th>
+      <th class="default_col" rowspan="2" style="width:8%">Category</th>
       <th colspan="4" class="split-header">REFERENCE SEQUENCE SOURCES</th>
     </tr>
     <tr>
-      <th class="border-left" style="width:23%">Genome Reference Consortium (GRC)</th>
-      <th style="width:23%">GENCODE</th>
-      <th style="width:23%">RefSeq</th>
-      <th style="width:23%">Locus Reference Genomic (LRG)</th>
+      <th class="border-left grc" style="width:23%">Genome Reference Consortium (GRC)</th>
+      <th class="genecode" style="width:23%">GENCODE</th>
+      <th class="refseq" style="width:23%">RefSeq</th>
+      <th class="lrg" style="width:23%">Locus Reference Genomic (LRG)</th>
     <tr/>
   </thead>
 
@@ -86,30 +86,23 @@ permalink: /ref-seq-sources/
 
     <!-- STABILITY -->
     <tr>
-      <td class="left-col left-col-bg" rowspan="2">STABILITY</td>
+      <td class="left-col left-col-bg">STABILITY</td>
       <td>
-        Version very infrequently.
-      </td><td>
-        Version.
-      </td><td>
-        Version.
-      </td><td>
-        Do not version.
-      </td>
-    </tr>
-    <tr>
-      <td>
+        <div class="margin-bottom-20">Version very infrequently.</div>
         <div class="margin-bottom-5">Major updates (sequence and structure changes, which may disrupt chromosome coordinates) are indicated by the number after GRCh (e.g. GRCh37 to GRCh38).</div>
         <div class="margin-bottom-5">Minor updates (the addition of patches) can occur quaterly, and are indicated by the digit after 'p' e.g. GRCh38.p10. Patch updates do not disrupt the primary assembly chromosome coordinates.</div>
         <div>The GRC has not announced plans to release a GRCh39 assembly.</div>
       </td><td>
+        <div class="margin-bottom-20">Version.</div>
         <div class="margin-bottom-5">Updates denoted by the final digit in the accession number (after the full stop/period); e.g. ENSTxxx.1</div>
         <div>Updates are issued in batches (e.g. GENCODE release 26) as part of an Ensembl release (e.g. Ensembl release 88). This is normally every 2-3 months.</div>
       </td><td>
+        <div class="margin-bottom-20">Version.</div>
         <div class="margin-bottom-5">Updates denoted by the final digit in the accession number (after the full stop/period); e.g. NMxxx.1</div>
         <div>Individual sequence updates are available on an ad hoc basis and batch released at a later date (e.g. RefSeq release 81).</div>
       </td><td>
-        <div>Once an LRG has been made public, its “fixed” section, which contains reference sequences and exon numbering, will never change.</div>
+        <div class="margin-bottom-20">Do not version.</div>
+        <div class="margin-bottom-5">Once an LRG has been made public, its “fixed” section, which contains reference sequences and exon numbering, will never change.</div>
         <div>The “updatable” section, which contains mappings, annotations and community information is updated weekly.</div>
       </td>
     </tr>
