@@ -4,6 +4,10 @@
   {% include head.html %}
   
   <body>
+    {% if site.is_beta == 1 %} 
+      <div class="badge beta_label">beta</div>
+    {% endif %}
+
     {% include header.html %}   
     
     <div id="main" role="main" class="container container-extra">
