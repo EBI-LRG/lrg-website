@@ -27,7 +27,7 @@ order: 3
             <a href="{{ site.rest_lrg }}?query=status:public&size=100" target="_blank">{{ site.rest_lrg }}?query=status:public<b>&size=100</b></a>
           </td>
           <td>
-            <button class="btn btn-primary btn-sm" onclick="javascript:show_output('public_search','xml')">XML output</button>
+            <button class="btn btn-primary btn-xs" onclick="javascript:show_output('public_search','xml')">XML output</button>
           </td>
         </tr>
         <tr>
@@ -36,7 +36,7 @@ order: 3
             <a href="{{ site.rest_lrg }}?query=status:public&size=100&format=json" target="_blank">{{ site.rest_lrg }}?query=status:public<b>&size=100&format=json</b></a>
           </td>
           <td>
-            <button class="btn btn-primary btn-sm" onclick="javascript:show_output('public_search','json')">JSON output</button>
+            <button class="btn btn-primary btn-xs" onclick="javascript:show_output('public_search','json')">JSON output</button>
           </td>
         </tr>
       </tbody>   

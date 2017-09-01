@@ -26,7 +26,7 @@ order: 1
             <a href="{{ site.rest_lrg }}?query=name:COL1A1" target="_blank">{{ site.rest_lrg }}?query=name:COL1A1</a>
           </td>
           <td>
-            <button class="btn btn-primary btn-sm" onclick="javascript:show_output('hgnc_search','xml')">XML output</button>
+            <button class="btn btn-primary btn-xs" onclick="javascript:show_output('hgnc_search','xml')">XML output</button>
           </td>
         </tr>
         <tr>
@@ -35,7 +35,7 @@ order: 1
             <a href="{{ site.rest_lrg }}?query=name:COL1A1&format=json" target="_blank">{{ site.rest_lrg }}?query=name:COL1A1<b>&format=json</b></a>
           </td>
           <td>
-            <button class="btn btn-primary btn-sm" onclick="javascript:show_output('hgnc_search','json')">JSON output</button>
+            <button class="btn btn-primary btn-xs" onclick="javascript:show_output('hgnc_search','json')">JSON output</button>
           </td>
         </tr>
       </tbody>   

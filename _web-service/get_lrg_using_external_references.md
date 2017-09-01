@@ -27,7 +27,7 @@ order: 2
             <a href="{{ site.rest_lrg }}?query=ENSG00000108821" target="_blank">{{ site.rest_lrg }}?query=ENSG00000108821</a>
           </td>
           <td>
-            <button class="btn btn-primary btn-sm" onclick="javascript:show_output('xref_search','xml')">XML output</button>
+            <button class="btn btn-primary btn-xs" onclick="javascript:show_output('xref_search','xml')">XML output</button>
           </td>
         </tr>
         <tr>
@@ -36,7 +36,7 @@ order: 2
             <a href="{{ site.rest_lrg }}?query=ENSG00000108821&format=json" target="_blank">{{ site.rest_lrg }}?query=ENSG00000108821<b>&format=json</b></a>
           </td>
           <td>
-            <button class="btn btn-primary btn-sm" onclick="javascript:show_output('xref_search','json')">JSON output</button>
+            <button class="btn btn-primary btn-xs" onclick="javascript:show_output('xref_search','json')">JSON output</button>
           </td>
         </tr>
       </tbody>   

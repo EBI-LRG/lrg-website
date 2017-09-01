@@ -30,7 +30,7 @@ order: 3
           <a href="{{ site.rest_lrg }}/entry/LRG_1?fields=status" target="_blank">{{ site.rest_lrg }}/entry/LRG_1?fields=status</a>
         </td>
         <td>
-          <button class="btn btn-primary btn-sm" onclick="javascript:show_output('lrg_status_search','xml')">XML output</button>
+          <button class="btn btn-primary btn-xs" onclick="javascript:show_output('lrg_status_search','xml')">XML output</button>
         </td>
       </tr>
       <tr>
@@ -39,7 +39,7 @@ order: 3
           <a href="{{ site.rest_lrg }}/entry/LRG_1?fields=status&format=json" target="_blank">{{ site.rest_lrg }}/entry/LRG_1?fields=status<b>&format=json</b></a>
         </td>
         <td>
-          <button class="btn btn-primary btn-sm" onclick="javascript:show_output('lrg_status_search','json')">JSON output</button>
+          <button class="btn btn-primary btn-xs" onclick="javascript:show_output('lrg_status_search','json')">JSON output</button>
         </td>
       </tr>
     </tbody>   
@@ -109,7 +109,7 @@ order: 3
           <a href="{{ site.rest_lrg }}/entry/LRG_1,LRG_9?fields=name" target="_blank">{{ site.rest_lrg }}/entry/LRG_1,LRG_9?fields=name</a>
         </td>
         <td>
-          <button class="btn btn-primary btn-sm" onclick="javascript:show_output('lrg_status_multi_search','xml')">XML output</button>
+          <button class="btn btn-primary btn-xs" onclick="javascript:show_output('lrg_status_multi_search','xml')">XML output</button>
         </td>
       </tr>
       <tr>
@@ -118,7 +118,7 @@ order: 3
           <a href="{{ site.rest_lrg }}/entry/LRG_1,LRG_9?fields=name&format=json" target="_blank">{{ site.rest_lrg }}/entry/LRG_1,LRG_9?fields=name<b>&format=json</b></a>
         </td>
         <td>
-          <button class="btn btn-primary btn-sm" onclick="javascript:show_output('lrg_status_multi_search','json')">JSON output</button>
+          <button class="btn btn-primary btn-xs" onclick="javascript:show_output('lrg_status_multi_search','json')">JSON output</button>
         </td>
       </tr>
     </tbody>   
