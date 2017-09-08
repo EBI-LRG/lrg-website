@@ -28,7 +28,7 @@ var table_id = "#search_results";
 function get_query () {
 
   // Comes from the search page
-  var query = document.getElementById('search_id').value;
+  var query = $('#search_id').val();
 
   // Comes from an other page
   if (!query) {
@@ -263,8 +263,8 @@ function build_ftp_link (label,url) {
 function build_external_link (label,url,return_html) {
   var ext_link = build_link_base(label,url);
       ext_link.addClass(external_link_class);
-      ext_link.attr('target','_blank');
   if (return_html) {
+    ext_link.attr('target','_blank');
     return ext_link[0].outerHTML;
   }
   else {

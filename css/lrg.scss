@@ -271,6 +271,7 @@ header {
   border:1px solid #BCBEC0;
   text-shadow:0 1px 0 #fff;
   background-color:$lrg_gray;
+  border-radius: 0px 4px 4px 0px !important;
   &:hover, &:active, &:focus {
     color:$lrg_green2;
     background-color:#AAA;
@@ -1252,6 +1253,16 @@ ul.sections_list>li>a:after {
   border-top:6px solid #1C9BCF;
   width:40px;
   height:40px;
+  margin:0px auto;
+  -webkit-animation:spin 1.5s linear infinite;
+  animation:spin 1.5s linear infinite;
+}
+.loader-small {
+  border:4px solid #F0F0F0;
+  border-radius:50%;
+  border-top:4px solid #1C9BCF;
+  width:25px;
+  height:25px;
   margin:0px auto;
   -webkit-animation:spin 1.5s linear infinite;
   animation:spin 1.5s linear infinite;

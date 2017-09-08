@@ -51,7 +51,7 @@ function get_vep_results () {
       maf_help['Genome'] = maf_help['Genome'].replace('GRCh38','GRCh37');
     }
 
-    rest_url += hgvs+'?merged=1;content-type=application/json';
+    rest_url += hgvs+'?merged=1;hgvs=1;content-type=application/json';
 
     $('#vep_results').html('<h4 class="icon-info close-icon-5 smaller-icon" style="text-align:center">Request sent to Ensembl. Please wait for the results ...</h4><div class="loader" style="text-align:center"></div>');
 
@@ -257,13 +257,13 @@ function parse_transcript_data (data) {
   var html = "";
 
   // Transcript consequences
-  html += "<h4>Transcripts consequences</h4>";
+  html += "<h4>Transcript consequences</h4>";
 
   if (data.transcript_consequences) {
 
     html += '<table class="table table-hover table-lrg">';
     html += '  <thead><tr>';
-    html += '    <th>Gene</th><th>Transcript</th><th>Biotype</th><th>Strand</th>' + 
+    html += '    <th>Gene</th><th>Transcript</th><th>Biotype</th><th>Strand</th><th>HGVS</th>' + 
                 '<th>Consequences' + msc_help + '</th><th>Variant allele</th><th>IMPACT'+ msc_help +'</th><th>Details</th>';
     html += '  </tr></thead><tbody>';
 
@@ -281,8 +281,8 @@ function parse_transcript_data (data) {
 
       var v_allele = (trans.strand == 1) ? trans.variant_allele : reverse_complement(trans.variant_allele);
 
-      html += '    <tr><td>' + gene_id + '</td><td>' + trans_id + '</td><td>' + trans.biotype + '</td><td style="text-align:center">'+ strand + '</td><td>' + cons.join(', ') + '</td>' +
-                      '<td>' + v_allele + '</td><td>' + trans.impact + '</td><td>' + distance+ '</td></tr>';
+      html += '    <tr><td>' + gene_id + '</td><td>' + trans_id + '</td><td>' + trans.biotype + '</td><td style="text-align:center">'+ strand + '</td><td>'+trans.hgvsc+'</td><td>' +
+                       cons.join(', ') + '</td><td>' + v_allele + '</td><td>' + trans.impact + '</td><td>' + distance+ '</td></tr>';
     });
 
     html += '  </tbody></table>';
