@@ -14,9 +14,6 @@ var ref_assembly = '{{ site.ref_assembly }}';
 ens_url = ens_url.replace(/###ASSEMBLY###/, ref_assembly);
 
 var external_link_class = 'icon-ext';
-var lrg_regexp = /lrg_\d+/i;
-var all_lrgs = "LRG_*";
-var lrg_list = [];
 
 var table_id = "#search_results";
 
@@ -184,7 +181,7 @@ function newCell(content) {
 
 /**** Links ****/
 
-/* NCBI link */
+/* HGNC link */
 function get_hgnc_link (symbol) {
   var ext_link = build_external_link(symbol);
       ext_link.attr('onclick',"hgnc_link('"+symbol+"')");
@@ -294,7 +291,7 @@ function getObjects (obj_parent, obj, key, val, objects) {
     // Search with regex
     var regex;
     // Specific regex for the sequence identifiers, with a version, e.g. NM_000088.3
-    if (val.match(/^(NM_|NG_|ENST|ENSG)\d+/)) {
+    if (val.match(/^(NM_|NR_|NG_|ENST|ENSG)\d+/)) {
       regex = new RegExp("^"+val+"\.", "i");
     }
     // Wild card character associated with other characters
