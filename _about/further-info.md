@@ -16,7 +16,8 @@ expanded: 1
 
 <div class="margin-top-25"></div>
 
-##### [Frequently Asked Questions (FAQs)](/faq)
+##### Frequently Asked Questions (FAQs)
+The LRG website hosts a page listing the [FAQs](/faq)
 <div class="margin-top-25"></div>
 
 ##### Additional resources

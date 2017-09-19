@@ -74,9 +74,9 @@ permalink: /ref-seq-sources/
         <div class="margin-bottom-5"><b>Transcript identifier format</b>: ENSTxxx; e.g. ENST00000357654.7</div>
         <div><b>Protein identifier format</b>: ENSPxxx e.g. ENSP00000350283.3</div>
       </td><td>
-        <div class="margin-bottom-5"><b>Gene identifier format</b>: NGxxx; e.g. NG_005905.2</div>
-        <div class="margin-bottom-5"><b>Transcript identifier format</b>: NMxxx; e.g. NM_007294.3</div>
-        <div><b>Protein identifier format</b>: NPxxx; e.g. NP_009225.1</div>
+        <div class="margin-bottom-5"><b>Gene identifier format</b>: NG_xxx; e.g. NG_005905.2</div>
+        <div class="margin-bottom-5"><b>Transcript identifier format</b>: NM_xxx; e.g. NM_007294.3</div>
+        <div><b>Protein identifier format</b>: NP_xxx; e.g. NP_009225.1</div>
       </td><td>
         <div class="margin-bottom-5"><b>Gene identifier format</b>: LRG_xxx; e.g. LRG_292</div>
         <div class="margin-bottom-5"><b>Transcript identifier format</b>: LRG_xxxtxxx; e.g. LRG_292t1</div>
@@ -94,11 +94,11 @@ permalink: /ref-seq-sources/
         <div>The GRC has not announced plans to release a GRCh39 assembly.</div>
       </td><td>
         <div class="margin-bottom-20">Version.</div>
-        <div class="margin-bottom-5">Updates denoted by the final digit in the accession number (after the full stop/period); e.g. ENSTxxx.1</div>
+        <div class="margin-bottom-5">Updates denoted by increment to the numeric version after the decimal; e.g. ENSTxxx.2</div>
         <div>Updates are issued in batches (e.g. GENCODE release 26) as part of an Ensembl release (e.g. Ensembl release 88). This is normally every 2-3 months.</div>
       </td><td>
         <div class="margin-bottom-20">Version.</div>
-        <div class="margin-bottom-5">Updates denoted by the final digit in the accession number (after the full stop/period); e.g. NMxxx.1</div>
+        <div class="margin-bottom-5">Updates denoted by increment to the numeric version after the decimal; e.g. NM_xxx.2</div>
         <div>Individual sequence updates are available on an ad hoc basis and batch released at a later date (e.g. RefSeq release 81).</div>
       </td><td>
         <div class="margin-bottom-20">Do not version.</div>
@@ -132,7 +132,15 @@ permalink: /ref-seq-sources/
       </td><td>
         <span style="color:red">TODO</span>
       </td><td>
-        <span style="color:red">TODO</span>
+        <div>
+          RefSeq curators at the NCBI review a variety of transcript, proteomic, epigenomic, and variation data to annotate a set of well-supported and biologically valid transcripts and their encoded proteins for each gene.
+        </div>
+        <div>
+          The curated transcripts and proteins are aligned to the genome and combined with additional computational models to generate a comprehensive genome annotation.
+        </div>
+        <div>
+          Genomic RefSeqGene records are then defined for a subset of genes, and annotated by aligning the curated transcripts to the genomic sequence, as well as projection of features for neighboring genes from the genome annotation.
+        </div>
       </td><td>
         LRG curators review both RefSeq and GENCODE locus annotion as well as reviewing supporting evidence.  They work with RefSeq and GENCODE annototers to update locus annotation with a view to create matching transcript models for inclusion in the LRG record.
       </td>
