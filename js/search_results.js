@@ -64,16 +64,27 @@ function get_search_results (search_id) {
     return "";
   }
 
-  var search_term = search_id;
+  var search_ids_list = search_id.split(';');
+
+  // Search LRG ID with only the number (e.g. '10' instead of 'LRG_10')
+  $.each(search_ids_list, function (index, search_item) {
+    if (search_item.match(/^\d+$/)) {
+      search_ids_list[index] = 'LRG_'+search_item;
+    }
+  });
+
+  var search_term = '';
+  // Search all LRGs
   if (search_id == "*") {
     search_term = "All LRGs";
   }
-  search_term = search_term.replace(/;/g, ' / ');
-
-  $("#search_term").html(search_term);
+  else {
+    search_term = search_ids_list.join(' / ');
+  }
 
   var result_objects = {};
-  var search_ids_list = search_id.split(';');
+
+  $("#search_term").html(search_term);
 
   return $.getJSON( lrg_json_file ).then(function(data) {
     $.each(search_ids_list, function (index, search_item) {
