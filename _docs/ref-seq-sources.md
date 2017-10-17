@@ -2,8 +2,10 @@
 layout: page
 title: Reference sequence sources
 tags: ref-seq-sources
-icon-class: icon-info
-permalink: /ref-seq-sources/
+icon-class: icon-resource
+permalink: /documentation/ref-seq-sources/
+desc: Learn more about the different reference sequences, their sources and how they relate to the LRG project
+docs_order: 3
 ---
 
 <table class="table table-hover table-lrg ref-sources margin-bottom-75">
@@ -25,11 +27,11 @@ permalink: /ref-seq-sources/
     <tr>
       <td class="left-col left-col-bg">PURPOSE</td>
       <td>
-        <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/grc/human" target="_blank">Maintaining and updating reference genome sequences, including for human.</a>
+        <a class="icon-external-link" href="{{ site.urls.grc }}" target="_blank">Maintaining and updating reference genome sequences, including for human.</a>
       </td><td>
-        <a class="icon-external-link" href="https://www.gencodegenes.org/about.html" target="_blank">Enhancing and extending the annotation of all evidence-based gene features in the human genome at a high accuracy</a>
+        <a class="icon-external-link" href="{{ site.urls.gencode }}" target="_blank">Enhancing and extending the annotation of all evidence-based gene features in the human genome at a high accuracy</a>
       </td><td>
-        <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/refseq/about/" target="_blank">Providing a comprehensive, integrated, non-redundant, well-annotated set of sequences (genomic, transcript and protein).</a>
+        <a class="icon-external-link" href="{{ site.urls.refseq }}" target="_blank">Providing a comprehensive, integrated, non-redundant, well-annotated set of sequences (genomic, transcript and protein).</a>
       </td><td>
         <a href="{{ site.baseurl }}/about">Creating stable reference sequence records that are used for reporting sequence variants with clinical implications.</a>
       </td>
@@ -169,36 +171,36 @@ permalink: /ref-seq-sources/
       <td class="left-col left-col-bg">REFERENCES</td>
       <td>
         <div class="margin-bottom-5">
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/grc/help/definitions" target="_blank">Assembly Terminology</a>
+          <a class="icon-external-link" href="{{ site.urls.ncbi }}/grc/help/definitions" target="_blank">Assembly Terminology</a>
         </div>
         <div class="margin-bottom-5">
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/grc/help/patches" target="_blank">Patches</a>
+          <a class="icon-external-link" href="{{ site.urls.ncbi }}/grc/help/patches" target="_blank">Patches</a>
         </div>
         <div>
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/28396521" target="_blank">Schneider VA et al., 2017 </a>
+          <a class="icon-external-link" href="{{ site.urls.ncbi }}/pubmed/28396521" target="_blank">Schneider VA et al., 2017 </a>
         </div>
       </td><td>
        <div class="margin-bottom-5">
-          <a class="icon-external-link" href="http://www.ensembl.org/info/website/glossary.html" target="_blank">Ensembl glossary</a>
+          <a class="icon-external-link" href="{{ site.urls.ensembl }}/info/website/glossary.html" target="_blank">Ensembl glossary</a>
         </div>
         <div class="margin-bottom-5">
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/26110515" target="_blank">Frankish A et al., 2015</a>
+          <a class="icon-external-link" href="{{ site.urls.ncbi }}/pubmed/26110515" target="_blank">Frankish A et al., 2015</a>
         </div>
         <div>
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/22955987" target="_blank">Harrow J et al., 2012</a>
+          <a class="icon-external-link" href="{{ site.urls.ncbi }}/pubmed/22955987" target="_blank">Harrow J et al., 2012</a>
         </div>
       </td><td>
         <div class="margin-bottom-5">
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/books/NBK50679/" target="_blank">RefSeq FAQ</a>
+          <a class="icon-external-link" href="{{ site.urls.ncbi }}/books/NBK50679/" target="_blank">RefSeq FAQ</a>
         </div>
         <div class="margin-bottom-5">
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/refseq/rsg/lrg/" target="_blank">RefSeqGene and LRG</a>
+          <a class="icon-external-link" href="{{ site.urls.ncbi }}/refseq/rsg/lrg/" target="_blank">RefSeqGene and LRG</a>
         </div>
         <div class="margin-bottom-5">
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/26553804" target="_blank">O’Leary NA et al., 2016</a>
+          <a class="icon-external-link" href="{{ site.urls.ncbi }}/pubmed/26553804" target="_blank">O’Leary NA et al., 2016</a>
         </div>
         <div>
-          <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/22121212" target="_blank">Pruitt KD et al., 2012</a>
+          <a class="icon-external-link" href="{{ site.urls.ncbi }}/pubmed/22121212" target="_blank">Pruitt KD et al., 2012</a>
         </div>
       </td><td>
         <div class="margin-bottom-5">
@@ -231,12 +233,12 @@ permalink: /ref-seq-sources/
         <a class="icon-external-link" href="http://appris.bioinfo.cnio.es" target="_blank">APPRIS</a>
       </td>
       <td>
-        APPRIS is a system to annotate alternatively spliced transcripts based on a range of computational methods. LRG curators use this information to help identify well-supported transcript models (<a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/23161672" target="_blank">Rodriguez JM et al., 2013</a>).
+        APPRIS is a system to annotate alternatively spliced transcripts based on a range of computational methods. LRG curators use this information to help identify well-supported transcript models (<a class="icon-external-link" href="{{ site.urls.ncbi }}/pubmed/23161672" target="_blank">Rodriguez JM et al., 2013</a>).
       </td>
     </tr>
     <tr>
       <td class="left-col">
-        <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/projects/CCDS/CcdsBrowse.cgi" target="_blank">CCDS</a>
+        <a class="icon-external-link" href="{{ site.urls.ncbi }}/projects/CCDS/CcdsBrowse.cgi" target="_blank">CCDS</a>
       </td>
       <td>
         The CCDS project is a collaborative effort to identify a core set of protein coding regions that are consistently annotated and of high quality.  A combination of manual and automated genome annotations provided by (NCBI) and Ensembl (which incorporates manual HAVANA annotations) are compared to identify annotations with matching genomic coordinates.
@@ -244,18 +246,18 @@ permalink: /ref-seq-sources/
     </tr>
     <tr>
       <td class="left-col">
-        <a class="icon-external-link" href="http://www.ebi.ac.uk/about" target="_blank">EMBL-EBI</a>
+        <a class="icon-external-link" href="{{ site.urls.embl_ebi }}/about" target="_blank">EMBL-EBI</a>
       </td>
       <td>
-        The European Bioinformatics Institute (EMBL-EBI) shares data from <a class="icon-external-link" href="http://www.ebi.ac.uk/services" target="_blank">life science experiments</a>, performs basic <a class="icon-external-link" href="http://www.ebi.ac.uk/research" target="_blank">research</a> in computational biology and offers an extensive user  <a class="icon-external-link" href="http://www.ebi.ac.uk/training" target="_blank">training</a> programme, supporting researchers in academia and <a class="icon-external-link" href="http://www.ebi.ac.uk/industry" target="_blank">industry</a>. It is part of <a class="icon-external-link" href="http://embl.org/" target="_blank">EMBL</a>, Europe’s flagship laboratory for the life sciences.
+        The European Bioinformatics Institute (EMBL-EBI) shares data from <a class="icon-external-link" href="{{ site.urls.embl_ebi }}/services" target="_blank">life science experiments</a>, performs basic <a class="icon-external-link" href="{{ site.urls.embl_ebi }}/research" target="_blank">research</a> in computational biology and offers an extensive user  <a class="icon-external-link" href="{{ site.urls.embl_ebi }}/training" target="_blank">training</a> programme, supporting researchers in academia and <a class="icon-external-link" href="{{ site.urls.embl_ebi }}/industry" target="_blank">industry</a>. It is part of <a class="icon-external-link" href="http://embl.org/" target="_blank">EMBL</a>, Europe’s flagship laboratory for the life sciences.
       </td>
     </tr>
     <tr>
       <td class="left-col">
-        <a class="icon-external-link" href="http://www.ensembl.org" target="_blank">Ensembl</a>
+        <a class="icon-external-link" href="{{ site.urls.ensembl }}" target="_blank">Ensembl</a>
       </td>
       <td>
-        Ensembl, based at EMBL-EBI, is a project to develop a software system which produces and maintains automatic annotation on selected eukaryotic genomes (<a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/27899575" target="_blank">Aken BL et al., 2017</a>).
+        Ensembl, based at EMBL-EBI, is a project to develop a software system which produces and maintains automatic annotation on selected eukaryotic genomes (<a class="icon-external-link" href="{{ site.urls.ncbi }}/pubmed/27899575" target="_blank">Aken BL et al., 2017</a>).
       </td>
     </tr>
     <tr>
@@ -287,7 +289,7 @@ permalink: /ref-seq-sources/
         <a class="icon-external-link" href="http://www.hgvs.org/" target="_blank">HGVS</a>
       </td>
       <td>
-        The Human Genome Variation Society issues <a class="icon-external-link" href="http://varnomen.hgvs.org/recommendations/general/" target="_blank">guidelines and recommendations</a> on the nomenclature of gene variations. <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/26931183" target="_blank">Den Dunnen et al., 2016</a>
+        The Human Genome Variation Society issues <a class="icon-external-link" href="http://varnomen.hgvs.org/recommendations/general/" target="_blank">guidelines and recommendations</a> on the nomenclature of gene variations. <a class="icon-external-link" href="{{ site.urls.ncbi }}/pubmed/26931183" target="_blank">den Dunnen et al., 2016</a>
       </td>
     </tr>
     <tr>
@@ -300,7 +302,7 @@ permalink: /ref-seq-sources/
     </tr>
     <tr>
       <td class="left-col">
-        <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/home/about/" target="_blank">NCBI</a>
+        <a class="icon-external-link" href="{{ site.urls.ncbi }}/home/about/" target="_blank">NCBI</a>
       </td>
       <td>
         The USA’s National Centre for Biotechnology Information advances science and health by providing access to biomedical and genomic information.
@@ -316,7 +318,7 @@ permalink: /ref-seq-sources/
     </tr>
     <tr>
       <td class="left-col">
-        <a class="icon-external-link" href="https://genome.ucsc.edu/" target="_blank">UCSC</a>
+        <a class="icon-external-link" href="{{ site.urls.ucsc }}" target="_blank">UCSC</a>
       </td>
       <td>
         Provides UCSC specific annotations on GRCh37, these are based on RefSeq annotation.  As of July 29, 2015 GENCODE annotations are the default annotations on GRCh38 in the UCSC genome browser.  UCSC annotations are no longer being generated.  Together with Ensembl, UCSC supplies Transcript Support Levels (TSL) for all GENCODE transcripts. LRG curators use this information to identify well-supported transcript models.
@@ -332,10 +334,10 @@ permalink: /ref-seq-sources/
     </tr>
     <tr>
       <td class="left-col">
-        <a class="icon-external-link" href="http://www.ensembl.org/vep" target="_blank">VEP</a>
+        <a class="icon-external-link" href="{{ site.urls.ensembl }}/vep" target="_blank">VEP</a>
       </td>
       <td>
-        VEP (Variant effect predictor) determines the effect of variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts, and protein sequence.  It is produced by Ensembl at EMBL-EBI. <a class="icon-external-link" href="https://www.ncbi.nlm.nih.gov/pubmed/27268795" target="_blank">McLaren W et al., 2016</a>
+        VEP (Variant effect predictor) determines the effect of variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts, and protein sequence.  It is produced by Ensembl at EMBL-EBI. <a class="icon-external-link" href="{{ site.urls.ncbi }}/pubmed/27268795" target="_blank">McLaren W et al., 2016</a>
       </td>
     </tr>
 

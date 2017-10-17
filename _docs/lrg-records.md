@@ -1,7 +1,11 @@
 ---
-title: "LRG records"
-about_order: 2
-expanded: 1
+layout: page
+title: LRG records
+tags: LRG records
+icon-class: icon-unreviewed-data
+permalink: /documentation/lrg-records/
+desc: Details about the content of LRG records
+docs_order: 1
 ---
 
 LRG records are created upon request for a region of the genome, usually a gene of interest. Each record contains a stable “**fixed**” section and a regularly updated “**updatable**” section:
@@ -10,10 +14,10 @@ LRG records are created upon request for a region of the genome, usually a gene 
 
 * Reference sequences
   * Genomic DNA sequence for the region of interest:
-    * The RefSeqGene (NG) which matches the genome reference assembly (GRCh38) or a legacy sequence
+    * The [RefSeqGene]({{ site.urls.refseqgene }}){: .icon-external-link}{:target="_blank"} (NG) which matches the genome reference assembly (GRCh38) or a legacy sequence
   * Transcripts and proteins for reporting variants:
-    * RefSeq transcript (NM) and protein (NP)
-    * GENCODE transcript (ENST) to RefSeq transcript (NM) matches 
+    * [RefSeq]({{ site.urls.refseq }}){: .icon-external-link}{:target="_blank"} transcript (NM) and protein (NP)
+    * [GENCODE]({{ site.urls.gencode }}){: .icon-external-link}{:target="_blank"} transcript (ENST) to [RefSeq]({{ site.urls.refseq }}){: .icon-external-link}{:target="_blank"} transcript (NM) matches 
     * Ideally only one transcript per locus
     * Only well-supported, community approved sequences
   

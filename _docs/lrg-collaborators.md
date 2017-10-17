@@ -3,7 +3,9 @@ layout: page
 title: LRG collaborators
 tags: Collaborator
 icon-class: icon-industry
-permalink: /lrg-collaborators/
+permalink: /documentation/lrg-collaborators/
+desc: List of locus-specific experts that have worked with the LRG team on the creation of records
+docs_order: 4
 ---
 
 

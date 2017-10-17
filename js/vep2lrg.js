@@ -1,7 +1,6 @@
 ---
 ---
 
-//var rest_current = 'http://rest.ensembl.org/vep/human/hgvs/';
 var rest_url    = '{{ site.rest_url_38 }}';
 var rest_grch37 = '{{ site.rest_url_37 }}';
 

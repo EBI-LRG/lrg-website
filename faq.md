@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "FAQ"
+title: "Frequently Asked Questions"
 permalink: /faq/
 tags: FAQ
 icon-class: icon-help
@@ -8,34 +8,26 @@ exclude_from_search: true
 ---
 
 <a id="top"/>
-This is the LRG Frequently Asked Questions page.
-
-{% include tutorial.html %}
 
 {% assign sorted_faq = (site.faq | sort: 'faq_order') %}
 <div>
-  <h3>Frequently Asked Questions <button class="btn btn-primary btn-xs is-collapsed" style="margin-left:50px" id="item_button" onclick="javascript:show_hide_all('item_title','item_content','item_button');">Expand all FAQs</button></h3>
-{% assign faq_groups = (site.faq_groups | sort: 'order') %}
-{% assign half_faq_groups_size = faq_groups.size | divided_by: 2 %}
-  <div class="clearfix">
-    <div class="left">
-      <ul>
-      
-      
-  {% for faq_group in faq_groups %}
-    
-    {% if forloop.index0 == half_faq_groups_size %}
-      </ul>
-    </div>
-    <div class="left margin-left-20">
-      <ul>
-    {% endif %}
 
+<!-- Table of content -->
+{% assign faq_groups = (site.faq_groups | sort: 'order') %}
+  <div class="clearfix margin-bottom-40">
+    <div class="left sections_list">
+      <span class="icon-next-page smaller-icon close-icon-2 lrg_blue padding-bottom-5">
+        <span class="lrg_dark bold_font">Categories</span>
+      </span>
+      <ul class="margin-top-5 margin-bottom-5">
+ {% for faq_group in faq_groups %}
     {% assign faq_group_name = faq_group.url | split:"/" | last %}
         <li><a href="#{{ faq_group_name }}">{{ faq_group.title }}</a></li>
-
   {% endfor %}
       </ul>
+    </div>
+    <div class="left" style="padding-left:60px">
+      <button class="btn btn-primary btn-xs is-collapsed" id="item_button" onclick="javascript:show_hide_all('item_title','item_content','item_button');">Expand all FAQs</button>
     </div>
   </div>
 

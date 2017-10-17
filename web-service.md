@@ -10,17 +10,17 @@ permalink: /web-service/
   <a href="http://www.ebi.ac.uk/ebisearch/ws/rest/lrg" target="_blank">
     <h4 class="info_highlighted clearfix">
       <div class="left icon-link close-icon-5"></div>
-      <div class="left">http://www.ebi.ac.uk/ebisearch/ws/rest/lrg</div>
+      <div class="left">https://www.ebi.ac.uk/ebisearch/ws/rest/lrg</div>
     </h4>
   </a>
 </div>
 
-The EMBL-EBI provides [RESTful web services](http://www.ebi.ac.uk/Tools/webservices/services/eb-eye_rest){: .icon-external-link}{:target="_blank"} for LRG. It also provides [client tools](http://www.ebi.ac.uk/Tools/webservices/services/eb-eye_rest#clients) in several programming languages to query their RESTful web services and parse their outputs.
+The EMBL-EBI provides [RESTful web services]({{ site.urls.embl_ebi }}/Tools/webservices/services/eb-eye_rest){: .icon-external-link}{:target="_blank"} for the LRG project. It also provides [client tools]({{ site.urls.embl_ebi }}/Tools/webservices/services/eb-eye_rest#clients){: .icon-external-link}{:target="_blank"} in several programming languages to query their RESTful web services and parse their outputs.
+This replaces the now deprecated LRG web services previously available from the old website.
 
-The EMBL-EBI RESTful web services provide several output format such as XML, JSON, CSV or TSV.
+The EMBL-EBI RESTful web services provide several output formats such as XML, JSON, CSV or TSV.
 
-Here are listed differents type of calls, which replace the deprecated LRG web services.  
-They are grouped in 2 main types of queries:
+Two main types of queries are available:
 
 * [Search LRG(s)](#ws_lrg_search) using differents terms/IDs, e.g. LRG ID, HGNC symbol, Ensembl accession, NCBI accession, ...
 * [Get LRG data annotation](#ws_lrg_data) from one or several entries  

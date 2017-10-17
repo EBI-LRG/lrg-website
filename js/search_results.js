@@ -2,10 +2,10 @@
 ---
 
 // Links
-var lrg_ftp  = '{{ site.lrg_ftp_http }}';
+var lrg_ftp  = '{{ site.lrg_record_url }}';
 var ens_url  = '{{ site.ens_url }}';
-var ncbi_url = '{{ site.ncbi_url }}';
-var ucsc_url = '{{ site.ucsc_url }}';
+var ncbi_url = '{{ site.urls.ncbi_url }}';
+var ucsc_url = '{{ site.urls.ucsc_url }}';
 var hgnc_url = '{{ site.hgnc_url }}';
 
 var lrg_json_file = '{{ site.lrg_json_file }}';
@@ -88,7 +88,7 @@ function get_search_results (search_id) {
 
   return $.getJSON( lrg_json_file ).then(function(data) {
     $.each(search_ids_list, function (index, search_item) {
-      result_objects = getObjects(data, data, "", search_item, result_objects);
+      result_objects = getObjects({}, data, "", search_item, result_objects);
     });
     return result_objects;
   });
@@ -282,7 +282,7 @@ function build_external_link (label,url,return_html) {
 
 
 // Return an array of objects according to key, value, or key and value matching
-function getObjects (obj_parent, obj, key, val, objects) {
+function getObjects (obj_parent, obj, key, val, objects, regex) {
 
   // Initialise hash
   if (!objects) {
@@ -300,19 +300,20 @@ function getObjects (obj_parent, obj, key, val, objects) {
   // Get a search result
   else {
     // Search with regex
-    var regex;
-    // Specific regex for the sequence identifiers, with a version, e.g. NM_000088.3
-    if (val.match(/^(NM_|NR_|NG_|ENST|ENSG)\d+/)) {
-      regex = new RegExp("^"+val+"\.", "i");
-    }
-    // Wild card character associated with other characters
-    else if (val.match(/\*/)) {
-      var tmp_val = val.replace(/\*/g,".*");
-      regex = new RegExp("^"+tmp_val+"$", "i");
-    }
-    // Default regex
-    else {
-      regex = new RegExp("^"+val+"$", "i"); 
+    if (!regex) {
+      // Specific regex for the sequence identifiers, with a version, e.g. NM_000088.3
+      if (val.match(/^(NM_|NR_|NG_|ENST|ENSG)\d+/)) {
+        regex = new RegExp("^"+val+"\.", "i");
+      }
+      // Wild card character associated with other characters
+      else if (val.match(/\*/)) {
+        var tmp_val = val.replace(/\*/g,".*");
+        regex = new RegExp("^"+tmp_val+"$", "i");
+      }
+      // Default regex
+      else {
+        regex = new RegExp("^"+val+"$", "i"); 
+      }
     }
 
     for (var i in obj) {

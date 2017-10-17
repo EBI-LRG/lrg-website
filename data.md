@@ -1,30 +1,33 @@
 ---
 layout: page
-title: Downloads
-tags: Downloads
+title: Data
+tags: Data
 icon-class: icon-download
-permalink: /downloads/
+permalink: /data/
 ---
 
 <!-- Table of content -->
-<div class="clearfix page_menu">
-  <ul class="sections_list">
-    <li class="icon-next-page smaller-icon close-icon-2 lrg_blue section_title">
+<div class="clearfix margin-bottom-40">
+  <div class="left sections_list">
+    <span class="icon-next-page smaller-icon close-icon-2 lrg_blue padding-bottom-5">
       <span class="lrg_dark bold_font">Sections</span>
-    </li>
-    <li><a href="#lrg-data">LRG data</a></li>
-    <li><a href="#lrg-in-ensembl">LRG in Ensembl</a></li>
-    <li><a href="#lrg-xml-schema">XML schema</a></li>
-    <li><a href="#lrg-archived-data">Archived data</a></li>
-    <li><a href="#web-services">Web services</a></li>
-  </ul>  
-</div>  
+    </span>
+    <ul class="margin-top-5 margin-bottom-5">
+      <li><a href="#lrg-data">LRG data</a></li>
+      <li><a href="#lrg-in-ensembl">LRG in Ensembl</a></li>
+      <li><a href="#lrg-xml-schema">XML schema</a></li>
+      <li><a href="#lrg-archived-data">Archived data</a></li>
+      <li><a href="#web-services">Web services</a></li>
+    </ul>
+  </div>
+</div>
+
 
 
 ### LRG data
 
-LRG data is available on the [LRG FTP site]({{ site.lrg_ftp_url }}) in **XML format**.  
-The LRG genomic, transcript and protein sequences are also available in **FASTA format** on the [LRG FTP site]({{ site.lrg_ftp_url }}fasta).
+LRG data is available on the [LRG FTP site]({{ site.lrg_ftp_url }}){:target="_blank"} in **XML format**.  
+The LRG genomic, transcript and protein sequences are also available in **FASTA format** on the [LRG FTP site]({{ site.lrg_ftp_url }}fasta){:target="_blank"}.
 
 There is the possibility to download all the public and pending LRGs:
 
@@ -81,7 +84,7 @@ There is the possibility to download all the public and pending LRGs:
   </div>
 </div>
 
-<span class="lrg_green2">NOTE:</span> If you can't access to the LRG FTP site through the FTP protocol, you can access it using the HTTP protocol: [LRG FTP site - HTTP]({{ site.lrg_ftp_http }}).
+<span class="lrg_green2">NOTE:</span> If you can't access to the LRG FTP site through the FTP protocol, you can access it using the HTTP protocol: [LRG FTP site - HTTP]({{ site.lrg_ftp_http }}){:target="_blank"}.
 
 <br />  
 
@@ -139,7 +142,7 @@ There is the possibility to download all the public and pending LRGs:
         <tr>
           <td>
             <div>LRG genes</div>
-            <div class="smaller-text" style="padding-top:2px;font-weight:normal">with <span class="lrg_green2">genomic coordinates</span></div>
+            <div class="smaller-text padding-top-2" style="font-weight:normal">with <span class="lrg_green2">genomic coordinates</span></div>
           </td>
           <td class="smaller-text">
             The file lists the LRG genes in genomic coordinates. The columns are:
@@ -154,7 +157,7 @@ There is the possibility to download all the public and pending LRGs:
             </ul>
 
             <div class="clearfix">
-              <div id="lrg_data_file_gene_button" class="item_title_no_border_small close-icon-5 icon-collapse-closed" style="float:left;margin-bottom:2px" onclick="javascript:show_hide('lrg_data_file_gene')">File content example</div>
+              <div id="lrg_data_file_gene_button" class="item_title_no_border_small close-icon-5 icon-collapse-closed left margin-bottom-2" onclick="javascript:show_hide('lrg_data_file_gene')">File content example</div>
             </div>
             <div id="lrg_data_file_gene" style="display:none">
               <table class="table table-bordered table-lrg">
@@ -190,7 +193,7 @@ There is the possibility to download all the public and pending LRGs:
         <tr>
           <td>
             <div>LRG transcripts</div>
-            <div class="smaller-text" style="padding-top:2px;font-weight:normal">with <span class="lrg_green2">exons coordinates</span></div>
+            <div class="smaller-text padding-top-2" style="font-weight:normal">with <span class="lrg_green2">exons coordinates</span></div>
           </td>
           <td class="smaller-text">
             The file lists the LRG transcripts, exons and protein in genomic coordinates<br />
@@ -209,7 +212,7 @@ There is the possibility to download all the public and pending LRGs:
             </ul>
 
             <div class="clearfix">
-              <div id="lrg_data_file_tr1_button" class="item_title_no_border_small close-icon-5 icon-collapse-closed" style="float:left;margin-bottom:2px" onclick="javascript:show_hide('lrg_data_file_tr1')">File content example</div>
+              <div id="lrg_data_file_tr1_button" class="item_title_no_border_small close-icon-5 icon-collapse-closed left margin-bottom-2" onclick="javascript:show_hide('lrg_data_file_tr1')">File content example</div>
             </div>
             <div id="lrg_data_file_tr1" style="display:none">
               <table class="table table-bordered table-lrg">
@@ -245,7 +248,7 @@ There is the possibility to download all the public and pending LRGs:
         <tr>
           <td>
             <div>LRG transcripts</div>
-            <div class="smaller-text" style="padding-top:2px;font-weight:normal">with <span class="lrg_green2">external references</span></div>
+            <div class="smaller-text padding-top-2" style="font-weight:normal">with <span class="lrg_green2">external references</span></div>
           </td>
           <td class="smaller-text">
             The file lists the LRG transcripts and their external references<br />
@@ -261,7 +264,7 @@ There is the possibility to download all the public and pending LRGs:
             </ul>
 
             <div class="clearfix">
-              <div id="lrg_data_file_tr2_button" class="item_title_no_border_small close-icon-5 icon-collapse-closed" style="float:left;margin-bottom:2px" onclick="javascript:show_hide('lrg_data_file_tr2')">File content example</div>
+              <div id="lrg_data_file_tr2_button" class="item_title_no_border_small close-icon-5 icon-collapse-closed left margin-bottom-2" onclick="javascript:show_hide('lrg_data_file_tr2')">File content example</div>
             </div>
             <div id="lrg_data_file_tr2" style="display:none">
               <table class="table table-bordered table-lrg">
@@ -290,7 +293,7 @@ There is the possibility to download all the public and pending LRGs:
         <tr>
           <td>
             <div>LRG proteins</div>
-            <div class="smaller-text" style="padding-top:2px;font-weight:normal">with <span class="lrg_green2">RefSeq proteins</span></div>
+            <div class="smaller-text padding-top-2" style="font-weight:normal">with <span class="lrg_green2">RefSeq proteins</span></div>
           </td>
           <td class="smaller-text">
             The file lists the LRG proteins and their corresponding RefSeq proteins and transcripts<br />
@@ -304,7 +307,7 @@ There is the possibility to download all the public and pending LRGs:
             </ul>
 
             <div class="clearfix">
-              <div id="lrg_data_file_pr_button" class="item_title_no_border_small close-icon-5 icon-collapse-closed" style="float:left;margin-bottom:2px" onclick="javascript:show_hide('lrg_data_file_pr')">File content example</div>
+              <div id="lrg_data_file_pr_button" class="item_title_no_border_small close-icon-5 icon-collapse-closed left margin-bottom-2" onclick="javascript:show_hide('lrg_data_file_pr')">File content example</div>
             </div>
             <div id="lrg_data_file_pr" style="display:none">
               <table class="table table-bordered table-lrg">
@@ -340,7 +343,7 @@ There is the possibility to download all the public and pending LRGs:
   
 <div class="clearfix">
   <div class="left file_link">
-    The list of LRGs already imported in <a href="http://www.ensembl.org" target="_blank">Ensembl</a> is available in this text file:
+    The list of LRGs already imported in <a class="icon-external-link" href="{{ site.urls.ensembl }}" target="_blank">Ensembl</a> is available in this text file:
   </div>
   <div class="left margin-left-5">
     <a href="{{ site.lrg_ftp_url }}lrgs_in_ensembl.txt" target="_blank">
@@ -356,7 +359,7 @@ There is the possibility to download all the public and pending LRGs:
   
 ### LRG XML schema
 
-The LRG XML schema documentation is downloadable [here]({{ site.lrg_ftp_url }}docs) and the different versions of the XML schema definitions (RELAX NG format) are available [here]({{ site.lrg_ftp_url }}docs/schemas).  
+The LRG XML schema documentation is downloadable [here]({{ site.lrg_ftp_url }}docs){:target="_blank"} and the different versions of the XML schema definitions (RELAX NG format) are available [here]({{ site.lrg_ftp_url }}docs/schemas){:target="_blank"}.  
 The current LRG XML schema version is **{{ site.lrg-schema }}**.  
 <br />
   

@@ -13,7 +13,7 @@ name: Locus Reference Genomic
 description: LRG sequences provide a stable genomic DNA framework for reporting variants with a permanent ID and core content that never changes.
 
 # Short description (displayed in the homepage)
-description2: 'A <span class="lrg_blue bold_font">L</span>ocus <span class="lrg_blue bold_font">R</span>eference <span class="lrg_blue bold_font">G</span>enomic (<span class="lrg_blue bold_font">LRG</span>) record contains stable reference sequences that are used for reporting sequence variants with clinical implications. LRGs may represent legacy or alternative reporting sequences, and to facilitate unambiguous reporting, they provide a defined and transparent mapping to the reference genome'
+description2: 'A <span class="bold_font">L</span>ocus <span class="bold_font">R</span>eference <span class="bold_font">G</span>enomic (<span class="bold_font">LRG</span>) record contains stable reference sequences that are used for reporting sequence variants with clinical implications. LRGs may represent legacy or alternative reporting sequences, and to facilitate unambiguous reporting, they provide a defined and transparent mapping to the reference genome'
 
 # Tag line (displayed in the header)
 tag_line: Stable reference sequences for reporting variants
@@ -26,8 +26,8 @@ avatar: /images/lrg_logo.png
 search-label: "Search LRGs"
 
 # LRG counts (used in FAQ) - Can be edited
-lrg-date: "August 2017"
-lrg-created: "1068"
+lrg-date: "October 2017"
+lrg-created: "1077"
 lrg-public: "694"
 lrg-schema: "1.9"
 
@@ -49,37 +49,54 @@ baseurl: ""
 baseurl_bootstrap:  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6"
 baseurl_googleapis: "https://ajax.googleapis.com/ajax/libs"
 
+ref_assembly: "GRCh38"
+
 is_beta: 1
+
+ebi_font: "https://www.ebi.ac.uk/web_guidelines/fonts"
+
+
+#-- URLs --#
+urls:
+  grc:        "https://www.ncbi.nlm.nih.gov/grc/human"
+  ucsc:       "https://genome.ucsc.edu"
+  ensembl:    "https://www.ensembl.org"
+  gencode:    "https://www.gencodegenes.org/about.html"
+  refseqgene: "https://www.ncbi.nlm.nih.gov/refseq/rsg/about/"
+  refseq:     "https://www.ncbi.nlm.nih.gov/refseq/about/"
+  ncbi:       &ncbi_url_root "https://www.ncbi.nlm.nih.gov"
+  embl_ebi:   &embl_ebi_url_root "https://www.ebi.ac.uk"
+  mutalyzer:  "https://www.mutalyzer.nl/"
+  vvalidator: "https://variantvalidator.org/"
 
 #-- Variables for javascript --#
 
 # URLs
-rest_url_38: "http://rest.ensembl.org/vep/human/hgvs/"
-rest_url_37: "http://grch37.rest.ensembl.org/vep/human/hgvs/"
-rest_lrg:    "http://www.ebi.ac.uk/ebisearch/ws/rest/lrg"
+rest_url_38: "https://rest.ensembl.org/vep/human/hgvs/"
+rest_url_37: "https://grch37.rest.ensembl.org/vep/human/hgvs/"
+rest_lrg:    "https://www.ebi.ac.uk/ebisearch/ws/rest/lrg"
 
-conseq_url:  "http://www.ensembl.org/info/genome/variation/predicted_data.html#"
+conseq_url:  "https://www.ensembl.org/info/genome/variation/predicted_data.html#"
 
 # 38
-ens_url:        "http://www.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels"
-ens_gene_url:   "http://www.ensembl.org/Homo_sapiens/Gene/Summary?g="
-ens_trans_url:  "http://www.ensembl.org/Homo_sapiens/Transcript/Summary?t="
-ens_var_url:    "http://www.ensembl.org/Homo_sapiens/Variation/Explore?v="
+ens_url:        "https://www.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels"
+ens_gene_url:   "https://www.ensembl.org/Homo_sapiens/Gene/Summary?g="
+ens_trans_url:  "https://www.ensembl.org/Homo_sapiens/Transcript/Summary?t="
+ens_var_url:    "https://www.ensembl.org/Homo_sapiens/Variation/Explore?v="
 
 #37
-ens_url_37:       "http://grch37.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels"
-ens_gene_url_37:  "http://grch37.ensembl.org/Homo_sapiens/Gene/Summary?g="
-ens_trans_url_37: "http://grch37.ensembl.org/Homo_sapiens/Transcript/Summary?t="
-ens_var_url_37:   "http://grch37.ensembl.org/Homo_sapiens/Variation/Explore?v="
+ens_url_37:       "https://grch37.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels"
+ens_gene_url_37:  "https://grch37.ensembl.org/Homo_sapiens/Gene/Summary?g="
+ens_trans_url_37: "https://grch37.ensembl.org/Homo_sapiens/Transcript/Summary?t="
+ens_var_url_37:   "https://grch37.ensembl.org/Homo_sapiens/Variation/Explore?v="
 
 ncbi_url: "https://www.ncbi.nlm.nih.gov/variation/view/?chr=###CHR###&from=###START###&to=###END###"
-ucsc_url: "http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr###LOC###"
-hgnc_url: "http://www.genenames.org/cgi-bin/gene_symbol_report?match="
+ucsc_url: "https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr###LOC###"
+hgnc_url: "https://www.genenames.org/cgi-bin/gene_symbol_report?match="
 
-ref_assembly:   "GRCh38"
-
-lrg_ftp_url:    "ftp://ftp.ebi.ac.uk/pub/databases/lrgex/test/"
-lrg_ftp_http:   "http://ftp.ebi.ac.uk/pub/databases/lrgex/test/"
+lrg_ftp_url:    "ftp://ftp.ebi.ac.uk/pub/databases/lrgex/"
+lrg_ftp_http:   "http://ftp.ebi.ac.uk/pub/databases/lrgex/"
+lrg_record_url: "http://ftp.ebi.ac.uk/pub/databases/lrgex/test/"
 lrg_json_file : "/json_index/lrg_index.json"
 #------------------------------#
 
@@ -99,8 +116,8 @@ footer-links:
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
-  embl-ebi: "http://www.ebi.ac.uk"
-  ncbi: "http://www.ncbi.nlm.nih.gov"
+  embl-ebi: *embl_ebi_url_root
+  ncbi: *ncbi_url_root
 
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
@@ -130,6 +147,9 @@ gems:
 collections:
     about:
         output: true
+    docs:
+        output: true
+        permalink: /documentation/:path/
     faq_groups:
         output: true
         permalink: /faq_group/:path/

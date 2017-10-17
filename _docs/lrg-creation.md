@@ -1,15 +1,19 @@
 ---
-title: "LRG creation process"
-about_order: 3
-expanded: 1
+layout: page
+title: LRG creation process
+tags: LRG creation process
+icon-class: icon-request
+permalink: /documentation/lrg-creation/
+desc: Description about how the LRG records are created
+docs_order: 2
 ---
 
 The LRG project is a collaboration between the NCBI and EMBL-EBI. The creation of an LRG involves several steps, listed here.   
 You can check the progress of pending LRGs [here](/curation-status).
 
 * **Request of an LRG** 
-  * LRGs are created upon request by collaborators (e.g. members of diagnostic and research communities and/or clinical experts from specific disease areas, LSDB curators, etc.), following the guidelines found here: <span style="font-style:bold;color:red">include LINK</span>.
-  * The genomic sequence included in each LRG record is identical to the RefSeqGene sequence (RSG) for the gene of interest. If there is no RSG for the gene, LRG curators will work with the NCBI to ensure its creation. It is our policy for all LRGs to match the genome reference assembly. However, alternative sequences may be requested if there is a prevalent legacy alternate allele or if there is an error in the genome reference assembly.
+  * LRGs are created upon request by collaborators (e.g. members of diagnostic and research communities and/or clinical experts from specific disease areas, LSDB curators, etc.), following the guidelines found here: [Request an LRG](/lrg-request).
+  * The genomic sequence included in each LRG record is identical to the [RefSeqGene]({{ site.urls.refseqgene }}){: .icon-external-link}{:target="_blank"} sequence (RSG) for the gene of interest. If there is no RSG for the gene, LRG curators will work with the NCBI to ensure its creation. It is our policy for all LRGs to match the genome reference assembly. However, alternative sequences may be requested if there is a prevalent legacy alternate allele or if there is an error in the genome reference assembly.
   * Requesters may suggest any transcript of choice (RefSeq or ENST) for inclusion in an LRG record. If there is no sequence for the desired transcript, LRG curators will work to ensure its creation.  
 
 <div class="margin-bottom-10"></div>
@@ -18,7 +22,7 @@ You can check the progress of pending LRGs [here](/curation-status).
 
 <div class="margin-bottom-10"></div>
 * **Automated Annotation**
-  * The most current annotation from GENCODE and RefSeq at each locus is included in the updatable section of records and refreshed on a weekly basis.
+  * The most current annotation from [GENCODE]({{ site.urls.gencode }}){: .icon-external-link}{:target="_blank"} and [RefSeq]({{ site.urls.refseq }}){: .icon-external-link}{:target="_blank"} at each locus is included in the updatable section of records and refreshed on a weekly basis.
 
 <div class="margin-bottom-10"></div>
 * **Manual Curation**
@@ -26,7 +30,7 @@ You can check the progress of pending LRGs [here](/curation-status).
   * Review of genomic reference sequence
     * Curators examine the RefSeqGene for any mismatches with respect to the genome reference assembly (GRCh38).
     * If a mismatch exists, curators examine the frequency of the alleles
-    * If the genome reference assembly alleles have a frequency of 5% or less in all populations, LRG curators will report this to GRC and request a review. Genome reference assembly alleles with a frequency higher than 5% in any population are considered representative and will not be requested for review. 
+    * If the genome reference assembly alleles have a frequency of 5% or less in all populations, LRG curators will report this to [GRC]({{ site.urls.grc }}){: .icon-external-link}{:target="_blank"} and request a review. Genome reference assembly alleles with a frequency higher than 5% in any population are considered representative and will not be requested for review. 
     *  LRG curators also discuss with the requester to determine whether the RefSeqGene alternate alleles represent prevalent legacy alleles. 
     *  The goal is to match the genome reference assembly as much as possible, and curators work with the NCBI to make changes to the RefSeqGene if appropriate. 
   * Review of Transcripts

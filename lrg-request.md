@@ -20,7 +20,7 @@ Authoritative source (e.g. LSDB) information:
 * Name of Submitter (and e-mail address) - optional  
 
 
-<span class="warning">NOTE:</span> Please refer to *e.g.* the LRG record for the **COL1A1** gene, [LRG_1]({{ site.lrg_ftp_http }}LRG_1.xml), for an example of how this contact information is displayed.  
+<span class="warning">NOTE:</span> Please refer to the LRG record for the **COL1A1** gene, [LRG_1]({{ site.lrg_ftp_http }}LRG_1.xml), for an example of how this contact information is displayed.  
 <br />
 
 
@@ -39,11 +39,11 @@ For many genes, a reference gene model may already have been created within the 
 
 * Genomic sequence for your gene of interest
   * Submit this in either Fasta format or using a public sequence accession and version (Genbank/EMBL)
-  * Remember to include upstream and downstream sequences for unique placement on the genome (We would recommend 5 kb upstream from the first exon and 2 kb downstream of the last exon or whatever is most appropriate. Be sure to include any promoter regions where mutations are reported).  
+  * Remember to include upstream and downstream sequences for unique placement on the genome (We would recommend 5 kb upstream from the first exon and 2 kb downstream of the last exon or whatever is most appropriate. Be sure to include any promoter regions where variants are reported).  
 
 * The gene name for the LRG (optional)  
 
-* For each transcript used for reporting mutations/diagnostics, please supply either an accession number (e.g. a RefSeq accession) OR:
+* For each transcript used for reporting variants/diagnostics, please supply either an accession number (e.g. a RefSeq accession) OR:
   * Transcript-specific exon positions in LRG coordinates
   * Start and end positions of the coding region in LRG coordinates  
     or  
@@ -54,7 +54,7 @@ For many genes, a reference gene model may already have been created within the 
   * Location of LRG on chromosome and genome assembly including any mismatch data (optional)  
 
 
-<span class="warning">NOTE:</span> There can be more than one transcript per LRG if this is necessary and used for reporting mutations and diagnostic purposes. Please put the most used transcript first.
+<span class="warning">NOTE:</span> There can be more than one transcript per LRG if this is necessary and used for reporting variants and diagnostic purposes. Please put the most used transcript first.
 For databases that currently use an idealised set of exons as a reporting standard, these can be submitted for a LRG.  
 <br />
 
@@ -70,13 +70,13 @@ For databases that currently use an idealised set of exons as a reporting standa
 
 ### Submitting Your Data
 
-Please submit your data to <a class="bold_font" href="mailto:request@lrg-sequence.org">request@lrg-sequence.org</a>.  
+Please submit your data to <a class="bold_font" href="mailto:contact@lrg-sequence.org">contact@lrg-sequence.org</a>.  
 <br />
 
 
 ### XML specification
 
-If you're happy using XML format, please download the specification from our [FTP site]({{ site.lrg_ftp_http }}) and use this for your submissions.  
+If you're happy using XML format, please download the specification from our [FTP site]({{ site.lrg_ftp_http }}){:target="_blank"} and use this for your submissions.  
 <br />
 
 
@@ -85,4 +85,4 @@ If you're happy using XML format, please download the specification from our [FT
 Coordinates should be **1-indexed** (i.e. start at position 1 rather than 0).
 
 
-For information on how to use a LRG record, please see the [FAQ](/faq).
+For information on how to use a LRG record, please see the [FAQs](/faq).
