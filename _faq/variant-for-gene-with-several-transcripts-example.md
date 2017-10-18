@@ -12,7 +12,7 @@ The calcitonin gene (CALCA) encodes two peptide hormones, calcitonin and calcito
 Using HGVS nomenclature, the variant can be described as **NM_001033952.2:c.228C>A** using the calcitonin RefSeq mRNA as the reference sequence. The corresponding protein-level description is **NP_001029124.1:p.Ser76Arg**.  
 Alternatively, it can be described with respect to the RefSeqGene genomic DNA sequence as **NG_015960.1:g.8290C>A**.  
 
-The LRG for the CALCA gene ([LRG_13]({{ site.lrg_ftp_http }}LRG_13.xml)) contains information for both the major alternatively spliced forms of the gene's transcripts. Calcitonin and CGRP are represented by transcripts t2 and t1 respectively. Consequently, the SNP can be described at the DNA level as **LRG_13: g.8290C>A** or **LRG_13t2:c.228C>A**.  
+The LRG for the CALCA gene ([LRG_13]({{ site.urls.lrg_ftp_http }}LRG_13.xml)) contains information for both the major alternatively spliced forms of the gene's transcripts. Calcitonin and CGRP are represented by transcripts t2 and t1 respectively. Consequently, the SNP can be described at the DNA level as **LRG_13: g.8290C>A** or **LRG_13t2:c.228C>A**.  
 The corresponding protein-level description is **LRG_13p2:p.Ser76Arg**.  
 
 <div class="row">

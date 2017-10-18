@@ -7,5 +7,5 @@ faq_tags:
   - records
 ---
 
-As of **{{ site.lrg-date }}**, over **{{ site.lrg-created }} LRGs** have been created, of which **{{ site.lrg-public }} are public**.
-The aim is to create an LRG for every locus with clinical implications. To request an LRG contact us at **request@lrg-sequence.org**.
+As of **{{ site.lrg-date }}**, over **{{ site.lrg-created }} LRGs** have been created, of which **{{ site.lrg-public }}** are **public**.
+The aim is to create an LRG for every locus with clinical implications. To request an LRG please look at the [LRG request](/lrg-request) page.

@@ -8,7 +8,7 @@ order: 3
 <div class="clearfix margin-top-20">
   <div class="left bold_font margin-right-10">Example URL syntax: </div> 
   <div class="left" style="font-weight:normal">
-    {{ site.rest_lrg }}<b>/entry/<span class="lrg_purple">&lt;lrg_ids_list&gt;</span>?fields=<span class="lrg_blue">status</span></b>
+    {{ site.rest.rest_lrg }}<b>/entry/<span class="lrg_purple">&lt;lrg_ids_list&gt;</span>?fields=<span class="lrg_blue">status</span></b>
   </div>
 </div>
 
@@ -27,7 +27,7 @@ order: 3
       <tr>
         <td>XML <span class="smaller-font">(default)</span></td>
         <td>
-          <a href="{{ site.rest_lrg }}/entry/LRG_1?fields=status" target="_blank">{{ site.rest_lrg }}/entry/LRG_1?fields=status</a>
+          <a href="{{ site.rest.rest_lrg }}/entry/LRG_1?fields=status" target="_blank">{{ site.rest.rest_lrg }}/entry/LRG_1?fields=status</a>
         </td>
         <td>
           <button class="btn btn-primary btn-xs" onclick="javascript:show_output('lrg_status_search','xml')">XML output</button>
@@ -36,7 +36,7 @@ order: 3
       <tr>
         <td>JSON</td>
         <td>
-          <a href="{{ site.rest_lrg }}/entry/LRG_1?fields=status&format=json" target="_blank">{{ site.rest_lrg }}/entry/LRG_1?fields=status<b>&format=json</b></a>
+          <a href="{{ site.rest.rest_lrg }}/entry/LRG_1?fields=status&format=json" target="_blank">{{ site.rest.rest_lrg }}/entry/LRG_1?fields=status<b>&format=json</b></a>
         </td>
         <td>
           <button class="btn btn-primary btn-xs" onclick="javascript:show_output('lrg_status_search','json')">JSON output</button>
@@ -106,7 +106,7 @@ order: 3
       <tr>
         <td>XML <span class="smaller-font">(default)</span></td>
         <td>
-          <a href="{{ site.rest_lrg }}/entry/LRG_1,LRG_9?fields=name" target="_blank">{{ site.rest_lrg }}/entry/LRG_1,LRG_9?fields=name</a>
+          <a href="{{ site.rest.rest_lrg }}/entry/LRG_1,LRG_9?fields=name" target="_blank">{{ site.rest.rest_lrg }}/entry/LRG_1,LRG_9?fields=name</a>
         </td>
         <td>
           <button class="btn btn-primary btn-xs" onclick="javascript:show_output('lrg_status_multi_search','xml')">XML output</button>
@@ -115,7 +115,7 @@ order: 3
       <tr>
         <td>JSON</td>
         <td>
-          <a href="{{ site.rest_lrg }}/entry/LRG_1,LRG_9?fields=name&format=json" target="_blank">{{ site.rest_lrg }}/entry/LRG_1,LRG_9?fields=name<b>&format=json</b></a>
+          <a href="{{ site.rest.rest_lrg }}/entry/LRG_1,LRG_9?fields=name&format=json" target="_blank">{{ site.rest.rest_lrg }}/entry/LRG_1,LRG_9?fields=name<b>&format=json</b></a>
         </td>
         <td>
           <button class="btn btn-primary btn-xs" onclick="javascript:show_output('lrg_status_multi_search','json')">JSON output</button>

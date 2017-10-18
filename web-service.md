@@ -94,7 +94,7 @@ The list of fields retrievables are listed [here](#ws_fields)
       <th>Example <span class="smaller-text">(using LRG_1)</span></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="bordered-columns">
     <tr>
       <td rowspan="5">GRCh37 coordinates</td>
       <td class="bold_font">assembly_grch37</td>

@@ -1,88 +1,88 @@
 ---
 layout: page
-title: LRG request
+title: Request an LRG
 tags: Request
 icon-class: icon-request
 permalink: /lrg-request/
 ---
 
-Below is a list of the information you need to supply when requesting a LRG record to be created. Remember, the LRG records are stable and will be used over a long period of time, so kindly make sure that the information you supply is accurate and in agreement with community consensus.  
-<br />
 
-### Contact information
+LRGs are created upon request by collaborators (e.g. members of diagnostic and research communities and/or clinical experts from specific disease areas, LSDB curators, etc.).  
 
-Authoritative source (e.g. LSDB) information:
-
-* Source name  
-
-* Source URL  
-
-* Name of Submitter (and e-mail address) - optional  
+If you are interested in requesting an LRG record we recommend following these steps:  
 
 
-<span class="warning">NOTE:</span> Please refer to the LRG record for the **COL1A1** gene, [LRG_1]({{ site.lrg_ftp_http }}LRG_1.xml), for an example of how this contact information is displayed.  
-<br />
+### Step 1
+
+Read about the [LRG creation process](/documentation/lrg-creation){:target="_blank"}. 
+<div class="margin-bottom-40"></div>
 
 
-### Sequence and transcript information
+### Step 2
+
+Check if an [LRG already exists](/search/?query=*){:target="_blank"}, and if so its [status and curation progress](/curation-status){:target="_blank"}.
 
 
-##### Using existing RefSeqGene record
+##### If your gene of interest already has a Pending LRG record:
 
-For many genes, a reference gene model may already have been created within the RefSeqGene (RSG) project. In that case, it's often a good idea to use this RSG record as a starting point for the creation of the LRG. Please supply the following information:
+Please do contact us anyway to let us know you are interested in that record being made public. 
+This helps us prioritise genes for curation.  Let us know which reference sequence you currently use for reporting sequence variants, especially if your transcript of choice is not included in the pending record or if you notice any other issues.
 
-* RefSeqGene accession
-* Information regarding any alternative transcripts that should be included or modifications to existing sequence and transcript(s) required
-
-
-##### If no RefSeqGene record exists
-
-* Genomic sequence for your gene of interest
-  * Submit this in either Fasta format or using a public sequence accession and version (Genbank/EMBL)
-  * Remember to include upstream and downstream sequences for unique placement on the genome (We would recommend 5 kb upstream from the first exon and 2 kb downstream of the last exon or whatever is most appropriate. Be sure to include any promoter regions where variants are reported).  
-
-* The gene name for the LRG (optional)  
-
-* For each transcript used for reporting variants/diagnostics, please supply either an accession number (e.g. a RefSeq accession) OR:
-  * Transcript-specific exon positions in LRG coordinates
-  * Start and end positions of the coding region in LRG coordinates  
-    or  
-    cDNA sequence and translated peptide sequence  
-    or  
-    database sequence accessions and versions for the cDNA and peptide sequence
-  * Amino acid sequence (optional unless it cannot be automatically generated from the coding region and exons)
-  * Location of LRG on chromosome and genome assembly including any mismatch data (optional)  
+<div class="icon-info close-icon-5 highlight_block margin-bottom-30">Note that pending records are subject to change and should not be used until they pass final approval and are made public.</div>
 
 
-<span class="warning">NOTE:</span> There can be more than one transcript per LRG if this is necessary and used for reporting variants and diagnostic purposes. Please put the most used transcript first.
-For databases that currently use an idealised set of exons as a reporting standard, these can be submitted for a LRG.  
-<br />
+##### If your gene of interest already has a Public LRG record:
+
+Please <a href="mailto:contact@lrg-sequence.org">contact us</a> if the information in the record is incorrect, or if you think additional transcripts or information are required.
 
 
-### In some cases this information may be relevant
-
-* If there is a legacy/other amino acid numbering system which would result in different amino acid numbering that would be generated automatically, you can include this.  
-
-* Other exon numbering systems
-
-<br />
+If an LRG does not exist for your gene of interest you can request one to be made.
+<div class="margin-bottom-40"></div>
 
 
-### Submitting Your Data
+### Step 3
 
-Please submit your data to <a class="bold_font" href="mailto:contact@lrg-sequence.org">contact@lrg-sequence.org</a>.  
-<br />
+Feel free to contact us with any pre-request enquiries, especially if you are planning to request multiple LRGs.
+ 
+Email us at <a href="mailto:contact@lrg-sequence.org">contact@lrg-sequence.org</a> to make your request and include the following details:
+ 
+##### Required
+
+* Your name
+* Your institution
+* The [HGNC]({{ site.urls.hgnc }}){: .icon-external-link}{:target="_blank"} Gene symbol
+
+<div class="margin-top-20"></div>
+
+##### Strongly recommended
+
+* Transcript(s) required (accession identifier and version)
+* Community information (if applicable, [see below](#community-information-section))
+ 
+
+<div class="icon-info close-icon-5 highlight_block margin-bottom-30">If you are requesting multiple LRGs please provide the information in a spreadsheet format.</div>
 
 
-### XML specification
+##### Notes
+ 
+* The LRG record may include more than one transcript, if required for reporting variants.
+Please list the more commonly used transcript first (e.g. t1 = NM_x, t2= NM_y). 
 
-If you're happy using XML format, please download the specification from our [FTP site]({{ site.lrg_ftp_http }}){:target="_blank"} and use this for your submissions.  
-<br />
+* Requesters may suggest any transcript of choice (RefSeq or ENST) for inclusion in an LRG record. Ultimately, the transcript sequences included in the LRG records are identical to RefSeq transcripts (NM).  If there is no RefSeq transcript for your transcript of interest, LRG curators will work with the NCBI to create it.
+ 
+* If you do not know what transcripts should be included in the record please note this in your email.  LRG curators will work with you to establish which transcript is most appropriate.
+ 
+* The genomic sequence included in each LRG record is identical to the RefSeqGene sequence (RSG) for the gene of interest. If there is no RSG for the gene, LRG curators will work with the NCBI to create it.  If there is an issue with the RSG, mention this in your email and LRG curators will work with yourself and the NCBI to resolve the issue.
 
+<div class="margin-bottom-30"></div>
 
-### Coordinates
+##### Community information section
+ 
+A "Community Section" is included in LRG records to note additional information deemed relevant by the requesters.  
+This section may include:
 
-Coordinates should be **1-indexed** (i.e. start at position 1 rather than 0).
+* Legacy exon numbering (e.g. [LRG_5](/search/?query=LRG_5){:target="_blank"})
+* Legacy amino acid numbering (e.g. [LRG_1](/search/?query=LRG_1){:target="_blank"})
+* Haplotype information (e.g. [LRG_802](/search/?query=LRG_802){:target="_blank"})
+* Other relevant information (e.g. [LRG_1061](/search/?query=LRG_1061){:target="_blank"})
 
-
-For information on how to use a LRG record, please see the [FAQs](/faq).

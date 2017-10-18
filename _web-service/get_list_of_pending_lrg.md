@@ -6,7 +6,7 @@ order: 4
 
 <div class="clearfix margin-top-20">
   <div class="left bold_font margin-right-10" style="width:75px">Query:</div> 
-  <div class="left">{{ site.rest_lrg }}<b>?query=status:<span class="lrg_blue">pending</span></b></div>
+  <div class="left">{{ site.rest.rest_lrg }}<b>?query=status:<span class="lrg_blue">pending</span></b></div>
 </div>
 <div class="clearfix ws_example_title">
   <div class="left bold_font margin-right-10" style="width:75px">Example:</div> 
@@ -22,13 +22,13 @@ order: 4
         <tr>
           <td>XML <span class="smaller-font">(default)</span></td>
           <td>
-            <a href="{{ site.rest_lrg }}?query=status:pending&size=100" target="_blank">{{ site.rest_lrg }}?query=status:pending<b>&size=100</b></a>
+            <a href="{{ site.rest.rest_lrg }}?query=status:pending&size=100" target="_blank">{{ site.rest.rest_lrg }}?query=status:pending<b>&size=100</b></a>
           </td>
         </tr>
         <tr>
           <td>JSON</td>
           <td>
-            <a href="{{ site.rest_lrg }}?query=status:pending&size=100&format=json" target="_blank">{{ site.rest_lrg }}?query=status:pending<b>&size=100&format=json</b></a>
+            <a href="{{ site.rest.rest_lrg }}?query=status:pending&size=100&format=json" target="_blank">{{ site.rest.rest_lrg }}?query=status:pending<b>&size=100&format=json</b></a>
           </td>
         </tr>
       </tbody>   

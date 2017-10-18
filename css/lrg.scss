@@ -538,6 +538,13 @@ header {
   }
 }
 
+.bordered-columns {
+  border-left: 1px solid #DDD;
+  td {
+    border-right: 1px solid #DDD;
+  }
+}
+
 .table-vep {
   border:none;
   width:100%;
@@ -974,6 +981,10 @@ table {
   background-color:$lrg_gray;
 }
 
+.lrg_dark_bg {
+  background-color:$lrg_dark;
+}
+
 .border_bottom_blue {
   border-bottom:1px solid $lrg_blue;
 }
@@ -1046,6 +1057,9 @@ td.left-col-bg {
 .margin-top-30 {
   margin-top:30px;
 }
+.margin-top-40 {
+  margin-top:40px;
+}
 
 .margin-bottom-0 {
   margin-bottom:0px;
@@ -1064,6 +1078,9 @@ td.left-col-bg {
 }
 .margin-bottom-25 {
   margin-bottom:25px;
+}
+.margin-bottom-30 {
+  margin-bottom:30px;
 }
 .margin-bottom-40 {
   margin-bottom:40px;

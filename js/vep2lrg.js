@@ -1,20 +1,20 @@
 ---
 ---
 
-var rest_url    = '{{ site.rest_url_38 }}';
-var rest_grch37 = '{{ site.rest_url_37 }}';
+var rest_url    = '{{ site.rest.rest_url_38 }}';
+var rest_grch37 = '{{ site.rest.rest_url_37 }}';
 
-var conseq_url  = '{{ site.conseq_url }}';
+var conseq_url  = '{{ site.urls.conseq_url }}';
 
 // 38
-var ens_gene_url  = '{{ site.ens_gene_url }}';
-var ens_trans_url = '{{ site.ens_trans_url }}';
-var ens_var_url   = '{{ site.ens_var_url }}';
+var ens_gene_url  = '{{ site.js_url.ens_gene }}';
+var ens_trans_url = '{{ site.js_url.ens_trans }}';
+var ens_var_url   = '{{ site.js_url.ens_var }}';
 
 //37
-var ens_gene_url_grch37  = '{{ site.ens_gene_url_37 }}';
-var ens_trans_url_grch37 = '{{ site.ens_trans_url_37 }}';
-var ens_var_url_grch37   = '{{ site.ens_var_url_37 }}';
+var ens_gene_url_grch37  = '{{ site.js_url.ens_gene_37 }}';
+var ens_trans_url_grch37 = '{{ site.js_url.ens_trans_37 }}';
+var ens_var_url_grch37   = '{{ site.js_url.ens_var_37 }}';
 
 var default_val   = 'unknown';
 

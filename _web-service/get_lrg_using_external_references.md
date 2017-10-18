@@ -7,7 +7,7 @@ order: 2
 
 <div class="clearfix margin-top-20">
   <div class="left bold_font margin-right-10" style="width:75px">Query:</div> 
-  <div class="left">{{ site.rest_lrg }}<b>?query=<span class="lrg_blue">&lt;xref_id&gt;</span></b></div>
+  <div class="left">{{ site.rest.rest_lrg }}<b>?query=<span class="lrg_blue">&lt;xref_id&gt;</span></b></div>
 </div>
 <div class="clearfix ws_example_title">
   <div class="left bold_font margin-right-10" style="width:75px">Example:</div> 
@@ -24,7 +24,7 @@ order: 2
         <tr>
           <td>XML <span class="smaller-font">(default)</span></td>
           <td>
-            <a href="{{ site.rest_lrg }}?query=ENSG00000108821" target="_blank">{{ site.rest_lrg }}?query=ENSG00000108821</a>
+            <a href="{{ site.rest.rest_lrg }}?query=ENSG00000108821" target="_blank">{{ site.rest.rest_lrg }}?query=ENSG00000108821</a>
           </td>
           <td>
             <button class="btn btn-primary btn-xs" onclick="javascript:show_output('xref_search','xml')">XML output</button>
@@ -33,7 +33,7 @@ order: 2
         <tr>
           <td>JSON</td>
           <td>
-            <a href="{{ site.rest_lrg }}?query=ENSG00000108821&format=json" target="_blank">{{ site.rest_lrg }}?query=ENSG00000108821<b>&format=json</b></a>
+            <a href="{{ site.rest.rest_lrg }}?query=ENSG00000108821&format=json" target="_blank">{{ site.rest.rest_lrg }}?query=ENSG00000108821<b>&format=json</b></a>
           </td>
           <td>
             <button class="btn btn-primary btn-xs" onclick="javascript:show_output('xref_search','json')">JSON output</button>

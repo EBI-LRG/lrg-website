@@ -2,11 +2,11 @@
 ---
 
 // Links
-var lrg_ftp  = '{{ site.lrg_record_url }}';
-var ens_url  = '{{ site.ens_url }}';
-var ncbi_url = '{{ site.urls.ncbi_url }}';
-var ucsc_url = '{{ site.urls.ucsc_url }}';
-var hgnc_url = '{{ site.hgnc_url }}';
+var lrg_ftp  = '{{ site.js_url.lrg_record }}';
+var ens_url  = '{{ site.js_url.ens }}';
+var ncbi_url = '{{ site.js_url.ncbi }}';
+var ucsc_url = '{{ site.js_url.ucsc }}';
+var hgnc_url = '{{ site.js_url.hgnc }}';
 
 var lrg_json_file = '{{ site.lrg_json_file }}';
 

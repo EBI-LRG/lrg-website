@@ -7,4 +7,4 @@ faq_tags:
   - records
 ---
 
-You can request the creation of an LRG for your gene of interest by contacting us at <a href="mailto:request@lrg-sequence.org">request@lrg-sequence.org</a>.
+You can request the creation of an LRG for your gene of interest by contacting us at <a href="mailto:contact@lrg-sequence.org">contact@lrg-sequence.org</a>. We suggest that beforehand you read the [Request an LRG](/lrg-request) page.

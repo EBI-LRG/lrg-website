@@ -6,7 +6,7 @@ icon-class: icon-submit
 permalink: /submit-variants/
 ---
 
-Consistent with the goals of the LRG collaboration, we offer the opportunity to submit information about variants to [dbSNP](http://www.ncbi.nlm.nih.gov/projects/SNP/){: .icon-external-link}{:target="_blank"} or [dbVar](http://www.ncbi.nlm.nih.gov/dbvar){: .icon-external-link}{:target="_blank"}/[DGVa](http://www.ebi.ac.uk/dgva/){: .icon-external-link}{:target="_blank"}, as appropriate, and obtain an accession number for each variant. The results will be returned to you as outlined in the [instructions]({{ site.lrg_ftp_http }}docs/SubmittingVariationInfo.pdf){:target="_blank"}.  
+Consistent with the goals of the LRG collaboration, we offer the opportunity to submit information about variants to [dbSNP](http://www.ncbi.nlm.nih.gov/projects/SNP/){: .icon-external-link}{:target="_blank"} or [dbVar](http://www.ncbi.nlm.nih.gov/dbvar){: .icon-external-link}{:target="_blank"}/[DGVa](http://www.ebi.ac.uk/dgva/){: .icon-external-link}{:target="_blank"}, as appropriate, and obtain an accession number for each variant. The results will be returned to you as outlined in the [instructions]({{ site.urls.lrg_ftp_http }}docs/SubmittingVariationInfo.pdf){:target="_blank"}.  
 <br />
 
 
@@ -53,7 +53,7 @@ We would encourage you to also submit the following information:
 
 Below is a general outline of the submission procedure: 
 
-1. **Download and read the [instructions]({{ site.lrg_ftp_http }}docs/SubmittingVariationInfo.pdf){:target="_blank"}** for submission and the [submission template]({{ site.lrg_ftp_http }}docs/submission_template.xls){:target="_blank"} so you understand the procedure and the steps involved.  
+1. **Download and read the [instructions]({{ site.urls.lrg_ftp_http }}docs/SubmittingVariationInfo.pdf){:target="_blank"}** for submission and the [submission template]({{ site.urls.lrg_ftp_http }}docs/submission_template.xls){:target="_blank"} so you understand the procedure and the steps involved.  
 
 2. **Fill in** your submission data in the template.  
 

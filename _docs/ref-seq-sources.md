@@ -286,7 +286,7 @@ docs_order: 3
     </tr>
     <tr>
       <td class="left-col">
-        <a class="icon-external-link" href="http://www.hgvs.org/" target="_blank">HGVS</a>
+        <a class="icon-external-link" href="{{ site.urls.hgvs }}" target="_blank">HGVS</a>
       </td>
       <td>
         The Human Genome Variation Society issues <a class="icon-external-link" href="http://varnomen.hgvs.org/recommendations/general/" target="_blank">guidelines and recommendations</a> on the nomenclature of gene variations. <a class="icon-external-link" href="{{ site.urls.ncbi }}/pubmed/26931183" target="_blank">den Dunnen et al., 2016</a>

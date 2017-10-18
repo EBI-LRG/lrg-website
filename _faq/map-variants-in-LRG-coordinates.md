@@ -7,5 +7,4 @@ faq_tags:
   - sequence
 ---
 
-Yes, the [NCBI Genome Remapping Service](http://www.ncbi.nlm.nih.gov/genome/tools/remap/) (Clinical Remap tab) can be used to convert variant data into LRG coordinates.  
-This tool will convert locations or HGVS variant descriptions on a selected genomic assembly or RefSeqGene into locations on an LRG if one is public for that region.
+Yes, several [tools](/convert) can be used to convert variant coordinates from other reference sequences into LRG coordinates.

@@ -51,53 +51,60 @@ baseurl_googleapis: "https://ajax.googleapis.com/ajax/libs"
 
 ref_assembly: "GRCh38"
 
+email_contact: "contact@lrg-sequence.org"
+
 is_beta: 1
 
 ebi_font: "https://www.ebi.ac.uk/web_guidelines/fonts"
 
+lrg_json_file: "/json_index/lrg_index.json"
 
 #-- URLs --#
 urls:
-  grc:        "https://www.ncbi.nlm.nih.gov/grc/human"
-  ucsc:       "https://genome.ucsc.edu"
-  ensembl:    "https://www.ensembl.org"
-  gencode:    "https://www.gencodegenes.org/about.html"
-  refseqgene: "https://www.ncbi.nlm.nih.gov/refseq/rsg/about/"
-  refseq:     "https://www.ncbi.nlm.nih.gov/refseq/about/"
-  ncbi:       &ncbi_url_root "https://www.ncbi.nlm.nih.gov"
-  embl_ebi:   &embl_ebi_url_root "https://www.ebi.ac.uk"
-  mutalyzer:  "https://www.mutalyzer.nl/"
-  vvalidator: "https://variantvalidator.org/"
+  acmg:         "https://www.acmg.net"
+  emqn:         "https://www.emqn.org"
+  ensembl:      "https://www.ensembl.org"
+  gencode:      "https://www.gencodegenes.org/about.html"
+  grc:          "https://www.ncbi.nlm.nih.gov/grc/human"
+  hgnc:         "https://www.genenames.org"
+  hgvs:         "http://www.hgvs.org/mutnomen/"
+  hgvs_var:     "http://varnomen.hgvs.org/"
+  refseqgene:   "https://www.ncbi.nlm.nih.gov/refseq/rsg/about/"
+  refseq:       "https://www.ncbi.nlm.nih.gov/refseq/about/"
+  ucsc:         "https://genome.ucsc.edu"
+  ncbi:         &ncbi_url_root "https://www.ncbi.nlm.nih.gov"
+  embl_ebi:     &embl_ebi_url_root "https://www.ebi.ac.uk"
+  mutalyzer:    "https://www.mutalyzer.nl/"
+  vvalidator:   "https://variantvalidator.org/"
+  conseq_url:   "https://www.ensembl.org/info/genome/variation/predicted_data.html#"
+  lrg_ftp:      "ftp://ftp.ebi.ac.uk/pub/databases/lrgex/"
+  lrg_ftp_http: "http://ftp.ebi.ac.uk/pub/databases/lrgex/"
 
 #-- Variables for javascript --#
 
 # URLs
-rest_url_38: "https://rest.ensembl.org/vep/human/hgvs/"
-rest_url_37: "https://grch37.rest.ensembl.org/vep/human/hgvs/"
-rest_lrg:    "https://www.ebi.ac.uk/ebisearch/ws/rest/lrg"
+rest:
+  rest_url_38: "https://rest.ensembl.org/vep/human/hgvs/"
+  rest_url_37: "https://grch37.rest.ensembl.org/vep/human/hgvs/"
+  rest_lrg:    "https://www.ebi.ac.uk/ebisearch/ws/rest/lrg"
 
-conseq_url:  "https://www.ensembl.org/info/genome/variation/predicted_data.html#"
-
-# 38
-ens_url:        "https://www.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels"
-ens_gene_url:   "https://www.ensembl.org/Homo_sapiens/Gene/Summary?g="
-ens_trans_url:  "https://www.ensembl.org/Homo_sapiens/Transcript/Summary?t="
-ens_var_url:    "https://www.ensembl.org/Homo_sapiens/Variation/Explore?v="
-
-#37
-ens_url_37:       "https://grch37.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels"
-ens_gene_url_37:  "https://grch37.ensembl.org/Homo_sapiens/Gene/Summary?g="
-ens_trans_url_37: "https://grch37.ensembl.org/Homo_sapiens/Transcript/Summary?t="
-ens_var_url_37:   "https://grch37.ensembl.org/Homo_sapiens/Variation/Explore?v="
-
-ncbi_url: "https://www.ncbi.nlm.nih.gov/variation/view/?chr=###CHR###&from=###START###&to=###END###"
-ucsc_url: "https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr###LOC###"
-hgnc_url: "https://www.genenames.org/cgi-bin/gene_symbol_report?match="
-
-lrg_ftp_url:    "ftp://ftp.ebi.ac.uk/pub/databases/lrgex/"
-lrg_ftp_http:   "http://ftp.ebi.ac.uk/pub/databases/lrgex/"
-lrg_record_url: "http://ftp.ebi.ac.uk/pub/databases/lrgex/test/"
-lrg_json_file : "/json_index/lrg_index.json"
+js_url:
+  # 38
+  ens:       "https://www.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels"
+  ens_gene:  "https://www.ensembl.org/Homo_sapiens/Gene/Summary?g="
+  ens_trans: "https://www.ensembl.org/Homo_sapiens/Transcript/Summary?t="
+  ens_var:   "https://www.ensembl.org/Homo_sapiens/Variation/Explore?v="
+  #37
+  ens_37:       "https://grch37.ensembl.org/Homo_sapiens/Location/View?r=###LOC###&contigviewbottom=url:ftp://ftp.ebi.ac.uk/pub/databases/lrgex/.ensembl_internal/###ID###_###ASSEMBLY###.gff=labels"
+  ens_gene_37:  "https://grch37.ensembl.org/Homo_sapiens/Gene/Summary?g="
+  ens_trans_37: "https://grch37.ensembl.org/Homo_sapiens/Transcript/Summary?t="
+  ens_var_37:   "https://grch37.ensembl.org/Homo_sapiens/Variation/Explore?v="
+  # Other links
+  ncbi: "https://www.ncbi.nlm.nih.gov/variation/view/?chr=###CHR###&from=###START###&to=###END###"
+  ucsc: "https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr###LOC###"
+  hgnc: "https://www.genenames.org/cgi-bin/gene_symbol_report?match="
+  # LRG URL
+  lrg_record: "http://ftp.ebi.ac.uk/pub/databases/lrgex/test/"
 #------------------------------#
 
 

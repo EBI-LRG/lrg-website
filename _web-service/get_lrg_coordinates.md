@@ -7,7 +7,7 @@ order: 1
 <div class="clearfix margin-top-20">
   <div class="left bold_font margin-right-10">Example URL syntax: </div> 
   <div class="left" style="font-weight:normal">
-    {{ site.rest_lrg }}<b>/entry/<span class="lrg_purple">&lt;lrg_ids_list&gt;</span>?fields=<span class="lrg_blue">&lt;list_of_fields&gt;</span></b>
+    {{ site.rest.rest_lrg }}<b>/entry/<span class="lrg_purple">&lt;lrg_ids_list&gt;</span>?fields=<span class="lrg_blue">&lt;list_of_fields&gt;</span></b>
   </div>
 </div>
 
@@ -25,7 +25,7 @@ order: 1
       <tr>
         <td>XML <span class="smaller-font">(default)</span></td>
         <td>
-          <a href="{{ site.rest_lrg }}/entry/LRG_1?fields=chr_name_grch37,chr_start_grch37,chr_end_grch37,chr_strand_grch37" target="_blank">/entry/LRG_1?fields=chr_name_grch37,chr_start_grch37,chr_end_grch37,chr_strand_grch37</a>
+          <a href="{{ site.rest.rest_lrg }}/entry/LRG_1?fields=chr_name_grch37,chr_start_grch37,chr_end_grch37,chr_strand_grch37" target="_blank">/entry/LRG_1?fields=chr_name_grch37,chr_start_grch37,chr_end_grch37,chr_strand_grch37</a>
         </td>
         <td>
           <button class="btn btn-primary btn-xs" onclick="javascript:show_output('coord_37_search','xml')">XML output</button>
@@ -34,7 +34,7 @@ order: 1
       <tr>
         <td>JSON</td>
         <td>
-          <a href="{{ site.rest_lrg }}/entry/LRG_1?fields=chr_name_grch37,chr_start_grch37,chr_end_grch37,chr_strand_grch37&format=json" target="_blank">/entry/LRG_1?fields=chr_name_grch37,chr_start_grch37,chr_end_grch37,chr_strand_grch37<b>&format=json</b></a>
+          <a href="{{ site.rest.rest_lrg }}/entry/LRG_1?fields=chr_name_grch37,chr_start_grch37,chr_end_grch37,chr_strand_grch37&format=json" target="_blank">/entry/LRG_1?fields=chr_name_grch37,chr_start_grch37,chr_end_grch37,chr_strand_grch37<b>&format=json</b></a>
         </td>
         <td>
           <button class="btn btn-primary btn-xs" onclick="javascript:show_output('coord_37_search','json')">JSON output</button>
@@ -121,7 +121,7 @@ order: 1
       <tr>
         <td>XML <span class="smaller-font">(default)</span></td>
         <td>
-          <a href="{{ site.rest_lrg }}/entry/LRG_1?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38" target="_blank">/entry/LRG_1?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38</a>
+          <a href="{{ site.rest.rest_lrg }}/entry/LRG_1?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38" target="_blank">/entry/LRG_1?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38</a>
         </td>
         <td>
           <button class="btn btn-primary btn-xs" onclick="javascript:show_output('coord_38_search','xml')">XML output</button>
@@ -130,7 +130,7 @@ order: 1
       <tr>
         <td>JSON</td>
         <td>
-          <a href="{{ site.rest_lrg }}/entry/LRG_1?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38&format=json" target="_blank">/entry/LRG_1?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38<b>&format=json</b></a>
+          <a href="{{ site.rest.rest_lrg }}/entry/LRG_1?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38&format=json" target="_blank">/entry/LRG_1?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38<b>&format=json</b></a>
         </td>
         <td>
           <button class="btn btn-primary btn-xs" onclick="javascript:show_output('coord_38_search','json')">JSON output</button>
@@ -218,7 +218,7 @@ order: 1
       <tr>
         <td>XML <span class="smaller-font">(default)</span></td>
         <td>
-          <a href="{{ site.rest_lrg }}/entry/LRG_1,LRG_2?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38" target="_blank">/entry/LRG_1,LRG_2?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38</a>
+          <a href="{{ site.rest.rest_lrg }}/entry/LRG_1,LRG_2?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38" target="_blank">/entry/LRG_1,LRG_2?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38</a>
         </td>
         <td>
           <button class="btn btn-primary btn-xs" onclick="javascript:show_output('coord_multi_38_search','xml')">XML output</button>
@@ -227,7 +227,7 @@ order: 1
       <tr>
         <td>JSON</td>
         <td>
-          <a href="{{ site.rest_lrg }}/entry/LRG_1,LRG_2?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38&format=json" target="_blank">/entry/LRG_1,LRG_2?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38<b>&format=json</b></a>
+          <a href="{{ site.rest.rest_lrg }}/entry/LRG_1,LRG_2?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38&format=json" target="_blank">/entry/LRG_1,LRG_2?fields=chr_name_grch38,chr_start_grch38,chr_end_grch38,chr_strand_grch38<b>&format=json</b></a>
         </td>
         <td>
           <button class="btn btn-primary btn-xs" onclick="javascript:show_output('coord_multi_38_search','json')">JSON output</button>

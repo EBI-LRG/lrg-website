@@ -26,8 +26,8 @@ permalink: /data/
 
 ### LRG data
 
-LRG data is available on the [LRG FTP site]({{ site.lrg_ftp_url }}){:target="_blank"} in **XML format**.  
-The LRG genomic, transcript and protein sequences are also available in **FASTA format** on the [LRG FTP site]({{ site.lrg_ftp_url }}fasta){:target="_blank"}.
+LRG data is available on the [LRG FTP site]({{ site.urls.lrg_ftp }}){:target="_blank"} in **XML format**.  
+The LRG genomic, transcript and protein sequences are also available in **FASTA format** on the [LRG FTP site]({{ site.urls.lrg_ftp }}fasta){:target="_blank"}.
 
 There is the possibility to download all the public and pending LRGs:
 
@@ -44,7 +44,7 @@ There is the possibility to download all the public and pending LRGs:
         <tr>
           <td>Public</td>
           <td>
-            <a href="{{ site.lrg_ftp_url }}LRG_public_xml_files.zip">
+            <a href="{{ site.urls.lrg_ftp }}LRG_public_xml_files.zip">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">XML</div>
@@ -52,7 +52,7 @@ There is the possibility to download all the public and pending LRGs:
             </a>
           </td>
           <td>
-            <a href="{{ site.lrg_ftp_url }}fasta/LRG_public_fasta_files.zip">
+            <a href="{{ site.urls.lrg_ftp }}fasta/LRG_public_fasta_files.zip">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">FASTA</div>
@@ -63,7 +63,7 @@ There is the possibility to download all the public and pending LRGs:
         <tr>
           <td>Pending</td>
           <td>
-            <a href="{{ site.lrg_ftp_url }}LRG_pending_xml_files.zip">
+            <a href="{{ site.urls.lrg_ftp }}LRG_pending_xml_files.zip">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">XML</div>
@@ -71,7 +71,7 @@ There is the possibility to download all the public and pending LRGs:
             </a>
           </td>
           <td>
-            <a href="{{ site.lrg_ftp_url }}LRG_pending_fasta_files.zip">
+            <a href="{{ site.urls.lrg_ftp }}LRG_pending_fasta_files.zip">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">FASTA</div>
@@ -84,7 +84,7 @@ There is the possibility to download all the public and pending LRGs:
   </div>
 </div>
 
-<span class="lrg_green2">NOTE:</span> If you can't access to the LRG FTP site through the FTP protocol, you can access it using the HTTP protocol: [LRG FTP site - HTTP]({{ site.lrg_ftp_http }}){:target="_blank"}.
+<span class="lrg_green2">NOTE:</span> If you can't access to the LRG FTP site through the FTP protocol, you can access it using the HTTP protocol: [LRG FTP site - HTTP]({{ site.urls.lrg_ftp_http }}){:target="_blank"}.
 
 <br />  
 
@@ -105,7 +105,7 @@ There is the possibility to download all the public and pending LRGs:
           <th>GRCh38</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="bordered-columns">
         <tr>
           <td>
             <div>LRG genes</div>
@@ -122,7 +122,7 @@ There is the possibility to download all the public and pending LRGs:
           </td>
           <td>BED<br /><span class="smaller-text">(12 columns)</span></td>
           <td>
-            <a href="{{ site.lrg_ftp_url }}LRG_GRCh37.bed" target="_blank">
+            <a href="{{ site.urls.lrg_ftp }}LRG_GRCh37.bed" target="_blank">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">BED</div>
@@ -130,7 +130,7 @@ There is the possibility to download all the public and pending LRGs:
             </a>
           </td>
           <td>
-            <a href="{{ site.lrg_ftp_url }}LRG_GRCh38.bed" target="_blank">
+            <a href="{{ site.urls.lrg_ftp }}LRG_GRCh38.bed" target="_blank">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">BED</div>
@@ -173,7 +173,7 @@ There is the possibility to download all the public and pending LRGs:
           </td>
           <td>Tabulated</td>
           <td>
-            <a href="{{ site.lrg_ftp_url }}list_LRGs_GRCh37.txt" target="_blank">
+            <a href="{{ site.urls.lrg_ftp }}list_LRGs_GRCh37.txt" target="_blank">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">TXT</div>
@@ -181,7 +181,7 @@ There is the possibility to download all the public and pending LRGs:
             </a>
           </td>
           <td>
-            <a href="{{ site.lrg_ftp_url }}list_LRGs_GRCh38.txt" target="_blank">
+            <a href="{{ site.urls.lrg_ftp }}list_LRGs_GRCh38.txt" target="_blank">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">TXT</div>
@@ -228,7 +228,7 @@ There is the possibility to download all the public and pending LRGs:
           </td>
           <td>Tabulated</td>
           <td>
-            <a href="{{ site.lrg_ftp_url }}list_LRGs_transcripts_GRCh37.txt" target="_blank">
+            <a href="{{ site.urls.lrg_ftp }}list_LRGs_transcripts_GRCh37.txt" target="_blank">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">TXT</div>
@@ -236,7 +236,7 @@ There is the possibility to download all the public and pending LRGs:
             </a>
           </td>
           <td>
-            <a href="{{ site.lrg_ftp_url }}list_LRGs_transcripts_GRCh38.txt" target="_blank">
+            <a href="{{ site.urls.lrg_ftp }}list_LRGs_transcripts_GRCh38.txt" target="_blank">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">TXT</div>
@@ -281,7 +281,7 @@ There is the possibility to download all the public and pending LRGs:
           <td>Tabulated</td>
           <td>-</td>
           <td>
-            <a href="{{ site.lrg_ftp_url }}list_LRGs_transcripts_xrefs.txt" target="_blank">
+            <a href="{{ site.urls.lrg_ftp }}list_LRGs_transcripts_xrefs.txt" target="_blank">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">TXT</div>
@@ -324,7 +324,7 @@ There is the possibility to download all the public and pending LRGs:
           <td>Tabulated</td>
           <td>-</td>
           <td>
-            <a href="{{ site.lrg_ftp_url }}list_LRGs_proteins_RefSeq.txt" target="_blank">
+            <a href="{{ site.urls.lrg_ftp }}list_LRGs_proteins_RefSeq.txt" target="_blank">
               <div class="file_link clearfix">
                 <div class="left icon-literature close-icon-0"></div>
                 <div class="left">TXT</div>
@@ -346,7 +346,7 @@ There is the possibility to download all the public and pending LRGs:
     The list of LRGs already imported in <a class="icon-external-link" href="{{ site.urls.ensembl }}" target="_blank">Ensembl</a> is available in this text file:
   </div>
   <div class="left margin-left-5">
-    <a href="{{ site.lrg_ftp_url }}lrgs_in_ensembl.txt" target="_blank">
+    <a href="{{ site.urls.lrg_ftp }}lrgs_in_ensembl.txt" target="_blank">
       <div class="file_link clearfix">
           <div class="left icon-literature close-icon-0"></div>
           <div class="left">TXT</div>
@@ -359,7 +359,7 @@ There is the possibility to download all the public and pending LRGs:
   
 ### LRG XML schema
 
-The LRG XML schema documentation is downloadable [here]({{ site.lrg_ftp_url }}docs){:target="_blank"} and the different versions of the XML schema definitions (RELAX NG format) are available [here]({{ site.lrg_ftp_url }}docs/schemas){:target="_blank"}.  
+The LRG XML schema documentation is downloadable [here]({{ site.urls.lrg_ftp }}docs){:target="_blank"} and the different versions of the XML schema definitions (RELAX NG format) are available [here]({{ site.urls.lrg_ftp }}docs/schemas){:target="_blank"}.  
 The current LRG XML schema version is **{{ site.lrg-schema }}**.  
 <br />
   
@@ -381,19 +381,19 @@ Previous versions of the LRGs (in different LRG XML schemas) are available:
         <tr>
           <td>Schema 1.8</td>
           <td>
-            <a class="icon-link smaller-icon close-icon-5" href="{{ site.lrg_ftp_url }}SCHEMA_1_8_ARCHIVE/" target="_blank">FTP site</a>
+            <a class="icon-link smaller-icon close-icon-5" href="{{ site.urls.lrg_ftp }}SCHEMA_1_8_ARCHIVE/" target="_blank">FTP site</a>
           </td>  
         </tr>
         <tr>
           <td>Schema 1.7</td>
           <td>
-            <a class="icon-link smaller-icon close-icon-5" href="{{ site.lrg_ftp_url }}SCHEMA_1_7_ARCHIVE/" target="_blank">FTP site</a>
+            <a class="icon-link smaller-icon close-icon-5" href="{{ site.urls.lrg_ftp }}SCHEMA_1_7_ARCHIVE/" target="_blank">FTP site</a>
           </td>  
         </tr>
         <tr>
           <td>Schema 1.6</td>
           <td>
-            <a class="icon-link smaller-icon close-icon-5" href="{{ site.lrg_ftp_url }}SCHEMA_1_6_ARCHIVE/" target="_blank">FTP site</a>
+            <a class="icon-link smaller-icon close-icon-5" href="{{ site.urls.lrg_ftp }}SCHEMA_1_6_ARCHIVE/" target="_blank">FTP site</a>
           </td>  
         </tr>
       </tbody>

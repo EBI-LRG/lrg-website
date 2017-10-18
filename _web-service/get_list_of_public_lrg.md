@@ -7,7 +7,7 @@ order: 3
 
 <div class="clearfix margin-top-20">
   <div class="left bold_font margin-right-10" style="width:75px">Query:</div> 
-  <div class="left">{{ site.rest_lrg }}<b>?query=status:<span class="lrg_blue">public</span></b></div>
+  <div class="left">{{ site.rest.rest_lrg }}<b>?query=status:<span class="lrg_blue">public</span></b></div>
 </div>
 <div class="clearfix ws_example_title">
   <div class="left bold_font margin-right-10" style="width:75px">Example:</div> 
@@ -24,7 +24,7 @@ order: 3
         <tr>
           <td>XML <span class="smaller-font">(default)</span></td>
           <td>
-            <a href="{{ site.rest_lrg }}?query=status:public&size=100" target="_blank">{{ site.rest_lrg }}?query=status:public<b>&size=100</b></a>
+            <a href="{{ site.rest.rest_lrg }}?query=status:public&size=100" target="_blank">{{ site.rest.rest_lrg }}?query=status:public<b>&size=100</b></a>
           </td>
           <td>
             <button class="btn btn-primary btn-xs" onclick="javascript:show_output('public_search','xml')">XML output</button>
@@ -33,7 +33,7 @@ order: 3
         <tr>
           <td>JSON</td>
           <td>
-            <a href="{{ site.rest_lrg }}?query=status:public&size=100&format=json" target="_blank">{{ site.rest_lrg }}?query=status:public<b>&size=100&format=json</b></a>
+            <a href="{{ site.rest.rest_lrg }}?query=status:public&size=100&format=json" target="_blank">{{ site.rest.rest_lrg }}?query=status:public<b>&size=100&format=json</b></a>
           </td>
           <td>
             <button class="btn btn-primary btn-xs" onclick="javascript:show_output('public_search','json')">JSON output</button>
@@ -93,14 +93,14 @@ order: 3
   Looking at the tag <b>"hitCount"</b> you can see how many entries have been found, and then you can loop over this number to retrieve all the results. Let's say the total number of result is <b>&lt;hitCount&gt;<span class="warning">665</span>&lt;/hitCount&gt;</b>, we have to loop like this:
 </p>
 <p>
-  <a href="{{ site.rest_lrg }}?query=status:public&size=100&start=0" target="_blank">{{ site.rest_lrg }}?query=status:public<b>&size=100&start=0</b></a>
+  <a href="{{ site.rest.rest_lrg }}?query=status:public&size=100&start=0" target="_blank">{{ site.rest.rest_lrg }}?query=status:public<b>&size=100&start=0</b></a>
 </p>
 <p>
-  <a href="{{ site.rest_lrg }}?query=status:public&size=100&start=100" target="_blank">{{ site.rest_lrg }}?query=status:public<b>&size=100&start=100</b></a>
+  <a href="{{ site.rest.rest_lrg }}?query=status:public&size=100&start=100" target="_blank">{{ site.rest.rest_lrg }}?query=status:public<b>&size=100&start=100</b></a>
 </p>
 <p>...</p>
 <p>
-  <a href="{{ site.rest_lrg }}?query=status:public&size=100&start=600" target="_blank">{{ site.rest_lrg }}?query=status:public<b>&size=100&start=600</b></a>
+  <a href="{{ site.rest.rest_lrg }}?query=status:public&size=100&start=600" target="_blank">{{ site.rest.rest_lrg }}?query=status:public<b>&size=100&start=600</b></a>
 </p>
 
 

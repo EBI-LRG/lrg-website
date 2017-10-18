@@ -6,7 +6,7 @@ order: 1
 
 <div class="clearfix margin-top-20">
   <div class="left bold_font margin-right-10" style="width:75px">Query:</div> 
-  <div class="left">{{ site.rest_lrg }}<b>?query=name:<span class="lrg_blue">&lt;HGNC_symbol&gt;</span></b></div>
+  <div class="left">{{ site.rest.rest_lrg }}<b>?query=name:<span class="lrg_blue">&lt;HGNC_symbol&gt;</span></b></div>
 </div>
 <div class="clearfix ws_example_title">
   <div class="left bold_font margin-right-10" style="width:75px">Example:</div> 
@@ -23,7 +23,7 @@ order: 1
         <tr>
           <td>XML <span class="smaller-font">(default)</span></td>
           <td>
-            <a href="{{ site.rest_lrg }}?query=name:COL1A1" target="_blank">{{ site.rest_lrg }}?query=name:COL1A1</a>
+            <a href="{{ site.rest.rest_lrg }}?query=name:COL1A1" target="_blank">{{ site.rest.rest_lrg }}?query=name:COL1A1</a>
           </td>
           <td>
             <button class="btn btn-primary btn-xs" onclick="javascript:show_output('hgnc_search','xml')">XML output</button>
@@ -32,7 +32,7 @@ order: 1
         <tr>
           <td>JSON</td>
           <td>
-            <a href="{{ site.rest_lrg }}?query=name:COL1A1&format=json" target="_blank">{{ site.rest_lrg }}?query=name:COL1A1<b>&format=json</b></a>
+            <a href="{{ site.rest.rest_lrg }}?query=name:COL1A1&format=json" target="_blank">{{ site.rest.rest_lrg }}?query=name:COL1A1<b>&format=json</b></a>
           </td>
           <td>
             <button class="btn btn-primary btn-xs" onclick="javascript:show_output('hgnc_search','json')">JSON output</button>

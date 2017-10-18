@@ -11,4 +11,4 @@ faq_related:
   - lrg-final-arbiter
 ---
 
-The creation of LRGs is the joint responsibility of the [European Bioinformatics Institute (EMBL-EBI)](http://www.ebi.ac.uk/)and the [National Center for Biotechnology Information (NCBI)](http://www.ncbi.nlm.nih.gov/).
+The creation of LRGs is the joint responsibility of the [European Bioinformatics Institute (EMBL-EBI)]({{ site.urls.embl_ebi }}){: .icon-external-link}{:target="_blank"} and the [National Center for Biotechnology Information (NCBI)]({{ site.urls.ncbi }}){: .icon-external-link}{:target="_blank"}.
