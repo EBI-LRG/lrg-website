@@ -12,4 +12,4 @@ faq_related:
 
 Anybody can write an application to handle and manipulate sequence data in the LRGs: the LRG format is open and the record schema is freely available.  
 We would encourage you to make your software free and open and to let us know about it so that we can provide links to your application.  
-Technical support for the schema is available at **help@lrg-sequence.org**.
+Technical support for the schema is available at <a href="mailto:{{ site.email_contact }}">{{ site.email_contact }}</a>.

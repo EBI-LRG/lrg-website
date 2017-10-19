@@ -8,5 +8,5 @@ faq_related:
   - responsibility-for-lrg-creation
 ---
 
-For an LRG to be an international standard, it must be accessioned by the collaborating groups. If you would like to request an LRG, please contact <a href="mailto:request@lrg-sequence.org">request@lrg-sequence.org</a>.  
+For an LRG to be an international standard, it must be accessioned by the collaborating groups. If you would like to request an LRG, please contact <a href="mailto:{{ site.email_contact }}">{{ site.email_contact }}</a>.  
 We would encourage you **not to** create your own LRG records.

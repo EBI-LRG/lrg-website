@@ -59,8 +59,8 @@ Below is a general outline of the submission procedure:
 
 3. **Request a "handle"** from [dbSNP](http://www.ncbi.nlm.nih.gov/projects/SNP/handle){: .icon-external-link}{:target="_blank"} and enter this in the submission template.  
 
-4. **Email the submission** and "handle" to <a class="bold_font" href="mailto:contact@lrg-sequence.org">contact@lrg-sequence.org</a>  
-   Alternatively, if the submission is large, request an upload account on our FTP server by sending an email to <a class="bold_font" href="mailto:contact@lrg-sequence.org">contact@lrg-sequence.org</a> and upload the submission via FTP.
+4. **Email the submission** and "handle" to <a class="bold_font" href="mailto:{{ site.email_contact }}">{{ site.email_contact }}</a>  
+   Alternatively, if the submission is large, request an upload account on our FTP server by sending an email to <a class="bold_font" href="mailto:{{ site.email_contact }}">{{ site.email_contact }}</a> and upload the submission via FTP.
 
 
-Any questions can be sent to <a class="bold_font" href="mailto:contact@lrg-sequence.org">contact@lrg-sequence.org</a> as well.
+Any questions can be sent to <a class="bold_font" href="mailto:{{ site.email_contact }}">{{ site.email_contact }}</a> as well.

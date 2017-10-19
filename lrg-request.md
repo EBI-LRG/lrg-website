@@ -33,7 +33,7 @@ This helps us prioritise genes for curation.  Let us know which reference sequen
 
 ##### If your gene of interest already has a Public LRG record:
 
-Please <a href="mailto:contact@lrg-sequence.org">contact us</a> if the information in the record is incorrect, or if you think additional transcripts or information are required.
+Please <a href="mailto:{{ site.email_contact }}">contact us</a> if the information in the record is incorrect, or if you think additional transcripts or information are required.
 
 
 If an LRG does not exist for your gene of interest you can request one to be made.
@@ -44,7 +44,7 @@ If an LRG does not exist for your gene of interest you can request one to be mad
 
 Feel free to contact us with any pre-request enquiries, especially if you are planning to request multiple LRGs.
  
-Email us at <a href="mailto:contact@lrg-sequence.org">contact@lrg-sequence.org</a> to make your request and include the following details:
+Email us at <a href="mailto:{{ site.email_contact }}">{{ site.email_contact }}</a> to make your request and include the following details:
  
 ##### Required
 
