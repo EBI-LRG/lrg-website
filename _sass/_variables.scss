@@ -67,5 +67,10 @@ $line-height : 1.5;
 $line-height-compact: 1.2;
 
 // Menu width threshold
-$menu_width_threshold_max: 1129px; //1159px;
-$menu_width_threshold_min: 1130px; //1160px;
+$container_width_max: 1169px;
+$container_width_min: 1170px;
+$container_width_threshold_max: 1079px; //1159px;
+$container_width_threshold_min: 1080px; //1160px;
+
+// Transition time
+$transition_time : 0.3s;

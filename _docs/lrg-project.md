@@ -1,7 +1,10 @@
 ---
-title: "LRG project"
-about_order: 1
-expanded: 1
+layout: page
+title: LRG project
+tags: LRG project
+icon-class: icon-documentation
+permalink: /documentation/lrg-project
+desc: General information about the LRG project
 ---
 
 ##### Created specifically for clinical reporting by manual curation

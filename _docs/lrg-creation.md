@@ -5,7 +5,6 @@ tags: LRG creation process
 icon-class: icon-request
 permalink: /documentation/lrg-creation/
 desc: Description about how the LRG records are created
-docs_order: 2
 ---
 
 The LRG project is a collaboration between the NCBI and EMBL-EBI. The creation of an LRG involves several steps, listed here.   

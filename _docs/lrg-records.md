@@ -5,7 +5,6 @@ tags: LRG records
 icon-class: icon-unreviewed-data
 permalink: /documentation/lrg-records/
 desc: Details about the content of LRG records
-docs_order: 1
 ---
 
 LRG records are created upon request for a region of the genome, usually a gene of interest. Each record contains a stable “**fixed**” section and a regularly updated “**updatable**” section:

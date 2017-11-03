@@ -160,6 +160,11 @@
   content: "n";
 }
 
+.icon-stop:before {
+  font-family: 'EBI-Functional';
+  content: "o";
+}
+
 .icon-target:before {
   font-family: 'EBI-Functional';
   content: "T";

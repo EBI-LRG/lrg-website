@@ -13,14 +13,14 @@ name: Locus Reference Genomic
 description: LRG sequences provide a stable genomic DNA framework for reporting variants with a permanent ID and core content that never changes.
 
 # Short description (displayed in the homepage)
-description2: 'A <span class="bold_font">L</span>ocus <span class="bold_font">R</span>eference <span class="bold_font">G</span>enomic (<span class="bold_font">LRG</span>) record contains stable reference sequences that are used for reporting sequence variants with clinical implications. LRGs may represent legacy or alternative reporting sequences, and to facilitate unambiguous reporting, they provide a defined and transparent mapping to the reference genome'
+description2: 'A <span class="bold_font">L</span>ocus <span class="bold_font">R</span>eference <span class="bold_font">G</span>enomic (<span class="bold_font">LRG</span>) record contains stable reference sequences that are used for reporting sequence variants with clinical implications'
 
 # Tag line (displayed in the header)
 tag_line: Stable reference sequences for reporting variants
 
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-#avatar: /images/lrg_logo.png
+# URL of the LRG logo
 avatar: /images/lrg_logo.png
+avatar_hover: /images/lrg_logo_hover.png
 
 # Search label
 search-label: "Search LRGs"
@@ -57,7 +57,8 @@ is_beta: 1
 
 ebi_font: "https://www.ebi.ac.uk/web_guidelines/fonts"
 
-lrg_json_file: "/json_index/lrg_index.json"
+lrg_json_file:  "/json_index/lrg_index.json"
+step_json_file: "/json_index/step_index.json"
 
 #-- URLs --#
 urls:

@@ -8,7 +8,8 @@ var ncbi_url = '{{ site.js_url.ncbi }}';
 var ucsc_url = '{{ site.js_url.ucsc }}';
 var hgnc_url = '{{ site.js_url.hgnc }}';
 
-var lrg_json_file = '{{ site.lrg_json_file }}';
+var lrg_json_file  = '{{ site.lrg_json_file }}';
+var step_json_file = '{{ site.step_json_file }}';
 
 var ref_assembly = '{{ site.ref_assembly }}';
 ens_url = ens_url.replace(/###ASSEMBLY###/, ref_assembly);
@@ -17,6 +18,11 @@ var external_link_class = 'icon-ext';
 
 var table_id = "#search_results";
 
+var step_col_class = 'step_col';
+var public_step_col_class = 'public_step';
+
+var lrg_steps_list = [];
+var lrg_steps_count = 0;
 
 //
 // Methods //
@@ -47,8 +53,15 @@ function go_to_result_page (query) {
 
       // Asynch AJAX call + display results
       get_search_results(query).then(function(result_objects){
-        display_results(result_objects);
+        lrg_steps_list = [];
+        lrg_steps_count = 0;
 
+        if (query == 'public') {
+          display_results(result_objects);
+        }
+        else {
+          get_lrg_steps(result_objects);
+        }
       });
     }
     // Other page
@@ -95,33 +108,6 @@ function get_search_results (search_id) {
 
 }
 
-// Function get data in array
-function get_data_in_array () {
-  var data_array = [];
-  return $.getJSON( lrg_json_file ).then(function(data) {
-    // Get the different searchable items
-    var data_list = {};
-    for (var i in data) {
-      if (!data.hasOwnProperty(i)) continue;
-      var item = data[i];
-      data_list[item.id] = 1;
-      data_list[item.symbol] = 1;
-      data_list[item.status] = 1;
-      for (var j in item.synonyms) {
-        data_list[item.synonyms[j]] = 1;
-      }
-      for (var k in item.xref) {
-        data_list[item.xref[k]] = 1;
-      }
-    }
-    // Compile the data into an array
-    $.each(data_list, function(key, value) {
-      data_array.push(key);
-    });
-    return data_array;
-  });
-
-}
 
 // Function to display results
 function display_results (results) {
@@ -147,6 +133,8 @@ function display_results (results) {
   });
 
   var link_separator = '<span>-</span>';
+  
+  var has_lrg_pending = 0;
 
   for (i in result_keys) {
     var lrg_id     = result_keys[i];
@@ -160,28 +148,48 @@ function display_results (results) {
     var ncbi_link = get_ncbi_link(chr, start, end);
     var ucsc_link = get_ucsc_link(chr, start, end);
 
-    var lrg_link = lrg_ftp;
-    var curation_link = '';
+    var lrg_link = '';
+    var curation_id = lrg_id.toLowerCase()+'_step';
+    var curation_cell = newCell().attr('id', curation_id);
+        curation_cell.addClass(step_col_class);
+
     if (lrg_status != "public") {
-      lrg_link += lrg_status + "/";
-      curation_link = get_curation_link(lrg_id); 
+      lrg_link = get_lrg_link(lrg_id, lrg_status);
+      has_lrg_pending = 1;
+    }
+    else {
+      lrg_link = get_lrg_link(lrg_id);
+      curation_cell.addClass(public_step_col_class);
     }
 
     // HTML code
     var newrow = $('<tr/>');
-        //newrow.attr('id', lrg_id); // <= not used at the moment
     // LRG ID
-    var lrg_link = build_ftp_link(lrg_id, lrg_link + lrg_id + '.xml');
     var lrg_id_cell = newCell(lrg_link);
         lrg_id_cell.attr('sorttable_key', extract_id(lrg_id));
     newrow.append(lrg_id_cell);
     // Symbol
     newrow.append(newCell(get_hgnc_link(symbol)));
-    // Status
-    newrow.append(newCell('<span>'+lrg_status+curation_link+'</span>').addClass('lrg_'+lrg_status+'_hl'));
+    // LRG Status
+    newrow.append(newCell("<span>"+lrg_status+"</span>").addClass('lrg_'+lrg_status+'_hl'));
+    // Curation Status
+    newrow.append(curation_cell.addClass(step_col_class));
+    if (lrg_status != "public") {
+      get_lrg_step_data(lrg_id, curation_id);
+    }
     // External links
     newrow.append(newCell(ens_link + link_separator + ncbi_link + link_separator + ucsc_link).addClass('gbrowser'));
     $(table_id + " > tbody").append(newrow);
+  }
+
+  // Post process to show or not the "Curation status" column (not needed if only public LRG returned in the results)
+  if (has_lrg_pending == 1) {
+    $('.'+step_col_class).show();
+    $('.'+public_step_col_class).attr('sorttable_key', lrg_steps_count);
+    $('.'+public_step_col_class).html("<span class=\"label label-success\">" + lrg_steps_list[lrg_steps_count] + "</span>");
+  }
+  else {
+    $('.'+step_col_class).hide();
   }
 }
 
@@ -190,7 +198,21 @@ function newCell(content) {
   return $("<td></td>").html(content);
 }
 
-/**** Links ****/
+/***** Links *****/
+
+/* LRG link */
+function get_lrg_link (lrg_id, status) {
+  var lrg_link = build_link_base(lrg_id);
+  var js_param = (status) ? "'"+lrg_id+"','"+status+"'" : "'"+lrg_id+"'";
+      lrg_link.attr('onclick',"lrg_link("+js_param+")");
+  return lrg_link[0].outerHTML;
+}
+function lrg_link (lrg_id, status) {
+  var lrg_url  = lrg_ftp;
+      lrg_url += (status) ? status+'/' : '';
+  window.open(lrg_url + lrg_id + '.xml','_blank');
+}
+
 
 /* HGNC link */
 function get_hgnc_link (symbol) {
@@ -250,7 +272,7 @@ function get_curation_link (lrg_id) {
 }
 
 
-/**** Functions to build the links ****/
+/***** Functions to build the links *****/
 
 function build_link_base (label,url) {
   var ext_link = $('<a></a>');
@@ -263,7 +285,6 @@ function build_link_base (label,url) {
 
 function build_ftp_link (label,url) {
   var ftp_link = build_link_base(label,url);
-      
   return ftp_link;
 }
 
@@ -353,6 +374,10 @@ function extract_id (lrg_id) {
   }
 }
 
+
+
+/***** URL and URL parameters manipulation *****/
+
 // Function to retrieve the searched term
 function getParameterByName (name, url) {
   if (!url) url = window.location.href;
@@ -393,6 +418,71 @@ function changeUrlParam (param, value) {
 
 // Rolling image displayed while the result is 
 function wait_for_results() {
+  var cols = $(table_id).find("thead > tr:first th").length;
   $(table_id + " > tbody").empty();
-  $(table_id + " > tbody").append('<tr><td colspan="5"><div class="wait"></div><div class="loader"></div></td></tr>');
+  $(table_id + " > tbody").append('<tr><td colspan="'+cols+'"><div class="wait"></div><div class="loader"></div></td></tr>');
+}
+
+
+
+/***** Retrieve information about LRG curation steps (pending records) *****/
+
+// Function to get the LRG steps
+function get_lrg_steps (results) {
+  $.getJSON( step_json_file, function(data) {
+    var steps_list = [];
+    $.each(data.steps, function (index, value) {
+      var i = index + 1;
+      lrg_steps_list[i] = value;
+      lrg_steps_count ++;
+    });
+
+    display_results(results);
+  });
+}
+
+// Function to get the LRG step curation
+function get_lrg_step_data (lrg_id, curation_id) {
+  $.getJSON( step_json_file, function(data) {
+    lrg_step_data = data.lrg[lrg_id];
+
+    var step_id   = lrg_step_data.step;
+    var step_desc = lrg_steps_list[step_id];
+    var step_date = lrg_step_data.date;
+    var step_content = "<span class=\"label label-default\">" + step_desc + "</span> - step <span class=\"badge\">" + step_id + "/" + lrg_steps_count + "</span><br />Status updated the "+ step_date;
+    
+    $('#'+curation_id).attr('sorttable_key', step_id);
+    $('#'+curation_id).html(step_content);
+  });
+}
+
+
+
+/***** Autocompletion *****/
+
+// Function get data in array
+function get_data_in_array () {
+  var data_array = [];
+  return $.getJSON( lrg_json_file ).then(function(data) {
+    // Get the different searchable items
+    var data_list = {};
+    for (var i in data) {
+      if (!data.hasOwnProperty(i)) continue;
+      var item = data[i];
+      data_list[item.id] = 1;
+      data_list[item.symbol] = 1;
+      data_list[item.status] = 1;
+      for (var j in item.synonyms) {
+        data_list[item.synonyms[j]] = 1;
+      }
+      for (var k in item.xref) {
+        data_list[item.xref[k]] = 1;
+      }
+    }
+    // Compile the data into an array
+    $.each(data_list, function(key, value) {
+      data_array.push(key);
+    });
+    return data_array;
+  });
 }

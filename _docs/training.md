@@ -5,7 +5,6 @@ tags: Training materials
 icon-class: icon-video
 permalink: /documentation/training/
 desc: Training material from workshops held by the LRG project team
-docs_order: 5
 ---
 
 <div class="clearfix">

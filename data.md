@@ -401,7 +401,7 @@ Previous versions of the LRGs (in different LRG XML schemas) are available:
   </div>
 </div>
 
-### Web services
+<h3 class="icon-tool smaller-icon" id="web-services">Web services</h3>
 
 The EMBL-EBI provides RESTful web services for LRG.
 <div><a class="icon-next-page smaller-icon close-icon-2" href="/web-service">See more</a></div>

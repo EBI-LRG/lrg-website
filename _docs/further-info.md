@@ -1,7 +1,10 @@
 ---
-title: "Further information"
-about_order: 2
-expanded: 1
+layout: page
+title: Further information
+tags: Further information
+icon-class: icon-info
+permalink: /documentation/further_information/
+desc: Publications, additional resources, ...
 ---
 
 ##### Publications
@@ -16,22 +19,17 @@ expanded: 1
 
 <div class="margin-top-30"></div>
 
-##### Frequently Asked Questions (FAQs)
-The LRG website hosts a page listing the [FAQs](/faq)
-<div class="margin-top-30"></div>
-
 ##### Additional resources
 * [LRG video presentation](http://www.ebi.ac.uk/training/online/course/locus-reference-genomic-lrg-resource-webinar){: .icon-external-link}{:target="_blank"}: a webinar of ~30min providing an overview and demo of the LRG resource.
 
 * The LRG specification [document]({{ site.urls.lrg_ftp_http }}docs/LRG.pdf){: .icon-external-link}{:target="_blank"}
 
-For more information on how the RefSeqGene records relate to the LRG project, please refer to this [NCBI webpage document](http://www.ncbi.nlm.nih.gov/refseq/rsg/lrg/){: .icon-external-link}{:target="_blank"}.
+* For more information on how the RefSeqGene records relate to the LRG project, please refer to this [NCBI webpage document](http://www.ncbi.nlm.nih.gov/refseq/rsg/lrg/){: .icon-external-link}{:target="_blank"}.  
+
 <div class="margin-top-30"></div>
 
 ##### Licence
 The LRG project imposes no restrictions on access to, or use of, the data provided. The code written by the members of the project is provided under the **Apache 2.0 licence**.
 
-<div class="clearfix margin-top-40">
-  <div class="left">Special thanks to Spencer Phillips (EMBL-EBI) for designing the LRG logo.</div>
-  <div class="left margin-left-10"><img class="lrg_dark_bg" src="{{ site.avatar }}" style="width:75%;height:75%;padding:4px 6px" /></div>
-</div>
+<div class="margin-top-40"></div>
+Special thanks to Spencer Phillips (EMBL-EBI) for designing the LRG logo.
