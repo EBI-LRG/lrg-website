@@ -150,8 +150,14 @@ function display_results (results) {
 
     var lrg_link = '';
     var curation_id = lrg_id.toLowerCase()+'_step';
-    var curation_cell = newCell().attr('id', curation_id);
-        curation_cell.addClass(step_col_class);
+    var curation_desc_cell = newCell().attr('id', curation_id);
+        curation_desc_cell.addClass(step_col_class);
+
+    var curation_step_cell = newCell().attr('id', curation_id+"_id");
+        curation_step_cell.addClass(step_col_class);
+
+    var curation_date_cell = newCell().attr('id', curation_id+"_date");
+        curation_date_cell.addClass(step_col_class);
 
     if (lrg_status != "public") {
       lrg_link = get_lrg_link(lrg_id, lrg_status);
@@ -159,7 +165,9 @@ function display_results (results) {
     }
     else {
       lrg_link = get_lrg_link(lrg_id);
-      curation_cell.addClass(public_step_col_class);
+      curation_desc_cell.addClass(public_step_col_class);
+      curation_step_cell.html(render_lrg_step_id(lrg_steps_count));
+      curation_date_cell.html('-');
     }
 
     // HTML code
@@ -172,8 +180,10 @@ function display_results (results) {
     newrow.append(newCell(get_hgnc_link(symbol)));
     // LRG Status
     newrow.append(newCell("<span>"+lrg_status+"</span>").addClass('lrg_'+lrg_status+'_hl'));
-    // Curation Status
-    newrow.append(curation_cell.addClass(step_col_class));
+    // Curation Status & date
+    newrow.append(curation_desc_cell.addClass(step_col_class));
+    newrow.append(curation_step_cell.addClass(step_col_class));
+    newrow.append(curation_date_cell.addClass(step_col_class));
     if (lrg_status != "public") {
       get_lrg_step_data(lrg_id, curation_id);
     }
@@ -184,11 +194,19 @@ function display_results (results) {
 
   // Post process to show or not the "Curation status" column (not needed if only public LRG returned in the results)
   if (has_lrg_pending == 1) {
+    $('#search_help').attr('style','margin-bottom:10px');
+    $('#step_info_container').html('<div class="left section-header icon-unassigned-job">Curation status steps</div><div class="left margin-left-10 margin-right-10"><img src="/images/curation_steps.png"/></div>')
+    $('#step_info_container').show();
+
     $('.'+step_col_class).show();
     $('.'+public_step_col_class).attr('sorttable_key', lrg_steps_count);
-    $('.'+public_step_col_class).html("<span class=\"label label-success\">" + lrg_steps_list[lrg_steps_count] + "</span>");
+    $('.'+public_step_col_class).html("<span class=\"label lrg_public_bg\">" + lrg_steps_list[lrg_steps_count] + "</span>");
   }
   else {
+    $('#search_help').removeAttr('style');
+    $('#step_info_container').hide();
+    $('#step_info_container').html('');
+
     $('.'+step_col_class).hide();
   }
 }
@@ -449,11 +467,23 @@ function get_lrg_step_data (lrg_id, curation_id) {
     var step_id   = lrg_step_data.step;
     var step_desc = lrg_steps_list[step_id];
     var step_date = lrg_step_data.date;
-    var step_content = "<span class=\"label label-default\">" + step_desc + "</span> - step <span class=\"badge\">" + step_id + "/" + lrg_steps_count + "</span><br />Status updated the "+ step_date;
-    
+    var step_desc_content = "<span class=\"label lrg_pending_bg lrg_black\">" + step_desc + "</span>";
+    var step_num_content  = render_lrg_step_id(step_id);
+    var step_date_content = "<span class=\"label lrg_step_status icon-calendar close-icon-5\">" + step_date + "</span>";
+
     $('#'+curation_id).attr('sorttable_key', step_id);
-    $('#'+curation_id).html(step_content);
+    $('#'+curation_id).html(step_desc_content);
+
+    $('#'+curation_id+"_id").attr('sorttable_key', step_id);
+    $('#'+curation_id+"_id").html(step_num_content);
+
+    $('#'+curation_id+"_date").html(step_date_content);    
   });
+}
+
+// Function to display LRG step ID
+function render_lrg_step_id (step_id) {
+  return "<span class=\"badge lrg_step_status\">" + step_id + "/" + lrg_steps_count + "</span>";
 }
 
 

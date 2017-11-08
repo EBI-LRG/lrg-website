@@ -39,11 +39,11 @@ $red1 : #E22;
 $red2 : #F66;
 
 // LRG status
-$lrg_public:  #48a726;
+$lrg_public:  $lrg_blue; //#48a726;
 $lrg_pending: #FFA500;
 $lrg_stalled: #E00;
 
-
+$default_font: $darkGray;
 $highlight : #FCFCFF;
 $bg_1: #F9F9F9;
 $bg_2: #E9E9E9;

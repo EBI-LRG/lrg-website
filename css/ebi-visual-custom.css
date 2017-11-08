@@ -206,6 +206,16 @@
   content: "l";
 }
 
+.icon-calendar:before {
+  font-family: 'EBI-Generic';
+  content: "r";
+}
+
+.icon-clock:before {
+  font-family: 'EBI-Generic';
+  content: "{";
+}
+
 .icon-contact:before {
   font-family: 'EBI-Generic';
   content: "C";

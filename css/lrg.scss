@@ -22,7 +22,7 @@ body {
 	background:$white;
   font-family:$font_content;/*$helvetica;*/
   font-size:0.9em;
-  color:$darkGray;
+  color:$default_font;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -913,18 +913,6 @@ a.section-link {
 }
 
 
-.label-date {
-  /*float:right;*/
-  padding:0px 0px 0px 5px;
-  margin-top:-2px;
-  vertical-align:top;
-  /*width:50px;*/
-  >span {
-    background-color:$lrg_blue;
-  }
-}
-
-
 //
 // .table
 //
@@ -1002,6 +990,10 @@ table {
 
 .lrg_light_purple {
   color:$lrg_light_purple;
+}
+
+.lrg_black {
+  color:$default_font;
 }
 
 .lrg_dark {
@@ -1198,6 +1190,9 @@ td.left-col-bg {
 }
 .padding-top-5 {
   padding-top:5px;
+}
+.padding-top-10 {
+  padding-top:10px;
 }
 
 .padding-bottom-5 {
@@ -1727,32 +1722,50 @@ footer span {
   line-height:18px;
 }
 
+
+/* LRG status colours */
+
+.lrg_step_status {
+  background-color: $lrg_gray2;
+  color: $default_font;
+}
+
 .lrg_public {
-  color:$lrg_public;
-  border-color:$lrg_public;
+  color:$lrg_public !important;
+  border-color:$lrg_public !important;
 }
 .lrg_pending {
-  color:$lrg_pending;
-  border-color:$lrg_pending;
+  color:$lrg_pending !important;
+  border-color:$lrg_pending !important;
 }
 .lrg_stalled {
-  color:$lrg_stalled;
-  border-color:$lrg_stalled;
+  color:$lrg_stalled !important;
+  border-color:$lrg_stalled !important;
 }
 
 .lrg_public_bg {
-  background-color:$lrg_public;
+  background-color:$lrg_public !important;
 }
 .lrg_pending_bg {
-  background-color:$lrg_pending;
+  background-color:$lrg_pending !important;
 }
 .lrg_stalled_bg {
-  background-color:$lrg_stalled;
+  background-color:$lrg_stalled !important;
+}
+
+.lrg_public_bc {
+  border-color:$lrg_public !important;
+}
+.lrg_pending_bc {
+  border-color:$lrg_pending !important;
+}
+.lrg_stalled_bc {
+  border-color:$lrg_stalled !important;
 }
 
 .lrg_public_hl {
   > span {
-    border-left:5px solid $lrg_public;
+    border-left:5px solid $lrg_blue;
     padding-left:5px;
   }
 }
