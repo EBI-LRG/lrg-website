@@ -9,11 +9,11 @@ exclude_from_search: true
 
 <a id="top"/>
 
-{% assign sorted_faq = (site.faq | sort: 'faq_order') %}
+{% assign sorted_faq = site.faq | sort: 'faq_order' %}
 <div>
 
 <!-- Table of content -->
-{% assign faq_groups = (site.faq_groups | sort: 'order') %}
+{% assign faq_groups = site.faq_groups | sort: 'order' %}
   <div class="clearfix margin-bottom-40">
     <div class="left sections_list">
       <span class="icon-next-page smaller-icon close-icon-2 lrg_blue padding-bottom-5">

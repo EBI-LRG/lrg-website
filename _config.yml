@@ -48,6 +48,7 @@ baseurl: ""
 # Others baseurls
 baseurl_bootstrap:  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6"
 baseurl_googleapis: "https://ajax.googleapis.com/ajax/libs"
+baseurl_ext_lib: "/scripts/"
 
 ref_assembly: "GRCh38"
 
@@ -142,15 +143,15 @@ kramdown:
 permalink: /:title/
 
 # The release of Jekyll used
-version: 3.4.0
+version: 3.6.2
 
 # Set the Sass partials directory, as we're using @imports
 sass:
   style: :compressed # You might prefer to minify using :compressed or expanded using :expanded
 
 # Use the following plug-ins
-gems:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+plugins:
+  - jekyll-assets # Compress/minified the JS scripts
 
 collections:
     about:
@@ -185,3 +186,19 @@ exclude:
     - LICENSE
     - README.md
     - CNAME
+
+# jekyll-assets plugin configuration (only used for JS)
+assets:
+  compress:
+    js: true
+  autowrite: true
+  cache: false
+  prefix: "/js"
+  digest: false # Use MD5 in the file name if "true". 
+  assets:
+    - "*.js"
+  sources:
+    - js
+  features:
+    liquid: true
+    integrity: false

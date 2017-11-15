@@ -39,7 +39,7 @@ The list of fields retrievables are listed [here](#ws_fields)
   <div class="right" style="margin-right:5px"><a class="icon-next-page close-icon-5 rotate-icon-270" href="#top">Back to top</a></div>
 </div>
 
-{% assign sorted_ws = (site.web-service | where:"tag","ws_lrg_search" | sort: 'order') %}
+{% assign sorted_ws = site.web-service | where:"tag","ws_lrg_search" | sort: 'order' %}
 {% for ws in sorted_ws %}
   {% assign ws_id = 'ws_lrg_search_' | append : ws.order %}
   <div class="item_entry">
@@ -62,7 +62,7 @@ The list of fields retrievables are listed [here](#ws_fields)
   <div class="right" style="margin-right:5px"><a class="icon-next-page close-icon-5 rotate-icon-270" href="#top">Back to top</a></div>
 </div>
 
-{% assign sorted_ws = (site.web-service | where:"tag","ws_lrg_data" | sort: 'order') %}
+{% assign sorted_ws = site.web-service | where:"tag","ws_lrg_data" | sort: 'order' %}
 {% for ws in sorted_ws %}
   {% assign ws_id = 'ws_lrg_data_' | append : ws.order %}
   <div class="item_entry">

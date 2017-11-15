@@ -2,21 +2,24 @@
 layout: page
 title: LRG creation process
 tags: LRG creation process
-icon-class: icon-request
+icon-class: icon-steps
 permalink: /documentation/lrg-creation/
-desc: Description about how the LRG records are created
+desc: The steps involved in creating an LRG record
 ---
 
-The LRG project is a collaboration between the NCBI and EMBL-EBI. The creation of an LRG involves several steps, listed here.   
+The LRG project is a collaboration between the NCBI and EMBL-EBI. The creation of an LRG involves several steps.   
 You can check the progress of pending LRGs [here](/curation-status).
 
-* **Request of an LRG** 
-  * LRGs are created upon request by collaborators (e.g. members of diagnostic and research communities and/or clinical experts from specific disease areas, LSDB curators, etc.), following the guidelines found here: [Request an LRG](/lrg-request).
+<div class="margin-bottom-20"></div>
+![alt text]({{ site.base_url }}/images/curation_steps.png "Curation steps")
+
+* **Request of an LRG** <span class="badge pending_bg_dark_font margin-left-5">Step 1</span>
+  * LRGs are created upon request by collaborators (e.g. members of diagnostic and research communities and/or clinical experts from specific disease areas, LSDB curators, etc.), following the guidelines found here: [Request an LRG](/documentation/lrg-request).
   * The genomic sequence included in each LRG record is identical to the [RefSeqGene]({{ site.urls.refseqgene }}){: .icon-external-link}{:target="_blank"} sequence (RSG) for the gene of interest. If there is no RSG for the gene, LRG curators will work with the NCBI to ensure its creation. It is our policy for all LRGs to match the genome reference assembly. However, alternative sequences may be requested if there is a prevalent legacy alternate allele or if there is an error in the genome reference assembly.
   * Requesters may suggest any transcript of choice (RefSeq or ENST) for inclusion in an LRG record. If there is no sequence for the desired transcript, LRG curators will work to ensure its creation.  
 
 <div class="margin-bottom-10"></div>
-* **Creation of pending record**
+* **Creation of pending record** <span class="badge pending_bg_dark_font margin-left-5">Step 2</span>
   * Pending records are not finalised and are subject to change.
 
 <div class="margin-bottom-10"></div>
@@ -24,7 +27,7 @@ You can check the progress of pending LRGs [here](/curation-status).
   * The most current annotation from [GENCODE]({{ site.urls.gencode }}){: .icon-external-link}{:target="_blank"} and [RefSeq]({{ site.urls.refseq }}){: .icon-external-link}{:target="_blank"} at each locus is included in the updatable section of records and refreshed on a weekly basis.
 
 <div class="margin-bottom-10"></div>
-* **Manual Curation**
+* **Manual Curation** <span class="badge pending_bg_dark_font margin-left-5">Step 3</span>
   * Curation of LRG records is an expert activity performed by scientists at the EMBL-EBI.
   * Review of genomic reference sequence
     * Curators examine the RefSeqGene for any mismatches with respect to the genome reference assembly (GRCh38).
@@ -40,15 +43,15 @@ You can check the progress of pending LRGs [here](/curation-status).
     * We aim to include one transcript, though sometimes more than one will be necessary to ensure that all variants at the locus can be reported. 
     * Only transcripts with good biological evidence that are essential for reporting variants will be included. 
     * For each selected transcript, it is our goal to build complete identity between the RefSeq transcript and the corresponding GENCODE transcript.
-  * Expert review
+  * Expert review <span class="badge pending_bg_dark_font margin-left-5">Steps 4 &amp; 5</span>
     * Experts in the LRG region of interest are contacted for input. For more on experts see the [LRG collaborators page](/lrg-collaborators).
 
 <div class="margin-bottom-10"></div> 
-* **Publication of LRG**
+* **Publication of LRG** <span class="badge pending_bg_dark_font margin-left-5">Steps 6 &amp; 7</span> <span class="badge lrg_blue_bg margin-left-5">Step 8</span>
   * Once the LRG record and sequences have been reviewed and approved by requesters, experts and LRG curators, the record is finalised and collaborators informed. These records are referred to as “public” LRGs. The reference sequences included in the fixed section cannot be changed once the LRG is made public.
 
-<div class="margin-bottom-10"></div>
-* The **updatable section** of all records, “pending” and “public”, **is refreshed** in an automated manner on a weekly basis.
+<div class="margin-bottom-20"></div>
+The **updatable section** of all records, “pending” and “public”, **is refreshed** in an automated manner on a weekly basis.
 
 <div class="margin-bottom-40"></div>
 

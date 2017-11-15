@@ -4,7 +4,7 @@
 //
 
 // Colors
-$blue: #1881ad; //#1a8ebe; //#4183C4;
+$blue: #1881ad;
 $blue2: #369;
 $black: #000;
 $white: #fff;
@@ -17,9 +17,11 @@ $lrg_green_old    : #48A726;
 $lrg_blue         : #1C9BCF;
 $lrg_blue2        : #1A4468;
 $lrg_blue3        : #0E4C87;
+
 $lrg_dark         : #3C3F45;
 $lrg_gray         : #BCBEC0;
 $lrg_gray2        : #EEE;
+$lrg_gray3        : #DDD;
 $lrg_purple       : #9051A0;
 
 // Light colours
@@ -71,6 +73,9 @@ $container_width_max: 1169px;
 $container_width_min: 1170px;
 $container_width_threshold_max: 1079px; //1159px;
 $container_width_threshold_min: 1080px; //1160px;
+
+// Footer height
+$footer_height: 130px;
 
 // Transition time
 $transition_time : 0.3s;

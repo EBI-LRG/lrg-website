@@ -1,3 +1,5 @@
+---
+---
 
 var rest_url    = '{{ site.rest.rest_url_38 }}';
 var rest_grch37 = '{{ site.rest.rest_url_37 }}';
@@ -264,12 +266,7 @@ function parse_transcript_data (data) {
                 '<th>Consequences' + msc_help + '</th><th>Variant allele</th><th>IMPACT'+ msc_help +'</th><th>Details</th>';
     html += '  </tr></thead><tbody>';
 
-    // Sort by gene symbol
-    var sorted_transcript_consequences = data.transcript_consequences.sort(function(a,b) {
-      return compareStrings(a.gene_symbol, b.gene_symbol);
-    });
-
-    $.each(sorted_transcript_consequences, function (index, trans) {
+    $.each(data.transcript_consequences, function (index, trans) {
       var gene_id  = '<a class="icon-external-link bold_font" href="'+ ens_gene_url + trans.gene_id +'">'+trans.gene_symbol+'</a>';
       var trans_id = '<a class="icon-external-link" href="'+ ens_trans_url + trans.transcript_id +'">'+trans.transcript_id+'</a>';
       var strand = get_strand(trans.strand);
@@ -281,11 +278,9 @@ function parse_transcript_data (data) {
 
       var distance = (trans.distance) ? '<i>Distance to transcript: '+trans.distance+'bp' : '-';
 
-      var hgvsc = (trans.hgvsc) ? trans.hgvsc : '-';
-      
       var v_allele = (trans.strand == 1) ? trans.variant_allele : reverse_complement(trans.variant_allele);
 
-      html += '    <tr><td>' + gene_id + '</td><td>' + trans_id + '</td><td>' + trans.biotype + '</td><td style="text-align:center">'+ strand + '</td><td>'+hgvsc+'</td><td>' +
+      html += '    <tr><td>' + gene_id + '</td><td>' + trans_id + '</td><td>' + trans.biotype + '</td><td style="text-align:center">'+ strand + '</td><td>'+trans.hgvsc+'</td><td>' +
                        cons.join(', ') + '</td><td>' + v_allele + '</td><td>' + trans.impact + '</td><td>' + distance+ '</td></tr>';
     });
 
@@ -314,12 +309,3 @@ function complement(seq) {
 function reverse_complement(seq) {
     return seq.split('').reverse().map(complement).join('');
 }  
-
-
-function compareStrings(a, b) {
-  // Assuming you want case-insensitive comparison
-  a = a.toLowerCase();
-  b = b.toLowerCase();
-
-  return (a < b) ? -1 : (a > b) ? 1 : 0;
-}

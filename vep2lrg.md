@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "VEP results"
+title: "Variant Effect Predictor (VEP) results"
 tag: vep
 permalink: /vep2lrg/
 icon-class: icon-tool
@@ -24,7 +24,7 @@ include_in_sitemap: false
     The <a href="{{ site.urls.ensembl }}/info/docs/tools/vep/index.html" target="_blank">Variant Effect Predictor (VEP)</a> determines the effect of variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts, and protein sequence, as well as regulatory regions. 
   </p>
   <div style="margin: 15px 5px 0px">
-    {% assign faqs = (site.faq | where: 'help','vep') %}
+    {% assign faqs = site.faq | where: 'help','vep' %}
      
       {% for faq in faqs %}
         {% if faq.faq_tags contains "vep" %}
