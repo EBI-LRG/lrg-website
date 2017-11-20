@@ -46,9 +46,8 @@ url:
 baseurl: ""
 
 # Others baseurls
-baseurl_bootstrap:  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6"
-baseurl_googleapis: "https://ajax.googleapis.com/ajax/libs"
-baseurl_ext_lib: "/scripts/"
+#baseurl_bootstrap:  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6"
+#baseurl_googleapis: "https://ajax.googleapis.com/ajax/libs"
 
 ref_assembly: "GRCh38"
 
@@ -56,7 +55,7 @@ email_contact: "contact@lrg-sequence.org"
 
 is_beta: 1
 
-ebi_font: "https://www.ebi.ac.uk/web_guidelines/fonts"
+#ebi_font: "https://www.ebi.ac.uk/web_guidelines/fonts"
 
 lrg_json_file:  "/json_index/lrg_index.json"
 step_json_file: "/json_index/step_index.json"
