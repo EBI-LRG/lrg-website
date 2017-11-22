@@ -6,8 +6,9 @@ var ncbi_url = '{{ site.js_url.ncbi }}';
 var ucsc_url = '{{ site.js_url.ucsc }}';
 var hgnc_url = '{{ site.js_url.hgnc }}';
 
-var lrg_json_file  = '{{ site.lrg_json_file }}';
-var step_json_file = '{{ site.step_json_file }}';
+var lrg_json_file   = '{{ site.lrg_json_file }}';
+var step_json_file  = '{{ site.step_json_file }}';
+var lrg_search_terms_file = '{{ site.lrg_search_terms_file }}';
 
 var ref_assembly = '{{ site.ref_assembly }}';
 ens_url = ens_url.replace(/###ASSEMBLY###/, ref_assembly);
@@ -21,6 +22,16 @@ var public_step_col_class = 'public_step';
 
 var lrg_steps_list = [];
 var lrg_steps_count = 0;
+
+var json_keys = { 'LRG_'   : 'id',
+                  'public' : 'status',
+                  'pending': 'status'
+                };
+
+var json_skip_keys =   { 'chr' : 1,
+                         'start' : 1,
+                         'end' : 1
+                       };
 
 //
 // Methods //
@@ -54,12 +65,7 @@ function go_to_result_page (query) {
         lrg_steps_list = [];
         lrg_steps_count = 0;
 
-        if (query == 'public') {
-          display_results(result_objects);
-        }
-        else {
-          get_lrg_steps(result_objects);
-        }
+        display_results(result_objects);
       });
     }
     // Other page
@@ -99,7 +105,17 @@ function get_search_results (search_id) {
 
   return $.getJSON( lrg_json_file ).then(function(data) {
     $.each(search_ids_list, function (index, search_item) {
-      result_objects = getObjects({}, data, "", search_item, result_objects);
+      var key = '';
+      for (var jkey in json_keys) {
+        if (json_keys.hasOwnProperty(jkey)) {
+          var re = "^"+jkey;
+          if (search_item.match(re)) {
+            key = json_keys[jkey];
+            break;
+          }
+        }
+      }
+      result_objects = getObjects({}, data, key, search_item, result_objects);
     });
     return result_objects;
   });
@@ -150,7 +166,6 @@ function display_results (results) {
     var ncbi_link = get_ncbi_link(chr, start, end);
     var ucsc_link = get_ucsc_link(chr, start, end);
 
-    
 
     var lrg_link = '';
     var curation_id = lrg_id.toLowerCase();
@@ -162,7 +177,6 @@ function display_results (results) {
 
     var curation_date_cell = newCell().attr('id', curation_id+"_date");
         curation_date_cell.addClass(step_col_class);
-
 
 
     if (lrg_status != "public") {
@@ -210,10 +224,8 @@ function display_results (results) {
     // Get the LRG steps
     get_lrg_step_data(lrg_list);
 
-    // Populate Curation status column for public LRGs
+    // Show the LRG steps
     $('.'+step_col_class).show();
-    $('.'+public_step_col_class).attr('sorttable_key', lrg_steps_count);
-    $('.'+public_step_col_class).html("<span class=\"label public_bg\">" + lrg_steps_list[lrg_steps_count] + "</span><span class=\"lrg_blue\">----</span>"+render_lrg_step_id(lrg_steps_count,'public'));
   }
   else {
     $('#step_info_container').hide();
@@ -353,7 +365,7 @@ function getObjects (obj_parent, obj, key, val, objects, regex) {
     // Search with regex
     if (!regex) {
       // Specific regex for the sequence identifiers, with a version, e.g. NM_000088.3
-      if (val.match(/^(NM_|NR_|NG_|ENST|ENSG)\d+/)) {
+      if (val.match(/^(NM_|NR_|NG_|ENST|ENSG)\d+$/)) {
         regex = new RegExp("^"+val+"\.", "i");
       }
       // Wild card character associated with other characters
@@ -363,17 +375,20 @@ function getObjects (obj_parent, obj, key, val, objects, regex) {
       }
       // Default regex
       else {
-        regex = new RegExp("^"+val+"$", "i"); 
+        regex = new RegExp("^"+val+"$", "i");
       }
     }
 
     for (var i in obj) {
-      if (!obj.hasOwnProperty(i)) continue;
+      // Skip search on non searchable fields
+      if (!obj.hasOwnProperty(i) || json_skip_keys[i]) continue;
+
       if (typeof obj[i] == 'object') {
         objects = getObjects(obj, obj[i], key, val, objects);    
       } 
       // if key matches and value matches or if key matches and value is not passed (eliminating the case where key matches but passed value does not)
-      else if ((i == key && (obj[i] == val || regex.test(obj[i]))) || (i == key && val == '')) { //
+      else if ((i == key && (obj[i] == val || regex.test(obj[i]))) || (i == key && val == '')) {
+        console.log("FOUND");
         objects[obj.id] = obj;
       } 
       // only add if the object is not already in the array
@@ -474,6 +489,18 @@ function get_lrg_steps (results) {
 // Function to get the LRG step curation
 function get_lrg_step_data (lrg_list) {
   $.getJSON( step_json_file, function(data) {
+    
+    // List the different steps
+    var steps_list = [];
+    $.each(data.steps, function (index, value) {
+      var i = index + 1;
+      lrg_steps_list[i] = value;
+      lrg_steps_count ++;
+    });
+    $('.'+public_step_col_class).attr('sorttable_key', lrg_steps_count);
+    $('.'+public_step_col_class).html("<span class=\"label public_bg\">" + lrg_steps_list[lrg_steps_count] + "</span><span class=\"lrg_blue\">----</span>"+render_lrg_step_id(lrg_steps_count,'public'));
+  
+    // Display the corresponding curation step for each pending LRG
     $.each(lrg_list, function (index, lrg_id) {
       lrg_step_data = data.lrg[lrg_id];
 
@@ -489,7 +516,7 @@ function get_lrg_step_data (lrg_list) {
       $('#'+curation_id+"_step").html(step_desc_content+"<span class=\"pending\">----</span>"+step_num_content);
 
       $('#'+curation_id+"_date").html(step_date_content);
-    });   
+    });
   });
 }
 
@@ -509,27 +536,35 @@ function render_lrg_step_id (step_id,status) {
 
 // Function get data in array
 function get_data_in_array () {
-  var data_array = [];
-  return $.getJSON( lrg_json_file ).then(function(data) {
+  /*return $.getJSON( lrg_json_file ).then(function(data) {
     // Get the different searchable items
-    var data_list = {};
+    var data_list = new Object();
     for (var i in data) {
       if (!data.hasOwnProperty(i)) continue;
       var item = data[i];
       data_list[item.id] = 1;
       data_list[item.symbol] = 1;
       data_list[item.status] = 1;
-      for (var j in item.syn) {
-        data_list[item.syn[j]] = 1;
-      }
-      for (var k in item.xref) {
-        data_list[item.xref[k]] = 1;
+      for (var j in item.terms) {
+        data_list[item.terms[j]] = 1;
       }
     }
-    // Compile the data into an array
-    $.each(data_list, function(key, value) {
-      data_array.push(key);
-    });
+    return Object.keys(data_list);
+  });*/
+
+  return $.ajax({
+    url: lrg_search_terms_file,
+    dataType: "text"
+  })
+  .error(function (xhRequest, ErrorText, thrownError) {
+    console.log('xhRequest: ' + xhRequest + "\n");
+    console.log('ErrorText: ' + ErrorText + "\n");
+    console.log('thrownError: ' + thrownError + "\n");
+  })
+  .then(function(data) {
+    var data_array = data.split('\n');
+    console.log("DATA ARRAY LENGTH: "+data_array.length);
+    
     return data_array;
   });
 }

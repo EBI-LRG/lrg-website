@@ -57,8 +57,9 @@ is_beta: 1
 
 #ebi_font: "https://www.ebi.ac.uk/web_guidelines/fonts"
 
-lrg_json_file:  "/json_index/lrg_index.json"
-step_json_file: "/json_index/step_index.json"
+lrg_json_file:  "/indexes/lrg_index.json"
+step_json_file: "/indexes/step_index.json"
+lrg_search_terms_file:  "/indexes/lrg_search_terms.txt"
 
 #-- URLs --#
 urls:
