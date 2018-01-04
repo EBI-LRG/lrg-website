@@ -1,0 +1,4 @@
+{
+"steps" : ["LRG requested","Pending LRG generated","Under curation","Awaiting feedback from requester","Awaiting feedback from other collaborator","Awaiting final check","Final check performed","LRG published"],
+"lrg" : {"9":[3,"07/4/2016"],"14":[3,"13/5/2016"]}
+}
