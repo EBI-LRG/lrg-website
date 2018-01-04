@@ -3,7 +3,7 @@ layout: page
 title: LRG project
 tags: LRG project
 icon-class: icon-documentation
-permalink: /documentation/lrg-project
+permalink: /documentation/lrg-project/
 desc: General information about the LRG project
 ---
 

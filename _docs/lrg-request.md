@@ -21,7 +21,10 @@ If you haven’t already, please read about the [LRG creation process](/document
   <p>Please do contact us anyway to let us know you are interested in the record being made public. 
   This helps us prioritise genes for curation.  Let us know which reference sequence you currently use for reporting sequence variants, especially if your transcript of choice is not included in the pending record or if you notice any other issues.</p>
 
-  <div class="icon-info close-icon-5 highlight_block margin-bottom-30">Note that pending records are subject to change and should not be used until they pass final approval and are made public.</div>
+  <div class="clearfix margin-bottom-20">
+    <div class="left icon-info close-icon-0 note_header"></div>
+    <div class="left note_content">Pending records are subject to change and should not be used until they pass final approval and are made public.</div>
+  </div>
 
 
   <h5 id="if-your-gene-of-interest-already-has-a-public-lrg-record">If your gene of interest already has a Public LRG record:</h5>

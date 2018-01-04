@@ -29,10 +29,10 @@ permalink: /data/
 LRG data is available on the [LRG FTP site]({{ site.urls.lrg_ftp }}){:target="_blank"} in **XML format**.  
 The LRG genomic, transcript and protein sequences are also available in **FASTA format** on the [LRG FTP site]({{ site.urls.lrg_ftp }}fasta){:target="_blank"}.
 
-There is the possibility to download all the public and pending LRGs:
+<div class="clearfix">
+  <div class="left padding-bottom-5">There is the possibility to download all the public and pending LRGs:</div>
 
-<div class="row">
-  <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
+  <div class="row left margin-left-20">
     <table class="table table-hover table-lrg table-lrg-bold-left-col">
       <thead>
         <tr class="sorttable_header">
@@ -42,11 +42,11 @@ There is the possibility to download all the public and pending LRGs:
       </thead>
       <tbody>
         <tr>
-          <td>Public</td>
+          <td style="vertical-align:middle">Public</td>
           <td>
             <a href="{{ site.urls.lrg_ftp }}LRG_public_xml_files.zip">
               <div class="file_link clearfix">
-                <div class="left icon-literature close-icon-0"></div>
+                <div class="left icon-file close-icon-2 tiny-icon"></div>
                 <div class="left">XML</div>
               </div>
             </a>
@@ -54,18 +54,18 @@ There is the possibility to download all the public and pending LRGs:
           <td>
             <a href="{{ site.urls.lrg_ftp }}fasta/LRG_public_fasta_files.zip">
               <div class="file_link clearfix">
-                <div class="left icon-literature close-icon-0"></div>
+                <div class="left icon-file close-icon-2 tiny-icon"></div>
                 <div class="left">FASTA</div>
               </div>
             </a>
           </td>  
         </tr>
         <tr>
-          <td>Pending</td>
+          <td style="vertical-align:middle">Pending</td>
           <td>
             <a href="{{ site.urls.lrg_ftp }}LRG_pending_xml_files.zip">
               <div class="file_link clearfix">
-                <div class="left icon-literature close-icon-0"></div>
+                <div class="left icon-file close-icon-2 tiny-icon"></div>
                 <div class="left">XML</div>
               </div>
             </a>
@@ -73,7 +73,7 @@ There is the possibility to download all the public and pending LRGs:
           <td>
             <a href="{{ site.urls.lrg_ftp }}LRG_pending_fasta_files.zip">
               <div class="file_link clearfix">
-                <div class="left icon-literature close-icon-0"></div>
+                <div class="left icon-file close-icon-2 tiny-icon"></div>
                 <div class="left">FASTA</div>
               </div>
             </a>
@@ -84,9 +84,11 @@ There is the possibility to download all the public and pending LRGs:
   </div>
 </div>
 
-<span class="lrg_green2">NOTE:</span> If you can't access to the LRG FTP site through the FTP protocol, you can access it using the HTTP protocol: [LRG FTP site - HTTP]({{ site.urls.lrg_ftp_http }}){:target="_blank"}.
+<div class="clearfix margin-bottom-20">
+  <div class="left icon-info close-icon-0 note_header"></div>
+  <div class="left note_content">If you can't access to the LRG FTP site through the FTP protocol, you can access it using the HTTP protocol: <a href="http://ftp.ebi.ac.uk/pub/databases/lrgex/" target="_blank">LRG FTP site - HTTP</a>.</div>
+</div>
 
-<br />  
 
 ##### Summary data
 
@@ -124,7 +126,7 @@ There is the possibility to download all the public and pending LRGs:
           <td>
             <a href="{{ site.urls.lrg_ftp }}LRG_GRCh37.bed" target="_blank">
               <div class="file_link clearfix">
-                <div class="left icon-literature close-icon-0"></div>
+                <div class="left icon-file close-icon-2 tiny-icon"></div>
                 <div class="left">BED</div>
               </div>
             </a>
@@ -132,7 +134,7 @@ There is the possibility to download all the public and pending LRGs:
           <td>
             <a href="{{ site.urls.lrg_ftp }}LRG_GRCh38.bed" target="_blank">
               <div class="file_link clearfix">
-                <div class="left icon-literature close-icon-0"></div>
+                <div class="left icon-file close-icon-2 tiny-icon"></div>
                 <div class="left">BED</div>
               </div>
             </a>
@@ -175,7 +177,7 @@ There is the possibility to download all the public and pending LRGs:
           <td>
             <a href="{{ site.urls.lrg_ftp }}list_LRGs_GRCh37.txt" target="_blank">
               <div class="file_link clearfix">
-                <div class="left icon-literature close-icon-0"></div>
+                <div class="left icon-file close-icon-2 tiny-icon"></div>
                 <div class="left">TXT</div>
               </div>
             </a>
@@ -183,7 +185,7 @@ There is the possibility to download all the public and pending LRGs:
           <td>
             <a href="{{ site.urls.lrg_ftp }}list_LRGs_GRCh38.txt" target="_blank">
               <div class="file_link clearfix">
-                <div class="left icon-literature close-icon-0"></div>
+                <div class="left icon-file close-icon-2 tiny-icon"></div>
                 <div class="left">TXT</div>
               </div>
             </a>
@@ -230,7 +232,7 @@ There is the possibility to download all the public and pending LRGs:
           <td>
             <a href="{{ site.urls.lrg_ftp }}list_LRGs_transcripts_GRCh37.txt" target="_blank">
               <div class="file_link clearfix">
-                <div class="left icon-literature close-icon-0"></div>
+                <div class="left icon-file close-icon-2 tiny-icon"></div>
                 <div class="left">TXT</div>
               </div>
             </a>
@@ -238,7 +240,7 @@ There is the possibility to download all the public and pending LRGs:
           <td>
             <a href="{{ site.urls.lrg_ftp }}list_LRGs_transcripts_GRCh38.txt" target="_blank">
               <div class="file_link clearfix">
-                <div class="left icon-literature close-icon-0"></div>
+                <div class="left icon-file close-icon-2 tiny-icon"></div>
                 <div class="left">TXT</div>
               </div>
             </a>
@@ -283,7 +285,7 @@ There is the possibility to download all the public and pending LRGs:
           <td>
             <a href="{{ site.urls.lrg_ftp }}list_LRGs_transcripts_xrefs.txt" target="_blank">
               <div class="file_link clearfix">
-                <div class="left icon-literature close-icon-0"></div>
+                <div class="left icon-file close-icon-2 tiny-icon"></div>
                 <div class="left">TXT</div>
               </div>
             </a>
@@ -326,7 +328,7 @@ There is the possibility to download all the public and pending LRGs:
           <td>
             <a href="{{ site.urls.lrg_ftp }}list_LRGs_proteins_RefSeq.txt" target="_blank">
               <div class="file_link clearfix">
-                <div class="left icon-literature close-icon-0"></div>
+                <div class="left icon-file close-icon-2 tiny-icon"></div>
                 <div class="left">TXT</div>
               </div>
             </a>
@@ -348,7 +350,7 @@ There is the possibility to download all the public and pending LRGs:
   <div class="left margin-left-5">
     <a href="{{ site.urls.lrg_ftp }}lrgs_in_ensembl.txt" target="_blank">
       <div class="file_link clearfix">
-          <div class="left icon-literature close-icon-0"></div>
+          <div class="left icon-file close-icon-2 tiny-icon"></div>
           <div class="left">TXT</div>
       </div>
     </a>
@@ -366,10 +368,10 @@ The current LRG XML schema version is **{{ site.lrg-schema }}**.
   
 ### LRG archived data
 
-Previous versions of the LRGs (in different LRG XML schemas) are available:
+<div class="clearfix">
+  <div class="left padding-bottom-5">Previous versions of the LRGs (in different LRG XML schemas) are available:</div>
 
-<div class="row">
-  <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
+  <div class="row left margin-left-20">
     <table class="table table-hover table-lrg table-lrg-bold-left-col">
       <thead>
         <tr class="sorttable_header">

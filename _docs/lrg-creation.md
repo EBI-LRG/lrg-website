@@ -8,7 +8,7 @@ desc: The steps involved in creating an LRG record
 ---
 
 The LRG project is a collaboration between the NCBI and EMBL-EBI. The creation of an LRG involves several steps.   
-You can check the progress of pending LRGs [here](/curation-status).
+You can check the progress of pending LRGs [here](/search/?query=pending).
 
 <div class="margin-bottom-20"></div>
 ![alt text]({{ site.base_url }}/images/curation_steps.png "Curation steps")

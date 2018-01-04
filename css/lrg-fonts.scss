@@ -297,6 +297,11 @@
   content: "C";
 }
 
+.icon-discuss:before {
+  font-family: 'EBI-Generic';
+  content: '\\';
+}
+
 .icon-documentation:before {
   font-family: 'EBI-Generic';
   content: ";";
@@ -315,6 +320,11 @@
 .icon-face-to-face:before {
   font-family: 'EBI-Generic';
   content: "f";
+}
+
+.icon-file:before {
+  font-family: 'EBI-Generic';
+  content: "Q";
 }
 
 .icon-graph:before {
@@ -385,11 +395,6 @@
 .icon-support:before {
   font-family: 'EBI-Generic';
   content: "s";
-}
-
-.icon-unreviewed-data:before {
-  font-family: 'EBI-Generic';
-  content: "Q";
 }
 
 .icon-video:before {

@@ -19,7 +19,7 @@ docs_order: 3
       <th class="genecode" style="width:23%">GENCODE</th>
       <th class="refseq" style="width:23%">RefSeq</th>
       <th class="lrg" style="width:23%">Locus Reference Genomic (LRG)</th>
-    <tr/>
+    </tr>
   </thead>
 
   <tbody>
@@ -43,7 +43,7 @@ docs_order: 3
       <td>
         The reference genome assembly for human consists of the primary assembly and alternate loci (patches).  Patches either represent error corrections (FIX patch) or alternate alleles (NOVEL patch).
       </td><td>
-        GENCODE genes, transcripts and proteins. The GENCODE annotation is made by merging the Havana manual annotation and the Ensembl automated evidence-based annotation.
+        GENCODE genes, transcripts and proteins. The GENCODE gene set is is made by merging manual annotation created by the Ensembl-HAVANA team and automated evidence-based annotation from the Ensembl Genebuild.
       </td><td>
         RefSeqGene (a region of genomic DNA encompassing and flanking the transcribed region of a gene), RefSeq transcripts, RefSeq proteins.
       </td><td>
@@ -57,7 +57,7 @@ docs_order: 3
       <td>
         A collaboration between the Sanger Institute, EMBL-EBI, the NCBI and McDonnell Genome Institute.
       </td><td>
-        A collaboration between many institutes lead by Ensembl at EMBL-EBI, based near Cambridge, UK.
+        A ollaboration led by Ensembl at EMBL-EBI, based near Cambridge, UK and including partners from Yale University, UCSC, MIT, CRG, CNIO and the University of Lausanne.
       </td><td>
         The NCBI, based in Bethesda, MD, USA.
       </td><td>
@@ -96,7 +96,7 @@ docs_order: 3
         <div>The GRC has not announced plans to release a GRCh39 assembly.</div>
       </td><td>
         <div class="margin-bottom-20">Version.</div>
-        <div class="margin-bottom-5">Updates denoted by increment to the numeric version after the decimal; e.g. ENSTxxx.2</div>
+        <div class="margin-bottom-5">Updates denoted by the final digit in the accession number (after the full stop/period); e.g. ENSTxxx.1</div>
         <div>Updates are issued in batches (e.g. GENCODE release 26) as part of an Ensembl release (e.g. Ensembl release 88). This is normally every 2-3 months.</div>
       </td><td>
         <div class="margin-bottom-20">Version.</div>
@@ -132,7 +132,15 @@ docs_order: 3
       <td>
         Genome assemblies (GRCh37 or GRCh38) are un-annotated genome builds.  Annotation is provided by Ensembl (GENCODE) and the NCBI (RefSeq).
       </td><td>
-        <span style="color:red">TODO</span>
+        <div>
+          Both manual and automated gene annotation approaches utilise primary transcriptomic and proteomic data aligned to the reference genome to determine transcript stucture and CDSs.
+        </div>
+        <div>
+          Manual annotation also incorporates datasets that capture TSS and transcript 3’ ends, epigenetic and transcription factor binding data as well as cross-species conservation at both the sequence and transcript level to refine structural and functional annotation.
+        </div>
+        <div>
+          The resulting manual annotation is merged with the automated annotation via a hierarchical method that gives precedence to manual annotation to produce the GENCODE gene set.
+        </div>
       </td><td>
         <div>
           RefSeq curators at the NCBI review a variety of transcript, proteomic, epigenomic, and variation data to annotate a set of well-supported and biologically valid transcripts and their encoded proteins for each gene.

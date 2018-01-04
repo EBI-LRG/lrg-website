@@ -2,7 +2,7 @@
 layout: page
 title: LRG records
 tags: LRG records
-icon-class: icon-unreviewed-data
+icon-class: icon-file
 permalink: /documentation/lrg-records/
 desc: Details about the content of LRG records
 ---

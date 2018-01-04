@@ -6,8 +6,8 @@ var ncbi_url = '{{ site.js_url.ncbi }}';
 var ucsc_url = '{{ site.js_url.ucsc }}';
 var hgnc_url = '{{ site.js_url.hgnc }}';
 
-var lrg_json_file   = '{{ site.lrg_json_file }}';
-var step_json_file  = '{{ site.step_json_file }}';
+var lrg_json_file  = '{{ site.lrg_json_file }}';
+var step_json_file = '{{ site.step_json_file }}';
 var lrg_search_terms_file = '{{ site.lrg_search_terms_file }}';
 
 var ref_assembly = '{{ site.ref_assembly }}';
@@ -28,10 +28,23 @@ var json_keys = { 'LRG_'   : 'id',
                   'pending': 'status'
                 };
 
-var json_skip_keys =   { 'chr' : 1,
-                         'start' : 1,
-                         'end' : 1
-                       };
+var json_skip_keys = { 'coord' : 1 };
+
+var months = {
+  '1'  : 'January',
+  '2'  : 'February',
+  '3'  : 'March',
+  '4'  : 'April',
+  '5'  : 'May',
+  '6'  : 'June',
+  '7'  : 'July',
+  '8'  : 'August',
+  '9'  : 'September',
+  '10' : 'October',
+  '11' : 'November',
+  '12' : 'December'
+};
+
 
 //
 // Methods //
@@ -96,7 +109,7 @@ function get_search_results (search_id) {
     search_term = "All LRGs";
   }
   else {
-    search_term = search_ids_list.join(' / ');
+    search_term = search_ids_list.join('<span class="lrg_dark"> | </span>');
   }
 
   var result_objects = {};
@@ -157,9 +170,9 @@ function display_results (results) {
     var lrg_id     = result_keys[i];
     var symbol     = results[lrg_id].symbol;
     var lrg_status = results[lrg_id].status;
-    var chr        = results[lrg_id].chr;
-    var start      = results[lrg_id].start;
-    var end        = results[lrg_id].end;
+    var chr        = results[lrg_id].coord[0];
+    var start      = results[lrg_id].coord[1];
+    var end        = results[lrg_id].coord[2];
     var id         = extract_id(lrg_id);
 
     var ens_link  = get_ens_link(id, chr, start, end);
@@ -181,7 +194,7 @@ function display_results (results) {
 
     if (lrg_status != "public") {
       lrg_link = get_lrg_link(lrg_id, id, lrg_status);
-      lrg_list.push(lrg_id);
+      lrg_list.push(id);
 
       if (has_lrg_pending == 0) {
         has_lrg_pending = 1;
@@ -481,15 +494,15 @@ function get_lrg_steps (results) {
       lrg_steps_list[i] = value;
       lrg_steps_count ++;
     });
-
     display_results(results);
   });
 }
 
 // Function to get the LRG step curation
 function get_lrg_step_data (lrg_list) {
+
   $.getJSON( step_json_file, function(data) {
-    
+
     // List the different steps
     var steps_list = [];
     $.each(data.steps, function (index, value) {
@@ -499,23 +512,23 @@ function get_lrg_step_data (lrg_list) {
     });
     $('.'+public_step_col_class).attr('sorttable_key', lrg_steps_count);
     $('.'+public_step_col_class).html("<span class=\"label public_bg\">" + lrg_steps_list[lrg_steps_count] + "</span><span class=\"lrg_blue\">----</span>"+render_lrg_step_id(lrg_steps_count,'public'));
-  
+
     // Display the corresponding curation step for each pending LRG
     $.each(lrg_list, function (index, lrg_id) {
+
       lrg_step_data = data.lrg[lrg_id];
 
-      var step_id   = lrg_step_data.step;
+      var step_id   = lrg_step_data[0];
       var step_desc = lrg_steps_list[step_id];
-      var step_date = lrg_step_data.date;
+      var step_date =  format_date(lrg_step_data[1]);
       var step_desc_content = "<span class=\"label pending_bg_dark_font\">" + step_desc + "</span>";
       var step_num_content  = render_lrg_step_id(step_id,'pending');
       var step_date_content = "<span class=\"label lrg_step_date icon-calendar close-icon-5\">" + step_date + "</span>";
 
-      var curation_id = lrg_id.toLowerCase();
-      $('#'+curation_id+"_step").attr('sorttable_key', step_id);
-      $('#'+curation_id+"_step").html(step_desc_content+"<span class=\"pending\">----</span>"+step_num_content);
+      $('#lrg_'+lrg_id+"_step").attr('sorttable_key', step_id);
+      $('#lrg_'+lrg_id+"_step").html(step_desc_content+"<span class=\"pending\">----</span>"+step_num_content);
 
-      $('#'+curation_id+"_date").html(step_date_content);
+      $('#lrg_'+lrg_id+"_date").html(step_date_content);
     });
   });
 }
@@ -530,27 +543,18 @@ function render_lrg_step_id (step_id,status) {
   return "<span class=\""+step_class+"\" title=\""+title+"\">" + step_id + "</span>";
 }
 
+// Get the correct date format
+function format_date(raw_date) {
+  var date = raw_date.split('/');
+  return date[0] + ' ' + months[date[1]] + ' ' + date[2];
+}
+
 
 
 /***** Autocompletion *****/
 
 // Function get data in array
 function get_data_in_array () {
-  /*return $.getJSON( lrg_json_file ).then(function(data) {
-    // Get the different searchable items
-    var data_list = new Object();
-    for (var i in data) {
-      if (!data.hasOwnProperty(i)) continue;
-      var item = data[i];
-      data_list[item.id] = 1;
-      data_list[item.symbol] = 1;
-      data_list[item.status] = 1;
-      for (var j in item.terms) {
-        data_list[item.terms[j]] = 1;
-      }
-    }
-    return Object.keys(data_list);
-  });*/
 
   return $.ajax({
     url: lrg_search_terms_file,
@@ -564,7 +568,6 @@ function get_data_in_array () {
   .then(function(data) {
     var data_array = data.split('\n');
     console.log("DATA ARRAY LENGTH: "+data_array.length);
-    
     return data_array;
   });
 }

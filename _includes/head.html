@@ -10,34 +10,26 @@
   <link rel="mask-icon" href="{{ "/images/favicon/safari-pinned-tab.svg" | prepend: site.baseurl }}" color="#5bbad5"/>
   
   <!-- CSS -->
-  <!--<link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl_bootstrap }}"/>
-  <link rel="stylesheet" href="{{ "/css/bootstrap-theme.min.css" | prepend: site.baseurl_bootstrap }}"/>-->
+  <!--<link rel="stylesheet" href="{{ "/css/lib/bootstrap-theme.min.css" | prepend: site.baseurl_bootstrap }}"/>-->
   <link rel="stylesheet" href="{{ "/css/lib/bootstrap.min.css" | prepend: site.baseurl }}"/>
-  <link rel="stylesheet" href="{{ "/css/lib/bootstrap-theme.min.css" | prepend: site.baseurl }}"/>
   <link rel="stylesheet" href="{{ "/css/lrg-fonts.css" | prepend: site.baseurl }}"/>
   <link rel="stylesheet" href="{{ "/css/lrg.css" | prepend: site.baseurl }}"/>
-  <!--<link rel="stylesheet" href="{{ "/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" | prepend: site.baseurl_googleapis }}"/>-->
   <link rel="stylesheet" href="{{ "/css/lib/jquery-ui.min.css" | prepend: site.baseurl }}"/>
-  <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Lato:700|Open+Sans:400,400i,700"/>-->
 
   <!-- Javascript / Jquery -->
-  <!--<script src="{{ "/jquery/1.12.2/jquery.min.js" | prepend: site.baseurl_googleapis }}"></script>
-  <script src="{{ "/jqueryui/1.11.4/jquery-ui.min.js" | prepend: site.baseurl_googleapis }}"></script>
-  <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl_bootstrap }}"></script>-->
   <script src="{{ "/js/lib/jquery.min.js"    | prepend: site.baseurl }}"></script>
   <script src="{{ "/js/lib/jquery-ui.min.js" | prepend: site.baseurl }}"></script>
   <script src="{{ "/js/lib/bootstrap.min.js" | prepend: site.baseurl }}"></script>
   <script src="{{ "/js/lrg.js"               | prepend: site.baseurl }}"></script>
   <script src="{{ "/js/search_results.js"    | prepend: site.baseurl }}"></script>
   <script src="{{ "/js/sorttable.js"         | prepend: site.baseurl }}"></script>
-
   <script type="text/javascript">
     window.onload = function () {
       // Autocomplete
       get_data_in_array().then(function(data_list){
         $("#search_id").autocomplete({
           // Limit the number of results displayed
-          maxResults: 25,
+          maxResults:25,
           source: function(request, response) {
             var results = $.ui.autocomplete.filter(data_list, request.term);
             response(results.slice(0, this.options.maxResults));
@@ -46,16 +38,14 @@
             $("#search_id").val(ui.item.value);
             get_query();
           },
-          minLength: 3
+          minLength:3
         });
       });
 
       // Search results
       var url = window.location.href;
       var regex = new RegExp("\/search\/");
-      if (regex.test(url)) {
-        get_query();
-      }
+      if (regex.test(url)) { get_query(); }
 
       // This will capture hash changes while on the page
       $(window).on("hashchange",offsetAnchor);
@@ -68,7 +58,7 @@
     // Toggle tooltip
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip({
-        container : 'body'
+        container:'body'
       });
       $('button').focus(function() {
         this.blur();
@@ -76,5 +66,4 @@
     });
 
   </script>
-
 </head>

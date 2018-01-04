@@ -325,7 +325,7 @@ header {
 }
 .navbar-nav>li>a.active {
   color:$lrg_blue;
-  -webkit-transition-duration: $transition_time; /* Safari */
+  -webkit-transition-duration: $transition_time; 
   transition-duration: $transition_time;
   &:after {
     content:'';
@@ -422,8 +422,44 @@ header {
     background-color:$lrg_dark;
     box-shadow:none;
 
-    .navbar-nav>li>a {
-      padding:5px;
+    .navbar-nav {
+      float:none!important;
+      li {
+        float:none;
+        background-color:none;
+        color:$white;
+        &:hover {
+          background-color:$white;
+          border-left:4px solid $lrg_green2;
+          height:30px;
+          a, span {
+            color: $lrg_green2;
+          }
+        }
+        &:active, &:focus {
+          background-color:$white;
+          border-left:4px solid $lrg_blue;
+          a, span {
+            color: $lrg_blue;
+          }
+        }
+        a {
+          text-align:right;
+          padding:5px;
+          color:$white;
+          &:after {
+            content:none;
+          }
+        }
+        a.active {
+          color:$lrg_blue;
+          -webkit-transition-duration: $transition_time; /* Safari */
+          transition-duration: $transition_time;
+          &:after {
+            content:none;
+          }
+        }
+      }
     }
   }
 
@@ -431,24 +467,6 @@ header {
     display:none!important;
   }
   
-  .navbar-default {
-    border:none;
-    .navbar-nav {
-      float:none!important;
-      li {
-        float:none;
-        background-color:none;
-        &:hover {
-          background-color:$white;
-          border-left:4px solid $lrg_green2;
-        }
-        &:active, &:focus {
-          background-color:$white;
-          border-left:4px solid $lrg_blue;
-        }
-      }
-    }
-  }
 
   .collapse.in{
     display:block !important;
@@ -475,6 +493,7 @@ header {
     }
   }
 
+  
   .navbar-default .navbar-toggle .icon-bar {
     background-color:$white;
   }
@@ -854,6 +873,17 @@ a.section-link {
 
 .item-link {
   margin:6px 5px;
+}
+
+.note_header {
+  background-color: $lrg_green2;
+  color: $white;
+  padding:7px 8px 6px;
+  font-size:16px;
+}
+.note_content {
+  background-color: $lrg_gray2;
+  padding:8px;
 }
 
 
@@ -1371,7 +1401,7 @@ ul.sections_list>li>a:after {
 }
 
 .item_entry {
-  margin-bottom:4px;
+  margin-bottom:10px;
   border:1px solid $lrg_gray;
   &:hover, &:focus, &:active {
     border-color:$lrg_purple;
@@ -1382,7 +1412,7 @@ ul.sections_list>li>a:after {
 }
 
 .item_title {
-  padding:6px 5px;
+  padding:5px;
   color:$lrg_blue;
   font-size:16px;
   line-height:16px;
