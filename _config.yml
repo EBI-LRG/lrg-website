@@ -155,22 +155,15 @@ plugins:
   - jekyll-assets # Compress/minified the JS scripts
 
 collections:
-    about:
-        output: true
     docs:
         output: true
         permalink: /documentation/:path/
     faq_groups:
-        output: true
-        permalink: /faq_group/:path/
-    faq_categories:
-        output: true
-        permalink: /faq_category/:path/
+        output: false
     faq:
-        output: true
-        permalink: /faq/:path/
+        output: false
     web-service:
-        output: true
+        output: false
 defaults:
     -
         scope: 
