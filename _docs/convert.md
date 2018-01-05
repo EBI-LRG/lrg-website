@@ -3,7 +3,8 @@ layout: page
 title: Convert variant coordinates
 tags: Convert
 icon-class: icon-mapping
-permalink: /convert/
+permalink: /documentation/convert/
+desc: Convert coordinates from different sources (e.g. LRG, RefSeqGene, GRCh38, GRCh37)
 ---
 
 

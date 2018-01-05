@@ -3,7 +3,8 @@ layout: page
 title: Submit variants
 tags: Variants
 icon-class: icon-submit
-permalink: /submit-variants/
+permalink: /documentation/submit-variants/
+desc: Procedures to submit information about variants
 ---
 
 Consistent with the goals of the LRG collaboration, we offer the opportunity to submit information about variants to [dbSNP](http://www.ncbi.nlm.nih.gov/projects/SNP/){: .icon-external-link}{:target="_blank"} or [dbVar](http://www.ncbi.nlm.nih.gov/dbvar){: .icon-external-link}{:target="_blank"}/[DGVa](http://www.ebi.ac.uk/dgva/){: .icon-external-link}{:target="_blank"}, as appropriate, and obtain an accession number for each variant. The results will be returned to you as outlined in the [instructions]({{ site.urls.lrg_ftp_http }}docs/SubmittingVariationInfo.pdf){:target="_blank"}.  

@@ -4,6 +4,7 @@ title: Request an LRG
 tags: Request
 icon-class: icon-request
 permalink: /documentation/lrg-request/
+desc: No LRG record for your gene of interest? You can request one!
 ---
 
 
