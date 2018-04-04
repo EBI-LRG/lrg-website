@@ -85,7 +85,7 @@ The LRG genomic, transcript and protein sequences are also available in **FASTA 
 </div>
 
 <div class="clearfix margin-bottom-20">
-  <div class="left icon-info close-icon-0 note_header"></div>
+  <div class="left icon-info close-icon-0 note_header lrg_green2_bg"></div>
   <div class="left note_content">If you can't access to the LRG FTP site through the FTP protocol, you can access it using the HTTP protocol: <a href="http://ftp.ebi.ac.uk/pub/databases/lrgex/" target="_blank">LRG FTP site - HTTP</a>.</div>
 </div>
 

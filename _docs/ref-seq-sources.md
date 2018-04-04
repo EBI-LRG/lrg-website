@@ -57,7 +57,7 @@ docs_order: 3
       <td>
         A collaboration between the Sanger Institute, EMBL-EBI, the NCBI and McDonnell Genome Institute.
       </td><td>
-        A ollaboration led by Ensembl at EMBL-EBI, based near Cambridge, UK and including partners from Yale University, UCSC, MIT, CRG, CNIO and the University of Lausanne.
+        A collaboration led by Ensembl at EMBL-EBI, based near Cambridge, UK and including partners from Yale University, UCSC, MIT, CRG, CNIO and the University of Lausanne.
       </td><td>
         The NCBI, based in Bethesda, MD, USA.
       </td><td>

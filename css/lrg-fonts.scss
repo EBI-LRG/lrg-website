@@ -170,6 +170,11 @@
   content: "+";
 }
 
+.icon-analyse:before {
+  font-family: 'EBI-Functional';
+  content: "A";
+}
+
 .icon-approve:before {
   font-family: 'EBI-Functional';
   content: "/";
@@ -195,24 +200,29 @@
   content: "8";
 }
 
+.icon-database-submit:before {
+  font-family: 'EBI-Functional';
+  content: "D";
+}
+
 .icon-download:before {
   font-family: 'EBI-Functional';
   content: "=";
 }
 
-.icon-view:before {
+.icon-lock:before {
   font-family: 'EBI-Functional';
-  content: "4";
-}
-
-.icon-submit:before {
-  font-family: 'EBI-Functional';
-  content: "_";
+  content: "L";
 }
 
 .icon-mapping:before {
   font-family: 'EBI-Functional';
   content: "0";
+}
+
+.icon-menu:before {
+  font-family: 'EBI-Functional';
+  content: "M";
 }
 
 .icon-next-page:before,
@@ -241,6 +251,11 @@
   content: "o";
 }
 
+.icon-submit:before {
+  font-family: 'EBI-Functional';
+  content: "_";
+}
+
 .icon-target:before {
   font-family: 'EBI-Functional';
   content: "T";
@@ -256,25 +271,16 @@
   content: "*";
 }
 
-.icon-lock:before {
-  font-family: 'EBI-Functional';
-  content: "L";
-}
-
-.icon-database-submit:before {
-  font-family: 'EBI-Functional';
-  content: "D";
-}
-
-.icon-target:before {
-  font-family: 'EBI-Functional';
-  content: "T";
-}
-
 .icon-unlock:before {
   font-family: 'EBI-Functional';
   content: "U";
 }
+
+.icon-view:before {
+  font-family: 'EBI-Functional';
+  content: "4";
+}
+
 
 /* Generic */
 .icon-alert:before {
@@ -360,6 +366,11 @@
 .icon-link:before {
   font-family: 'EBI-Generic';
   content: "L";
+}
+
+.icon-location:before {
+  font-family: 'EBI-Generic';
+  content: "[";
 }
 
 .icon-news:before {

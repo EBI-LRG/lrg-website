@@ -595,12 +595,12 @@ header {
   }
 }
 
-.table-vep {
+.table-vep-sum {
   border:none;
   width:100%;
   tr {
     line-height:20px;
-    height:28px;
+    height:55px;
     background-color:$lrg_gray2;
     border-bottom:4px solid $white;
     td {
@@ -611,6 +611,34 @@ header {
     td:first-child {
       width:10px;
       height:28px;
+    }
+  }
+  tr:first-child {
+    height:28px;
+  }
+}
+
+.table-vep-map {
+  border:none;
+  width:auto;
+  tr {
+    background-color:$lrg_gray2;
+    border-bottom:4px solid $white;
+    td {
+      line-height:20px;
+      padding:4px;
+      vertical-align:middle;
+      text-align: center;
+    }
+    td:nth-child(3) {
+      border-right: 2px solid $white;
+    }
+  }
+  tr:first-child {
+    height:28px;
+    font-weight: bold;
+    td:first-child {
+      border-right: 2px solid $white;
     }
   }
 }
@@ -752,6 +780,12 @@ a.section-link {
   }
 }
 
+.section-header-absolute {
+  position:absolute;
+  top:8px;
+  left:24px;
+}
+
 .section-title, .section-title2 {
   position:relative;
   text-align:center;
@@ -876,7 +910,6 @@ a.section-link {
 }
 
 .note_header {
-  background-color: $lrg_green2;
   color: $white;
   padding:7px 8px 6px;
   font-size:16px;
@@ -1073,6 +1106,9 @@ td.left-col-bg {
 .margin-top-40 {
   margin-top:40px;
 }
+.margin-top-50 {
+  margin-top:50px;
+}
 
 .margin-bottom-0 {
   margin-bottom:0px;
@@ -1140,7 +1176,7 @@ td.left-col-bg {
 
 
 .padding-left-0 {
-  padding-left:0px;
+  padding-left:0px !important;
 }
 .padding-left-5 {
   padding-left:5px;
@@ -1153,7 +1189,7 @@ td.left-col-bg {
 }
 
 .padding-right-0 {
-  padding-right:0px;
+  padding-right:0px !important;
 }
 .padding-right-5 {
   padding-right:5px;
@@ -1710,6 +1746,27 @@ footer span {
 .lrg_step_date {
   background-color: $lrg_gray2;
   color: $default_font;
+}
+
+td.step_col span:nth-child(2):before {
+  content: '----';
+}
+.public_step {
+  > span:first-child, span:nth-child(3) {
+    background-color: $lrg_blue !important;
+  }
+  > span:nth-child(2) {
+    color: $lrg_blue;
+  }
+}
+.pending_step {
+  > span:first-child, span:nth-child(3) {
+    background-color: $lrg_pending !important;
+    color: $black;
+  }
+  > span:nth-child(2) {
+    color: $lrg_pending
+  }
 }
 
 .badge_circle {

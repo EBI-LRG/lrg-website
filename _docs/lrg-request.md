@@ -15,15 +15,14 @@ LRGs are created upon request by collaborators (members of diagnostic and resear
 If you haven’t already, please read about the [LRG creation process](/documentation/lrg-creation){:target="_blank"}. Check if an [LRG already exists](/search/?query=*){:target="_blank"}, and if so its [status and curation progress](/curation-status){:target="_blank"}.
 
 <div class="margin-left-20 margin-bottom-20">
-  
-  <h5 id="if-your-gene-of-interest-already-has-a-pending-lrg-record">If your gene of interest already has a Pending LRG record:</h5>
 
+  <h5 id="if-your-gene-of-interest-already-has-a-pending-lrg-record">If your gene of interest already has a Pending LRG record:</h5>
 
   <p>Please do contact us anyway to let us know you are interested in the record being made public. 
   This helps us prioritise genes for curation.  Let us know which reference sequence you currently use for reporting sequence variants, especially if your transcript of choice is not included in the pending record or if you notice any other issues.</p>
 
   <div class="clearfix margin-bottom-20">
-    <div class="left icon-info close-icon-0 note_header"></div>
+    <div class="left icon-info close-icon-0 note_header lrg_green2_bg"></div>
     <div class="left note_content">Pending records are subject to change and should not be used until they pass final approval and are made public.</div>
   </div>
 
