@@ -1,9 +1,9 @@
 ---
 layout: page
-title: "Variant Effect Predictor (VEP) results"
+title: "Variant information"
 tag: vep
 permalink: /vep2lrg/
-icon-class: icon-tool
+icon-class: icon-help
 include_in_search: false
 include_in_sitemap: false
 ---
@@ -44,6 +44,9 @@ include_in_sitemap: false
 </div>
 
 
+<!-- Searched entry -->
+<h3>Query: <span class="vep_hgvs"></span></h3>
+
 <div id="vep_msg" style="display:none">
   <h4 class="icon-info close-icon-5 smaller-icon" style="text-align:center">Request sent to Ensembl. Please wait for the results ...</h4>
   <div class="loader" style="text-align:center"></div>
@@ -52,13 +55,89 @@ include_in_sitemap: false
 
 <!-- VEP results -->
 <div id="vep_results" style="display:none">
+
+
+  <!-- Co-located variants -->
+  <div id="coloc_variants">
+    <h3 class="icon-location smaller-icon close-icon-5 margin-top-50 margin-bottom-10">Co-located variant(s)</h3>
+    <div id="coloc_variants_entry"></div>
+  </div>
+
+  <!-- Sequence variants -->
+  <div id="seq_variants">  
+    <table id="seq_variants_table" class="table table-hover table-lrg">
+      <thead>
+        <tr><th colspan="3" style="with:100%">Genomic sequences</th></tr>
+        <tr>
+          <th style="with:20%"></th>
+          <th style="with:40%">Primary reference genome (<span class="assembly"></span>)</th>
+          <th style="with:40%">LRG genomic</th>
+        </tr>
+      </thead>
+      <tbody id="gen_seq">
+        <tr>
+          <td><b>Alleles</b></td>
+          <td id="gen_ref_cell">
+            <div id="gen_ref_fwd" style="text-align:center"></div>
+            <div class="clearfix">
+              <div class="arrow ref_arrow"><div class="line"></div><div class="point point_right"></div></div>
+            </div>
+            <div class="clearfix">
+              <div class="arrow ref_arrow"><div class="point point_left"></div><div class="line"></div></div>
+            </div>
+            <div id="gen_ref_rev" style="text-align:center"></div>
+          </td>
+          <td id="gen_lrg_cell">
+            <div id="gen_lrg_fwd" style="text-align:center"></div>
+            <div class="clearfix">
+              <div class="arrow"><div class="line lrg_blue_bg"></div><div class="point point_right lrg_blue"></div></div>
+            </div>
+            <div class="clearfix">
+              <div class="arrow"><div class="point point_left lrg_blue"></div><div class="line lrg_blue_bg"></div></div>
+            </div>
+            <div id="gen_lrg_rev" style="text-align:center"></div>
+          </td>
+        </tr>
+        <tr id="allele_freq_row">
+          <td><b>Allele frequency</b></td>
+          <td id="ref_al_cell"></td>
+          <td id="lrg_al_cell"></td>
+        </tr>
+      </tbody>
+      <thead>
+        <tr><th colspan="3">Transcript sequences</th></tr>
+        <tr>
+          <th></th>
+          <th>Ensembl transcripts</th>
+          <th>LRG and RefSeq transcripts</th>
+        </tr>
+      </thead>
+      <tbody id="trans_seq">
+        <tr>
+          <td><b>Transcript alleles</b></td>
+          <td id="tr_ref_cell">            
+            <div class="clearfix">
+              <div id="tr_ref_arrow" class="arrow"></div>
+            </div>
+            <div id="tr_ref_al" style="text-align:center"></div>
+          </td>
+          <td id="tr_lrg_cell">            
+            <div class="clearfix">
+              <div id="tr_lrg_arrow" class="arrow"></div>
+            </div>
+            <div id="tr_lrg_al" style="text-align:center"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
   
-  <h2>Results for <span id="vep_hgvs"></span></h2>
+  <h2>Results for <span class="vep_hgvs"></span></h2>
 
   <!-- Summary results -->
   <div id="vep_summmary">
-    <h3 class="icon-menu smaller-icon close-icon-5 margin-bottom-10">Summary</h3>
-
     <div class="clearfix">
       <div class="col-xs-8 col-sm-8 col-md-7 col-lg-7 padding-left-0">
         <table class="table-vep-sum" style="width:100%"><tbody></tbody></table>
@@ -67,36 +146,9 @@ include_in_sitemap: false
         <table class="table-vep-map"><tbody></tbody></table>
       </div>
     </div>
-
     <div id="vep_strand"></div>
   </div>
 
-
-  <!-- Co-located variants -->
-  <div id="coloc_variants">
-
-    <h3 class="icon-location smaller-icon close-icon-5 margin-top-50 margin-bottom-10">Co-located variant(s)</h3>
-      
-    <table id="coloc_variants_table" class="table table-hover table-lrg">
-      <thead>
-        <tr>
-          <th rowspan="2">Variant</th>
-          <th rowspan="2">Alleles</th>
-          <th class="split-header text-center" colspan="2">1000Genomes <a class="icon-external-link" href="http://www.internationalgenome.org/" target="_blank"></a></th>
-          <th class="split-header text-center" colspan="2">gnomAD <a class="icon-external-link" href="http://gnomad.broadinstitute.org/" target="_blank"></a></th>
-          <th rowspan="2">Ancestral<br />allele</th><th rowspan="2">Strand</th>
-        </tr>
-        <tr>
-          <th>Minor allele<span class="icon-help tiny-icon close-icon-0 padding-left-5" data-toggle="tooltip" data-placement="bottom" id="ma" title="Minor Allele from the 1000Genomes Project (Phase 3)"></span></th>
-          <th>MAF<span class="icon-help tiny-icon close-icon-0 padding-left-5" data-toggle="tooltip" data-placement="bottom"  id="maf" title="Minor Allele Frequency from the 1000Genomes Project (Phase 3)"></span></th>
-          <th>Alt. Allele<span class="icon-help tiny-icon close-icon-0 padding-left-5" data-toggle="tooltip" data-placement="bottom" id="ma_gnomAD" title="Alternative allele of existing variant in gnomAD exomes combined population"></span></th>
-          <th>AF<span class="icon-help tiny-icon close-icon-0 padding-left-5" data-toggle="tooltip" data-placement="bottom" id="maf_gnomAD" title="Frequency of existing variant in gnomAD exomes combined population"></span></th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-  </div>
 
 
   <!-- Transcript consequences -->
@@ -112,9 +164,8 @@ include_in_sitemap: false
           <th>Strand</th>
           <th>HGVS</th> 
           <th>Consequences<a class="icon-info-link" href="{{ site.urls.conseq_url }}consequences" data-toggle="tooltip" data-placement="bottom" title="Click here to see the list of consequences and their descriptions" target="_blank"></a></th>
-          <th>Variant allele</th>
+          <th>Non-reference genome allele</th>
           <th>IMPACT<a class="icon-info-link" href="{{ site.urls.conseq_url }}consequences" data-toggle="tooltip" data-placement="bottom" title="Click here to see the list of consequences and their descriptions" target="_blank"></a></th>
-          <th>Details</th>
         </tr>
       </thead>
       <tbody></tbody>  

@@ -1012,23 +1012,23 @@ table {
 }
 
 .lrg_blue_bg {
-  background-color:$lrg_blue;
+  background-color:$lrg_blue !important;
 }
 
 .lrg_green2_bg {
-  background-color:$lrg_green2;
+  background-color:$lrg_green2 !important;
 }
 
 .lrg_purple_bg {
-  background-color:$lrg_purple;
+  background-color:$lrg_purple !important;
 }
 
 .lrg_gray_bg {
-  background-color:$lrg_gray;
+  background-color:$lrg_gray !important;
 }
 
 .lrg_dark_bg {
-  background-color:$lrg_dark;
+  background-color:$lrg_dark !important;
 }
 
 .border_bottom_blue {
@@ -1861,4 +1861,38 @@ td.step_col span:nth-child(2):before {
 }
 .ref-sources>tbody>tr>td:last-child {
   background-color: $lrg_light_blue;
+}
+
+/** VEP **/
+.arrow {
+  position: relative;
+  margin:3px 10px;
+  height:20px;
+}
+
+.line {
+  margin:7px 0px;
+  width:100%;
+  background-color: $lrg_dark;
+  height:6px;
+  float:left;
+}
+.point {
+  width: 0;
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position:absolute;
+  top:0px;
+}
+.point_right {
+  border-left: 20px solid;
+  right:-5px;
+  float:right;
+}
+.point_left {
+  border-bottom: 10px solid transparent;
+  border-right: 20px solid;
+  left:-5px;
+  float:left;
 }

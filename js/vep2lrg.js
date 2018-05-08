@@ -104,6 +104,22 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
     maf_colour[lrg_id] = maf_colour['LRG'];
   }
 
+  var genome_assembly  = data.assembly_name.toLowerCase();
+  var genome_bg_colour = (genome_assembly.match('grch37')) ? 'lrg_purple_bg' : 'lrg_green2_bg';
+  var genome_colour    = (genome_assembly.match('grch37')) ? 'lrg_purple' : 'lrg_green2';
+
+  // Consequence (most severe)
+  var vep_sum_table = '      <tr>' + 
+                      '        <td class="' + genome_bg_colour + '"></td>' +
+                      '        <td colspan="5">' + 
+                      '          <span class="bold_font">Most severe consequence' + msc_help + '</span>:' + 
+                      '          <span class="bold_font padding-left-5">' + 
+                      '            <a class="icon-external-link" data-toggle="tooltip" data-placement="bottom" href="'+conseq_url+data.most_severe_consequence+'" title="Click here to see the description of the consequence term '+data.most_severe_consequence+'" target="_blank">'+data.most_severe_consequence+'</a>' + 
+                      '          </span>' +
+                      '        </td>' +
+                      '      </tr>';
+   $('.table-vep-sum > tbody').html(vep_sum_table);
+
   // Alleles
   var allele_desc = (data.id.indexOf("LRG_") >= 0) ? [lrg_label,'Genome'] : ['Genome',lrg_label];
 
@@ -123,10 +139,6 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
   var genome_allele = (data.id.indexOf("LRG_") >= 0) ? allele2 : allele1;
   var alt_allele = (data.id.indexOf("LRG_") >= 0) ? allele1 : allele2;
 
-  var genome_assembly  = data.assembly_name.toLowerCase();
-  var genome_bg_colour = (genome_assembly.match('grch37')) ? 'lrg_purple_bg' : 'lrg_green2_bg';
-  var genome_colour    = (genome_assembly.match('grch37')) ? 'lrg_purple' : 'lrg_green2';
-
   var flagged = data.strand
 
   // Strands
@@ -136,152 +148,47 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
   var strand_gen = (data.id.indexOf("LRG_") >= 0) ? strand2 : strand1;
   var strand_lrg = (data.id.indexOf("LRG_") >= 0) ? strand1 : strand2;
 
-  $('#vep_hgvs').html(data.id);
+  $('.vep_hgvs').html(data.id);
 
-  // Consequence
-  vep_sum_table = '      <tr>' + 
-                  '        <td class="' + genome_bg_colour + '"></td>' +
-                  '        <td colspan="5">' + 
-                  '          <span class="bold_font">Most severe consequence' + msc_help + '</span>:' + 
-                  '          <span class="bold_font padding-left-5">' + 
-                  '            <a class="icon-external-link" data-toggle="tooltip" data-placement="bottom" href="'+conseq_url+data.most_severe_consequence+'" title="Click here to see the description of the consequence term '+data.most_severe_consequence+'" target="_blank">'+data.most_severe_consequence+'</a>' + 
-                  '          </span>' +
-                  '        </td>' +
-                  '      </tr>';
+  $('.assembly').html(data.assembly_name);
 
-  // Genomic sequence
-  vep_sum_table += '      <tr>' + 
-                    '        <td class="' + genome_bg_colour + '"></td>' +
-                    '        <td style="width:120px">' + 
-                    '          <span class="bold_font">' + data.assembly_name + '</span> allele:' + 
-                    '        </td>' +
-                    '        <td class="' + genome_colour + ' bold_font bigger-font">' + genome_allele + '</td>' +
-                    '        <td colspan="2" class="smaller-font margin-left-15">';
-  if (strand_gen) {
-    var genome_strand = get_strand(strand_gen);
-    var genome_strand_label = get_strand(strand_gen, 1);
+  $('#gen_ref_fwd').html(genome_allele);
+  $('#gen_ref_rev').html(reverse_complement(genome_allele));
 
-     vep_sum_table += '          [ <span class="padding-right-5">' + genome_strand + '</span> ' + data.assembly_name + ' <span class="bold_font">' + genome_strand_label + '</span> strand ]';
-  }
-  vep_sum_table += '      </td></tr>';
-
-
-  // LRG sequence
-  vep_sum_table += '      <tr>';
+  $('.ref_arrow > div.line').addClass(genome_bg_colour);
+  $('.ref_arrow > div.point').addClass(genome_colour);
 
   if (strand_lrg) {
     var fwd_lrg_allele = alt_allele;
     var rev_lrg_allele = reverse_complement(alt_allele);
+    var tr_lrg_allele = fwd_lrg_allele;
+    var tr_lrg_arrow  = '<div class="line lrg_blue_bg"></div><div class="point point_right lrg_blue"></div>';
 
     if (strand_lrg == -1) {
       fwd_lrg_allele = reverse_complement(alt_allele);
       rev_lrg_allele = alt_allele;
+      tr_lrg_allele  = rev_lrg_allele;
+      tr_lrg_arrow  = '<div class="point point_left lrg_blue"></div><div class="line lrg_blue_bg"></div>';
     }
 
-    var lrg_allele_label_css = 'lrg_blue bigger-font';
-    var bold_lrg_allele_label_css = lrg_allele_label_css +' bold_font';
+    $('#gen_lrg_fwd').html(fwd_lrg_allele);
+    $('#gen_lrg_rev').html(rev_lrg_allele);
     
-
-    var fwd_lrg_allele_label = (strand_lrg == 1)  ? '<span class="'+bold_lrg_allele_label_css+'">'+fwd_lrg_allele+'</span>' : '<span class="'+lrg_allele_label_css+'">'+fwd_lrg_allele+'</span>';
-    var rev_lrg_allele_label = (strand_lrg == -1) ? '<span class="'+bold_lrg_allele_label_css+'">'+rev_lrg_allele+'</span>' : '<span class="'+lrg_allele_label_css+'">'+rev_lrg_allele+'</span>';
-
-    vep_sum_table += '        <td class="lrg_blue_bg"></td>'+
-                     '        <td style="width:120px">' + 
-                     '          <span class="bold_font">LRG</span> allele: ' + 
-                     '        </td>' ;
-
-    var lrg_strand = get_strand(1);
-    var lrg_strand_label = get_strand(1,1);
-    var lrg_genome_strand = get_strand(strand_lrg);
-    var lrg_genome_strand_label = (strand_lrg == 1) ? "Forward" : "Reverse";
-    var lrg_genome_strand_label2 = get_strand(strand_lrg,' ');
-    
-    var lrg_displayed_allele = (strand_lrg == 1) ? fwd_lrg_allele_label : rev_lrg_allele_label;
-    vep_sum_table += '      </td><td>' + lrg_displayed_allele + '</td>' +
-                     '      <td class="smaller-font margin-left-15">' +
-                     '        [ <span class="padding-right-5">' + genome_strand + '</span> ' + data.assembly_name + ' <span class="bold_font">' + genome_strand_label + '</span> strand ]<br />' +
-                     '        [ <span class="padding-right-5">' + get_strand(strand_lrg) + '</span> LRG <span class="bold_font">' + lrg_genome_strand_label + '</span> strand ]' +
-                     '      </td>' + 
-                     '      <td class="smaller-font">';
-
-    if (strand_lrg == -1) {
-      vep_sum_table += '      ' + fwd_lrg_allele_label + '<span style="padding-left:15px">[ <span class="padding-right-5">' + lrg_strand + '</span> LRG <span class="bold_font">' + lrg_strand_label + '</span> strand ]</span>'
-    }
-  }
-  else {
-    vep_sum_table += '        <td class="lrg_blue_bg"></td>'+
-                     '        <td colspan="3">Can\'t determine which is the LRG allele: we need to know on which strand the LRG sequence maps to the genome'; 
-  }
-  vep_sum_table += '      </td></tr>';
-
-  $('.table-vep-sum > tbody').html(vep_sum_table);
-
-  // Genomic sequence
-  var vep_map_table = '      <tr><td colspan="3">Sequences</td><td colspan="3">Alignment</td></tr>' +
-                      '      <tr><td>' +
-                      '          <div class="text-center margin-bottom-2 '+genome_bg_colour+'" style="width:60px;height:20px">'+get_strand(1)+'</div>' +
-                      '          <div class="text-center '+genome_bg_colour+'" style="width:60px;height:20px">'+get_strand(-1)+'</div>' +
-                      '        </td><td class="padding-left-0 padding-right-0">' +
-                      '          <div class="margin-bottom-2"><span class="'+ genome_colour + ' bold_font bigger-font">' + genome_allele + '</span></div>' +
-                      '          <div>' + reverse_complement(genome_allele) + '</div>' +
-                      '        </td><td>' +
-                      '          <div class="text-center  margin-bottom-2 '+genome_bg_colour+'" style="width:60px;height:20px">'+get_strand(1)+'</div>' +
-                      '          <div class="text-center '+genome_bg_colour+'" style="width:60px;height:20px">'+get_strand(-1)+'</div>' +
-                      '        </td>';
-  // Genomic Mapping
-  vep_map_table += '        <td style="vertical-align:bottom">' +
-                   '          <div class="text-center '+genome_bg_colour+'" style="width:60px;height:20px">'+get_strand(1)+'</div>' +
-                   '        </td><td class="padding-left-0 padding-right-0" style="vertical-align:bottom">' +
-                   '          <div><span class="'+ genome_colour + ' bold_font bigger-font">' + genome_allele + '</span></div>' +
-                   '        </td><td style="vertical-align:bottom">' +
-                   '          <div class="text-center '+genome_bg_colour+'" style="width:60px;height:20px">'+get_strand(1)+'</div>' +
-                   '        </td></tr>';
-  // LRG sequence
-  vep_map_table += '      <tr><td>' +
-                   '          <div class="lrg_blue_bg text-center margin-left-20 margin-bottom-2" style="width:40px;height:20px">'+get_strand(1)+'</div>' +
-                   '          <div class="lrg_blue_bg text-center margin-left-20" style="width:40px;height:20px">'+get_strand(-1)+'</div>' +
-                   '        </td><td class="padding-left-0 padding-right-0">' +
-                   '          <div class="margin-bottom-2">' + fwd_lrg_allele_label + '</div>' +
-                   '          <div>' + rev_lrg_allele_label + '</div>' +
-                   '        </td><td>' +
-                   '          <div class="lrg_blue_bg text-center margin-bottom-2" style="width:40px;height:20px">'+get_strand(1)+'</div>' +
-                   '          <div class="lrg_blue_bg text-center" style="width:40px;height:20px">'+get_strand(-1)+'</div>' +
-                   '        </td>';
-  // LRG Mapping
-  var aligned_lrg_strand_label = '<span class="bigger-font" style="color:blue" title="Forward">&rarr;</span>';
-  var aligned_lrg_allele = fwd_lrg_allele_label;
-  if (strand_lrg == -1) {
-    aligned_lrg_strand_label = '<span class="bigger-font" style="color:red" title="Reverse">&rarr;</span>';
-    aligned_lrg_allele = rev_lrg_allele_label;
+    $('#tr_lrg_arrow').html(tr_lrg_arrow);
+    $('#tr_lrg_al').html(tr_lrg_allele);
   }
 
-  vep_map_table += '        <td style="vertical-align:top">' +
-                   '          <div class="lrg_blue_bg text-center margin-left-20" style="width:40px;height:20px">'+aligned_lrg_strand_label+'</div>' +
-                   '        </td><td class="padding-left-0 padding-right-0" style="vertical-align:top">' +
-                   '          <div>'+aligned_lrg_allele+ '</div>' +
-                   '        </td><td style="vertical-align:top">' +
-                   '          <div class="lrg_blue_bg text-center" style="width:40px;height:20px">'+aligned_lrg_strand_label+'</div>' +
-                   '        </td></tr>';
-
-  $('.table-vep-map > tbody').html(vep_map_table);
-
-  if (strand_lrg) {
-    var lrg_gene_name = (hgnc_symbol) ? ' ('+hgnc_symbol+')' : '';
-    $('#vep_strand').html('    <div class="clearfix margin-top-10 margin-bottom-20">'+
-                          '      <div class="left icon-info close-icon-0 note_header lrg_dark_bg"></div>' + 
-                          '      <div class="left note_content"><b>'+ lrg_id + '</b>' + lrg_gene_name +' maps to the ' + lrg_genome_strand + ' <span class="bold_font">' + lrg_genome_strand_label2 + '</span> strand of the genome assembly</div>'+
-                          '    </div>');
-  }
-
-  parse_colocated_variants(data,seqs_by_allele);
+  parse_colocated_variants(data,seqs_by_allele,strand_lrg);
   
   parse_transcript_data(data);
 }
 
 
-function parse_colocated_variants (data,seqs_by_allele) {
+function parse_colocated_variants (data,seqs_by_allele,strand_lrg) {
 
-   var html = "";
+  var html_af_ref = "";
+  var html_af_lrg = "";
+  var html_var = "";
 
   if (data.colocated_variants) {
 
@@ -298,32 +205,64 @@ function parse_colocated_variants (data,seqs_by_allele) {
 
       var var_id     = (variant.id) ? '<a target="_blank" class="icon-external-link" href="'+ens_var_url+variant.id+'">'+variant.id+'</a>' : default_val;
       var var_al     = (variant.allele_string) ? variant.allele_string : default_val;
-      var ma         = (variant.minor_allele) ? '<span class="'+ma_colour+'">'+variant.minor_allele+'</span>' : default_val;
+      var ma         = (variant.minor_allele) ? variant.minor_allele : default_val;
       var maf        = (variant.minor_allele_freq || variant.minor_allele_freq == 0) ? variant.minor_allele_freq : default_val;
-      var ma_gnomad  = (variant.gnomad_allele) ? '<span class="'+gnomad_colour+'">'+variant.gnomad_allele+'</span>' : default_val;
+      var ma_gnomad  = (variant.gnomad_allele) ? variant.gnomad_allele: default_val;
       var maf_gnomad = (variant.gnomad_maf || variant.gnomad_maf == 0) ? variant.gnomad_maf : default_val;
       var aa         = (variant.ancestral_allele) ? variant.ancestral_allele : default_val;
       var strand     = (variant.strand) ? get_strand(variant.strand) : default_val;
       console.log("Variant:  "+variant.id);
+      console.log('MAF: '+ma+ ' ('+maf+')');
+      console.log('gnomAD: '+ma_gnomad+ ' ('+maf_gnomad+')');
+      console.log('REF :'+$('#gen_ref_fwd').html());
+      console.log('LRG :'+$('#gen_lrg_fwd').html());
 
-      var minor_allele_seq = "";
-      var minor_allele_seq_info = ""
-      if (variant.minor_allele) {
-        if (seqs_by_allele[variant.minor_allele]) {
-          minor_allele_seq_info = '<div>' + maf_help[seqs_by_allele[variant.minor_allele]] + '<b>MINOR</b> allele <span class="bold_font ' + ma_colour + '">' + variant.minor_allele + '</span>.</div>';
-          $.each(seqs_by_allele, function(allele, seq) {
-            if (seq != seqs_by_allele[variant.minor_allele]) {
-              minor_allele_seq_info += '<div>' + maf_help[seq] + '<b>MAJOR</b> allele <span class="bold_font ' + maf_colour[seq] + '">' + allele + '</span>.</div>';
-            }
-          });
-
-          minor_allele_seq = ' <div class="btn btn-xs btn-primary btn-lrg-small icon-minus close-icon-0 right" id="'+variant.id+'_button" onclick="javascript:show_hide_info(\''+variant.id+'\')"></div>';
-          minor_allele_seq_info = '<tr id="'+variant.id+'" ><td></td><td colspan="7">'+minor_allele_seq_info+'</td></tr>';
-        }
+      // Match Ref allele
+      var html_af_1 = "";
+      if (ma && ma == $('#gen_ref_fwd').html()) {
+        html_af_1 += '<li>'+maf+' (1000 Genomes)</li>';
       }
-      html += '      <tr><td>' + var_id + '</td><td>' + var_al + '</td><td>' + ma + minor_allele_seq + '</td><td>' + maf + '</td><td>' + ma_gnomad + '</td><td>' + maf_gnomad + '</td><td>' + aa + '</td><td style="text-align:center">' + strand +'</td></tr>'+minor_allele_seq_info;
+      else if (ma_gnomad && ma_gnomad == $('#gen_ref_fwd').html()) {
+        html_af_1 += '<li>'+maf_gnomad+' (gnomAD)</li>';
+      }
+      if (html_af_1 != "") {
+        html_af_ref += (data.colocated_variants.length > 1) ? '<li>'+var_id+':<ul>'+html_af_1+'</ul></li>' : html_af_1;
+      }
+      console.log('AF REF: '+html_af_lrg );
+
+      // Match LRG allele
+      var html_af_2 = "";
+      var lrg_allele = (strand_lrg && strand_lrg == -1) ? $('#gen_lrg_rev').html() : $('#gen_lrg_fwd').html()
+      if (ma && ma == lrg_allele) {
+        html_af_2 += '<li>'+maf+' (1000 Genomes)</li>';
+      }
+      else if (ma_gnomad && ma_gnomad == lrg_allele) {
+        html_af_2 += '<li>'+maf_gnomad+' (gnomAD)</li>';
+      }
+      if (html_af_2 != "") {
+        html_af_lrg += (data.colocated_variants.length > 1) ? '<li>'+var_id+':<ul>'+html_af_2+'</ul></li>' : html_af_2;
+      }
+      console.log('AF LRG: '+html_af_lrg );
+   
     });
-    $('#coloc_variants_table > tbody').html(html);
+
+    // Co-located variants
+    if (data.colocated_variants.length > 1) {
+      $('#coloc_variants_entry').html('<ul>'+html_var+'</ul>');
+    }
+    else if (data.colocated_variants.length == 1) {
+      $('#coloc_variants > h3').html('Co-located variant: '+html_var);
+    }
+
+    // Allele frequency
+    if (html_af_ref != "" || html_af_lrg != "") {
+      $('#ref_al_cell').html('<ul>'+html_af_ref+'</ul>');
+      $('#lrg_al_cell').html('<ul>'+html_af_lrg+'</ul>'); 
+    }
+    else {
+      $('#allele_freq_row').hide();
+    }
+
   }
   else {
     $('#coloc_variants').html('<div class="clearfix margin-top-10 margin-bottom-20">'+
@@ -356,8 +295,6 @@ function parse_transcript_data (data) {
         cons.push('<a class="icon-external-link" href="'+conseq_url+cterm+'" title="Click here to see the description of the consequence term '+cterm+'" target="_blank">'+cterm+'</a>');
       });
 
-      var distance = (trans.distance) ? '<i>Distance to transcript: '+trans.distance+'bp' : '-';
-
       var hgvsc = (trans.hgvsc) ? trans.hgvsc : '-';
       
       var v_allele = (trans.strand == 1) ? trans.variant_allele : reverse_complement(trans.variant_allele,1);
@@ -365,7 +302,7 @@ function parse_transcript_data (data) {
       var biotype = trans.biotype.replace('_', ' ');
 
       html += '    <tr><td>' + gene_id + '</td><td>' + trans_id + '</td><td>' + biotype + '</td><td style="text-align:center">'+ strand + '</td><td>'+hgvsc+'</td><td>' +
-                       cons.join(', ') + '</td><td>' + v_allele + '</td><td>' + trans.impact + '</td><td>' + distance+ '</td></tr>';
+                       cons.join(', ') + '</td><td>' + v_allele + '</td><td>' + trans.impact + '</td></tr>';
     });
 
     $('#tr_consequences > table > tbody').html(html);

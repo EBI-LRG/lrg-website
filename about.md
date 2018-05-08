@@ -30,7 +30,6 @@ A **L**ocus **R**eference **G**enomic (**LRG**) record is manually curated and c
         <div class="icon-help close-icon-0 section-circle section-circle_blue"></div>
         <div class="section-sub-circle">FAQs</div>
       </div>
-
       <div class="section-content text-center">
         Find answers to most frequently asked questions
       </div>
@@ -43,7 +42,6 @@ A **L**ocus **R**eference **G**enomic (**LRG**) record is manually curated and c
         <div class="icon-resource close-icon-0 section-circle section-circle_blue"></div>
         <div class="section-sub-circle">Reference sequence sources</div>
       </div>
-
       <div class="section-content text-center">
         Learn more about the different reference sequences, their sources and how they relate to the LRG project
       </div>
@@ -60,7 +58,6 @@ A **L**ocus **R**eference **G**enomic (**LRG**) record is manually curated and c
         <div class="icon-industry close-icon-0 section-circle section-circle_blue"></div>
         <div class="section-sub-circle">LRG collaborators</div>
       </div>
-
       <div class="section-content text-center">
         List of locus-specific experts that have worked with the LRG team on the creation of records
       </div>
@@ -73,7 +70,6 @@ A **L**ocus **R**eference **G**enomic (**LRG**) record is manually curated and c
         <div class="icon-video close-icon-0 section-circle section-circle_blue"></div>
         <div class="section-sub-circle">Training materials</div>
       </div>
-
       <div class="section-content text-center">
         Training material from workshops held by the LRG project team
       </div>
@@ -86,11 +82,14 @@ A **L**ocus **R**eference **G**enomic (**LRG**) record is manually curated and c
         <div class="icon-info close-icon-0 section-circle section-circle_blue"></div>
         <div class="section-sub-circle">Further information</div>
       </div>
-
       <div class="section-content text-center">
         Publications, additional resources, ...
       </div>
     </a>
   </div>
 
+</div>
+
+<div class="margin-top-40">
+  <p>{{ site.description3 }}</p>
 </div>

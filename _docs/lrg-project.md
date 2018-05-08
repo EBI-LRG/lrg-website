@@ -27,6 +27,8 @@ Each LRG record is created in collaboration with experts in the region of intere
 <div class="margin-top-30"></div>
 
 ##### Connect the past, present and future of clinical variant reporting
+{{ site.description3 }}
+
 To be compatible with NGS-based sequencing, we aim to match all LRGs to the genome reference assembly ({{ site.ref_assembly }}). However, when an LRG based on legacy sequence is required, creating the LRG defines the relationship of the legacy sequence to the reference genome assembly. This facilitates the usage of legacy data alongside NGS technology. Where the community requests an allele that is incompatible with the genome reference assembly, we evaluate and request a review by the GRC if appropriate. 
 
 The annotation for both RefSeq and GENCODE is reviewed as part of the manual curation process. Once a transcript model has been selected, efforts are made to have the corresponding RefSeq and GENCODE transcripts match each other and match the reference. In addition, we aim to have complete identity between the two transcripts, including the UTRs. This facilitates unambiguous multi-directional data exchange between RefSeq, GENCODE and the reference genome assemblies (GRCh37, GRCh38).

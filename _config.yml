@@ -15,6 +15,9 @@ description: LRG sequences provide a stable genomic DNA framework for reporting 
 # Short description (displayed in the homepage)
 description2: 'A <span class="bold_font">L</span>ocus <span class="bold_font">R</span>eference <span class="bold_font">G</span>enomic (<span class="bold_font">LRG</span>) record contains stable reference sequences that are used for reporting sequence variants with clinical implications'
 
+# Text language
+description3: 'NCBI (RefSeq) and EMBL-EBI (Ensembl/GENCODE) are working together to rationalise differences in our gene sets. Our goals for 2018/2019 include faster convergence on key high value annotations to provide a common minimal set of transcripts per gene. The goal for this transcript subset is identity between RefSeq and Ensembl both in terms of transcript length and per each nucleotide base. We encourage the community to continue working with us to create LRGs, which will have input into this future goal.'
+
 # Tag line (displayed in the header)
 tag_line: Stable reference sequences for reporting variants
 
