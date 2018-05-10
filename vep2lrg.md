@@ -15,37 +15,9 @@ include_in_sitemap: false
   }
 </script>
 
-<div class="section-box" id="search_help">
-  <div class="clearfix">
-    <div class="section-header icon-help left">About the VEP</div>
-    <div class="right close-button icon-close close-icon-0" title="Close this box" onclick="javascript:$('#search_help').hide()"></div>
-  </div>
-  <p class="margin-top-5 margin-bottom-0 smaller-text">
-    The <a class="icon-external-link" href="{{ site.urls.ensembl }}/info/docs/tools/vep/index.html" target="_blank">Variant Effect Predictor (VEP)</a> determines the effect of variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts, and protein sequence, as well as regulatory regions. 
-  </p>
-  <div style="margin: 15px 5px 0px">
-    {% assign faqs = site.faq | where: 'help','vep' %}
-     
-      {% for faq in faqs %}
-        {% if faq.faq_tags contains "vep" %}
-          {% assign faq_id = faq.faq_group | append : '_' | append : faq.faq_order %}
-          <div class="item_entry" style="width:auto">
-            <div class="item_title close-icon-5 icon-collapse-closed" id="{{ faq_id }}_button" onclick="javascript:show_hide('{{ faq_id }}')">
-              {{ faq.title }}
-              <div class="icon-help right" data-toggle="tooltip" data-placement="bottom" title="Contextual help from the FAQ"></div>
-            </div>
-            <div class="item_content" id="{{ faq_id }}">
-              {{ faq.content }}
-            </div>
-        </div>
-        {% endif %}
-    {% endfor %}
-  </div>
-</div>
-
 
 <!-- Searched entry -->
-<h3>Query: <span class="vep_hgvs"></span></h3>
+<h2 id="vep_hgvs_title" style="display:none">HGVS: <span class="vep_hgvs"></span></h2>
 
 <div id="vep_msg" style="display:none">
   <h4 class="icon-info close-icon-5 smaller-icon" style="text-align:center">Request sent to Ensembl. Please wait for the results ...</h4>
@@ -59,43 +31,56 @@ include_in_sitemap: false
 
   <!-- Co-located variants -->
   <div id="coloc_variants">
-    <h3 class="icon-location smaller-icon close-icon-5 margin-top-50 margin-bottom-10">Co-located variant(s)</h3>
+    <h3 class="icon-location smaller-icon close-icon-5 margin-top-10 margin-bottom-10">Co-located variant(s)</h3>
     <div id="coloc_variants_entry"></div>
   </div>
 
   <!-- Sequence variants -->
   <div id="seq_variants">  
+    <h3 class="icon-info smaller-icon close-icon-5 margin-top-10 margin-bottom-10">Alleles</h3>
     <table id="seq_variants_table" class="table table-hover table-lrg">
       <thead>
-        <tr><th colspan="3" style="with:100%">Genomic sequences</th></tr>
+        <tr><th colspan="3" class="split-header">Genomic sequences</th></tr>
         <tr>
-          <th style="with:20%"></th>
-          <th style="with:40%">Primary reference genome (<span class="assembly"></span>)</th>
-          <th style="with:40%">LRG genomic</th>
+          <th style="width:20%"></th>
+          <th class="text-center" style="width:40%">Primary reference genome (<span class="assembly"></span>)</th>
+          <th class="text-center" style="width:40%">LRG genomic</th>
         </tr>
       </thead>
       <tbody id="gen_seq">
         <tr>
           <td><b>Alleles</b></td>
           <td id="gen_ref_cell">
-            <div id="gen_ref_fwd" style="text-align:center"></div>
+            <div class="allele_label clearfix">
+              <div id="gen_ref_fwd_label" class="allele_label_fwd"></div>
+              <div id="gen_ref_fwd" class="allele_label_text"></div>
+            </div>
             <div class="clearfix">
               <div class="arrow ref_arrow"><div class="line"></div><div class="point point_right"></div></div>
             </div>
             <div class="clearfix">
               <div class="arrow ref_arrow"><div class="point point_left"></div><div class="line"></div></div>
             </div>
-            <div id="gen_ref_rev" style="text-align:center"></div>
+            <div class="allele_label clearfix">
+              <div id="gen_ref_rev" class="allele_label_text"></div>
+              <div id="gen_ref_rev_label" class="allele_label_rev"></div>
+            </div>
           </td>
           <td id="gen_lrg_cell">
-            <div id="gen_lrg_fwd" style="text-align:center"></div>
+            <div class="allele_label clearfix">
+              <div id="gen_lrg_fwd_label" class="allele_label_fwd"></div>
+              <div id="gen_lrg_fwd" class="allele_label_text"></div>
+            </div>
             <div class="clearfix">
               <div class="arrow"><div class="line lrg_blue_bg"></div><div class="point point_right lrg_blue"></div></div>
             </div>
             <div class="clearfix">
               <div class="arrow"><div class="point point_left lrg_blue"></div><div class="line lrg_blue_bg"></div></div>
             </div>
-            <div id="gen_lrg_rev" style="text-align:center"></div>
+            <div class="allele_label clearfix">
+              <div id="gen_lrg_rev" class="allele_label_text"></div>
+              <div id="gen_lrg_rev_label" class="allele_label_rev"></div>
+            </div>
           </td>
         </tr>
         <tr id="allele_freq_row">
@@ -105,11 +90,11 @@ include_in_sitemap: false
         </tr>
       </tbody>
       <thead>
-        <tr><th colspan="3">Transcript sequences</th></tr>
+        <tr><th colspan="3" class="split-header">Transcript sequences</th></tr>
         <tr>
           <th></th>
-          <th>Ensembl transcripts</th>
-          <th>LRG and RefSeq transcripts</th>
+          <th class="text-center">Ensembl transcripts</th>
+          <th class="text-center">LRG and RefSeq transcripts</th>
         </tr>
       </thead>
       <tbody id="trans_seq">
@@ -133,26 +118,46 @@ include_in_sitemap: false
   </div>
 
 
-  
-  <h2>Results for <span class="vep_hgvs"></span></h2>
+  <h3 class="icon-tool smaller-icon close-icon-5 margin-top-50">Predicted effect of variant (mismatch between LRG and primary reference genome)</h3>
 
   <!-- Summary results -->
-  <div id="vep_summmary">
-    <div class="clearfix">
-      <div class="col-xs-8 col-sm-8 col-md-7 col-lg-7 padding-left-0">
-        <table class="table-vep-sum" style="width:100%"><tbody></tbody></table>
-      </div>
-      <div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 padding-right-0">
-        <table class="table-vep-map"><tbody></tbody></table>
+  <div id="vep_summmary" class="clearfix margin-bottom-10">
+    <div class="col-xs-6 col-sm-6 col-md-5 col-lg-5 padding-left-0">
+      <table class="table-vep-sum" style="width:100%"><tbody></tbody></table>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-7 col-lg-7 padding-left-0 padding-right-0">
+      <div class="section-box" id="search_help">
+        <div class="clearfix">
+          <div class="section-header icon-help left">About the VEP</div>
+          <div class="right close-button icon-close close-icon-0" title="Close this box" onclick="javascript:$('#search_help').hide()"></div>
+        </div>
+        <p class="margin-top-5 margin-bottom-0 smaller-text">
+          These results are generated by the <a class="icon-external-link" href="{{ site.urls.ensembl }}/info/docs/tools/vep/index.html" target="_blank">Variant Effect Predictor (VEP)</a>a>, an Ensembl tool that determines the effect of variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts and protein sequences, as well as regulatory regions.<br />
+          Results are presented based on a change FROM the primary reference genome allele to the LRG allele.
+        </p>
+        <div style="margin: 15px 5px 0px">
+          {% assign faqs = site.faq | where: 'help','vep' %}
+            {% for faq in faqs %}
+              {% if faq.faq_tags contains "vep" %}
+                {% assign faq_id = faq.faq_group | append : '_' | append : faq.faq_order %}
+                <div class="item_entry" style="width:auto">
+                  <div class="item_title close-icon-5 icon-collapse-closed" id="{{ faq_id }}_button" onclick="javascript:show_hide('{{ faq_id }}')">
+                    {{ faq.title }}
+                    <div class="icon-help right" data-toggle="tooltip" data-placement="bottom" title="Contextual help from the FAQ"></div>
+                  </div>
+                  <div class="item_content" id="{{ faq_id }}">
+                    {{ faq.content }}
+                  </div>
+              </div>
+              {% endif %}
+          {% endfor %}
+        </div>
       </div>
     </div>
-    <div id="vep_strand"></div>
   </div>
 
-
-
   <!-- Transcript consequences -->
-  <h3 class="icon-analyse smaller-icon close-icon-5 margin-top-50 margin-bottom-10">Transcript consequences</h3>
+  <h3 class="icon-analyse smaller-icon close-icon-5 margin-top-20 margin-bottom-10">Transcript consequences</h3>
 
   <div id="tr_consequences">
     <table class="table table-hover table-lrg">

@@ -56,7 +56,7 @@ ref_assembly: "GRCh38"
 
 email_contact: "contact@lrg-sequence.org"
 
-is_beta: 1
+is_beta: 0
 
 #ebi_font: "https://www.ebi.ac.uk/web_guidelines/fonts"
 
@@ -109,7 +109,7 @@ js_url:
   ucsc: "https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr###LOC###"
   hgnc: "https://www.genenames.org/cgi-bin/gene_symbol_report?match="
   # LRG URL
-  lrg_record: "http://ftp.ebi.ac.uk/pub/databases/lrgex/test/"
+  lrg_record: "http://ftp.ebi.ac.uk/pub/databases/lrgex/"
 #------------------------------#
 
 

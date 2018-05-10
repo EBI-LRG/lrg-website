@@ -1896,3 +1896,42 @@ td.step_col span:nth-child(2):before {
   left:-5px;
   float:left;
 }
+
+.allele_label {
+  position:relative;
+}
+.allele_label_text {
+  float:left;
+  width:100%;
+  text-align:center;
+}
+.allele_label_fwd {
+  float:left;
+  position:absolute;
+  top:5px;
+  left:15px;
+}
+.allele_label_rev {
+  float:right;
+  position:absolute;
+  top:-5px;
+  right:15px;
+}
+.symbol {
+  float:left;
+}
+.fwd_arrow {
+  float:left;
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+  top: -2px;
+  transform: rotate(180deg);
+}
+.rev_arrow {
+  float:left;
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+  top: -4px;
+}

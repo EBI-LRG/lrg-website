@@ -37,7 +37,6 @@ function get_vep_results () {
   var hgnc_symbol = getUrlParam('hgnc');
   var g_strand    = getUrlParam('strand');
 
-
   if (assembly && hgvs) {
     assembly = assembly.toLowerCase();
     if (assembly.match('grch37')) {
@@ -49,12 +48,13 @@ function get_vep_results () {
     }
 
     rest_url += hgvs+'?merged=1;hgvs=1;failed=1;content-type=application/json';
-console.log(rest_url);
+    console.log('Ensembl REST call: '+rest_url);
     $('#vep_msg').show();
 
     $.getJSON(rest_url)
               .done(function(data) {
-                  console.log(data);
+                  console.log("Ensembl REST query done to retrieve VEP data from HGVS notation");
+                  //console.log(data);
                   parseData(data[0],lrg_id,hgnc_symbol,g_strand);
                   $('#vep_msg').hide();
                   $('#vep_results').show();
@@ -67,7 +67,6 @@ console.log(rest_url);
                                  '</div></div>';
                 $('#vep_msg').html(fail_html);
               });
-    console.log("Ensembl REST query done to retrieve VEP data from HGVS notation");
   }
   else {
     if (!assembly && !hgvs) {
@@ -148,15 +147,49 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
   var strand_gen = (data.id.indexOf("LRG_") >= 0) ? strand2 : strand1;
   var strand_lrg = (data.id.indexOf("LRG_") >= 0) ? strand1 : strand2;
 
-  $('.vep_hgvs').html(data.id);
+  var ref_fwd_al = genome_allele;
+  var ref_rev_al = reverse_complement(genome_allele);
+
+  var hgvs_elements = data.id.split(':');
+  $('.vep_hgvs').html('<span class="'+genome_colour+'">'+hgvs_elements[0]+'</span>:'+hgvs_elements[1]);
+  $('#vep_hgvs_title').show();
 
   $('.assembly').html(data.assembly_name);
 
-  $('#gen_ref_fwd').html(genome_allele);
-  $('#gen_ref_rev').html(reverse_complement(genome_allele));
+  $('#gen_ref_fwd').html(ref_fwd_al);
+  $('#gen_ref_rev').html(ref_rev_al);
 
   $('.ref_arrow > div.line').addClass(genome_bg_colour);
   $('.ref_arrow > div.point').addClass(genome_colour);
+
+  var fwd_arrow = '<div class="line '+genome_bg_colour+'"></div><div class="point point_right '+genome_colour+'"></div>';
+  var rev_arrow = '<div class="point point_left '+genome_colour+'"></div><div class="line '+genome_bg_colour+'"></div>';
+
+  if (data.transcript_consequences) {
+
+    $.each(data.transcript_consequences, function (index, trans) {
+      if (trans.gene_symbol == hgnc_symbol) {
+        var tr_lrg_arrow = (trans.strand == -1) ? rev_arrow : fwd_arrow;
+        
+        var gen_ref_label_id = (trans.strand == -1) ? 'gen_ref_rev_label' : 'gen_ref_fwd_label';
+        var gen_ref_label    = (trans.strand == -1) ? '<div class="symbol">'+hgnc_symbol+'</div> <div class="rev_arrow '+genome_colour+'">&crarr;</div>' : '<div class="fwd_arrow '+genome_colour+'">&crarr;</div> <div class="symbol"> '+hgnc_symbol+'</div>';
+            gen_ref_label    = '<div class="clearfix">'+gen_ref_label+'</div>';
+
+        var tr_allele = (trans.strand == 1) ? ref_fwd_al : ref_rev_al;
+        $('#tr_ref_arrow').html(tr_lrg_arrow);
+        $('#tr_ref_al').html(tr_allele);
+
+        $('#'+gen_ref_label_id).html(gen_ref_label);
+
+        return false;
+      }
+    });
+  }
+  else {
+    // Default: forward
+    $('#tr_ref_arrow').html(fwd_arrow);
+    $('#tr_ref_al').html(genome_allele);
+  }
 
   if (strand_lrg) {
     var fwd_lrg_allele = alt_allele;
@@ -165,11 +198,15 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
     var tr_lrg_arrow  = '<div class="line lrg_blue_bg"></div><div class="point point_right lrg_blue"></div>';
 
     if (strand_lrg == -1) {
-      fwd_lrg_allele = reverse_complement(alt_allele);
-      rev_lrg_allele = alt_allele;
       tr_lrg_allele  = rev_lrg_allele;
       tr_lrg_arrow  = '<div class="point point_left lrg_blue"></div><div class="line lrg_blue_bg"></div>';
     }
+
+    var gen_lrg_label_id = (strand_lrg  == -1) ? 'gen_lrg_rev_label' : 'gen_lrg_fwd_label';
+    var gen_lrg_label    = (strand_lrg  == -1) ? '<div class="symbol">'+hgnc_symbol+'</div> <div class="rev_arrow lrg_blue">&crarr;</div>' : '<div class="fwd_arrow lrg_blue">&crarr;</div> <div class="symbol"> '+hgnc_symbol+'</div>';
+        gen_lrg_label    = '<div class="clearfix">'+gen_lrg_label+'</div>';
+
+    $('#'+gen_lrg_label_id).html(gen_lrg_label);
 
     $('#gen_lrg_fwd').html(fwd_lrg_allele);
     $('#gen_lrg_rev').html(rev_lrg_allele);
@@ -211,11 +248,8 @@ function parse_colocated_variants (data,seqs_by_allele,strand_lrg) {
       var maf_gnomad = (variant.gnomad_maf || variant.gnomad_maf == 0) ? variant.gnomad_maf : default_val;
       var aa         = (variant.ancestral_allele) ? variant.ancestral_allele : default_val;
       var strand     = (variant.strand) ? get_strand(variant.strand) : default_val;
-      console.log("Variant:  "+variant.id);
-      console.log('MAF: '+ma+ ' ('+maf+')');
-      console.log('gnomAD: '+ma_gnomad+ ' ('+maf_gnomad+')');
-      console.log('REF :'+$('#gen_ref_fwd').html());
-      console.log('LRG :'+$('#gen_lrg_fwd').html());
+
+      html_var += (data.colocated_variants.length > 1) ? '<li>'+var_id+'</li>' : var_id;
 
       // Match Ref allele
       var html_af_1 = "";
@@ -228,7 +262,6 @@ function parse_colocated_variants (data,seqs_by_allele,strand_lrg) {
       if (html_af_1 != "") {
         html_af_ref += (data.colocated_variants.length > 1) ? '<li>'+var_id+':<ul>'+html_af_1+'</ul></li>' : html_af_1;
       }
-      console.log('AF REF: '+html_af_lrg );
 
       // Match LRG allele
       var html_af_2 = "";
@@ -242,7 +275,6 @@ function parse_colocated_variants (data,seqs_by_allele,strand_lrg) {
       if (html_af_2 != "") {
         html_af_lrg += (data.colocated_variants.length > 1) ? '<li>'+var_id+':<ul>'+html_af_2+'</ul></li>' : html_af_2;
       }
-      console.log('AF LRG: '+html_af_lrg );
    
     });
 
@@ -265,10 +297,11 @@ function parse_colocated_variants (data,seqs_by_allele,strand_lrg) {
 
   }
   else {
-    $('#coloc_variants').html('<div class="clearfix margin-top-10 margin-bottom-20">'+
-                              '  <div class="left icon-info close-icon-0 note_header lrg_dark_bg"></div>' + 
-                              '  <div class="left note_content">No co-located variant found in Ensembl</div>' +
-                              '</div>');
+    $('#coloc_variants_entry').html('<div class="clearfix margin-top-10 margin-bottom-20">'+
+                                    '  <div class="left icon-info close-icon-0 note_header lrg_dark_bg"></div>' + 
+                                    '  <div class="left note_content">No co-located variant found in Ensembl</div>' +
+                                    '</div>');
+    $('#allele_freq_row').hide();
   }
 }
 
