@@ -17,7 +17,7 @@ permalink: /contact/
 
 <h3 class="icon-request margin-top-30" id="request-a-lrg">Request an LRG</h3>
 
-If no LRG record exists for your gene of interest, you can [request](/lrg-request) one to be created for you.    
+If no LRG record exists for your gene of interest, you can [request](/documentation/lrg-request) one to be created for you.    
 
 <h3 class="icon-submit margin-top-40" id="submit-variants">Submit variants to obtain accession numbers</h3>
 

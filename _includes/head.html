@@ -23,6 +23,7 @@
   <script src="{{ "/js/lrg.js"               | prepend: site.baseurl }}"></script>
   <script src="{{ "/js/search_results.js"    | prepend: site.baseurl }}"></script>
   <script src="{{ "/js/sorttable.js"         | prepend: site.baseurl }}"></script>
+  <script src="{{ "/js/eu_cookie_banner.js"  | prepend: site.baseurl }}"></script>
   <script type="text/javascript">
     window.onload = function () {
       // Autocomplete
@@ -41,6 +42,10 @@
           minLength:3
         });
       });
+console.log(window.cookieName+" | "+window.cookieValue+" | "+checkCookie(window.cookieName));
+      if(checkCookie(window.cookieName) != window.cookieValue){
+        createDiv(); 
+      }
 
       // Search results
       var url = window.location.href;

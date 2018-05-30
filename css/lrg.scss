@@ -1935,3 +1935,52 @@ td.step_col span:nth-child(2):before {
   position: relative;
   top: -4px;
 }
+
+/* EU Cookie banner */
+#cookie-law {
+  width:100%;
+  height:auto;
+  position:fixed;
+  /*padding:0px 15px;*/
+  padding: 1rem;
+  left:0px;
+  bottom:0px;
+  background-color:$lrg_blue;
+  color: #FFF;
+  z-index: 1000;
+  a {
+    color:$lrg_dark;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    border-bottom-color: inherit;
+    &:hover, &:active, &:focus {
+      color:$lrg_purple;
+      border-bottom-style: solid;
+    }
+  }
+}
+.cookie_row {
+  max-width: 80rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.cookie_text {
+  margin-right: 1em;
+  line-height: 1.5;
+  float:left;
+  width:75%;
+}
+.close-cookie-banner {
+  position: absolute;
+  right: 2rem;
+  top: 0rem;
+  cursor: pointer;
+  /*font-size: 2em;*/
+  padding-top: 1rem;
+  float:right;
+  text-align:right;
+  width:25%;
+  &:hover, &:active, &:focus {
+    color:$lrg_dark;
+  }
+}
