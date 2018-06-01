@@ -12,7 +12,7 @@ LRGs are created upon request by collaborators (members of diagnostic and resear
 
 <h3 class="icon-stop smaller-icon margin-top-30" id="before-requesting-an-lrg">Before requesting an LRG</h3>
 
-If you haven’t already, please read about the [LRG creation process](/documentation/lrg-creation){:target="_blank"}. Check if an [LRG already exists](/search/?query=*){:target="_blank"}, and if so its [status and curation progress](/curation-status){:target="_blank"}.
+<p>If you haven’t already, please read about the [LRG creation process](/documentation/lrg-creation){:target="_blank"}. Check if an [LRG already exists](/search/?query=*){:target="_blank"}, and if so its [status and curation progress](/curation-status){:target="_blank"}.</p>
 
 <div class="margin-left-20 margin-bottom-20">
 
@@ -75,6 +75,11 @@ Please list the more commonly used transcript first (e.g. t1 = NM_x, t2= NM_y).
 If there is no RSG for the gene, LRG curators will work with the NCBI to create it.  
 If there is an issue with the RSG, mention this in your email and LRG curators will work with yourself and the NCBI to resolve the issue.
 
+<div class="clearfix margin-bottom-20">
+  <div class="left icon-info close-icon-0 note_header lrg_green2_bg"></div>
+  <div class="left note_content">Please, read our <a class="icon-external-link icon-documentation smaller-icon close-icon-2" href="{{ site.privacy-notice-creation-link }}" target="_blank">Privacy Notice</a> for how we use personal data in the LRG record creation process.</div>
+</div>
+
 <div class="margin-bottom-30"></div>
 
 ##### Community information section
@@ -86,4 +91,3 @@ This section may include:
 * Legacy amino acid numbering (e.g. [LRG_1](/search/?query=LRG_1){:target="_blank"})
 * Haplotype information (e.g. [LRG_802](/search/?query=LRG_802){:target="_blank"})
 * Other relevant information (e.g. [LRG_1061](/search/?query=LRG_1061){:target="_blank"})
-
