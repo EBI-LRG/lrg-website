@@ -311,7 +311,7 @@ function parse_transcript_data (data) {
   var html = "";
 
   // Transcript consequences
-  if (data.transcript_consequences) {
+  if (data.transcript_consequences && data.transcript_consequences.length!=0) {
 
     // Sort by gene symbol
     var sorted_transcript_consequences = data.transcript_consequences.sort(function(a,b) {
@@ -319,7 +319,10 @@ function parse_transcript_data (data) {
     });
 
     $.each(sorted_transcript_consequences, function (index, trans) {
-      var gene_id  = '<a class="icon-external-link bold_font" href="'+ ens_gene_url + trans.gene_id +'">'+trans.gene_symbol+'</a>';
+      var gene_id = '-';
+      if (trans.gene_symbol != undefined) {
+        gene_id = '<a class="icon-external-link bold_font" href="'+ ens_gene_url + trans.gene_id +'">'+trans.gene_symbol+'</a>';
+      }
       var trans_id = '<a class="icon-external-link" href="'+ ens_trans_url + trans.transcript_id +'">'+trans.transcript_id+'</a>';
       var strand = get_strand(trans.strand);
 
@@ -374,8 +377,8 @@ function reverse_complement(seq, to_reverse) {
 
 function compareStrings(a, b) {
   // Assuming you want case-insensitive comparison
-  a = a.toLowerCase();
-  b = b.toLowerCase();
+  a = (a == undefined) ? 'zzzz' : a.toLowerCase();
+  b = (b == undefined) ? 'zzzz' : b.toLowerCase();
 
   return (a < b) ? -1 : (a > b) ? 1 : 0;
 }

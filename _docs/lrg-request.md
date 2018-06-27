@@ -12,7 +12,7 @@ LRGs are created upon request by collaborators (members of diagnostic and resear
 
 <h3 class="icon-stop smaller-icon margin-top-30" id="before-requesting-an-lrg">Before requesting an LRG</h3>
 
-<p>If you haven’t already, please read about the [LRG creation process](/documentation/lrg-creation){:target="_blank"}. Check if an [LRG already exists](/search/?query=*){:target="_blank"}, and if so its [status and curation progress](/curation-status){:target="_blank"}.</p>
+If you haven’t already, please read about the [LRG creation process](/documentation/lrg-creation){:target="_blank"}. Check if an [LRG already exists](/search/?query=*){:target="_blank"}, and if so its [status and curation progress](/curation-status){:target="_blank"}.
 
 <div class="margin-left-20 margin-bottom-20">
 

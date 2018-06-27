@@ -348,7 +348,7 @@ The LRG genomic, transcript and protein sequences are also available in **FASTA 
     The list of LRGs already imported in <a class="icon-external-link" href="{{ site.urls.ensembl }}" target="_blank">Ensembl</a> is available in this text file:
   </div>
   <div class="left margin-left-5">
-    <a href="{{ site.urls.lrg_ftp }}lrgs_in_ensembl.txt" target="_blank">
+    <a href="{{ site.urls.lrg_ftp }}data_files/lrgs_in_ensembl.txt" target="_blank">
       <div class="file_link clearfix">
           <div class="left icon-file close-icon-2 tiny-icon"></div>
           <div class="left">TXT</div>

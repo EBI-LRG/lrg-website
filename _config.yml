@@ -57,7 +57,7 @@ ref_assembly: "GRCh38"
 email_contact: "contact@lrg-sequence.org"
 
 privacy-notice-creation-link: '//www.ebi.ac.uk/data-protection/privacy-notice/locus-reference-genomic-record-creation'
-consent_text: 'This website requires cookies, and the limited processing of your personal data in order to function. By using the site you are agreeing to this as outlined in our <a target="_blank" href="*privacy-notice-link">Privacy Notice</a> and <a target="_blank" href="//www.ebi.ac.uk/about/terms-of-use">Terms of Use</a>.'
+consent_text: 'This website requires cookies, and the limited processing of your personal data in order to function. By using the site you are agreeing to this as outlined in our <a target="_blank" href="//www.ebi.ac.uk/data-protection/privacy-notice/lrg-website">Privacy Notice</a> and <a target="_blank" href="//www.ebi.ac.uk/about/terms-of-use">Terms of Use</a>.'
 
 
 is_beta: 0
