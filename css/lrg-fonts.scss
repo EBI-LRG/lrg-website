@@ -288,6 +288,11 @@
   content: "l";
 }
 
+.icon-announcement:before {
+  font-family: 'EBI-Generic';
+  content: "U";
+}
+
 .icon-calendar:before {
   font-family: 'EBI-Generic';
   content: "r";
@@ -371,6 +376,11 @@
 .icon-location:before {
   font-family: 'EBI-Generic';
   content: "[";
+}
+
+.icon-new:before {
+  font-family: 'EBI-Generic';
+  content: "<";
 }
 
 .icon-news:before {
