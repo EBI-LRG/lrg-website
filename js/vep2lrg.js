@@ -15,6 +15,7 @@ var ens_trans_url_grch37 = '{{ site.js_url.ens_trans_37 }}';
 var ens_var_url_grch37   = '{{ site.js_url.ens_var_37 }}';
 
 var default_val = '';
+var max_allele_length = 10;
 
 var maf_help = { 
                  'LRG' : 'The <b>LRG</b> genomic sequence contains the ',
@@ -54,16 +55,16 @@ function get_vep_results () {
     $.getJSON(rest_url)
               .done(function(data) {
                   console.log("Ensembl REST query done to retrieve VEP data from HGVS notation");
-                  //console.log(data);
                   parseData(data[0],lrg_id,hgnc_symbol,g_strand);
                   $('#vep_msg').hide();
                   $('#vep_results').show();
               })
               .fail(function(data,status,xhr) {
-                console.log( status+": "+ xhr);
+                var msg = (data.responseJSON.error) ? data.responseJSON.error : xhr;
+                console.log( status+": "+ data.responseJSON.error);
                 var fail_html = '<div class="clearfix"><div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 lrg_gray_bg">' + 
                                  '<h4 class="icon-alert close-icon-5 smaller-icon" style="text-align:center"><span class="lrg_dark">Sorry, we can\'t get results from Ensembl!</span></h4>' +
-                                 '<h6>Type: <span style="font-style:italic">'+status+'</span></h6><h6>Cause: <span style="font-style:italic">'+xhr+'</span></h6>' +
+                                 '<h6>Type: <span class="error_msg">'+status+'</span></h6><h6>Cause: <span class="error_msg">'+msg+'</span></h6>' +
                                  '</div></div>';
                 $('#vep_msg').html(fail_html);
               });
@@ -156,8 +157,13 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
 
   $('.assembly').html(data.assembly_name);
 
-  $('#gen_ref_fwd').html(ref_fwd_al);
-  $('#gen_ref_rev').html(ref_rev_al);
+  var ref_fwd_al_label  = (ref_fwd_al.length > max_allele_length) ? ref_fwd_al.substr(1,max_allele_length)+'...' : ref_fwd_al;
+  var ref_rev_al_length = ref_rev_al.length;
+  var ref_rev_al_label  = (ref_rev_al_length > max_allele_length) ? '...'+ref_rev_al.substr(ref_rev_al_length-max_allele_length,ref_rev_al_length) : ref_rev_al;
+  $('#gen_ref_fwd').html(ref_fwd_al_label);
+  $('#gen_ref_fwd').attr('title',ref_fwd_al);
+  $('#gen_ref_rev').html(ref_rev_al_label);
+  $('#gen_ref_rev').attr('title',ref_rev_al);
 
   $('.ref_arrow > div.line').addClass(genome_bg_colour);
   $('.ref_arrow > div.point').addClass(genome_colour);
@@ -176,8 +182,14 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
             gen_ref_label    = '<div class="clearfix">'+gen_ref_label+'</div>';
 
         var tr_allele = (trans.strand == 1) ? ref_fwd_al : ref_rev_al;
+        var tr_allele_length = tr_allele.length;
+        var tr_allele_label  = tr_allele;
+        if (tr_allele_length > max_allele_length) {
+          tr_allele_label = (trans.strand == 1) ? tr_allele.substr(1,max_allele_length)+'...' : '...'+tr_allele.substr(tr_allele_length-max_allele_length,tr_allele_length);
+        }
         $('#tr_ref_arrow').html(tr_lrg_arrow);
-        $('#tr_ref_al').html(tr_allele);
+        $('#tr_ref_al').html(tr_allele_label);
+        $('#tr_ref_al').attr('title',tr_allele);
 
         $('#'+gen_ref_label_id).html(gen_ref_label);
 
@@ -208,11 +220,25 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
 
     $('#'+gen_lrg_label_id).html(gen_lrg_label);
 
-    $('#gen_lrg_fwd').html(fwd_lrg_allele);
-    $('#gen_lrg_rev').html(rev_lrg_allele);
-    
+    // LRG genomic sequence
+    var fwd_lrg_al_label  = (fwd_lrg_allele.length > max_allele_length) ? fwd_lrg_allele.substr(1,max_allele_length)+'...' : fwd_lrg_allele;
+    var rev_lrg_al_length = rev_lrg_allele.length;
+    var rev_lrg_al_label  = (rev_lrg_al_length > max_allele_length) ? '...'+rev_lrg_allele.substr(rev_lrg_al_length-max_allele_length,rev_lrg_al_length) : rev_lrg_allele;
+    $('#gen_lrg_fwd').html(fwd_lrg_al_label);
+    $('#gen_lrg_fwd').attr('title',fwd_lrg_allele);
+    $('#gen_lrg_rev').html(rev_lrg_al_label);
+    $('#gen_lrg_rev').attr('title',rev_lrg_allele);
+
+    // LRG transcript sequence
+    var tr_lrg_allele_label  = tr_lrg_allele;
+    var tr_lrg_allele_length = tr_lrg_allele.length;
+    if (tr_lrg_allele_length > max_allele_length) {
+      tr_lrg_allele_label = (strand_lrg == 1) ? tr_lrg_allele.substr(1,max_allele_length)+'...' : '...'+tr_lrg_allele.substr(tr_lrg_allele_length-max_allele_length,tr_lrg_allele_length);
+    }
     $('#tr_lrg_arrow').html(tr_lrg_arrow);
-    $('#tr_lrg_al').html(tr_lrg_allele);
+    $('#tr_lrg_al').html(tr_lrg_allele_label);
+    $('#tr_lrg_al').attr('title',tr_lrg_allele);
+
   }
 
   parse_colocated_variants(data,seqs_by_allele,strand_lrg);
