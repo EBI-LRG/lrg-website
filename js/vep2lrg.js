@@ -277,13 +277,26 @@ function parse_colocated_variants (data,seqs_by_allele,strand_lrg) {
 
       html_var += (data.colocated_variants.length > 1) ? '<li>'+var_id+'</li>' : var_id;
 
+      var var_array = var_al.split('/');
+
       // Match Ref allele
       var html_af_1 = "";
-      if (ma && ma == $('#gen_ref_fwd').html()) {
-        html_af_1 += '<li>'+maf+' (1000 Genomes)</li>';
+      var ref_allele = $('#gen_ref_fwd').html();
+      if (ma) {
+        if (ma == ref_allele) {
+          html_af_1 += '<li><b>'+ma+"</b>: "+maf+' (1000 Genomes)</li>';
+        }
+        else if (var_array.length == 2 && var_array.indexOf(ref_allele)) {
+          html_af_1 += '<li><b>'+ref_allele+"</b>: "+(1-maf)+' (1000 Genomes)</li>';
+        }
       }
-      else if (ma_gnomad && ma_gnomad == $('#gen_ref_fwd').html()) {
-        html_af_1 += '<li>'+maf_gnomad+' (gnomAD)</li>';
+      else if (ma_gnomad) {
+        if (ma_gnomad == ref_allele) {
+          html_af_1 += '<li><b>'+ma_gnomad+"</b>: "+maf_gnomad+' (gnomAD)</li>';
+        }
+        else if (var_array.length == 2 && var_array.indexOf(ref_allele)) {
+          html_af_1 += '<li><b>'+ref_allele+"</b>: "+(1-maf_gnomad)+' (gnomAD)</li>';
+        }
       }
       if (html_af_1 != "") {
         html_af_ref += (data.colocated_variants.length > 1) ? '<li>'+var_id+':<ul>'+html_af_1+'</ul></li>' : html_af_1;
@@ -291,12 +304,22 @@ function parse_colocated_variants (data,seqs_by_allele,strand_lrg) {
 
       // Match LRG allele
       var html_af_2 = "";
-      var lrg_allele = (strand_lrg && strand_lrg == -1) ? $('#gen_lrg_rev').html() : $('#gen_lrg_fwd').html()
-      if (ma && ma == lrg_allele) {
-        html_af_2 += '<li>'+maf+' (1000 Genomes)</li>';
+      var lrg_allele = $('#gen_lrg_fwd').html();
+      if (ma) {
+        if (ma == lrg_allele) {
+          html_af_2 += '<li><b>'+ma+"</b>: "+maf+' (1000 Genomes)</li>';
+        }
+        else if (var_array.length == 2 && var_array.indexOf(lrg_allele)) {
+          html_af_2 += '<li><b>'+lrg_allele+"</b>: "+(1-maf)+' (1000 Genomes)</li>';
+        }
       }
-      else if (ma_gnomad && ma_gnomad == lrg_allele) {
-        html_af_2 += '<li>'+maf_gnomad+' (gnomAD)</li>';
+      else if (ma_gnomad) {
+        if (ma_gnomad == lrg_allele) {
+          html_af_2 += '<li><b>'+ma_gnomad+": "+maf_gnomad+' (gnomAD)</li>';
+        }
+        else if (var_array.length == 2 && var_array.indexOf(lrg_allele)) {
+          html_af_2 += '<li><b>'+lrg_allele+"</b>: "+(1-maf_gnomad)+' (gnomAD)</li>';
+        }
       }
       if (html_af_2 != "") {
         html_af_lrg += (data.colocated_variants.length > 1) ? '<li>'+var_id+':<ul>'+html_af_2+'</ul></li>' : html_af_2;
