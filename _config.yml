@@ -29,9 +29,9 @@ avatar_hover: /images/lrg_logo_hover.png
 search-label: "Search LRGs"
 
 # LRG counts (used in FAQ) - Should be edited regularly
-lrg-date: "June 2018"
-lrg-created: "1086"
-lrg-public: "757"
+lrg-date: "August 2018"
+lrg-created: "1127"
+lrg-public: "798"
 lrg-schema: "1.9"
 
 #--------------------------------------------------------#
