@@ -224,9 +224,9 @@ header {
     background-image: url({{ site.avatar }});
     -webkit-transition-duration: $transition_time; /* Safari */
     transition-duration: $transition_time;
-    &:hover, &:active, &:focus {
+    /*&:hover, &:active, &:focus {
       background-image: url({{ site.avatar_hover }});
-    }
+    }*/
   }
 }
 
