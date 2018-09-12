@@ -38,4 +38,4 @@ faq_tags:
 </script>
 
 Over **<span id="lrg_count"></span> LRGs** have been created, of which **<span id="lrg_public_count"></span>** are **public**.
-The aim is to create an LRG for every locus with clinical implications. To request an LRG please look at the [LRG request](/lrg-request) page.
+The aim is to create an LRG for every locus with clinical implications. To request an LRG please look at the [LRG request](/documentation/lrg-request) page.

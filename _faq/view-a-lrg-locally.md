@@ -9,7 +9,7 @@ faq_related:
   - use-a-lrg-record
 ---
 
-Yes, each LRG can be downloaded from its page on the LRG website or by following the instructions described on the [Download page](/downloads).
+Yes, each LRG can be downloaded from its own page on the LRG website or by following the instructions described on the [Data page](/data).
 If you want to display the downloaded LRG(s) locally on your web browser with the same layout as the LRG website, you need to download the files:  
 
 * [lrg2html.xsl]({{ site.urls.lrg_ftp_http }}lrg2html.xsl)

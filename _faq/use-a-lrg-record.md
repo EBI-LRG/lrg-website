@@ -27,7 +27,7 @@ Once a LRG record has been created, you can e.g.:
 
 * **Submit your variant data** into a public archive:
 
-  * Variants can be submitted to [dbSNP]({{ site.urls.ncbi }}/SNP/){: .icon-external-link}{:target="_blank"} and [ClinVar]({{ site.urls.ncbi }}/clinvar/){: .icon-external-link}{:target="_blank"} via the [LRG submission process](/submit-variants).  
+  * Variants can be submitted to [dbSNP]({{ site.urls.ncbi }}/SNP/){: .icon-external-link}{:target="_blank"} and [ClinVar]({{ site.urls.ncbi }}/clinvar/){: .icon-external-link}{:target="_blank"} via the [LRG submission process](/documentation/submit-variants).  
 
 * **Interpret your variant data** using your LRG:
 

@@ -7,4 +7,4 @@ faq_tags:
   - sequence
 ---
 
-Yes, several [tools](/convert) can be used to convert variant coordinates from other reference sequences into LRG coordinates.
+Yes, several [tools](/documentation/convert) can be used to convert variant coordinates from other reference sequences into LRG coordinates.
