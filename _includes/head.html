@@ -26,6 +26,24 @@
   <script src="{{ "/js/eu_cookie_banner.js"  | prepend: site.baseurl }}"></script>
   <script type="text/javascript">
     window.onload = function () {
+      // Search results
+      var url = window.location.href;
+      var regex = /search/;
+      if (regex.test(url)) { get_query(); }
+      else {
+        // Redirect from older URLs (/LRG/LRG_xxx)
+        var regex2 = /LRG\/LRG_/;
+        if (regex2.test(url)) {
+          var url_data = url.split("/LRG/");
+          if (url_data[1]) {
+            var lrg_id = url_data[1].match(/^(LRG_\d+)/);
+            if (lrg_id && lrg_id[1]) {
+              $(location).attr('href',url_data[0]+"/search/?query="+lrg_id[1]);
+            }
+          }
+        }
+      }
+
       // Autocomplete
       get_data_in_array().then(function(data_list){
         $("#search_id").autocomplete({
@@ -45,11 +63,6 @@
       if(checkCookie(window.cookieName) != window.cookieValue){
         createDiv(); 
       }
-
-      // Search results
-      var url = window.location.href;
-      var regex = new RegExp("\/search\/");
-      if (regex.test(url)) { get_query(); }
 
       // This will capture hash changes while on the page
       $(window).on("hashchange",offsetAnchor);
