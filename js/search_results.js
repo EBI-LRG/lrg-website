@@ -107,8 +107,16 @@ function get_search_results (search_id) {
 
   // Search LRG ID with only the number (e.g. '10' instead of 'LRG_10')
   $.each(search_ids_list, function (index, search_item) {
+    // Only numeric data
     if (search_item.match(/^\d+$/)) {
       search_ids_list[index] = 'LRG_'+search_item;
+    }
+    // LRG with transcript or protein ID
+    else {
+      var extracted_lrg_id = search_item.match(/^(LRG_\d+)(t|p)\d+$/);
+      if (extracted_lrg_id) {
+        search_ids_list[index] = extracted_lrg_id[1];
+      }
     }
   });
 
