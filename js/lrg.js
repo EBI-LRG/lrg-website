@@ -20,6 +20,8 @@ function show_hide(id, label) {
   }
 }
 
+
+
 function show_hide_info(id) {
   var info_id = "#"+id;
   var button_id = "#"+id+"_button";

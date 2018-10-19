@@ -28,12 +28,19 @@
     window.onload = function () {
       // Search results
       var url = window.location.href;
-      var regex = /search/;
+      var regex  = /search\/\?query=.+/;
+      var regex2 = /search/;
+      // Search page with query
       if (regex.test(url)) { get_query(); }
+      // Search page without query
+      else if (regex2.test(url)) {
+        $("#search_msg").show();
+        $("#search_result_container").hide();
+      }
+      // Redirect from older URLs (/LRG/LRG_xxx)
       else {
-        // Redirect from older URLs (/LRG/LRG_xxx)
-        var regex2 = /LRG\/LRG_/;
-        if (regex2.test(url)) {
+        var regex3 = /LRG\/LRG_/;
+        if (regex3.test(url)) {
           var url_data = url.split("/LRG/");
           if (url_data[1]) {
             var lrg_id = url_data[1].match(/^(LRG_\d+)/);

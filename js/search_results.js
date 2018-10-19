@@ -64,33 +64,38 @@ function get_query () {
   if (!query) {
     query = getParameterByName("query");
   }
-  go_to_result_page(query);
+
+  if (query && query.length > 0) {
+    go_to_result_page(query);
+  }
 }
 
 function go_to_result_page (query) {
 
-  if (query.length > 0) {
-    var url = window.location.href;
-    var regex = new RegExp("\/search\/");
-    // Search page
-    if (regex.test(url)) {
-      changeUrlParam('query', query);
+  var url = window.location.href;
+  var regex = /search/;
+  // Search page
+  if (regex.test(url)) {
+    changeUrlParam('query', query);
 
-      $("#search_count").hide();
-      wait_for_results();
+    $("#search_count").hide();
+    $("#search_msg").hide();
+    $("#search_result_container").show();
 
-      // Asynch AJAX call + display results
-      get_search_results(query).then(function(result_objects){
-        lrg_steps_list = [];
-        lrg_steps_count = 0;
+    // Loading waiting icon
+    wait_for_results();
 
-        display_results(result_objects);
-      });
-    }
-    // Other page
-    else {
-      location.href = '/search/?query='+query;
-    }
+    // Asynch AJAX call + display results
+    get_search_results(query).then(function(result_objects){
+      lrg_steps_list = [];
+      lrg_steps_count = 0;
+
+      display_results(result_objects);
+    });
+  }
+  // Other page
+  else {
+    location.href = '/search/?query='+query;
   }
 }
 
@@ -158,123 +163,135 @@ function display_results (results) {
   var result_count = Object.keys(results).length;
   var result_term = "result";
   if (!result_count) {
+    no_results();
     result_count = 0;
+    $("#search_count").html(result_count + " " + result_term);
+    $("#search_count").show();
+    $("#search_help_container").removeClass();
+    $('#step_info_container').hide();
+    return;
   }
-  if (result_count > 1) {
-    result_term += "s";
-  }
+  else if (result_count > 0) {
+    $("#search_msg").hide();
+    $("#search_msg").html();
+    $("#search_result_container").show();
 
-  $("#search_count").html(result_count + " " + result_term);
-  $("#search_count").show();
-  table_tbody.empty();
-  $("#search_help_container").removeClass();
+    if (result_count > 1) {
+      result_term += "s";
+    }
 
-  var step_info = $('#step_info_container');
+    $("#search_count").html(result_count + " " + result_term);
+    $("#search_count").show();
+    table_tbody.empty();
+    $("#search_help_container").removeClass();
 
-  // Sort the results by LRG ID (using the numeric part of the LRG ID)
-  var result_keys = Object.keys(results);
-  result_keys.sort(function(a,b) {
-    var id_a = extract_id(a);
-    var id_b = extract_id(b);
-    return id_a - id_b;
-  });
+    var step_info = $('#step_info_container');
 
-  var link_separator = '<span>-</span>';
-  
-  var has_lrg_pending = 0;
+    // Sort the results by LRG ID (using the numeric part of the LRG ID)
+    var result_keys = Object.keys(results);
+    result_keys.sort(function(a,b) {
+      var id_a = extract_id(a);
+      var id_b = extract_id(b);
+      return id_a - id_b;
+    });
 
-  var lrg_list = [];
-
-  var rows_list = [];
-
-  // Loop over results
-  for (var i=0; i < result_keys.length; i++) {
-    var lrg_id = result_keys[i];
-    var entry  = results[lrg_id];
-    var symbol = entry.symbol;
-    var status = entry.status;
-    var chr    = entry.coord[0];
-    var start  = entry.coord[1];
-    var end    = entry.coord[2];
-    var id     = extract_id(lrg_id);
-
-    var ens_link  = generate_external_link('Ensembl','ens',1);
-    var ncbi_link = generate_external_link('NCBI','ncbi',1);
-    var ucsc_link = generate_external_link('UCSC','ucsc',1);
-
-    var lrg_link    = get_lrg_link(lrg_id, id);
-    var curation_id = lrg_id.toLowerCase();
+    var link_separator = '<span>-</span>';
     
-    // Step class
-    var step_classes =  step_col_class + ' ';
-        step_classes += (status == 'public') ? public_step_col_class : pending_step_col_class;
+    var has_lrg_pending = 0;
 
-    var curation_desc_cell = newCell().attr('id', curation_id+'_step');
-        curation_desc_cell.addClass(step_classes);
+    var lrg_list = [];
 
-    var curation_date_cell = newCell('-').attr('id', curation_id+"_date");
-        curation_date_cell.addClass(step_col_class);
+    var rows_list = [];
 
-    if (status == 'public') {
-      curation_desc_cell.attr('sorttable_key', lrg_steps_count);
+    // Loop over results
+    for (var i=0; i < result_keys.length; i++) {
+      var lrg_id = result_keys[i];
+      var entry  = results[lrg_id];
+      var symbol = entry.symbol;
+      var status = entry.status;
+      var chr    = entry.coord[0];
+      var start  = entry.coord[1];
+      var end    = entry.coord[2];
+      var id     = extract_id(lrg_id);
+
+      var ens_link  = generate_external_link('Ensembl','ens',1);
+      var ncbi_link = generate_external_link('NCBI','ncbi',1);
+      var ucsc_link = generate_external_link('UCSC','ucsc',1);
+
+      var lrg_link    = get_lrg_link(lrg_id, id);
+      var curation_id = lrg_id.toLowerCase();
+      
+      // Step class
+      var step_classes =  step_col_class + ' ';
+          step_classes += (status == 'public') ? public_step_col_class : pending_step_col_class;
+
+      var curation_desc_cell = newCell().attr('id', curation_id+'_step');
+          curation_desc_cell.addClass(step_classes);
+
+      var curation_date_cell = newCell('-').attr('id', curation_id+"_date");
+          curation_date_cell.addClass(step_col_class);
+
+      if (status == 'public') {
+        curation_desc_cell.attr('sorttable_key', lrg_steps_count);
+      }
+      else {
+        lrg_list.push(id);
+
+        if (has_lrg_pending == 0) {
+          has_lrg_pending = 1;
+          step_info.show(400);
+        }
+      }
+
+      // HTML code
+      var newrow = $('<tr/>');
+          newrow.attr('id', lrg_row_id_prefix+id);
+          newrow.attr('data-chr', chr);
+          newrow.attr('data-start', start);
+          newrow.attr('data-end', end);
+          newrow.attr('data-symbol', symbol);
+          newrow.attr('data-status', status);
+
+      // LRG ID
+      var lrg_id_cell = newCell(lrg_link);
+          lrg_id_cell.attr('sorttable_key', id);
+      
+      newrow.append(lrg_id_cell);
+      // Symbol
+      newrow.append(newCell(generate_external_link(symbol,'hgnc_link')));
+      // LRG Status
+      newrow.append(newCell("<span>"+status+"</span>").addClass(status+'_hl'));
+      // Curation Status step
+      newrow.append(curation_desc_cell);
+      // Curation Status date
+      newrow.append(curation_date_cell);
+
+      // External links
+      newrow.append(newCell(ens_link + link_separator + ncbi_link + link_separator + ucsc_link).addClass('gbrowser'));
+
+      rows_list.push(newrow);
+      //table_tbody.append(newrow);
+    }
+    table_tbody.append(rows_list);
+
+    // Post process to show or not the "Curation status" column (not needed if only public LRG returned in the results)
+    if (has_lrg_pending == 1) {
+
+      // Make space to display the step diagram
+      $("#search_help_container").addClass("col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-left-0 padding-right-0");
+
+      // Get the LRG steps
+      get_lrg_step_data(lrg_list);
+
+      // Show the LRG steps
+      $('.'+step_col_class).show();
     }
     else {
-      lrg_list.push(id);
+      step_info.hide();
+      step_info.html('');
 
-      if (has_lrg_pending == 0) {
-        has_lrg_pending = 1;
-        step_info.show(400);
-      }
+      $('.'+step_col_class).hide();
     }
-
-    // HTML code
-    var newrow = $('<tr/>');
-        newrow.attr('id', lrg_row_id_prefix+id);
-        newrow.attr('data-chr', chr);
-        newrow.attr('data-start', start);
-        newrow.attr('data-end', end);
-        newrow.attr('data-symbol', symbol);
-        newrow.attr('data-status', status);
-
-    // LRG ID
-    var lrg_id_cell = newCell(lrg_link);
-        lrg_id_cell.attr('sorttable_key', id);
-    
-    newrow.append(lrg_id_cell);
-    // Symbol
-    newrow.append(newCell(generate_external_link(symbol,'hgnc_link')));
-    // LRG Status
-    newrow.append(newCell("<span>"+status+"</span>").addClass(status+'_hl'));
-    // Curation Status step
-    newrow.append(curation_desc_cell);
-    // Curation Status date
-    newrow.append(curation_date_cell);
-
-    // External links
-    newrow.append(newCell(ens_link + link_separator + ncbi_link + link_separator + ucsc_link).addClass('gbrowser'));
-
-    rows_list.push(newrow);
-    //table_tbody.append(newrow);
-  }
-  table_tbody.append(rows_list);
-
-  // Post process to show or not the "Curation status" column (not needed if only public LRG returned in the results)
-  if (has_lrg_pending == 1) {
-
-    // Make space to display the step diagram
-    $("#search_help_container").addClass("col-xs-6 col-sm-6 col-md-6 col-lg-6 padding-left-0 padding-right-0");
-
-    // Get the LRG steps
-    get_lrg_step_data(lrg_list);
-
-    // Show the LRG steps
-    $('.'+step_col_class).show();
-  }
-  else {
-    step_info.hide();
-    step_info.html('');
-
-    $('.'+step_col_class).hide();
   }
 }
 
@@ -500,9 +517,15 @@ function wait_for_results() {
   var cols = $(table_id).find("thead > tr:first th").length;
   table_tbody = $(table_id + " > tbody");
   table_tbody.empty();
-  table_tbody.append('<tr><td colspan="'+cols+'"><div class="wait"></div><div class="loader"></div></td></tr>');
+  table_tbody.append('<tr><td colspan="'+cols+'"><div class="wait"></div><div class="loader"></div></td></tr>'); 
 }
 
+function no_results() {
+  var cols = $(table_id).find("thead > tr:first th").length;
+  table_tbody = $(table_id + " > tbody");
+  table_tbody.empty();
+  table_tbody.append('<tr><td colspan="'+cols+'"><div class="no_results"></div></td></tr>'); 
+}
 
 
 /***** Retrieve information about LRG curation steps (pending records) *****/

@@ -989,9 +989,18 @@ table {
 }
 
 #search_term {
-  font-style:bold;
+  font-weight:bold;
   color:$lrg_green2;
   margin:0px 10px;
+}
+
+#search_msg {
+  font-weight:bold;
+  text-align:center;
+  margin:0px 10px;
+}
+#search_msg:before {
+  content: "Please search a term in the box above"
 }
 
 .bold_font {
@@ -1644,6 +1653,17 @@ ul.sections_list>li>a:after {
 }
 .wait:before {
   content:"Please wait for the results";
+}
+
+.no_results {
+  text-align:center;
+  width:100%;
+  font-size:1.1em;
+  font-weight:bold;
+  padding:5px;
+}
+.no_results:before {
+  content:"No matching results found";
 }
 
 .page {

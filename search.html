@@ -9,38 +9,40 @@ include_in_sitemap: true
 
 
 {% include search_help.html %}
-
-<h3 class="post-title">Search results for: <span id="search_term"></span> <div class="badge big_badge lrg_blue_bg" id="search_count"></div></h3>
-<table id="search_results" class="table table-hover table-lrg table-lrg-bold-left-col sortable">
-  <thead>
-    <tr class="sorttable_header">
-      <th class="sorttable_numeric sorttable_sorted first-col">
-        <span>LRG ID</span>
-        <span class="right icon-help tiny-icon close-icon-0 margin-right-15" data-toggle="tooltip" data-placement="bottom" title="Sort by LRG identifier"></span>
-      </th>
-      <th class="to_sort">
-        <span>HGNC Symbol</span>
-        <span class="right icon-help tiny-icon close-icon-0 margin-right-15" data-toggle="tooltip" data-placement="bottom" title="Sort by HGNC symbol (external link)"></span>
-      </th>
-      <th class="to_sort">
-        <span>LRG status</span>
-        <span class="right icon-help tiny-icon close-icon-0 margin-right-15" data-toggle="tooltip" data-placement="bottom" title="Sort by LRG publication status, i.e. public or pending. Link to the progress status of the pending LRGs is displayed"></span>
-      </th>
-      <th class="to_sort step_col">
-        <span>Curation status (step)</span>
-        <span class="right icon-help tiny-icon close-icon-0 margin-right-15" data-toggle="tooltip" data-placement="bottom" title="Display the curation status. Sort by LRG curation step"></span>
-      </th>
-      <th class="sorttable_nosort step_col">
-        <span>Step updated</span>
-        <span class="right icon-help tiny-icon close-icon-0 margin-right-15" data-toggle="tooltip" data-placement="bottom" title="Display the date when the curation step was updated."></span>
-      </th>
-      <th class="sorttable_nosort">
-        <span>Genome browsers</span>
-        <span class="right icon-help tiny-icon close-icon-0 margin-right-5" style="cursor:pointer" data-toggle="tooltip" data-placement="bottom" title="External links to several genome browsers"></span>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
+<div id="search_msg" style="display:none"></div>
+<div id="search_result_container">
+  <h3 class="post-title">Search results for: <span id="search_term"></span> <div class="badge big_badge lrg_blue_bg" id="search_count"></div></h3>
+  <table id="search_results" class="table table-hover table-lrg table-lrg-bold-left-col sortable">
+    <thead>
+      <tr class="sorttable_header">
+        <th class="sorttable_numeric sorttable_sorted first-col">
+          <span>LRG ID</span>
+          <span class="right icon-help tiny-icon close-icon-0 margin-right-15" data-toggle="tooltip" data-placement="bottom" title="Sort by LRG identifier"></span>
+        </th>
+        <th class="to_sort">
+          <span>HGNC Symbol</span>
+          <span class="right icon-help tiny-icon close-icon-0 margin-right-15" data-toggle="tooltip" data-placement="bottom" title="Sort by HGNC symbol (external link)"></span>
+        </th>
+        <th class="to_sort">
+          <span>LRG status</span>
+          <span class="right icon-help tiny-icon close-icon-0 margin-right-15" data-toggle="tooltip" data-placement="bottom" title="Sort by LRG publication status, i.e. public or pending. Link to the progress status of the pending LRGs is displayed"></span>
+        </th>
+        <th class="to_sort step_col">
+          <span>Curation status (step)</span>
+          <span class="right icon-help tiny-icon close-icon-0 margin-right-15" data-toggle="tooltip" data-placement="bottom" title="Display the curation status. Sort by LRG curation step"></span>
+        </th>
+        <th class="sorttable_nosort step_col">
+          <span>Step updated</span>
+          <span class="right icon-help tiny-icon close-icon-0 margin-right-15" data-toggle="tooltip" data-placement="bottom" title="Display the date when the curation step was updated."></span>
+        </th>
+        <th class="sorttable_nosort">
+          <span>Genome browsers</span>
+          <span class="right icon-help tiny-icon close-icon-0 margin-right-5" style="cursor:pointer" data-toggle="tooltip" data-placement="bottom" title="External links to several genome browsers"></span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
 
