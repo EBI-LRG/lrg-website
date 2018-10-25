@@ -1,3 +1,5 @@
+---
+---
 // Creare's 'Implied Consent' EU Cookie Law Banner v:2.4
 // Conceived by Robert Kent, James Bavington & Tom Foyster - slightly edited for LRG
  

@@ -1,4 +1,5 @@
-
+---
+---
 // Links
 var lrg_ftp  = '{{ site.js_url.lrg_record }}';
 var ens_url  = '{{ site.js_url.ens }}';

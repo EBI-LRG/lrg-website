@@ -1,4 +1,5 @@
-
+---
+---
 var rest_url    = '{{ site.rest.rest_url_38 }}';
 var rest_grch37 = '{{ site.rest.rest_url_37 }}';
 
