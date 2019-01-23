@@ -167,10 +167,10 @@ include_in_sitemap: false
           <th>Transcript</th>
           <th>Biotype</th>
           <th>Strand</th>
-          <th>HGVS</th> 
-          <th>Consequences<a class="icon-info-link" href="{{ site.urls.conseq_url }}consequences" data-toggle="tooltip" data-placement="bottom" title="Click here to see the list of consequences and their descriptions" target="_blank"></a></th>
+          <th>HGVS</th>
+          <th>Consequences<a class="icon-info-link" href="{{ site.urls.conseq_url }}consequence_type_table" data-toggle="tooltip" data-placement="bottom" title="Click here to see the list of consequences and their descriptions" target="_blank"></a></th>
           <th>Non-reference genome allele</th>
-          <th>IMPACT<a class="icon-info-link" href="{{ site.urls.conseq_url }}consequences" data-toggle="tooltip" data-placement="bottom" title="Click here to see the list of consequences and their descriptions" target="_blank"></a></th>
+          <th>IMPACT<a class="icon-info-link" href="{{ site.urls.conseq_url }}consequence_type_table" data-toggle="tooltip" data-placement="bottom" title="Click here to see the list of consequences and their descriptions" target="_blank"></a></th>
         </tr>
       </thead>
       <tbody></tbody>  
@@ -178,6 +178,3 @@ include_in_sitemap: false
   </div>
 
 </div>
-
-
-

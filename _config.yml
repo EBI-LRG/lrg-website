@@ -85,7 +85,7 @@ urls:
   embl_ebi:     &embl_ebi_url_root "https://www.ebi.ac.uk"
   mutalyzer:    "https://www.mutalyzer.nl/"
   vvalidator:   "https://variantvalidator.org/"
-  conseq_url:   "https://www.ensembl.org/info/genome/variation/predicted_data.html#"
+  conseq_url:   "https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html#"
   lrg_ftp:      "ftp://ftp.ebi.ac.uk/pub/databases/lrgex/"
   lrg_ftp_http: "http://ftp.ebi.ac.uk/pub/databases/lrgex/"
 
@@ -173,7 +173,7 @@ collections:
         output: false
 defaults:
     -
-        scope: 
+        scope:
             type: "faq"
             path: "faq"
         values:
@@ -195,7 +195,7 @@ assets:
   autowrite: true
   cache: false
   prefix: "/js"
-  digest: false # Use MD5 in the file name if "true". 
+  digest: false # Use MD5 in the file name if "true".
   assets:
     - "*.js"
   sources:

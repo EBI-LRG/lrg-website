@@ -18,17 +18,17 @@ var ens_var_url_grch37   = '{{ site.js_url.ens_var_37 }}';
 var default_val = '';
 var max_allele_length = 10;
 
-var maf_help = { 
+var maf_help = {
                  'LRG' : 'The <b>LRG</b> genomic sequence contains the ',
                  'Genome' : 'The <b>genome assembly</b> (GRCh38) contains the '
                };
-var maf_colour = {  
+var maf_colour = {
                     'LRG' : 'lrg_blue',
                     'Genome' : 'lrg_green2',
                     'default' : 'lrg_dark'
                  };
 
-var msc_help = '<a class="icon-info-link" href="'+conseq_url+'consequences" title="Click here to see the list of consequences and their descriptions" target="_blank"></a>';
+var msc_help = '<a class="icon-info-link" href="'+conseq_url+'consequence_type_table" title="Click here to see the list of consequences and their descriptions" target="_blank"></a>';
 
 
 function get_vep_results () {
@@ -63,7 +63,7 @@ function get_vep_results () {
               .fail(function(data,status,xhr) {
                 var msg = (data.responseJSON.error) ? data.responseJSON.error : xhr;
                 console.log( status+": "+ data.responseJSON.error);
-                var fail_html = '<div class="clearfix"><div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 lrg_gray_bg">' + 
+                var fail_html = '<div class="clearfix"><div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 lrg_gray_bg">' +
                                  '<h4 class="icon-alert close-icon-5 smaller-icon" style="text-align:center"><span class="lrg_dark">Sorry, we can\'t get results from Ensembl!</span></h4>' +
                                  '<h6>Type: <span class="error_msg">'+status+'</span></h6><h6>Cause: <span class="error_msg">'+msg+'</span></h6>' +
                                  '</div></div>';
@@ -110,12 +110,12 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
   var genome_colour    = (genome_assembly.match('grch37')) ? 'lrg_purple' : 'lrg_green2';
 
   // Consequence (most severe)
-  var vep_sum_table = '      <tr>' + 
+  var vep_sum_table = '      <tr>' +
                       '        <td class="' + genome_bg_colour + '"></td>' +
-                      '        <td colspan="5">' + 
-                      '          <span class="bold_font">Most severe consequence' + msc_help + '</span>:' + 
-                      '          <span class="bold_font padding-left-5">' + 
-                      '            <a class="icon-external-link" data-toggle="tooltip" data-placement="bottom" href="'+conseq_url+data.most_severe_consequence+'" title="Click here to see the description of the consequence term '+data.most_severe_consequence+'" target="_blank">'+data.most_severe_consequence+'</a>' + 
+                      '        <td colspan="5">' +
+                      '          <span class="bold_font">Most severe consequence' + msc_help + '</span>:' +
+                      '          <span class="bold_font padding-left-5">' +
+                      '            <a class="icon-external-link" data-toggle="tooltip" data-placement="bottom" href="'+conseq_url+data.most_severe_consequence+'" title="Click here to see the description of the consequence term '+data.most_severe_consequence+'" target="_blank">'+data.most_severe_consequence+'</a>' +
                       '          </span>' +
                       '        </td>' +
                       '      </tr>';
@@ -177,7 +177,7 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
     $.each(data.transcript_consequences, function (index, trans) {
       if (trans.gene_symbol == hgnc_symbol) {
         var tr_lrg_arrow = (trans.strand == -1) ? rev_arrow : fwd_arrow;
-        
+
         var gen_ref_label_id = (trans.strand == -1) ? 'gen_ref_rev_label' : 'gen_ref_fwd_label';
         var gen_ref_label    = (trans.strand == -1) ? '<div class="symbol">'+hgnc_symbol+'</div> <div class="rev_arrow '+genome_colour+'">&crarr;</div>' : '<div class="fwd_arrow '+genome_colour+'">&crarr;</div> <div class="symbol"> '+hgnc_symbol+'</div>';
             gen_ref_label    = '<div class="clearfix">'+gen_ref_label+'</div>';
@@ -243,7 +243,7 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
   }
 
   parse_colocated_variants(data,seqs_by_allele,strand_lrg);
-  
+
   parse_transcript_data(data);
 }
 
@@ -325,7 +325,7 @@ function parse_colocated_variants (data,seqs_by_allele,strand_lrg) {
       if (html_af_2 != "") {
         html_af_lrg += (data.colocated_variants.length > 1) ? '<li>'+var_id+':<ul>'+html_af_2+'</ul></li>' : html_af_2;
       }
-   
+
     });
 
     // Co-located variants
@@ -339,7 +339,7 @@ function parse_colocated_variants (data,seqs_by_allele,strand_lrg) {
     // Allele frequency
     if (html_af_ref != "" || html_af_lrg != "") {
       $('#ref_al_cell').html('<ul>'+html_af_ref+'</ul>');
-      $('#lrg_al_cell').html('<ul>'+html_af_lrg+'</ul>'); 
+      $('#lrg_al_cell').html('<ul>'+html_af_lrg+'</ul>');
     }
     else {
       $('#allele_freq_row').hide();
@@ -348,7 +348,7 @@ function parse_colocated_variants (data,seqs_by_allele,strand_lrg) {
   }
   else {
     $('#coloc_variants_entry').html('<div class="clearfix margin-top-10 margin-bottom-20">'+
-                                    '  <div class="left icon-info close-icon-0 note_header lrg_dark_bg"></div>' + 
+                                    '  <div class="left icon-info close-icon-0 note_header lrg_dark_bg"></div>' +
                                     '  <div class="left note_content">No co-located variant found in Ensembl</div>' +
                                     '</div>');
     $('#allele_freq_row').hide();
@@ -356,7 +356,7 @@ function parse_colocated_variants (data,seqs_by_allele,strand_lrg) {
 }
 
 
-// Transcript consequence results 
+// Transcript consequence results
 function parse_transcript_data (data) {
   var html = "";
 
@@ -382,7 +382,7 @@ function parse_transcript_data (data) {
       });
 
       var hgvsc = (trans.hgvsc) ? trans.hgvsc : '-';
-      
+
       var v_allele = (trans.strand == 1) ? trans.variant_allele : reverse_complement(trans.variant_allele,1);
 
       var biotype = trans.biotype.replace('_', ' ');
@@ -395,7 +395,7 @@ function parse_transcript_data (data) {
   }
   else {
     $('#tr_consequences').html('<div class="clearfix margin-top-10 margin-bottom-20">'+
-                               '  <div class="left icon-info close-icon-0 note_header lrg_dark_bg"></div>' + 
+                               '  <div class="left icon-info close-icon-0 note_header lrg_dark_bg"></div>' +
                                '  <div class="left note_content">No transcript consequence found</div>' +
                                '</div>');
   }
@@ -415,14 +415,14 @@ function get_strand (strand, label) {
 
 function complement(seq) {
     return { A: 'T', T: 'A', G: 'C', C: 'G' , '-':'-' }[seq];
-}    
+}
 function reverse_complement(seq, to_reverse) {
     var seq_array = seq.split('');
     if (to_reverse) {
       seq_array = seq_array.reverse();
     }
     return seq_array.map(complement).join('');
-}  
+}
 
 
 function compareStrings(a, b) {
