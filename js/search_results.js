@@ -191,13 +191,14 @@ function display_results (results) {
     // Sort the results by LRG ID (using the numeric part of the LRG ID)
     var result_keys = Object.keys(results);
     result_keys.sort(function(a,b) {
-      var id_a = extract_id(a);
-      var id_b = extract_id(b);
-      return id_a - id_b;
+      //var id_a = extract_id(a);
+      //var id_b = extract_id(b);
+      //return id_a - id_b;
+      return a - b;
     });
 
     var link_separator = '<span>-</span>';
-    
+
     var has_lrg_pending = 0;
 
     var lrg_list = [];
@@ -206,22 +207,21 @@ function display_results (results) {
 
     // Loop over results
     for (var i=0; i < result_keys.length; i++) {
-      var lrg_id = result_keys[i];
+      var lrg_id = result_keys[i]; // Only numeric value, e.g. "1" for "LRG_1"
       var entry  = results[lrg_id];
       var symbol = entry.symbol;
       var status = entry.status;
-      var chr    = entry.coord[0];
-      var start  = entry.coord[1];
-      var end    = entry.coord[2];
-      var id     = extract_id(lrg_id);
+      var chr    = entry.c[0];
+      var start  = entry.c[1];
+      var end    = entry.c[2];
+      //var id     = lrg_id;//extract_id(lrg_id);
 
       var ens_link  = generate_external_link('Ensembl','ens',1);
       var ncbi_link = generate_external_link('NCBI','ncbi',1);
       var ucsc_link = generate_external_link('UCSC','ucsc',1);
 
-      var lrg_link    = get_lrg_link(lrg_id, id);
       var curation_id = lrg_id.toLowerCase();
-      
+
       // Step class
       var step_classes =  step_col_class + ' ';
           step_classes += (status == 'public') ? public_step_col_class : pending_step_col_class;
@@ -236,7 +236,7 @@ function display_results (results) {
         curation_desc_cell.attr('sorttable_key', lrg_steps_count);
       }
       else {
-        lrg_list.push(id);
+        lrg_list.push(lrg_id);
 
         if (has_lrg_pending == 0) {
           has_lrg_pending = 1;
@@ -246,7 +246,7 @@ function display_results (results) {
 
       // HTML code
       var newrow = $('<tr/>');
-          newrow.attr('id', lrg_row_id_prefix+id);
+          newrow.attr('id', lrg_row_id_prefix+lrg_id);
           newrow.attr('data-chr', chr);
           newrow.attr('data-start', start);
           newrow.attr('data-end', end);
@@ -254,9 +254,9 @@ function display_results (results) {
           newrow.attr('data-status', status);
 
       // LRG ID
-      var lrg_id_cell = newCell(lrg_link);
-          lrg_id_cell.attr('sorttable_key', id);
-      
+      var lrg_id_cell = newCell(get_lrg_link(lrg_id));
+          lrg_id_cell.attr('sorttable_key', lrg_id);
+
       newrow.append(lrg_id_cell);
       // Symbol
       newrow.append(newCell(generate_external_link(symbol,'hgnc_link')));
@@ -306,8 +306,8 @@ function newCell(content) {
 /***** Links *****/
 
 /* LRG link */
-function get_lrg_link (lrg_id, id) {
-  var lrg_link = build_link_base(lrg_id);
+function get_lrg_link (lrg_id) {
+  var lrg_link = build_link_base('LRG_'+lrg_id);
       lrg_link.addClass('lrg_link');
   return lrg_link[0].outerHTML;
 }
@@ -331,7 +331,7 @@ $(document).on('click', '.hgnc_link', function () {
 /* Ensembl | NCBI | UCSC links */
 $(document).on('click', '.egb_link', function () {
   var id = $(this).closest('tr').attr('id');
-  
+
   var el = $('#'+lrg_row_id_prefix+id);
   var chr   = el.data('chr');
   var start = el.data('start');
@@ -414,9 +414,40 @@ function getObjects (obj_parent, obj, key, val, objects, regex) {
   else {
     // Search with regex
     if (!regex) {
-      // Specific regex for the sequence identifiers, with a version, e.g. NM_000088.3
-      if (val.match(/^(NM_|NR_|NG_|ENST|ENSG)\d+$/)) {
-        regex = new RegExp("^"+val+"\.", "i");
+      // Specific regex for the sequence identifiers, e.g. NM_000088.3 or NM_000088
+      if (val.match(/^(NM_|NR_|NG_|ENST|ENSG)\d+/)) {
+
+        // Remove ENS prefix for Ensembl entries as we don't store it in the index file
+        if (val.match(/^(ENST|ENSG)\d+/)) {
+          val = val.replace("ENS","");
+        }
+        // Remove N prefix for RefSeq entries as we don't store it in the index file
+        else if (val.match(/^(NM_|NR_|NG_)\d+/)) {
+          val = val.replace("N","");
+        }
+
+        // Setup the Regex
+        if (val.match(/\.\d+$/)) {
+          regex = new RegExp("^"+val+"$", "i");
+        }
+        else {
+          regex = new RegExp("^"+val+'\\.', "i");
+        }
+      }
+      // Specific regex for the truncated sequence identifiers, e.g. M_000088.3 or M_000088
+      else if (val.match(/^(M_|R_|G_|T|G)\d+/)) {
+        // Setup the Regex
+        if (val.match(/\.\d+$/)) {
+          regex = new RegExp("^"+val+"$", "i");
+        }
+        else {
+          regex = new RegExp("^"+val+'\\.', "i");
+        }
+      }
+      // LRG ID
+      else if (val.match(/^LRG_\d+$/)) {
+        val = val.replace("LRG_","");
+        regex = new RegExp("^"+val+"$", "i");
       }
       // Wild card character associated with other characters
       else if (val.match(/\*/)) {
@@ -434,14 +465,13 @@ function getObjects (obj_parent, obj, key, val, objects, regex) {
       if (!obj.hasOwnProperty(i) || json_skip_keys[i]) continue;
 
       if (typeof obj[i] == 'object') {
-        objects = getObjects(obj, obj[i], key, val, objects);  
-      } 
+        objects = getObjects(obj, obj[i], key, val, objects);
+      }
       // if key matches and value matches or if key matches and value is not passed (eliminating the case where key matches but passed value does not)
       else if ((i == key && (obj[i] == val || regex.test(obj[i]))) || (i == key && val == '')) {
-        console.log("FOUND");
         objects[obj.id] = obj;
         break;
-      } 
+      }
       // only add if the object is not already in the array
       else if ((obj[i] == val || regex.test(obj[i])) && key == ''){
         // Data fetched from an array
@@ -513,19 +543,19 @@ function changeUrlParam (param, value) {
   }
 }
 
-// Rolling image displayed while the result is 
+// Rolling image displayed while the result is
 function wait_for_results() {
   var cols = $(table_id).find("thead > tr:first th").length;
   table_tbody = $(table_id + " > tbody");
   table_tbody.empty();
-  table_tbody.append('<tr><td colspan="'+cols+'"><div class="wait"></div><div class="loader"></div></td></tr>'); 
+  table_tbody.append('<tr><td colspan="'+cols+'"><div class="wait"></div><div class="loader"></div></td></tr>');
 }
 
 function no_results() {
   var cols = $(table_id).find("thead > tr:first th").length;
   table_tbody = $(table_id + " > tbody");
   table_tbody.empty();
-  table_tbody.append('<tr><td colspan="'+cols+'"><div class="no_results"></div></td></tr>'); 
+  table_tbody.append('<tr><td colspan="'+cols+'"><div class="no_results"></div></td></tr>');
 }
 
 
@@ -543,7 +573,7 @@ function get_lrg_step_data (lrg_list) {
       lrg_steps_list[i] = value;
       lrg_steps_count ++;
     });
-    
+
     // Add step data for public records
     $('.'+public_step_col_class).html("<span class=\"label\">" + lrg_steps_list[lrg_steps_count] + "</span>"+render_lrg_step_id(lrg_steps_count,'public'));
 
@@ -560,11 +590,11 @@ function get_lrg_step_data (lrg_list) {
       var step_num_content  = render_lrg_step_id(step_id,'pending');
       var step_date_content = "<span class=\"label lrg_step_date icon-calendar close-icon-5\">" + step_date + "</span>";
 
-      var step_el = $('#lrg_'+lrg_id+"_step");
+      var step_el = $('#'+lrg_id+"_step");
       step_el.attr('sorttable_key', step_id);
       step_el.html(step_desc_content+step_num_content);
 
-      $('#lrg_'+lrg_id+"_date").html(step_date_content);
+      $('#'+lrg_id+"_date").html(step_date_content);
     }
   });
 }
