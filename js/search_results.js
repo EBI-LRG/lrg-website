@@ -414,6 +414,8 @@ function getObjects (obj_parent, obj, key, val, objects, regex) {
   else {
     // Search with regex
     if (!regex) {
+      var start_regex = "(^|\|)";
+      var end_regex   = "($|\|)";
       // Specific regex for the sequence identifiers, e.g. NM_000088.3 or NM_000088
       if (val.match(/^(NM_|NR_|NG_|ENST|ENSG)\d+/)) {
 
@@ -427,36 +429,34 @@ function getObjects (obj_parent, obj, key, val, objects, regex) {
         }
 
         // Setup the Regex
-        if (val.match(/\.\d+$/)) {
-          regex = new RegExp("^"+val+"$", "i");
-        }
-        else {
-          regex = new RegExp("^"+val+'\\.', "i");
-        }
+        var regex_prefix = start_regex + val;
+        var regex_suffix = (val.match(/\.\d+$/)) ? end_regex : '\\.';
+        regex = new RegExp(regex_prefix + regex_suffix, "i");
       }
       // Specific regex for the truncated sequence identifiers, e.g. M_000088.3 or M_000088
       else if (val.match(/^(M_|R_|G_|T|G)\d+/)) {
         // Setup the Regex
-        if (val.match(/\.\d+$/)) {
-          regex = new RegExp("^"+val+"$", "i");
-        }
-        else {
-          regex = new RegExp("^"+val+'\\.', "i");
-        }
+        var regex_prefix = start_regex + val;
+        var regex_suffix = (val.match(/\.\d+$/)) ? end_regex : '\\.';
+        regex = new RegExp(regex_prefix + regex_suffix, "i");
       }
       // LRG ID
       else if (val.match(/^LRG_\d+$/)) {
         val = val.replace("LRG_","");
         regex = new RegExp("^"+val+"$", "i");
       }
+      // Numeric LRG ID
+      else if (val.match(/^\d+$/)) {
+        regex = new RegExp("^"+val+"$", "i");
+      }
       // Wild card character associated with other characters
       else if (val.match(/\*/)) {
         var tmp_val = val.replace(/\*/g,".*");
-        regex = new RegExp("^"+tmp_val+"$", "i");
+        regex = new RegExp(start_regex + tmp_val + end_regex, "i");
       }
       // Default regex
       else {
-        regex = new RegExp("^"+val+"$", "i");
+        regex = new RegExp(start_regex + val + end_regex, "i");
       }
     }
 
@@ -467,22 +467,25 @@ function getObjects (obj_parent, obj, key, val, objects, regex) {
       if (typeof obj[i] == 'object') {
         objects = getObjects(obj, obj[i], key, val, objects);
       }
-      // if key matches and value matches or if key matches and value is not passed (eliminating the case where key matches but passed value does not)
-      else if ((i == key && (obj[i] == val || regex.test(obj[i]))) || (i == key && val == '')) {
-        objects[obj.id] = obj;
-        break;
-      }
-      // only add if the object is not already in the array
-      else if ((obj[i] == val || regex.test(obj[i])) && key == ''){
-        // Data fetched from an array
-        if (Object.keys(obj)[0] == 0) {
-          objects[obj_parent.id] = obj_parent;
-        }
-        // Data fetched from a key/value
-        else {
+      // if value matches
+      else if (obj[i] == val || regex.test(obj[i])) {
+        // if key defined and matches
+        if (i == key) {
           objects[obj.id] = obj;
+          break;
         }
-        break;
+        // else if no key defined
+        else if (key == '') {
+          // Data fetched from an array
+          if (Object.keys(obj)[0] == 0) {
+            objects[obj_parent.id] = obj_parent;
+          }
+          // Data fetched from a key/value
+          else {
+            objects[obj.id] = obj;
+          }
+          break;
+        }
       }
     }
   }
