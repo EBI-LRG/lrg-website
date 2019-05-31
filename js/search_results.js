@@ -414,8 +414,8 @@ function getObjects (obj_parent, obj, key, val, objects, regex) {
   else {
     // Search with regex
     if (!regex) {
-      var start_regex = "(^|\|)";
-      var end_regex   = "($|\|)";
+      var start_regex = '^(.*\\|)?';
+      var end_regex   = '(\\|.*)?$';
       // Specific regex for the sequence identifiers, e.g. NM_000088.3 or NM_000088
       if (val.match(/^(NM_|NR_|NG_|ENST|ENSG)\d+/)) {
 
