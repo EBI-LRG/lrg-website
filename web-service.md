@@ -91,7 +91,7 @@ The list of fields retrievables are listed [here](#ws_fields)
       <th>Type</th>
       <th>Field</th>
       <th>Description</th>
-      <th>Example <span class="smaller-text">(using LRG_1)</span></th>
+      <th>Example <span class="smaller-font">(using LRG_1)</span></th>
     </tr>
   </thead>
   <tbody class="bordered-columns">
@@ -205,5 +205,3 @@ The list of fields retrievables are listed [here](#ws_fields)
     </tr>
   </tbody>
 </table>
-
-

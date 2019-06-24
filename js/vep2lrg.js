@@ -158,13 +158,18 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
 
   $('.assembly').html(data.assembly_name);
 
+
+  /* --------------------------- */
+  /* Reference assembly sequence */
+  /* --------------------------- */
+
   var ref_fwd_al_label  = (ref_fwd_al.length > max_allele_length) ? ref_fwd_al.substr(1,max_allele_length)+'...' : ref_fwd_al;
   var ref_rev_al_length = ref_rev_al.length;
   var ref_rev_al_label  = (ref_rev_al_length > max_allele_length) ? '...'+ref_rev_al.substr(ref_rev_al_length-max_allele_length,ref_rev_al_length) : ref_rev_al;
-  $('#gen_ref_fwd').html(ref_fwd_al_label);
-  $('#gen_ref_fwd').attr('title',ref_fwd_al);
-  $('#gen_ref_rev').html(ref_rev_al_label);
-  $('#gen_ref_rev').attr('title',ref_rev_al);
+  $('.gen_ref_fwd').html(ref_fwd_al_label);
+  $('.gen_ref_fwd').attr('title',ref_fwd_al);
+  $('.gen_ref_rev').html(ref_rev_al_label);
+  $('.gen_ref_rev').attr('title',ref_rev_al);
 
   $('.ref_arrow > div.line').addClass(genome_bg_colour);
   $('.ref_arrow > div.point').addClass(genome_colour);
@@ -178,10 +183,12 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
       if (trans.gene_symbol == hgnc_symbol) {
         var tr_lrg_arrow = (trans.strand == -1) ? rev_arrow : fwd_arrow;
 
-        var gen_ref_label_id = (trans.strand == -1) ? 'gen_ref_rev_label' : 'gen_ref_fwd_label';
-        var gen_ref_label    = (trans.strand == -1) ? '<div class="symbol">'+hgnc_symbol+'</div> <div class="rev_arrow '+genome_colour+'">&crarr;</div>' : '<div class="fwd_arrow '+genome_colour+'">&crarr;</div> <div class="symbol"> '+hgnc_symbol+'</div>';
-            gen_ref_label    = '<div class="clearfix">'+gen_ref_label+'</div>';
+        var gen_ref_label_class = (trans.strand == -1) ? 'gen_ref_rev_label' : 'gen_ref_fwd_label';
+        var gen_ref_label = (trans.strand == -1) ? '<div class="symbol">'+hgnc_symbol+'</div> <div class="rev_arrow '+genome_colour+'">&crarr;</div>' : '<div class="fwd_arrow '+genome_colour+'">&crarr;</div> <div class="symbol"> '+hgnc_symbol+'</div>';
+            gen_ref_label = '<div class="clearfix">'+gen_ref_label+'</div>';
+        $('.'+gen_ref_label_class).html(gen_ref_label);
 
+        // Transcript
         var tr_allele = (trans.strand == 1) ? ref_fwd_al : ref_rev_al;
         var tr_allele_length = tr_allele.length;
         var tr_allele_label  = tr_allele;
@@ -191,8 +198,6 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
         $('#tr_ref_arrow').html(tr_lrg_arrow);
         $('#tr_ref_al').html(tr_allele_label);
         $('#tr_ref_al').attr('title',tr_allele);
-
-        $('#'+gen_ref_label_id).html(gen_ref_label);
 
         return false;
       }
@@ -204,41 +209,86 @@ function parseData(data,lrg_id,hgnc_symbol,g_strand) {
     $('#tr_ref_al').html(genome_allele);
   }
 
+  /* -------------------- */
+  /* LRG genomic sequence */
+  /* -------------------- */
+  var gen_lrg_label_id = 'gen_lrg_fwd_label';
+  var gen_lrg_label    = '<div class="fwd_arrow lrg_blue">&crarr;</div> <div class="symbol"> '+hgnc_symbol+'</div>';
+      gen_lrg_label    = '<div class="clearfix">'+gen_lrg_label+'</div>';
+  $('#'+gen_lrg_label_id).html(gen_lrg_label);
+
+  var fwd_lrg_allele = alt_allele;
+  var rev_lrg_allele = reverse_complement(alt_allele);
   if (strand_lrg) {
-    var fwd_lrg_allele = alt_allele;
-    var rev_lrg_allele = reverse_complement(alt_allele);
-    var tr_lrg_allele = fwd_lrg_allele;
-    var tr_lrg_arrow  = '<div class="line lrg_blue_bg"></div><div class="point point_right lrg_blue"></div>';
-
     if (strand_lrg == -1) {
-      tr_lrg_allele  = rev_lrg_allele;
-      tr_lrg_arrow  = '<div class="point point_left lrg_blue"></div><div class="line lrg_blue_bg"></div>';
+      fwd_lrg_allele = reverse_complement(alt_allele);
+      rev_lrg_allele = alt_allele;
     }
+  }
 
-    var gen_lrg_label_id = (strand_lrg  == -1) ? 'gen_lrg_rev_label' : 'gen_lrg_fwd_label';
-    var gen_lrg_label    = (strand_lrg  == -1) ? '<div class="symbol">'+hgnc_symbol+'</div> <div class="rev_arrow lrg_blue">&crarr;</div>' : '<div class="fwd_arrow lrg_blue">&crarr;</div> <div class="symbol"> '+hgnc_symbol+'</div>';
-        gen_lrg_label    = '<div class="clearfix">'+gen_lrg_label+'</div>';
+  var fwd_lrg_al_label  = (fwd_lrg_allele.length > max_allele_length) ? fwd_lrg_allele.substr(1,max_allele_length)+'...' : fwd_lrg_allele;
+  var rev_lrg_al_length = rev_lrg_allele.length;
+  var rev_lrg_al_label  = (rev_lrg_al_length > max_allele_length) ? '...'+rev_lrg_allele.substr(rev_lrg_al_length-max_allele_length,rev_lrg_al_length) : rev_lrg_allele;
 
-    $('#'+gen_lrg_label_id).html(gen_lrg_label);
+  $('#gen_lrg_fwd').html(fwd_lrg_al_label);
+  $('#gen_lrg_fwd').attr('title',fwd_lrg_allele);
+  $('#gen_lrg_rev').html(rev_lrg_al_label);
+  $('#gen_lrg_rev').attr('title',rev_lrg_allele);
 
-    // LRG genomic sequence
-    var fwd_lrg_al_label  = (fwd_lrg_allele.length > max_allele_length) ? fwd_lrg_allele.substr(1,max_allele_length)+'...' : fwd_lrg_allele;
-    var rev_lrg_al_length = rev_lrg_allele.length;
-    var rev_lrg_al_label  = (rev_lrg_al_length > max_allele_length) ? '...'+rev_lrg_allele.substr(rev_lrg_al_length-max_allele_length,rev_lrg_al_length) : rev_lrg_allele;
-    $('#gen_lrg_fwd').html(fwd_lrg_al_label);
-    $('#gen_lrg_fwd').attr('title',fwd_lrg_allele);
-    $('#gen_lrg_rev').html(rev_lrg_al_label);
-    $('#gen_lrg_rev').attr('title',rev_lrg_allele);
+  // LRG transcript sequence
+  var tr_lrg_allele = fwd_lrg_allele;
+  var tr_lrg_arrow  = '<div class="line lrg_blue_bg"></div><div class="point point_right lrg_blue"></div>';
+  var tr_lrg_allele_label  = tr_lrg_allele;
+  var tr_lrg_allele_length = tr_lrg_allele.length;
+  if (tr_lrg_allele_length > max_allele_length) {
+    tr_lrg_allele_label = tr_lrg_allele.substr(1,max_allele_length)+'...';
+  }
+  $('#tr_lrg_arrow').html(tr_lrg_arrow);
+  $('#tr_lrg_al').html(tr_lrg_allele_label);
+  $('#tr_lrg_al').attr('title',tr_lrg_allele);
 
-    // LRG transcript sequence
-    var tr_lrg_allele_label  = tr_lrg_allele;
-    var tr_lrg_allele_length = tr_lrg_allele.length;
-    if (tr_lrg_allele_length > max_allele_length) {
-      tr_lrg_allele_label = (strand_lrg == 1) ? tr_lrg_allele.substr(1,max_allele_length)+'...' : '...'+tr_lrg_allele.substr(tr_lrg_allele_length-max_allele_length,tr_lrg_allele_length);
+
+  /* ----------------------- */
+  /* LRG mapping to assembly */
+  /* ----------------------- */
+  if (strand_lrg) {
+    var fwd_lrg_ref_allele = alt_allele;
+    var rev_lrg_ref_allele = reverse_complement(alt_allele);
+
+    var gen_lrg_ref_label_id = (strand_lrg  == -1) ? 'gen_lrg_ref_rev_label' : 'gen_lrg_ref_fwd_label';
+    var gen_lrg_ref_label    = (strand_lrg  == -1) ? '<div class="symbol">'+hgnc_symbol+'</div> <div class="rev_arrow lrg_blue">&crarr;</div>' : '<div class="fwd_arrow lrg_blue">&crarr;</div> <div class="symbol"> '+hgnc_symbol+'</div>';
+        gen_lrg_ref_label    = '<div class="clearfix">'+gen_lrg_ref_label+'</div>';
+
+    var lrg_arrow_id = (strand_lrg  == -1) ? 'gen_lrg_ref_fwd_arrow' : 'gen_lrg_ref_rev_arrow';
+    $('#'+lrg_arrow_id+'_line').removeClass('lrg_blue_bg').addClass('lrg_purple_bg');
+    $('#'+lrg_arrow_id+'_point').removeClass('lrg_blue').addClass('lrg_purple');
+    //$('#'+lrg_arrow_id+' div').removeClass('lrg_blue_bg').addClass('lrg_purple_bg');
+        /*$('#'+lrg_arrow_id+' div').switchClass('lrg_blue_bg','lrg_purple_bg');
+    /*$('#'+lrg_arrow_id).switchClass('lrg_blue','lrg_purple');*/
+
+    $('#'+gen_lrg_ref_label_id).html(gen_lrg_ref_label);
+
+    // LRG genomic mapping to assembly
+    var fwd_lrg_ref_al_label  = (fwd_lrg_ref_allele.length > max_allele_length) ? fwd_lrg_ref_allele.substr(1,max_allele_length)+'...' : fwd_lrg_ref_allele;
+    var rev_lrg_ref_al_length = rev_lrg_ref_allele.length;
+    var rev_lrg_ref_al_label  = (rev_lrg_ref_al_length > max_allele_length) ? '...'+rev_lrg_ref_allele.substr(rev_lrg_ref_al_length-max_allele_length,rev_lrg_ref_al_length) : rev_lrg_ref_allele;
+    $('#gen_lrg_ref_fwd').html(fwd_lrg_ref_al_label);
+    $('#gen_lrg_ref_fwd').attr('title',fwd_lrg_ref_allele);
+    $('#gen_lrg_ref_rev').html(rev_lrg_ref_al_label);
+    $('#gen_lrg_ref_rev').attr('title',rev_lrg_ref_allele);
+
+    // LRG transcript mapping to assembly
+    var tr_lrg_ref_allele = (strand_lrg == -1) ? rev_lrg_ref_allele : fwd_lrg_ref_allele;
+    var tr_lrg_ref_arrow  = (strand_lrg == -1) ? '<div class="point point_left lrg_blue"></div><div class="line lrg_blue_bg"></div>' : '<div class="line lrg_blue_bg"></div><div class="point point_right lrg_blue"></div>';
+
+    var tr_lrg_ref_allele_label  = tr_lrg_ref_allele;
+    var tr_lrg_ref_allele_length = tr_lrg_ref_allele.length;
+    if (tr_lrg_ref_allele_length > max_allele_length) {
+      tr_lrg_ref_allele_label = (strand_lrg == 1) ? tr_lrg_ref_allele.substr(1,max_allele_length)+'...' : '...'+tr_lrg_ref_allele.substr(tr_lrg_ref_allele_length-max_allele_length,tr_lrg_allele_length);
     }
-    $('#tr_lrg_arrow').html(tr_lrg_arrow);
-    $('#tr_lrg_al').html(tr_lrg_allele_label);
-    $('#tr_lrg_al').attr('title',tr_lrg_allele);
+    $('#tr_lrg_ref_arrow').html(tr_lrg_ref_arrow);
+    $('#tr_lrg_ref_al').html(tr_lrg_ref_allele_label);
+    $('#tr_lrg_ref_al').attr('title',tr_lrg_ref_allele);
 
   }
 

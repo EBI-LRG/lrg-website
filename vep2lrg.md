@@ -40,20 +40,23 @@ include_in_sitemap: false
     <h3 class="icon-info smaller-icon close-icon-5 margin-top-10 margin-bottom-10">Alleles</h3>
     <table id="seq_variants_table" class="table table-hover table-lrg">
       <thead>
-        <tr><th colspan="3" class="split-header">Genomic sequences</th></tr>
+        <tr><th colspan="4" class="split-header">Genomic sequences</th></tr>
         <tr>
-          <th style="width:20%"></th>
-          <th class="text-center" style="width:40%">Primary reference genome (<span class="assembly"></span>)</th>
-          <th class="text-center" style="width:40%">LRG genomic</th>
+          <th style="width:10%"></th>
+          <th class="text-center" style="width:30%">Primary reference genome (<span class="assembly"></span>)</th>
+          <th class="text-center" style="width:30%">LRG genomic</th>
+          <th class="text-center" style="width:30%">Mapped LRG sequence</th>
         </tr>
       </thead>
       <tbody id="gen_seq">
         <tr>
           <td><b>Alleles</b></td>
+
+          <!-- Reference assembly -->
           <td id="gen_ref_cell">
             <div class="allele_label clearfix">
-              <div id="gen_ref_fwd_label" class="allele_label_fwd"></div>
-              <div id="gen_ref_fwd" class="allele_label_text"></div>
+              <div class="gen_ref_fwd_label allele_label_fwd"></div>
+              <div class="gen_ref_fwd allele_label_text"></div>
             </div>
             <div class="clearfix">
               <div class="arrow ref_arrow"><div class="line"></div><div class="point point_right"></div></div>
@@ -62,24 +65,58 @@ include_in_sitemap: false
               <div class="arrow ref_arrow"><div class="point point_left"></div><div class="line"></div></div>
             </div>
             <div class="allele_label clearfix">
-              <div id="gen_ref_rev" class="allele_label_text"></div>
-              <div id="gen_ref_rev_label" class="allele_label_rev"></div>
+              <div class="gen_ref_rev allele_label_text"></div>
+              <div class="gen_ref_rev_label allele_label_rev"></div>
             </div>
           </td>
+
+          <!-- LRG genomic -->
           <td id="gen_lrg_cell">
-            <div class="allele_label clearfix">
+            <div class="allele_label_lrg clearfix">
               <div id="gen_lrg_fwd_label" class="allele_label_fwd"></div>
               <div id="gen_lrg_fwd" class="allele_label_text"></div>
             </div>
             <div class="clearfix">
-              <div class="arrow"><div class="line lrg_blue_bg"></div><div class="point point_right lrg_blue"></div></div>
+              <div class="arrow_lrg"><div class="line lrg_blue_bg"></div><div class="point point_right lrg_blue"></div></div>
             </div>
             <div class="clearfix">
-              <div class="arrow"><div class="point point_left lrg_blue"></div><div class="line lrg_blue_bg"></div></div>
+              <div class="arrow_lrg"><div class="point point_left lrg_purple"></div><div class="line lrg_purple_bg"></div></div>
             </div>
-            <div class="allele_label clearfix">
+            <div class="allele_label_lrg clearfix">
               <div id="gen_lrg_rev" class="allele_label_text"></div>
               <div id="gen_lrg_rev_label" class="allele_label_rev"></div>
+            </div>
+          </td>
+
+          <!-- LRG mapping to assembly -->
+          <td id="lrg_ref_cell">
+            <div class="allele_label_lrg clearfix">
+              <div id="gen_lrg_ref_fwd_label" class="allele_label_fwd"></div>
+              <div id="gen_lrg_ref_fwd" class="allele_label_text"></div>
+            </div>
+            <div class="clearfix">
+              <div class="arrow_lrg"><div id="gen_lrg_ref_fwd_arrow_line" class="line lrg_blue_bg"></div><div id="gen_lrg_ref_fwd_arrow_point" class="point point_right lrg_blue"></div></div>
+            </div>
+            <div class="allele_label clearfix">
+              <div class="gen_ref_fwd_label allele_label_fwd"></div>
+              <div class="gen_ref_fwd allele_label_text"></div>
+            </div>
+            <div class="clearfix">
+              <div class="arrow ref_arrow"><div class="line"></div><div class="point point_right"></div></div>
+            </div>
+            <div class="clearfix">
+              <div class="arrow ref_arrow"><div class="point point_left"></div><div class="line"></div></div>
+            </div>
+            <div class="allele_label clearfix">
+              <div class="gen_ref_rev allele_label_text"></div>
+              <div class="gen_ref_rev_label allele_label_rev"></div>
+            </div>
+            <div class="clearfix">
+              <div class="arrow_lrg"><div id="gen_lrg_ref_rev_arrow_point" class="point point_left lrg_blue"></div><div id="gen_lrg_ref_rev_arrow_line" class="line lrg_blue_bg"></div></div>
+            </div>
+            <div class="allele_label_lrg clearfix">
+              <div id="gen_lrg_ref_rev" class="allele_label_text"></div>
+              <div id="gen_lrg_ref_rev_label" class="allele_label_rev"></div>
             </div>
           </td>
         </tr>
@@ -87,14 +124,16 @@ include_in_sitemap: false
           <td><b>Allele frequency</b></td>
           <td id="ref_al_cell"></td>
           <td id="lrg_al_cell"></td>
+          <td></td>
         </tr>
       </tbody>
       <thead>
-        <tr><th colspan="3" class="split-header">Transcript sequences</th></tr>
+        <tr><th colspan="4" class="split-header">Transcript sequences</th></tr>
         <tr>
           <th></th>
           <th class="text-center">Ensembl transcripts</th>
           <th class="text-center">LRG and RefSeq transcripts</th>
+          <th class="text-center">Mapped LRG and RefSeq transcripts</th>
         </tr>
       </thead>
       <tbody id="trans_seq">
@@ -108,9 +147,15 @@ include_in_sitemap: false
           </td>
           <td id="tr_lrg_cell">            
             <div class="clearfix">
-              <div id="tr_lrg_arrow" class="arrow"></div>
+              <div id="tr_lrg_arrow" class="arrow_lrg"></div>
             </div>
             <div id="tr_lrg_al" style="text-align:center"></div>
+          </td>
+          <td id="tr_lrg_ref_cell">            
+            <div class="clearfix">
+              <div id="tr_lrg_ref_arrow" class="arrow_lrg"></div>
+            </div>
+            <div id="tr_lrg_ref_al" style="text-align:center"></div>
           </td>
         </tr>
       </tbody>
@@ -131,7 +176,7 @@ include_in_sitemap: false
           <div class="section-header icon-help left">About the VEP</div>
           <div class="right close-button icon-close close-icon-0" title="Close this box" onclick="javascript:$('#search_help').hide()"></div>
         </div>
-        <p class="margin-top-5 margin-bottom-0 smaller-text">
+        <p class="margin-top-5 margin-bottom-0 smaller-font">
           These results are generated by the <a class="icon-external-link" href="{{ site.urls.ensembl }}/info/docs/tools/vep/index.html" target="_blank">Variant Effect Predictor (VEP)</a>a>, an Ensembl tool that determines the effect of variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts and protein sequences, as well as regulatory regions.<br />
           Results are presented based on a change FROM the primary reference genome allele to the LRG allele.
         </p>

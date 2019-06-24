@@ -113,7 +113,7 @@ The LRG genomic, transcript and protein sequences are also available in **FASTA 
             <div>LRG genes</div>
             <div>LRG transcripts</div>
           </td>
-          <td class="smaller-text">
+          <td class="smaller-font">
             The file contains 4 tracks:
             <ul>
               <li>Public LRG genes</li>
@@ -122,7 +122,7 @@ The LRG genomic, transcript and protein sequences are also available in **FASTA 
               <li>Pending LRG transcripts, with their exon(s) coordinates</li>
             </ul>
           </td>
-          <td>BED<br /><span class="smaller-text">(12 columns)</span></td>
+          <td>BED<br /><span class="smaller-font">(12 columns)</span></td>
           <td>
             <a href="{{ site.urls.lrg_ftp }}LRG_GRCh37.bed" target="_blank">
               <div class="file_link clearfix">
@@ -144,9 +144,9 @@ The LRG genomic, transcript and protein sequences are also available in **FASTA 
         <tr>
           <td>
             <div>LRG genes</div>
-            <div class="smaller-text padding-top-2" style="font-weight:normal">with <span class="lrg_green2">genomic coordinates</span></div>
+            <div class="smaller-font padding-top-2" style="font-weight:normal">with <span class="lrg_green2">genomic coordinates</span></div>
           </td>
-          <td class="smaller-text">
+          <td class="smaller-font">
             The file lists the LRG genes in genomic coordinates. The columns are:
             <ul>
               <li>LRG identifier</li>
@@ -195,9 +195,9 @@ The LRG genomic, transcript and protein sequences are also available in **FASTA 
         <tr>
           <td>
             <div>LRG transcripts</div>
-            <div class="smaller-text padding-top-2" style="font-weight:normal">with <span class="lrg_green2">exons coordinates</span></div>
+            <div class="smaller-font padding-top-2" style="font-weight:normal">with <span class="lrg_green2">exons coordinates</span></div>
           </td>
-          <td class="smaller-text">
+          <td class="smaller-font">
             The file lists the LRG transcripts, exons and protein in genomic coordinates<br />
             The columns are:
             <ul>
@@ -250,9 +250,9 @@ The LRG genomic, transcript and protein sequences are also available in **FASTA 
         <tr>
           <td>
             <div>LRG transcripts</div>
-            <div class="smaller-text padding-top-2" style="font-weight:normal">with <span class="lrg_green2">external references</span></div>
+            <div class="smaller-font padding-top-2" style="font-weight:normal">with <span class="lrg_green2">external references</span></div>
           </td>
-          <td class="smaller-text">
+          <td class="smaller-font">
             The file lists the LRG transcripts and their external references<br />
             The columns are:
             <ul>
@@ -295,9 +295,9 @@ The LRG genomic, transcript and protein sequences are also available in **FASTA 
         <tr>
           <td>
             <div>LRG proteins</div>
-            <div class="smaller-text padding-top-2" style="font-weight:normal">with <span class="lrg_green2">RefSeq proteins</span></div>
+            <div class="smaller-font padding-top-2" style="font-weight:normal">with <span class="lrg_green2">RefSeq proteins</span></div>
           </td>
-          <td class="smaller-text">
+          <td class="smaller-font">
             The file lists the LRG proteins and their corresponding RefSeq proteins and transcripts<br />
             The columns are:
             <ul>
@@ -342,7 +342,7 @@ The LRG genomic, transcript and protein sequences are also available in **FASTA 
 
 
 ### LRG in Ensembl
-  
+
 <div class="clearfix">
   <div class="left file_link">
     The list of LRGs already imported in <a class="icon-external-link" href="{{ site.urls.ensembl }}" target="_blank">Ensembl</a> is available in this text file:
@@ -357,15 +357,15 @@ The LRG genomic, transcript and protein sequences are also available in **FASTA 
   </div>
 </div>
 <br />
-  
-  
+
+
 ### LRG XML schema
 
 The LRG XML schema documentation is downloadable [here]({{ site.urls.lrg_ftp }}docs){:target="_blank"} and the different versions of the XML schema definitions (RELAX NG format) are available [here]({{ site.urls.lrg_ftp }}docs/schemas){:target="_blank"}.  
 The current LRG XML schema version is **{{ site.lrg-schema }}**.  
 <br />
-  
-  
+
+
 ### LRG archived data
 
 <div class="clearfix">

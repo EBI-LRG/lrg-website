@@ -127,7 +127,7 @@ docs_order: 3
     <tr>
       <td class="left-col left-col-bg">
         ANNOTATION
-        <div class="smaller-text lrg_green2" style="padding-top:2px;font-weight:normal">The process of finding and designating locations of individual genes and other features on raw DNA sequences</div>
+        <div class="smaller-font lrg_green2" style="padding-top:2px;font-weight:normal">The process of finding and designating locations of individual genes and other features on raw DNA sequences</div>
       </td>
       <td>
         Genome assemblies (GRCh37 or GRCh38) are un-annotated genome builds.  Annotation is provided by Ensembl (GENCODE) and the NCBI (RefSeq).
@@ -173,7 +173,7 @@ docs_order: 3
         <div>LRG curators can feed back input from the clinical community to RefSeq, GENCODE and the GRC.</div>
       </td>
     </tr>
-   
+
      <!-- REFERENCES -->
     <tr>
       <td class="left-col left-col-bg">REFERENCES</td>
@@ -337,7 +337,7 @@ docs_order: 3
         <a class="icon-external-link" href="http://www.uniprot.org/" target="_blank">UniProt</a>
       </td>
       <td>
-        The Universal Protein Resource (UniProt) is a comprehensive resource for protein sequence and annotation data. UniProt is a collaboration between the European Bioinformatics Institute (EMBL-EBI), the SIB Swiss Institute of Bioinformatics and the Protein Information Resource (PIR). 
+        The Universal Protein Resource (UniProt) is a comprehensive resource for protein sequence and annotation data. UniProt is a collaboration between the European Bioinformatics Institute (EMBL-EBI), the SIB Swiss Institute of Bioinformatics and the Protein Information Resource (PIR).
       </td>
     </tr>
     <tr>
