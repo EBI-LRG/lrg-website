@@ -318,6 +318,14 @@ docs_order: 3
     </tr>
     <tr>
       <td class="left-col">
+        <a class="icon-external-link" href="http://betatark.ensembl.org/" target="_blank">Tark</a> <span>(beta)</span>
+      </td>
+      <td>
+        An archive of all transcript sequences from Ensembl, RefSeq and other sources, including historical gene sets, with the possibility to compare them.
+      </td>
+    </tr>
+    <tr>
+      <td class="left-col">
         <a class="icon-external-link" href="http://www.thetgmi.org/" target="_blank">TGMI</a>
       </td>
       <td>

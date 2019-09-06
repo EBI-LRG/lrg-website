@@ -1,7 +1,7 @@
 ---
 title: "Does the addition of new transcripts not re-create the versioning problem?"
 faq_group: stability
-faq_order: 5
+faq_order: 4
 faq_tags:
   - transcripts
   - version

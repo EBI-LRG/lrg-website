@@ -1,7 +1,7 @@
 ---
 title: "What will happen when a new genome build is released?"
 faq_group: stability
-faq_order: 6
+faq_order: 5
 faq_tags:
   - sequence
 ---

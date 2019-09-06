@@ -70,24 +70,26 @@ lrg_search_terms_file:  "/indexes/lrg_search_terms.txt"
 
 #-- URLs --#
 urls:
-  acmg:         "https://www.acmg.net"
-  emqn:         "https://www.emqn.org"
-  ensembl:      "https://www.ensembl.org"
-  gencode:      "https://www.gencodegenes.org/about.html"
-  grc:          "https://www.ncbi.nlm.nih.gov/grc/human"
-  hgnc:         "https://www.genenames.org"
-  hgvs:         "http://www.hgvs.org/mutnomen/"
-  hgvs_var:     "http://varnomen.hgvs.org/"
-  refseqgene:   "https://www.ncbi.nlm.nih.gov/refseq/rsg/about/"
-  refseq:       "https://www.ncbi.nlm.nih.gov/refseq/about/"
-  ucsc:         "https://genome.ucsc.edu"
-  ncbi:         &ncbi_url_root "https://www.ncbi.nlm.nih.gov"
-  embl_ebi:     &embl_ebi_url_root "https://www.ebi.ac.uk"
-  mutalyzer:    "https://www.mutalyzer.nl/"
-  vvalidator:   "https://variantvalidator.org/"
-  conseq_url:   "https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html#"
-  lrg_ftp:      "ftp://ftp.ebi.ac.uk/pub/databases/lrgex/"
-  lrg_ftp_http: "http://ftp.ebi.ac.uk/pub/databases/lrgex/"
+  acmg:           "https://www.acmg.net"
+  emqn:           "https://www.emqn.org"
+  ensembl:        "https://www.ensembl.org"
+  gencode:        "https://www.gencodegenes.org/about.html"
+  grc:            "https://www.ncbi.nlm.nih.gov/grc/human"
+  hgnc:           "https://www.genenames.org"
+  hgvs:           "http://www.hgvs.org/mutnomen/"
+  hgvs_var:       "http://varnomen.hgvs.org/"
+  refseqgene:     "https://www.ncbi.nlm.nih.gov/refseq/rsg/about/"
+  refseq:         "https://www.ncbi.nlm.nih.gov/refseq/about/"
+  ucsc:           "https://genome.ucsc.edu"
+  ncbi:           &ncbi_url_root "https://www.ncbi.nlm.nih.gov"
+  embl_ebi:       &embl_ebi_url_root "https://www.ebi.ac.uk"
+  mutalyzer:      "https://www.mutalyzer.nl/"
+  vvalidator:     "https://variantvalidator.org/"
+  conseq_url:     "https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html#"
+  lrg_ftp:        "ftp://ftp.ebi.ac.uk/pub/databases/lrgex/"
+  lrg_ftp_http:   "http://ftp.ebi.ac.uk/pub/databases/lrgex/"
+  ens_mane_blog:  "http://www.ensembl.info/2019/03/12/coming-soon-mane-select-v0-5/"
+  ncbi_mane_blog: "https://ncbiinsights.ncbi.nlm.nih.gov/2019/07/03/new-human-genome-annotation-release-with-mane-select-and-other-improvements/"
 
 #-- Variables for javascript --#
 
@@ -168,6 +170,8 @@ collections:
     faq_groups:
         output: false
     faq:
+        output: false
+    info:
         output: false
     web-service:
         output: false
