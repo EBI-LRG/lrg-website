@@ -1,7 +1,7 @@
 ---
 title: "Why are there mismatches between LRG records and the reference genome assembly?"
 faq_group: lrg_definition
-faq_order: 6
+faq_order: 7
 faq_tags:
   - lrg_definition
   - vep

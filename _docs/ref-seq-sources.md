@@ -237,7 +237,7 @@ docs_order: 3
 
   <tbody>
     <tr>
-      <td class="left-col" style="width:100px">
+      <td class="left-col" style="width:125px">
         <a class="icon-external-link" href="http://appris.bioinfo.cnio.es" target="_blank">APPRIS</a>
       </td>
       <td>
@@ -266,6 +266,14 @@ docs_order: 3
       </td>
       <td>
         Ensembl, based at EMBL-EBI, is a project to develop a software system which produces and maintains automatic annotation on selected eukaryotic genomes (<a class="icon-external-link" href="{{ site.urls.ncbi }}/pubmed/27899575" target="_blank">Aken BL et al., 2017</a>).
+      </td>
+    </tr>
+    <tr>
+      <td class="left-col">
+        <a class="icon-external-link" href="{{ site.urls.ensembl }}/vep" target="_blank">Ensembl VEP</a>
+      </td>
+      <td>
+        VEP (Variant effect predictor) determines the effect of variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts, and protein sequence.  It is produced by Ensembl at EMBL-EBI. <a class="icon-external-link" href="{{ site.urls.ncbi }}/pubmed/27268795" target="_blank">McLaren W et al., 2016</a>
       </td>
     </tr>
     <tr>
@@ -310,18 +318,19 @@ docs_order: 3
     </tr>
     <tr>
       <td class="left-col">
-        <a class="icon-external-link" href="{{ site.urls.ncbi }}/home/about/" target="_blank">NCBI</a>
+        <a class="icon-external-link" href="{{ site.urls.ens_mane_blog }}" target="_blank">MANE</a>
       </td>
       <td>
-        The USA’s National Centre for Biotechnology Information advances science and health by providing access to biomedical and genomic information.
+        The <b>MANE</b> (<b>M</b>atched <b>A</b>nnotation from the <b>N</b>CBI and <b>E</b>MBL-EBI) Project is a joint initiative between EMBL-EBI’s <a href="{{ site.urls.gencode }}" target="_blank">Ensembl/GENCODE Project</a> and NCBI’s <a href="{{ site.urls.refseq }}" target="_blank">RefSeq project</a>. MANE aims to release a genome-wide transcript set that contains one well-supported transcript per protein-coding locus (MANE Select). All transcripts in the MANE set perfectly align to GRCh38 and represent 100% identity (5’UTR, coding sequence, 3’UTR) between the RefSeq (NM) and corresponding Ensembl (ENST) transcript.
+        For more information on MANE see <a href="{{ site.urls.ens_mane_blog }}" target="_blank">Ensembl's MANE blog</a> and <a href="{{ site.urls.ncbi_mane_blog }}" target="_blank">NCBI’s MANE blog</a>.
       </td>
     </tr>
     <tr>
       <td class="left-col">
-        <a class="icon-external-link" href="http://betatark.ensembl.org/" target="_blank">Tark</a> <span>(beta)</span>
+        <a class="icon-external-link" href="{{ site.urls.ncbi }}/home/about/" target="_blank">NCBI</a>
       </td>
       <td>
-        An archive of all transcript sequences from Ensembl, RefSeq and other sources, including historical gene sets, with the possibility to compare them.
+        The USA’s National Centre for Biotechnology Information advances science and health by providing access to biomedical and genomic information.
       </td>
     </tr>
     <tr>
@@ -342,18 +351,10 @@ docs_order: 3
     </tr>
     <tr>
       <td class="left-col">
-        <a class="icon-external-link" href="http://www.uniprot.org/" target="_blank">UniProt</a>
+        <a class="icon-external-link" href="{{ site.urls.uniprot }}" target="_blank">UniProt</a>
       </td>
       <td>
         The Universal Protein Resource (UniProt) is a comprehensive resource for protein sequence and annotation data. UniProt is a collaboration between the European Bioinformatics Institute (EMBL-EBI), the SIB Swiss Institute of Bioinformatics and the Protein Information Resource (PIR).
-      </td>
-    </tr>
-    <tr>
-      <td class="left-col">
-        <a class="icon-external-link" href="{{ site.urls.ensembl }}/vep" target="_blank">VEP</a>
-      </td>
-      <td>
-        VEP (Variant effect predictor) determines the effect of variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts, and protein sequence.  It is produced by Ensembl at EMBL-EBI. <a class="icon-external-link" href="{{ site.urls.ncbi }}/pubmed/27268795" target="_blank">McLaren W et al., 2016</a>
       </td>
     </tr>
 

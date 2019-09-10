@@ -39,6 +39,6 @@ category: 'new data'
     </table>
   </div>
 </div>
-<div class="margin-bottom-40">
+<div>
 See more details <a class="btn btn-primary btn-xs" href="/search/?query=LRG_1386;LRG_1384;LRG_1364;LRG_1369;LRG_1372;LRG_297;LRG_1366;LRG_1365;LRG_1368;LRG_1389;LRG_1367;LRG_1383;LRG_1387;LRG_1375">here</a>
 </div>

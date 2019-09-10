@@ -1,7 +1,7 @@
 ---
 title: "Why do some transcripts have a 'MANE Select' tag ?"
 faq_group: lrg_definition
-faq_order: 13
+faq_order: 5
 faq_tags:
   - lrg_definition
 ---

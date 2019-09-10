@@ -52,7 +52,7 @@ category: 'new data'
 			<thead>
 				<tr><th>HGNC symbol</th><th>LRG ID</th></tr>
 			</thead>
-			<tbody class="bordered-columns">	
+			<tbody class="bordered-columns">
 				<tr><td>PIEZO1</td><td><a href="{{ site.urls.lrg_ftp_http }}LRG_1137.xml" target="_blank">LRG_1137</a></td></tr>
 				<tr><td>PKLR</td><td><a href="{{ site.urls.lrg_ftp_http }}LRG_1136.xml" target="_blank">LRG_1136</a></td></tr>
 				<tr><td>RPL5</td><td><a href="{{ site.urls.lrg_ftp_http }}LRG_1155.xml" target="_blank">LRG_1155</a></td></tr>
@@ -72,7 +72,7 @@ category: 'new data'
 			<thead>
 				<tr><th>HGNC symbol</th><th>LRG ID</th></tr>
 			</thead>
-			<tbody class="bordered-columns">	
+			<tbody class="bordered-columns">
 		    <tr><td>SEC23B</td><td><a href="{{ site.urls.lrg_ftp_http }}LRG_1134.xml" target="_blank">LRG_1134</a></td></tr>
 		    <tr><td>SETBP1</td><td><a href="{{ site.urls.lrg_ftp_http }}LRG_1150.xml" target="_blank">LRG_1150</a></td></tr>
 		    <tr><td>SH3BP1</td><td><a href="{{ site.urls.lrg_ftp_http }}LRG_1154.xml" target="_blank">LRG_1154</a></td></tr>
@@ -83,11 +83,11 @@ category: 'new data'
 		    <tr><td>THPO</td><td><a href="{{ site.urls.lrg_ftp_http }}LRG_580.xml" target="_blank">LRG_580</a></td></tr>
 		    <tr><td>TJP2</td><td><a href="{{ site.urls.lrg_ftp_http }}LRG_1201.xml" target="_blank">LRG_1201</a></td></tr>
 		    <tr><td>UBE2T</td><td><a href="{{ site.urls.lrg_ftp_http }}LRG_1169.xml" target="_blank">LRG_1169</a></td></tr>
-		    <tr><td>VPS45</td><td><a href="{{ site.urls.lrg_ftp_http }}LRG_1170.xml" target="_blank">LRG_1170</a></td></tr> 
+		    <tr><td>VPS45</td><td><a href="{{ site.urls.lrg_ftp_http }}LRG_1170.xml" target="_blank">LRG_1170</a></td></tr>
 			</tbody>
 		</table>
 	</div>
 </div>
-<div class="margin-bottom-40">
+<div>
 See more details <a class="btn btn-primary btn-xs" href="/search/?query=LRG_1199;LRG_1208;LRG_1203;LRG_1163;LRG_1207;LRG_1127;LRG_1188;LRG_1186;LRG_1205;LRG_1153;LRG_1211;LRG_1179;LRG_1161;LRG_1209;LRG_1164;LRG_1214;LRG_1171;LRG_1165;LRG_1190;LRG_1166;LRG_1191;LRG_1196;LRG_598;LRG_1137;LRG_1136;LRG_1155;LRG_1140;LRG_1152;LRG_1120;LRG_1125;LRG_1156;LRG_1129;LRG_1148;LRG_1143;LRG_1134;LRG_1150;LRG_1154;LRG_1133;LRG_1131;LRG_1130;LRG_1206;LRG_580;LRG_1201;LRG_1169;LRG_1170">here</a>
 </div>

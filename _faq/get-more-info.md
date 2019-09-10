@@ -1,7 +1,7 @@
 ---
 title: "Where can I get more information about LRGs?"
 faq_group: lrg_definition
-faq_order: 11
+faq_order: 12
 faq_tags:
   - lrg_definition
 faq_related:

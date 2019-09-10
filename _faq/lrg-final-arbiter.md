@@ -1,7 +1,7 @@
 ---
 title: "Who is the final arbiter of LRG content?"
 faq_group: lrg_definition
-faq_order: 7
+faq_order: 8
 faq_tags:
   - lrg_definition
   - records

@@ -1,14 +1,14 @@
 ---
 title: "Is there a published account of LRGs that I can read?"
 faq_group: lrg_definition
-faq_order: 12
+faq_order: 13
 faq_tags:
   - lrg_definition
   - publication
 ---
 
-The LRG standard and why it is needed is described in the following publication: 
- 
+The LRG standard and why it is needed is described in the following publication:
+
 **"Locus Reference Genomic: reference sequences for the reporting of clinically relevant sequence variants"**  
 [MacArthur JA et al., Nucleic Acids Res. 2014 Jan (doi: 10.1093/nar/gkt1198)](MacArthur JA et al., Nucleic Acids Res. 2014 Jan (doi: 10.1093/nar/gkt1198)).  
 

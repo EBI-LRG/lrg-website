@@ -1,7 +1,7 @@
 ---
 title: "How many LRG records have been created?"
 faq_group: lrg_definition
-faq_order: 10
+faq_order: 11
 faq_tags:
   - lrg_definition
   - records
