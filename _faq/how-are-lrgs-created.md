@@ -1,10 +1,11 @@
 ---
-layout: page
-title: LRG creation process
-tags: LRG creation process
-icon-class: icon-steps
-permalink: /documentation/lrg-creation/
-desc: The steps involved in creating an LRG record
+title: "How are LRGs created?"
+faq_group: lrg_definition
+faq_order: 14
+faq_tags:
+  - lrg_definition
+faq_related:
+  - responsibility-for-lrg-creation
 ---
 
 The LRG project is a collaboration between the NCBI and EMBL-EBI. The creation of an LRG involves several steps.   
@@ -14,9 +15,9 @@ You can check the progress of pending LRGs [here](/search/?query=pending).
 ![alt text]({{ site.base_url }}/images/curation_steps.png "Curation steps")
 
 * **Request of an LRG** <span class="badge pending_bg_dark_font margin-left-5">Step 1</span>
-  * LRGs are created upon request by collaborators (e.g. members of diagnostic and research communities and/or clinical experts from specific disease areas, LSDB curators, etc.), following the guidelines found here: [Request an LRG](/documentation/lrg-request).
-  * The genomic sequence included in each LRG record is identical to the [RefSeqGene]({{ site.urls.refseqgene }}){: .icon-external-link}{:target="_blank"} sequence (RSG) for the gene of interest. If there is no RSG for the gene, LRG curators will work with the NCBI to ensure its creation. It is our policy for all LRGs to match the genome reference assembly. However, alternative sequences may be requested if there is a prevalent legacy alternate allele or if there is an error in the genome reference assembly.
-  * Requesters may suggest any transcript of choice (RefSeq or ENST) for inclusion in an LRG record. If there is no sequence for the desired transcript, LRG curators will work to ensure its creation.  
+    * LRGs are created upon request by collaborators (e.g. members of diagnostic and research communities and/or clinical experts from specific disease areas, LSDB curators, etc.).
+    * The genomic sequence included in each LRG record is identical to the [RefSeqGene]({{ site.urls.refseqgene }}){: .icon-external-link}{:target="_blank"} sequence (RSG) for the gene of interest. If there is no RSG for the gene, LRG curators will work with the NCBI to ensure its creation. It is our policy for all LRGs to match the genome reference assembly. However, alternative sequences may be requested if there is a prevalent legacy alternate allele or if there is an error in the genome reference assembly.
+    * Requesters may suggest any transcript of choice (RefSeq or ENST) for inclusion in an LRG record. If there is no sequence for the desired transcript, LRG curators will work to ensure its creation.
 
 <div class="margin-bottom-10"></div>
 * **Creation of pending record** <span class="badge pending_bg_dark_font margin-left-5">Step 2</span>
@@ -54,4 +55,3 @@ You can check the progress of pending LRGs [here](/search/?query=pending).
 The **updatable section** of all records, “pending” and “public”, **is refreshed** in an automated manner on a weekly basis.
 
 <div class="margin-bottom-40"></div>
-

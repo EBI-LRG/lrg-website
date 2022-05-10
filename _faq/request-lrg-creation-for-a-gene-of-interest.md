@@ -7,4 +7,7 @@ faq_tags:
   - records
 ---
 
-You can request the creation of an LRG for your gene of interest by contacting us at <a href="mailto:{{ site.email_contact }}">{{ site.email_contact }}</a>. We suggest that beforehand you read the [Request an LRG](/documentation/lrg-request) page.
+New LRGs are no longer generated and and the LRG website was last updated on 31st March 2021.
+Ensembl and RefSeq transcripts that are specified by the MANE collaboration are preferred for
+all genes where available to help standardise clinical
+reporting. <a href="https://tark.ensembl.org/web/mane_project/">https://tark.ensembl.org/web/mane_project/</a>
