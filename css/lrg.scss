@@ -148,7 +148,7 @@ ul.compact {
 //
 header {
   width:100%;
-  height:105px;
+  height:205px;
   position:fixed;
   top:0px;
   z-index:100;
@@ -170,11 +170,22 @@ header {
 .sub-masterhead_green {
   border-top:5px solid $lrg_green2;
 }
+.new-lrg-banner {
+  background-color: $lrg_yellow;
+  text-align:center;
+}
 .sub-masterhead_pending {
   border-top:5px solid $lrg_pending;
 }
 .sub-masterhead_stalled {
   border-top:5px solid $lrg_stalled;
+}
+
+.do_not_request_lrgs {
+  padding:15px;
+  margin-bottom:15px;
+  font-size:16px;
+  letter-spacing:1.1px;
 }
 
 
@@ -852,7 +863,7 @@ table {
 
 .container-extra {
   min-height: 100%;
-  padding-top:105px;
+  padding-top:235px;
   margin-bottom:-$footer_height;
 }
 .container-extra:after {
