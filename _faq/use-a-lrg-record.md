@@ -24,11 +24,7 @@ Once a LRG record has been created, you can e.g.:
 
   * [Mutalyzer]({{ site.urls.mutalyzer }}){: .icon-external-link}{:target="_blank"} checks that variants described using your LRG follow HGVS conventions - Mutalyzer's *"Name Checker"*, *"Syntax Checker"*, and *"Name Generator"* ensure that variants described using LRG sequences follow HGVS guidelines.
   * [VariantValidator]({{ site.urls.vvalidator }}){: .icon-external-link}{:target="_blank"}
-
-* **Submit your variant data** into a public archive:
-
-  * Variants can be submitted to [dbSNP]({{ site.urls.ncbi }}/SNP/){: .icon-external-link}{:target="_blank"} and [ClinVar]({{ site.urls.ncbi }}/clinvar/){: .icon-external-link}{:target="_blank"} via the [LRG submission process](/documentation/submit-variants).  
-
+  
 * **Interpret your variant data** using your LRG:
 
   * [Variant Effect Predictor - VEP]({{ site.urls.ensembl }}/info/docs/tools/vep/index.html){: .icon-external-link}{:target="_blank"} (Ensembl)
