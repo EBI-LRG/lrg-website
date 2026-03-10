@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lrg-website
+  namespace: lrg-website-prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lrg-website
+  template:
+    metadata:
+      labels:
+        app: lrg-website
+    spec:
+      containers:
+      - name: lrg-website
+        image: dockerhub.ebi.ac.uk/ensembl-apps/lrg-website:latest
+        ports:
+        - containerPort: 80
