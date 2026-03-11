@@ -14,7 +14,7 @@ build:
   before_script:
     - echo $CI_REGISTRY_TOKEN | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
   script:
-    - docker build -t dockerhub.ebi.ac.uk/ensembl-apps/lrg-website .
+    - docker build --platform linux/amd64 -t dockerhub.ebi.ac.uk/ensembl-apps/lrg-website .
     - docker push dockerhub.ebi.ac.uk/ensembl-apps/lrg-website
 
 deploy-prod:

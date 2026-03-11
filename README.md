@@ -36,7 +36,7 @@ The site is built using Jekyll and served via Caddy in a Docker container.
 
 1. Build the image:
    ```bash
-   docker build -t lrg-website .
+   docker build --platform linux/amd64 -t lrg-website .
    ```
 
 2. Run the container:
@@ -44,12 +44,6 @@ The site is built using Jekyll and served via Caddy in a Docker container.
    docker run -p 8080:80 lrg-website
    ```
    Visit http://localhost:8080
-
-3. Push to registry (for production):
-   ```bash
-   docker build -t dockerhub.ebi.ac.uk/ensembl-apps/lrg-website .
-   docker push dockerhub.ebi.ac.uk/ensembl-apps/lrg-website
-   ```
 
 ## Kubernetes Deployment
 
@@ -74,7 +68,7 @@ The site is built using Jekyll and served via Caddy in a Docker container.
 For testing puposes, you can build and push the image manually using the following commands:
 
 ```bash
-docker build -t dockerhub.ebi.ac.uk/ensembl-apps/lrg-website .
+docker build --platform linux/amd64 -t dockerhub.ebi.ac.uk/ensembl-apps/lrg-website .
 docker push dockerhub.ebi.ac.uk/ensembl-apps/lrg-website
 ```
 
