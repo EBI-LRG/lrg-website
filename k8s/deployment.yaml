@@ -4,7 +4,7 @@ metadata:
   name: lrg-website
   namespace: lrg-website-prod
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: lrg-website
@@ -13,6 +13,8 @@ spec:
       labels:
         app: lrg-website
     spec:
+      imagePullSecrets:
+      - name: lrg-registry-secret
       containers:
       - name: lrg-website
         image: dockerhub.ebi.ac.uk/ensembl-apps/lrg-website:latest

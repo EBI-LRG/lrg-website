@@ -9,5 +9,5 @@ spec:
   ports:
   - port: 80
     targetPort: 80
-    nodePort: 30080  # Optional: specify a port, or let K8s assign
+    nodePort: 30088  # Optional: specify a port, or let K8s assign
   type: NodePort
