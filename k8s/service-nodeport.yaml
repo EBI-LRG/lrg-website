@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lrg-website-nodeport
+  namespace: lrg-website-prod
+spec:
+  selector:
+    app: lrg-website
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30088  # Optional: specify a port, or let K8s assign
+  type: NodePort

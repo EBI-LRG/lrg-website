@@ -1,0 +1,34 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  DOCKER_API_VERSION: "1.43"
+  DOCKER_TLS_CERTDIR: ""
+
+build:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - echo $CI_REGISTRY_TOKEN | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
+  script:
+    - docker build --platform linux/amd64 -t dockerhub.ebi.ac.uk/ensembl-apps/lrg-website .
+    - docker push dockerhub.ebi.ac.uk/ensembl-apps/lrg-website
+
+deploy-prod:
+  stage: deploy
+  image: ${CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX}/alpine/k8s:1.25.16
+  before_script:
+    - mkdir -p ~/.kube/
+    - echo $KUBE_CONFIG_INFO | base64 -d > config
+    - mv config ~/.kube/
+    - unset HTTPS_PROXY
+  script:
+    - kubectl config get-contexts
+    - kubectl version --short
+    - kubectl apply -f k8s/ -n lrg-website-prod
+  only:
+    - master
+  when: manual
