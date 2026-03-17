@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lrg-website
+  namespace: lrg-website-prod
+  annotations:
+    kubernetes.io/ingress.class: 'nginx'
+spec:
+  rules:
+  - host: www.lrg-sequence.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: lrg-website-clusterip
+            port:
+              number: 80
