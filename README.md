@@ -65,6 +65,9 @@ The site is built using Jekyll and served via Caddy in a Docker container.
 4. Access via NodePort (for testing):
    Get the node IP and port from `kubectl get svc lrg-website-nodeport -n lrg-website-prod`
 
+5. Ingress:
+   The repository includes `k8s/ingress.yaml` to route `www.lrg-sequence.org` to the `lrg-website-clusterip` service.
+
 For testing puposes, you can build and push the image manually using the following commands:
 
 ```bash
