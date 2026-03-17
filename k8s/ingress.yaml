@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: lrg-website
   namespace: lrg-website-prod
+  annotations:
+    kubernetes.io/ingress.class: 'nginx'
 spec:
   rules:
   - host: www.lrg-sequence.org
